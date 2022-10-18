@@ -4,22 +4,18 @@
     font-family: 'Nunito Sans', sans-serif;
 }
 
-/* HEADER format */
-/*
-.main-header{
-    background: #ffa;
-    max-height: 12vh;
-}*/
+/* HEADER */
+
 nav{
     background: #ffa;
     max-height: 3vh;
     display: flex;
-    padding: 2% 4%;
+    padding: 2% 1%;
     justify-content: space-between;
     align-items: center;
 }
 nav img{
-    max-height: 75px;
+    max-height: 70px;
 }
 .nav-links{
     text-align: right;
@@ -27,8 +23,9 @@ nav img{
 .nav-links ul li{
     list-style: none;
     display: inline-block;
-    padding: 8px 30px;
+    padding: 4px 30px;
     position: relative;
+    font-weight: 700;
 }
 .nav-links ul li a{
     color: #000;
