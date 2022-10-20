@@ -48,13 +48,19 @@ nav img{
     position:absolute;
     top:0;
     left:0;
+    opacity: 0;
+    transition: opacity .5s;
+}
+.slider img.active {
+    opacity: 1;
 }
 .suivant, .precedent{
     color: #fff;
-    font-size: 3rem;
+    font-size: 2.5rem;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    cursor: pointer;
 }
 .suivant {
     right: 1rem;
