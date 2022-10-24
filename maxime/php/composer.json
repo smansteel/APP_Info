@@ -1,0 +1,12 @@
+{
+    "name": "maxime/maxime",
+    "require": {
+        "phpmailer/phpmailer": "^6.6"
+    },
+    "authors": [
+        {
+            "name": "maxime",
+            "email": "contact@captair.paris"
+        }
+    ]
+}

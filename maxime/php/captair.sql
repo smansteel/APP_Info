@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 24, 2022 at 06:49 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Oct 24, 2022 at 10:22 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,10 +24,69 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `otp`
+--
+
+CREATE TABLE `otp` (
+  `id` int(11) NOT NULL,
+  `email` text NOT NULL,
+  `token` text NOT NULL,
+  `utilisation` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
--- Error reading structure for table captair.users: #1932 - Table &#039;captair.users&#039; doesn&#039;t exist in engine
--- Error reading data for table captair.users: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &#039;FROM `captair`.`users`&#039; at line 1
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `email` text NOT NULL,
+  `password` text NOT NULL,
+  `creation` varchar(25) NOT NULL,
+  `capteurs` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `password`, `creation`, `capteurs`) VALUES
+(1, 'smansteelyt@gmail.com', '$2y$10$5PhFfBSMcb6eHSQby1ZbgexC1fYxf6TzgkbKZGFRDcfLAoiXAiTjC', '19:04:39', NULL),
+(3, 'potate@captair.paris', '$2y$10$D5UIp5yondWDz6AO0Yo0cOJsWSM9GzRNH2Et.6I7DKWCj8ypYThG2', '', NULL);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `otp`
+--
+ALTER TABLE `otp`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `otp`
+--
+ALTER TABLE `otp`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
