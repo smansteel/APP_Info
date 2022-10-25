@@ -2,7 +2,7 @@
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require 'C:/Users/Maxime/vendor/autoload.php';
+require 'C:/Users/maxim/vendor/autoload.php';
 
 
 function tokenGen()
@@ -15,7 +15,7 @@ function tokenGen()
     return $rtoken;
 }
 
-echo tokenGen();
+$token = tokenGen();
 
 // @ts-ignore
 $mail = new PHPMailer();                // @ignore
@@ -28,16 +28,19 @@ $mail->Username   = 'postmaster@captair.paris';     // SMTP username
 $mail->Password   = '8VHg2$v*25S%Cs3';         // SMTP password
 $mail->SMTPSecure = 'ssl';              // Enable TLS encryption, 'ssl' also accepted
 $mail->Port       = 465;                // TCP port to connect to
-$mail->setFrom('noreply@captair.paris', 'NOREPLY');
+$mail->setFrom('noreply@captair.paris', 'captair.paris noreply');
 $mail->addAddress('maxime.tardieu@gmail.com');
 
-$mail->Subject = "Subject Text";
-$mail->Body = "<i>Mail body in HTML</i>";
+$mail->Subject = "Confirmation de votre adresse mail sur captair.paris";
+$mail->Body = "<a href='http://localhost/confirmation.php?token=$token'>click to confirm email adress</a>";
 $mail->AltBody = "This is the plain text version of the email content";
 
 try {
-    //$mail->send();
+    $mail->send();
     echo "Message has been sent successfully";
+
+    //connect to db and add usage of token (password reset/acc confirmation)
+
     
 } catch (Exception $e) {         // @ignore
     echo "Mailer Error: " . $mail->ErrorInfo;

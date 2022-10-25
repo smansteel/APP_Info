@@ -5,8 +5,8 @@ if(isset($_POST["email"]) || isset($_POST["password"]) ) {
     $conn = OpenCon();
     $mail = $_POST["email"];
     $passwd = $_POST["password"];
-    $hashed = password_hash($passwd, 1);
-    $hashed_1234 = password_hash("1234", 1);
+    echo $passwd . "<br>";
+    $hashed = password_hash($passwd, PASSWORD_DEFAULT);
 
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
    
@@ -27,20 +27,23 @@ if(isset($_POST["email"]) || isset($_POST["password"]) ) {
     $rarray = [];
     while (mysqli_stmt_fetch($stmt)) {
         array_push($rarray, $mail, $hash);
-        printf ("%s, %s \n", $mail, $hash);
     }
     if(!$rarray[0]){
-        header("Location: /loginpage.php/?error=noacc");
+        header("Location: /login.php?error=noacc");
         
     }else{
-        if (password_verify( $passwd,  $hashed))
+        if (password_verify( $passwd,  $hash))
         {header("Location: /moncompte.php");
 
             session_start();
             $_SESSION["email"] = "$mail";
-            $_SESSION["lastname"] = "Parker";}
+            $_SESSION["token"] = "Parker";}
 
-        else{echo "Bah non mauvais mdp ";}
+            //add session material
+
+        else{header("Location: /login.php?error=badcred");
+            echo "Bah non mauvais mdp ";}
+            
     }
     CloseCon($conn);
 }

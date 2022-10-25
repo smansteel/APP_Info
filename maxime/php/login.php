@@ -3,6 +3,10 @@ if (isset($_GET["error"])){
   if($_GET["error"] == "noacc"){
     echo 'Non existing account, please create one <a href="/createaccount.php">here</a>';
   }
+  if($_GET["error"] == "badcred"){
+    echo 'Bad credentials reset you password <a href="/resetpassword.php">here</a>';
+  }
+  // add session material
 }
 ?>
 
