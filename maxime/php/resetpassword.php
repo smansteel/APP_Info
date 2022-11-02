@@ -2,7 +2,7 @@
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require 'C:/Users/maxim/vendor/autoload.php';
+require 'C:/Users/Maxime/vendor/autoload.php';
 
 
 function tokenGen()
