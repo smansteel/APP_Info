@@ -1,13 +1,26 @@
-<form action="userlogin.php" method="post" class="form-example">
+<link rel="stylesheet" href="login.css">
+
+<body>
+<div class="background"></div>
+<div class="bg-image">
+
+<img src="sources/captair.png" class="logo">
+<form action="userlogin.php" method="post" class="form">
+
   <div class="form-connect">
-    <label for="email">Entrez votre adresse mail: </label>
-    <input type="email" name="email" id="email" required>
+    <input type="email" name="email" id="email" class="form_field" placeholder="Adresse email"required>
   </div>
   <div class="form-example">
-    <label for="password">Entrez votre mot de passe </label>
-    <input type="password" name="password" id="password" required>
+    <input type="password" name="password" id="password" class="form_field" placeholder="Mot de passe" required>
   </div>
   <div class="form-example">
-    <input type="submit" value="Se connecter">
+    <input type="submit" value="Connexion" class="submit_button">
   </div>
 </form>
+<button type="button" href="/createaccount.php" class="newacc">Créer mon compte</button><br>
+<a href="/resetpassword.php" class="fgtpsswd">Mot de passe oublié</a>
+
+
+</div></div>
+
+</body>

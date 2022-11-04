@@ -1,13 +1,21 @@
 <body><?php
-if (isset($_GET["error"])){
+if (isset($_GET["error"]))
+{
   if($_GET["error"] == "noacc"){
     echo 'Non existing account, please create one <a href="/createaccount.php">here</a>';
   }
   if($_GET["error"] == "badcred"){
     echo 'Bad credentials reset you password <a href="/resetpassword.php">here</a>';
-  }
+  } 
+
   // add session material
+}  
+session_start();
+if(isset($_SESSION["id"]))
+{
+  header("Location: /moncompte.php");
 }
+
 ?>
 
 <form action="userlogin.php" method="post" class="form-example">
