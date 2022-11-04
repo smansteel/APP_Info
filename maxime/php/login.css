@@ -54,7 +54,7 @@ body {
     padding-left: 20px;
     border-color: white;
     background-color: #edf2f7;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     height: 50px;
     width: 350px;
 }
@@ -116,3 +116,30 @@ body {
     text-decoration: underline;
  
 }
+
+.flex-name{
+    height: 100% ;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: left;
+    padding: 10px;
+    margin-left: 10%; 
+    margin-right: auto;
+}
+.flex-edit{
+    margin-left: auto; 
+    margin-right: 30%;
+}
+
+
+.changeinfos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    text-align: center;
+    margin-top : 20px;
+    width: 100%;
+
+}
+
