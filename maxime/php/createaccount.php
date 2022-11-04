@@ -70,7 +70,7 @@
 /* create a prepared statement */
 
 
-      //make html form 
+     
       
       
       ?>

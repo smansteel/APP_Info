@@ -17,7 +17,9 @@
     <input type="submit" value="Connexion" class="submit_button">
   </div>
 </form>
-<button type="button" href="/createaccount.php" class="newacc">Créer mon compte</button><br>
+<br>
+<a class="newacc" href="/newaccount.php" class="newacc">Créer mon compte</a><br>
+<br>
 <a href="/resetpassword.php" class="fgtpsswd">Mot de passe oublié</a>
 
 
