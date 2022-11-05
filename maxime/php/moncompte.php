@@ -1,7 +1,17 @@
 <link rel="stylesheet" href="login.css">
 <html>
 
-<body>Bienvenue <?php session_start();
+<?php 
+session_start();
+if(!isset($_SESSION["prenom"])){
+   header("Location: /login.php");
+}
+?>
+
+<body>Bienvenue <?php 
+
+
+
                   echo $_SESSION["prenom"] ?>, dans cette rubrique vous pouvez, modifier les paramètres de votre comptes et gérer votre capteur.
    <div class="changeinfos">
       <div class="flex-name">

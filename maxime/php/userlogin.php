@@ -25,6 +25,7 @@ if (isset($_POST["email"]) || isset($_POST["password"])) {
     while (mysqli_stmt_fetch($stmt)) {
         //printf(" %s %s %s %s %s\n", $id, $hash, $nom, $prenom, $creation);
     }
+    mysqli_stmt_close($stmt);
 
     /* fetch value */
 
@@ -43,9 +44,9 @@ if (isset($_POST["email"]) || isset($_POST["password"])) {
             echo $nom . " " . $_SESSION["nom"];
             header("Location: /moncompte.php");
         } else {
-            //header("Location: /login.php?error=badcred");
-            echo "Bah non mauvais mdp ";
-            echo password_hash("1234",1);
+            header("Location: /login.php?error=badcred");
+            //echo "Bah non mauvais mdp ";
+            //echo password_hash("1234",1);
         }
     }
     CloseCon($conn);

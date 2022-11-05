@@ -21,7 +21,7 @@ function tokenGen()
 
 
 
-function phpMailSender($token, $email){
+function phpMailSender($token, $email, $typeofemail){
 // @ts-ignore
 $mail = new PHPMailer();                // @ignore
 
@@ -35,11 +35,16 @@ $mail->SMTPSecure = 'ssl';              // Enable TLS encryption, 'ssl' also acc
 $mail->Port       = 465;                // TCP port to connect to
 $mail->setFrom('noreply@captair.paris', 'captair.paris noreply');
 $mail->addAddress($email);
-
+if($typeofemail == 0){
 $mail->Subject = "Confirmation de votre adresse mail sur captair.paris";
 $mail->Body = "<a href='http://localhost/confirmation.php?token=$token'>click to confirm email adress</a>";
 $mail->AltBody = "This is the plain text version of the email content";
+} else if ($typeofemail == 1){
+    $mail->Subject = "Changement de votre mot de passe captair.paris";
+    $mail->Body = "<a href='http://localhost/confirmation.php?token=$token'>Cliquez sur ce lien pour changer votre mot de passe</a>";
+    $mail->AltBody = "This is the plain text version of the email content";
 
+}
 try {
     $mail->send();
     echo "Message has been sent successfully";
