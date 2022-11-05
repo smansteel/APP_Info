@@ -5,6 +5,10 @@ use PHPMailer\PHPMailer\Exception;
 require 'C:/Users/Maxime/vendor/autoload.php';
 
 
+
+
+
+
 function tokenGen()
 {
     $rtoken ="";
@@ -15,12 +19,13 @@ function tokenGen()
     return $rtoken;
 }
 
-$token = tokenGen();
 
+
+function phpMailSender($token, $email){
 // @ts-ignore
 $mail = new PHPMailer();                // @ignore
 
-$mail->SMTPDebug = 2;                   // Enable verbose debug output
+$mail->SMTPDebug = 0;                   // Enable verbose debug output
 $mail->isSMTP();                        // Set mailer to use SMTP
 $mail->Host       = 'ssl0.ovh.net;';    // Specify main SMTP server
 $mail->SMTPAuth   = true;               // Enable SMTP authentication
@@ -29,7 +34,7 @@ $mail->Password   = '8VHg2$v*25S%Cs3';         // SMTP password
 $mail->SMTPSecure = 'ssl';              // Enable TLS encryption, 'ssl' also accepted
 $mail->Port       = 465;                // TCP port to connect to
 $mail->setFrom('noreply@captair.paris', 'captair.paris noreply');
-$mail->addAddress('maxime.tardieu@gmail.com');
+$mail->addAddress($email);
 
 $mail->Subject = "Confirmation de votre adresse mail sur captair.paris";
 $mail->Body = "<a href='http://localhost/confirmation.php?token=$token'>click to confirm email adress</a>";
@@ -44,6 +49,8 @@ try {
     
 } catch (Exception $e) {         // @ignore
     echo "Mailer Error: " . $mail->ErrorInfo;
+}
+
 }
 
 ?>

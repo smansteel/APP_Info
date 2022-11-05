@@ -2,9 +2,9 @@
       $password = "test";
       $mail = "potate@captair.paris";
 
-
+      include "db_connect.php";
       $conn = OpenCon();
-      $mail = $_POST["email"];
+      //$mail = $_POST["email"];
 
       function guidv4($data = null) {
             // Generate 16 bytes (128 bits) of random data or use the data passed into the function.
@@ -68,9 +68,3 @@
       echo guidv4() . "<br>";
 
 /* create a prepared statement */
-
-
-     
-      
-      
-      ?>
