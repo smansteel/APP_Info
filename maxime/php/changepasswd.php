@@ -37,4 +37,28 @@ if (isset($_POST["email"])) {
         header("Location: /resetpassword.php?confirmation=email");
     }
 } else if (isset($_POST["password"]) && isset($_POST["password1"])) {
+
+    if ($_POST["password"] == $_POST["password1"]) {
+        $password = $_POST["password"];
+        $hashed = password_hash($password, 1);
+        $id = $_SESSION["id"];
+        $usertoken = $_SESSION["token"];
+
+
+        //check delete statement in db
+        $stmt3 = mysqli_prepare($conn, "DELETE FROM onetimepasses WHERE token = ?");
+        mysqli_stmt_bind_param($stmt3, "s", $usertoken);
+        mysqli_stmt_execute($stmt3);
+        mysqli_stmt_close($stmt3);
+
+
+        $stmt5 = mysqli_prepare($conn, "UPDATE users SET password = ? WHERE id = ?;");
+        mysqli_stmt_bind_param($stmt5, "ss", $hashed, $id);
+        mysqli_stmt_execute($stmt5);
+        mysqli_stmt_close($stmt5);
+        session_destroy();
+        header('Location: /login.php?confirmation=passwd');
+    } else {
+        header("Location: /newpassword.php?error=passwd");
+    }
 }

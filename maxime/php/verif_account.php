@@ -1,91 +1,54 @@
 <?php
 
-
 include "mailsend.php";
 include "db_connect.php";
 
-$conn = OpenCon();
 
-
-if (isset($_POST["email"])) {
-    $mail = $_POST["email"];
-    $passwd = $_POST["password"];
-    $nom = $_POST["nom"];
-    $prenom = $_POST["prenom"];
+function add_otp_for_id($id, $usage)
+{
+    $conn = OpenCon();
     $usertoken = tokenGen();
-    $hashed = password_hash($passwd, 1);
 
-    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-
-
-
-    $stmt4 = mysqli_prepare($conn, "SELECT id FROM users WHERE email=?");
-    mysqli_stmt_bind_param($stmt4, "s", $mail);
+    //fetch from db if an account with this email exists
+    $stmt4 = mysqli_prepare($conn, "SELECT email FROM users WHERE id=?");
+    mysqli_stmt_bind_param($stmt4, "s", $id);
     mysqli_stmt_execute($stmt4);
-    $result = mysqli_stmt_get_result($stmt4);
-    echo var_dump($result);
-    $rowcount = mysqli_num_rows($result);
+    mysqli_stmt_bind_result($stmt4, $email);
+    while (mysqli_stmt_fetch($stmt4)) {
+        //printf("%s \n", $email);
+    }
     mysqli_stmt_close($stmt4);
-    if ($rowcount != 0) {
+    echo $email . "<br>";
+
+    if (!isset($email)) {
         header("Location: /newaccount.php?error=email");
     } else {
 
-
-
-        $stmt = mysqli_prepare($conn, "INSERT INTO users(email, password, nom, prenom) VALUES (?, ?, ?, ?)");
-
-        mysqli_stmt_bind_param($stmt, "ssss", $mail, $hashed, $nom, $prenom);
-
-        /* execute query */
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_close($stmt);
-
-
-
-
-        $stmt3 = mysqli_prepare($conn, "SELECT id FROM users WHERE email=?");
-        mysqli_stmt_bind_param($stmt3, "s", $mail);
-        mysqli_stmt_execute($stmt3);
-        mysqli_stmt_bind_result($stmt3, $id);
-        $result = mysqli_stmt_get_result($stmt3);
-        mysqli_stmt_close($stmt3);
-        //echo var_dump($result);
-        $id_array = [];
-        while ($row = mysqli_fetch_row($result)) {
-            array_push($id_array, $row[0]);
-        }
-
-
-
-
         $time = date('d-m-y h:i:s');
-
-        /* utilisation : 0: creation compte
-                        1 : changer mdp*/
-        $id = $id_array[0];
 
         //clean old verif links
 
         $stmt4 = mysqli_prepare($conn, "DELETE FROM onetimepasses WHERE account_id=?");
-        mysqli_stmt_bind_param($stmt4, "s", $mail);
+        mysqli_stmt_bind_param($stmt4, "s", $id);
         mysqli_stmt_execute($stmt4);
-        $result = mysqli_stmt_get_result($stmt4);
-        echo var_dump($result);
-        $rowcount = mysqli_num_rows($result);
         mysqli_stmt_close($stmt4);
 
-
-        $stmt2 = mysqli_prepare($conn, "INSERT INTO onetimepasses (token, utilisation, creation_time, account_id) VALUES (?, 0, ?, $id);");
+        // add new verification token in db
+        /* utilisation d'utilisation dans la requete sql: 0 : creation compte
+                                                          1 : changer mdp
+        */
+        $stmt2 = mysqli_prepare($conn, "INSERT INTO onetimepasses (token, utilisation, creation_time, account_id) VALUES (?, $usage, ?, $id);");
         mysqli_stmt_bind_param($stmt2, "ss", $usertoken, $time);
-        /* execute query */
         mysqli_stmt_execute($stmt2);
         mysqli_stmt_close($stmt2);
-
-        phpMailSender($usertoken, $mail, 0);
-        header("Location: /verify.php");
+        return [$id, $usertoken, $email];
     }
-} else if (isset($_GET["token"])) {
-    $usertoken = $_GET["token"];
+}
+
+function verif_otp_for_email($otp)
+{
+    $conn = OpenCon();
+    $usertoken = $otp;
 
     $stmt3 = mysqli_prepare($conn, "SELECT account_id, creation_time, utilisation FROM onetimepasses WHERE token=?");
     mysqli_stmt_bind_param($stmt3, "s", $usertoken);
@@ -112,13 +75,13 @@ if (isset($_POST["email"])) {
                 header("Location: /invalid_link.php");
             } else {
 
-                //check for non deleted statements in db
+                //delete the entry in the db
                 $stmt3 = mysqli_prepare($conn, "DELETE FROM onetimepasses WHERE token = ?");
                 mysqli_stmt_bind_param($stmt3, "s", $usertoken);
                 mysqli_stmt_execute($stmt3);
                 mysqli_stmt_close($stmt3);
 
-
+                // set verified status
                 $stmt5 = mysqli_prepare($conn, "UPDATE users SET verified = 1 WHERE id = ?;");
                 mysqli_stmt_bind_param($stmt5, "s", $id);
                 mysqli_stmt_execute($stmt5);
@@ -151,7 +114,51 @@ if (isset($_POST["email"])) {
             }
         }
     }
-} else {
-    echo "no post or get";
-    header("Location: /login.php");
+
+    return $email;
+}
+
+function sendMail_redir($email, $usertoken)
+{
+    // send the email
+    phpMailSender($usertoken, $email, 0);
+    //header("Location: /verify.php");
+}
+
+function addUser($mail, $nom, $prenom, $hashed)
+{
+    $conn = OpenCon();
+
+
+    //fetch from db if an account with this email exists
+    $stmt4 = mysqli_prepare($conn, "SELECT id FROM users WHERE email=?");
+    mysqli_stmt_bind_param($stmt4, "s", $mail);
+    mysqli_stmt_execute($stmt4);
+    $result = mysqli_stmt_get_result($stmt4);
+    $rowcount = mysqli_num_rows($result);
+    mysqli_stmt_close($stmt4);
+    if ($rowcount != 0) {
+        header("Location: /newaccount.php?error=email");
+    } else {
+        //add in the db the new account
+        $stmt = mysqli_prepare($conn, "INSERT INTO users(email, password, nom, prenom) VALUES (?, ?, ?, ?)");
+        mysqli_stmt_bind_param($stmt, "ssss", $mail, $hashed, $nom, $prenom);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+
+
+
+        //get the id of the new account (could be removed with som optimization)
+        $stmt3 = mysqli_prepare($conn, "SELECT id FROM users WHERE email=?");
+        mysqli_stmt_bind_param($stmt3, "s", $mail);
+        mysqli_stmt_execute($stmt3);
+        mysqli_stmt_bind_result($stmt3, $id);
+        $result = mysqli_stmt_get_result($stmt3);
+        mysqli_stmt_close($stmt3);
+        $id_array = [];
+        while ($row = mysqli_fetch_row($result)) {
+            array_push($id_array, $row[0]);
+        }
+        return $id_array[0];
+    }
 }

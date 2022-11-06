@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="login.css">
 
 <body>
@@ -7,12 +8,17 @@
   <div class="bg-image">
 
     <img src="sources/captair.png" class="logo">
-    <div class="error">
-    <?php if (isset($_GET["error"])) {
-        if ($_GET["error"] == "email") {
-          echo 'This email already has an account linked to it,<br> try resseting the password <a href="/resetpassword.php">here</a>';
-        }}?>
-        </div>
+
+    <?php
+    if (isset($_GET["error"])) {
+      if ($_GET["error"] == "noacc") {
+        echo 'Non existing account, please create one <a href="/createaccount.php">here</a>';
+      }
+    }
+
+    ?>
+
+
     <form action="confirmation.php" method="post" class="form">
       <div class="form-connect">
         <input type="nom" name="nom" id="nom" class="form_field" placeholder="Nom" required>

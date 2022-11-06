@@ -1,3 +1,5 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <body>
 
   <link rel="stylesheet" href="login.css">
@@ -24,7 +26,16 @@
       } ?>
 
     </div>
+    <div class="confirmation">
+      <?php
+      if (isset($_GET["confirmation"])) {
+        if ($_GET["confirmation"] == "passwd") {
+          echo "Votre mot de passe vient d'être changé, nous vous invitons à vous connecter pour s'assurer que tout marche ! ";
+        }
+      }
+      ?>
 
+    </div>
 
     <form action="userlogin.php" method="post" class="form">
 

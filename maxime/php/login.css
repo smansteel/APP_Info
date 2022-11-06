@@ -138,6 +138,14 @@ body {
   padding-bottom: 10px;
   border-color: red;
 }
+.confirmation {
+  color: rgb(70, 70, 253);
+  padding-bottom: 10px;
+  border-color: red;
+}
 .text {
   color: black;
+  width: 300px;
+  text-align: center;
+  margin: auto;
 }

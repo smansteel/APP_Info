@@ -1,14 +1,15 @@
 <link rel="stylesheet" href="login.css">
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<?php 
+<?php
 session_start();
-if(!isset($_SESSION["prenom"])){
+if (!isset($_SESSION["prenom"])) {
    header("Location: /login.php");
 }
 ?>
 
-<body>Bienvenue <?php 
+<body>Bienvenue <?php
 
 
 

@@ -12,7 +12,7 @@ if (isset($_POST["email"]) || isset($_POST["password"])) {
 
 
     /* create a prepared statement */
-    $stmt = mysqli_prepare($conn, "SELECT id, password, nom, prenom, creation FROM users WHERE email=?");
+    $stmt = mysqli_prepare($conn, "SELECT id, password, nom, prenom, creation,verified  FROM users WHERE email=?");
 
     /* bind parameters for markers */
     mysqli_stmt_bind_param($stmt, "s", $mail);
@@ -21,7 +21,7 @@ if (isset($_POST["email"]) || isset($_POST["password"])) {
     mysqli_stmt_execute($stmt);
 
     /* bind result variables */
-    mysqli_stmt_bind_result($stmt, $id, $hash, $nom, $prenom, $creation);
+    mysqli_stmt_bind_result($stmt, $id, $hash, $nom, $prenom, $creation, $verified);
     while (mysqli_stmt_fetch($stmt)) {
         //printf(" %s %s %s %s %s\n", $id, $hash, $nom, $prenom, $creation);
     }
@@ -33,16 +33,21 @@ if (isset($_POST["email"]) || isset($_POST["password"])) {
         header("Location: /login.php?error=noacc");
     } else {
         if (password_verify($passwd,  $hash)) {
+            if ($verified == 0) {
+                header("Location: /unverified.php");
+            } else if ($verified == 1) {
+                session_start();
+                $_SESSION["id"] = $id;
+                $_SESSION["email"] = $mail;
+                $_SESSION["nom"] = $nom;
+                $_SESSION["prenom"] = $prenom;
+                $_SESSION["creation"] = $creation;
 
-            session_start();
-            $_SESSION["id"] = $id;
-            $_SESSION["email"] = $mail;
-            $_SESSION["nom"] = $nom;
-            $_SESSION["prenom"] = $prenom;
-            $_SESSION["creation"] = $creation;
-
-            echo $nom . " " . $_SESSION["nom"];
-            header("Location: /moncompte.php");
+                echo $nom . " " . $_SESSION["nom"];
+                header("Location: /moncompte.php");
+            } else {
+                echo $verified;
+            }
         } else {
             header("Location: /login.php?error=badcred");
             //echo "Bah non mauvais mdp ";
