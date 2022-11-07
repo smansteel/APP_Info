@@ -34,7 +34,7 @@ nav {
     align-items: center;
 }
 
-img {
+.logo img {
     max-height: 50px;
     height: auto;
 }
@@ -129,6 +129,39 @@ img {
     .open .menu {
         transform: translateX(0);
     }
+}
+
+.slider {
+    margin-top: 8vh;
+    height: 50vh;
+    position: relative;
+}
+.slider img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity: 0;
+    transition: opacity .5s;
+}
+.slider img.active {
+    opacity: 1;
+}
+.suivant, .precedent{
+    color: #fff;
+    font-size: 2.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.suivant {
+    right: 1rem;
+}
+.precedent{
+    left: 1rem;
 }
 
 .contenu {
