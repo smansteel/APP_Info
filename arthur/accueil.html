@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="with=device-wdith, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet"> 
         <title>Accueil - AirQ</title>
     </head>
+    
     <body>
 
     <!-- Bannière -->
 
-        <nav>
-            <a href="accueil.html"><img src="images/air_Q_full_turquoise_v2.svg"></a>
-            <div class="nav-links">
-                <ul>
-                    <li><a href="#">A Propos</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Données</a></li>
-                    <li><a href="#">Connexion</a></li>
+    <header>
+        <div class="navbar">
+            <img src="images/air_Q_full_turquoise_v3.svg" class="logo">
+            <nav>
+                <ul id="menuList">
+                    <li><a href="">A Propos</a></li>
+                    <li><a href="">Données</a></li>
+                    <li><a href="">FAQ</a></li>
+                    <li><a href="">Connexion</a></li>
                 </ul>
-            </div>
-            <img src="images/pngegg.png" alt="menu hamburger"
-            class="menu">
-        </nav> 
-
+            </nav>
+            <img src="images/pngegg.png" class="menu-icon" onclick="togglemenu()">
+        </div>
+    </header>
+    
+    
+    
     <!-- Carrousel d'images -->
 
         <div class="slider">
@@ -42,7 +46,28 @@
             <div class="precedent"><i class="fa-solid fa-circle-chevron-left"></i>
             </div>    
         </div>
+
         <script src="app.js"></script>
+        <script>
+
+            var menuList = document.getElementById("menuList");
+
+            menuList.style.maxHeight = "0px";
+
+            function togglemenu(){
+
+                if(menuList.style.maxHeight == "0px")
+                    {
+                        menuList.style.maxHeight = "130px";
+                    }
+                else 
+                    {
+                        menuList.style.maxHeight = "0px";
+                    }
+
+            }
+
+        </script>
     </body>
     <!-- 13:48 sur le tuto youtube de 22:26-->
 </html>

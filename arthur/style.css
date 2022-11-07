@@ -7,43 +7,78 @@
 
 /* HEADER */
 
-nav{
-    background: #fff;
-    max-height: 1vh;
-    display: flex;
-    padding: 50px;
-    justify-content: space-between;
-    align-items: center;
+.container{
+    width: 100%;
+    min-height: 1vh;
+    padding-left: 8%;
+    padding-right: 8%;
     box-sizing: border-box;
+    overflow: hidden;
 }
-nav img{
-    max-height: 70px;
+.navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
-.nav-links{
+.logo{
+    width: 100px;
+    cursor: pointer;
+    margin: 30px 0;
+}
+.menu-icon{
+    width: 25px;
+    cursor: pointer;
+    display: none;
+}
+nav{
+    flex: 1;
     text-align: right;
 }
-.nav-links ul li{
+nav ul li{
     list-style: none;
     display: inline-block;
-    padding: 4px 30px;
-    position: relative;
+    margin-right: 30px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
     font-weight: 700;
 }
-.nav-links ul li a{
-    color: #000;
-    text-decoration: none;
-    font-size: 20px;
-    
-}
-@media screen and (max-width: 900px) {
-    .nav-links {
-        display: none;
-    }
+nav ul li a:hover{
+    color: #00C4B3
 }
 
-.menu {
-    max-width: 10%;
+@media only screen and (max-width:700px) {
+
+    nav ul{
+        width:100%;
+        background: linear-gradient(#00C4B3, #00C4B3);
+        position: absolute;
+        top: 75px;
+        right: 0;
+        z-index: 2;
+    }
+    nav ul li{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    nav ul li a{
+        color: #000;
+    }
+    .menu-icon{
+        display: block;
+    }
+    #menuList{
+        overflow: hidden;
+        transition: 0.5s;
+    }
+
 }
+
+
+
 /*Carrousel d'images*/
 
 .slider {
