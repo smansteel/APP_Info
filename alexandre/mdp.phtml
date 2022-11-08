@@ -1,0 +1,13 @@
+<?php
+function CouleurProgression($pourcentage)
+{
+    $red = round((100 - $pourcentage) * 255 / 100);
+    $green = round($pourcentage * 255 / 100);
+
+    return "rgb(" . $red . ", " . $green . ", 0)";
+}
+?>
+
+<div class="barre">
+    <div class="progression" style="width:43%;color:<?php echo CouleurProgression(43); ?>"></div>
+</div>
