@@ -10,9 +10,6 @@ if (!isset($_SESSION["prenom"])) {
 ?>
 
 <body>Bienvenue <?php
-
-
-
                   echo $_SESSION["prenom"] ?>, dans cette rubrique vous pouvez, modifier les paramètres de votre comptes et gérer votre capteur.
    <div class="changeinfos">
       <div class="flex-name">
@@ -32,6 +29,10 @@ if (!isset($_SESSION["prenom"])) {
             <div class="form-edit">
                <input type="text" name="Prénom" id="Prenom" class="form_field" placeholder="Prénom" required>
             </div>
+            <div class="form-example">
+               <input type="submit" value="Changer de mot de passe" class="submit_button">
+            </div>
+            <p></p>
             <div class="form-example">
                <input type="submit" value="Enregistrer" class="submit_button">
             </div>
