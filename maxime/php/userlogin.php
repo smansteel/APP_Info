@@ -35,7 +35,7 @@ if (isset($_POST["email"]) || isset($_POST["password"])) {
         if (password_verify($passwd,  $hash)) {
             if ($verified == 0) {
                 header("Location: /unverified.php");
-            } else if ($verified == 1) {
+            } else if ($verified == '1') {
                 session_start();
                 $_SESSION["id"] = $id;
                 $_SESSION["email"] = $mail;

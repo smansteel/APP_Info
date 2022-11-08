@@ -58,7 +58,7 @@ if (isset($_POST["email"])) {
 
 
 
-        $time = date('d-m-y h:i:s');
+        $time = time();
 
         /* utilisation : 0: creation compte
                         1 : changer mdp*/
@@ -69,9 +69,6 @@ if (isset($_POST["email"])) {
         $stmt4 = mysqli_prepare($conn, "DELETE FROM onetimepasses WHERE account_id=?");
         mysqli_stmt_bind_param($stmt4, "s", $mail);
         mysqli_stmt_execute($stmt4);
-        $result = mysqli_stmt_get_result($stmt4);
-        echo var_dump($result);
-        $rowcount = mysqli_num_rows($result);
         mysqli_stmt_close($stmt4);
 
 
@@ -101,15 +98,16 @@ if (isset($_POST["email"])) {
         header("Location: /invalid_link.php");
     } else {
         $id = $id_array[0];
-        $creatime = date_parse($id_array[1]);
+        $creatime = $id_array[1];
         $usage = $id_array[2];
 
         if ($usage == 0) {
-
+            var_dump($creatime);
+            echo time();
 
 
             if (time() > $creatime + 3600) {
-                header("Location: /invalid_link.php");
+                //header("Location: /invalid_link.php");
             } else {
 
                 //check for non deleted statements in db
