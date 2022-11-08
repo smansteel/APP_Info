@@ -34,7 +34,7 @@ if (isset($_POST["email"]) || isset($_POST["password"])) {
     } else {
         if (password_verify($passwd,  $hash)) {
             if ($verified == 0) {
-                header("Location: /unverified.php");
+                header("Location: /unverified_logic.php?id=$id");
             } else if ($verified == '1') {
                 session_start();
                 $_SESSION["id"] = $id;
