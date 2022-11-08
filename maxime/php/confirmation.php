@@ -79,7 +79,7 @@ if (isset($_POST["email"])) {
         mysqli_stmt_close($stmt2);
 
         phpMailSender($usertoken, $mail, 0);
-        header("Location: /verify.php");
+        //header("Location: /verify.php");
     }
 } else if (isset($_GET["token"])) {
     $usertoken = $_GET["token"];

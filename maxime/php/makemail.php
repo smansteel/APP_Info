@@ -1,3 +1,6 @@
+<?php 
+function makemail($token){
+$stringData = '
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
     <style>
     
@@ -96,4 +99,8 @@
             </td>
         </table>
     
-    </body>
+    </body>'; 
+     return $stringData; 
+}
+
+?>
