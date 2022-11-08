@@ -1,1 +1,32 @@
-
+<!DOCTYPE html>
+<link rel="stylesheet" href="css.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
+<html>
+ 
+  <head>
+    <metacharset="utf-8">
+<title>Page de donn&eacutees</title>
+  </head>
+ 
+  <body>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
+    <h1>headeur </h1>
+        <blockquote> <h2>Niveau de pollution du m&eacutetro parisien</h2> </blockquote>
+          <div style="margin: 60px;  margin-left:280px;">
+            <p>Sur cette page vous pouvez voir sur cette page les donn&eacutees r&eacutecolt&eacutees par nos capteurs. Cette page est actualis&eacutee une fois par jour avec les donn&eacutees moyennes de la journ&eacutee pr&eacutec&eacutedente. </p>
+            <p>D&rsquo;autres lignes sont &agrave venir.</p>
+      </div>
+      </div>
+      <figure class="fig1">
+        <img src="ratp.jpg" style="margin: 60px;" /> 
+      </figure>
+      <figure class="fig2">
+      <img src="legende.png" style="margin: 120px;" /> 
+      </figure>
+      <figure class="fig3">
+        <img src="metroo.png" style="margin: 120px;"/> 
+        </figure>  
+  </body>
+ 
+</html
