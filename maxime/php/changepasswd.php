@@ -21,7 +21,7 @@ if (isset($_POST["email"])) {
     if ($rowcount == 0) {
         header("Location: /resetpassword.php?confirmation=email");
     } else {
-        $time = date('d-m-y h:i:s');
+        $time = time();
 
         /* utilisation : 0: creation compte
                         1 : changer mdp*/
