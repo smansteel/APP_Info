@@ -123,7 +123,7 @@ if (isset($_POST["email"])) {
                 mysqli_stmt_close($stmt5);
 
 
-                header("Location: /login.php");
+                header("Location: /verified.php");
             }
         } else if ($usage == 1) {
             try {

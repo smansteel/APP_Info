@@ -9,15 +9,16 @@
   <div class="bg-image">
 
     <img src="sources/captair.png" class="logo">
-    <div class="error">
-    <?php
-    if (isset($_GET["error"])) {
-      if ($_GET["error"] == "email") {
-        echo 'Un compte avec cet email existe déjà,<br> <a href="/resetpassword.php">changez le ici</a>';
-      }
-    }
 
-    ?>
+    <div class="error">
+      <?php
+      if (isset($_GET["error"])) {
+        if ($_GET["error"] == "email") {
+          echo 'Un compte avec cet email existe déjà,<br> <a href="/resetpassword.php">changez le ici</a>';
+        }
+      }
+
+      ?>
     </div>
 
 
@@ -32,10 +33,11 @@
       <div class="form-connect">
         <input type="email" name="email" id="email" class="form_field" placeholder="Adresse email" required autocomplete="off" readonly onfocus="this.removeAttribute('readonly');">
       </div>
-      <div class="form-example">
+      <div class="password-form">
         <input type="password" name="password" id="password" class="form_field" placeholder="Mot de passe" required autocomplete="off" readonly onfocus="this.removeAttribute('readonly');">
+        <img src="/sources/checkmark.svg" class="checkmark"/>
       </div>
-      <div class="form-example">
+      <div class="password-form">
         <input type="password" name="password-confirm" id="password-confirm" class="form_field" placeholder="Confirmez le mot de passe" required autocomplete="off" readonly onfocus="this.removeAttribute('readonly');">
         <div class="barre" id="PasswordInputStrength"></div>
       </div>
