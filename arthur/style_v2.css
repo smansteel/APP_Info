@@ -135,6 +135,16 @@ nav {
         transform: translateX(0);
     }
 
+    .open .slider {
+        transform:translateX(100%);
+        transition: transform 1s;
+    }
+
+    /* .fermer .slider {
+        transform: translateX(-100%);
+        transition: transform 1s;
+    } */
+
 }
 
 /* Slider */
@@ -199,12 +209,27 @@ footer {
     padding: 20px 0 20px;
 }
 
+.contenu-footer h4 {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
 .liens {
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-grow: 1;
     text-align: center;
+}
+
+.liens a {
+    text-decoration: none;
+    color : #000;
+    font-weight: 600;
+    font-size: 16px;
 }
 
 .bloc {

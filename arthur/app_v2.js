@@ -5,6 +5,8 @@ toggle.addEventListener('click', function() {
     body.classList.toggle('open');
 })
 
+
+
 let img_slider = document.getElementsByClassName('img_slider');
 
 let etape = 0;
