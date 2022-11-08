@@ -2,7 +2,7 @@
 session_start();
 if (isset($_SESSION["token"]) && isset($_SESSION["id"])) {
 } else {
-    header("Loaction: invalid_link.php");
+    header("Location: invalid_link.php");
 } ?>
 
 <body>

@@ -30,7 +30,7 @@
       <?php
       if (isset($_GET["confirmation"])) {
         if ($_GET["confirmation"] == "passwd") {
-          echo "Votre mot de passe vient d'être changé, nous vous invitons à vous connecter pour s'assurer que tout marche ! ";
+          echo "Votre mot de passe vient d'être changé, <br>nous vous invitons à vous connecter pour s'assurer que tout marche ! ";
         }
       }
       ?>
