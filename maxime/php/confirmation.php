@@ -127,11 +127,12 @@ if (isset($_POST["email"])) {
             }
         } else if ($usage == 1) {
             try {
-                if (time() > $creatime[0] + 3600) {
-                    header("Location: /invalid_link.php");
+                if (time() > $creatime + 3600) {
+                    //header("Location: /invalid_link.php");
                 } else {
 
                     session_start();
+                    session_unset();     
                     $_SESSION["id"] = $id;
                     $_SESSION["token"] = $usertoken;
                     header("Location: /newpassword.php");

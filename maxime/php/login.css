@@ -143,6 +143,7 @@ body {
   color: rgb(70, 70, 253);
   padding-bottom: 10px;
   border-color: red;
+  font-size: xx-small;
 }
 .text {
   color: black;
