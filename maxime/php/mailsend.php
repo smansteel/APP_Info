@@ -3,6 +3,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require 'C:/Users/maxim/vendor/autoload.php';
+include "makemail.php";
 
 
 
@@ -25,7 +26,7 @@ function phpMailSender($token, $email, $typeofemail){
 // @ts-ignore
 $mail = new PHPMailer();                // @ignore
 
-$mail->SMTPDebug = 0;                   // Enable verbose debug output
+$mail->SMTPDebug = 2;                   // Enable verbose debug output
 $mail->isSMTP();                        // Set mailer to use SMTP
 $mail->Host       = 'ssl0.ovh.net;';    // Specify main SMTP server
 $mail->SMTPAuth   = true;               // Enable SMTP authentication
@@ -37,11 +38,11 @@ $mail->setFrom('noreply@captair.paris', 'captair.paris noreply');
 $mail->addAddress($email);
 if($typeofemail == 0){
 $mail->Subject = "Confirmation de votre adresse mail sur captair.paris";
-$mail->Body = "<a href='http://localhost/confirmation.php?token=$token'>click to confirm email adress</a>";
+$mail->Body = makemail($token);
 $mail->AltBody = "This is the plain text version of the email content";
 } else if ($typeofemail == 1){
     $mail->Subject = "Changement de votre mot de passe captair.paris";
-    $mail->Body = "<a href='http://localhost/confirmation.php?token=$token'>Cliquez sur ce lien pour changer votre mot de passe</a>";
+    $mail->Body = makemail($token);
     $mail->AltBody = "This is the plain text version of the email content";
 
 }

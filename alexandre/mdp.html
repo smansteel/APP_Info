@@ -1,0 +1,89 @@
+<link rel="stylesheet" href="mdp.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+
+
+<form action="" method="post">
+
+
+    <menu>
+        <div>Nom</div><input type="NamedInput" id="Name">
+
+
+        <div>Prénom</div><input type="FirstnameInput" id="Firstname">
+
+
+        <div>Adresse mail</div><input type="mailInput" id="email">
+        <p>
+        <div for="Entréemdp">
+            Mot de passe:<p></p> <input type="password" id="Entréemdp" name="Entréemdp">
+        </div>
+        </p>
+        <p>
+        <div for="confirmEntréemdp">
+            Confirmer le mot de passe: <p></p><input type="PasswordInput" id="confirmEntréemdp" name="confirmEntréemdp">
+        </div>
+        </p>
+        <p>
+        <div class="" id="PasswordInputStrength">
+        </div>
+        <div>
+            <input type="checkbox" name="newsletter" value="newsletter">Je m'inscris à la newsletter ?
+        </div>
+        <div>
+            <input type="checkbox" name="Conditions" value="Conditions">J'accepte les conditions d'utilisations du site
+        </div>
+        </p>
+        <p><button>S'inscrire</button>
+        </p>
+    </menu>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('#Entréemdp, #confirmEntréemdp').on('keyup', function (e) {
+
+                if ($('#Entréemdp').val() != '' && $('#confirmEntréemdp').val() != '' && $('#Entréemdp').val() != $('#confirmEntréemdp').val()) {
+                    $('#PasswordInputStrength').removeClass().addClass('alert alert-error').html('Les mots de passe ne correspondent pas');
+
+                    return false;
+                }
+
+
+                // Doit avoir des lettres majuscules, des chiffres et des lettres minuscules.
+                var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+
+                // Doit comporter soit des lettres majuscules et minuscules, soit des minuscules et des chiffres.
+                var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+
+                // Doit comporter au moins 6 caractères
+                var okRegex = new RegExp("(?=.{6,}).*", "g");
+
+                if (okRegex.test($(this).val()) === false) {
+                    // Si ok regex ne correspond pas au PasswordInput
+                    $('#PasswordInputStrength').removeClass().addClass('alert alert-error').html('<div class="barre"> <div class="couleur1"></div> </div>' + 'Le mot de passe doit comporter au moins 6 caractères.');
+                }
+
+                else if (strongRegex.test($(this).val())) {
+                    // Si reg ex correspond à PasswordInput fort
+                    $('#PasswordInputStrength').removeClass().addClass('alert alert-success').html('<div class="barre"> <div class="couleur4"></div> </div>' + '<button1> <img src="valide.png"></button1>');
+                }
+
+                else if (mediumRegex.test($(this).val())) {
+                    // Si medium PasswordInput correspond au reg ex
+                    $('#PasswordInputStrength').removeClass().addClass('alert alert-info').html('<div class="barre"> <div class="couleur3"></div> </div>' + '<img src="valide.png">');
+                }
+
+                else {
+                    // Si le mot depasse est ok
+                    $('#PasswordInputStrength').removeClass().addClass('alert alert-error').html('<div class="barre"> <div class="couleur2"></div> </div>' + 'Rendez votre mot de passe plus fort en ajoutant des majuscules, des chiffres et des caractères spéciaux !');
+                }
+
+                return true;
+            });
+
+        });
+
+    </script>
+</form>

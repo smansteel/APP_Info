@@ -4,7 +4,7 @@ include "mailsend.php";
 include "db_connect.php";
 
 
-function add_otp_for_id($id, $usage)
+function add_otp_for_id($id, $usage, $from_page)
 {
     $conn = OpenCon();
     $usertoken = tokenGen();
@@ -21,10 +21,10 @@ function add_otp_for_id($id, $usage)
     echo $email . "<br>";
 
     if (!isset($email)) {
-        header("Location: /newaccount.php?error=email");
+        header("Location: /$from_page.php?error=email");
     } else {
 
-        $time = date('d-m-y h:i:s');
+        $time = time();
 
         //clean old verif links
 
@@ -41,7 +41,7 @@ function add_otp_for_id($id, $usage)
         mysqli_stmt_bind_param($stmt2, "ss", $usertoken, $time);
         mysqli_stmt_execute($stmt2);
         mysqli_stmt_close($stmt2);
-        return [$id, $usertoken, $email];
+        return [$usertoken, $email];
     }
 }
 
@@ -64,7 +64,7 @@ function verif_otp_for_email($otp)
         header("Location: /invalid_link.php");
     } else {
         $id = $id_array[0];
-        $creatime = date_parse($id_array[1]);
+        $creatime = $id_array[1];
         $usage = $id_array[2];
 
         if ($usage == 0) {

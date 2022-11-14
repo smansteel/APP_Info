@@ -9,15 +9,16 @@
   <div class="bg-image">
 
     <img src="sources/captair.png" class="logo">
-    <div class="error">
-    <?php
-    if (isset($_GET["error"])) {
-      if ($_GET["error"] == "email") {
-        echo 'Un compte avec cet email existe déjà,<br> <a href="/resetpassword.php">changez le ici</a>';
-      }
-    }
 
-    ?>
+    <div class="error">
+      <?php
+      if (isset($_GET["error"])) {
+        if ($_GET["error"] == "email") {
+          echo 'Un compte avec cet email existe déjà,<br> <a href="/resetpassword.php">changez le ici</a>';
+        }
+      }
+
+      ?>
     </div>
 
 
@@ -32,12 +33,15 @@
       <div class="form-connect">
         <input type="email" name="email" id="email" class="form_field" placeholder="Adresse email" required autocomplete="off" readonly onfocus="this.removeAttribute('readonly');">
       </div>
-      <div class="form-example">
+      <div class="password-form">
         <input type="password" name="password" id="password" class="form_field" placeholder="Mot de passe" required autocomplete="off" readonly onfocus="this.removeAttribute('readonly');">
+        <img src="/sources/checkmark.svg" class="checkmark-none" id="chechmark"/>
       </div>
-      <div class="form-example">
+      <div class="password-form">
         <input type="password" name="password-confirm" id="password-confirm" class="form_field" placeholder="Confirmez le mot de passe" required autocomplete="off" readonly onfocus="this.removeAttribute('readonly');">
         <div class="barre" id="PasswordInputStrength"></div>
+        <br>
+        <p id="errorbox" class="password-comments"></p>
       </div>
       
       <div class="form-example">
@@ -54,7 +58,8 @@
               var passwordconfirm = $("#password-confirm").val();
 
                 if (passwordval != '' && passwordconfirm != '' && passwordval != passwordconfirm) {
-                    $('#PasswordInputStrength').removeClass().html('Les mots de passe ne correspondent pas');
+                    $('#errorbox').innerHTML = '';
+                    $('#errorbox').html('Les mots de passe ne correspondent pas');
 
                     return false;
                 }
@@ -72,22 +77,36 @@
 
                 if (okRegex.test($(this).val()) === false) {
                     // Si ok regex ne correspond pas au PasswordInput
-                    $('#PasswordInputStrength').removeClass().html('<div class="inline-container"><div class="barre"> <p class="couleur1"></p> </div><div class="password-comments">   <br> Le mot de passe doit comporter au moins 6 caractères. </div> </div>  ');
+                    $('#checkmark').removeClass();
+                    $('checkmark').classList.add("checkmark-none");
+                    $('#PasswordInputStrength').removeClass().html('<div class="inline-container"><div class="barre"> <p class="couleur1"></p> </div></div>  ');
+                    $('#errorbox').innerHTML = "";
+                    $('#errorbox').innerHTML ('Le mot de passe doit au moins faire 6 caractères');
                 }
 
                 else if (strongRegex.test($(this).val())) {
                     // Si reg ex correspond à PasswordInput fort
-                    $('#PasswordInputStrength').removeClass().html('<div class="barre"> <div class="couleur4"></div> </div> <button1> <img src="valide.png"></button1>');
+                    $('#PasswordInputStrength').removeClass().html('<div class="barre"> <div class="couleur4"></div> </div>');
+                    $('#checkmark').removeClass();
+                    $('#errorbox').innerHTML = "";
+                    $('checkmark').classList.add("checkmark-green");
                 }
 
                 else if (mediumRegex.test($(this).val())) {
                     // Si medium PasswordInput correspond au reg ex
-                    $('#PasswordInputStrength').removeClass().html('<div class="barre"> <div class="couleur3"></div> </div> <img src="valide.png">');
+                    $('#checkmark').removeClass();
+                    $('#errorbox').innerHTML = "";
+                    $('checkmark').classList.add("checkmark-green");
+                    $('#PasswordInputStrength').removeClass().html('<div class="barre"> <div class="couleur3"></div> </div>');
                 }
 
                 else {
                     // Si le mot depasse est ok
-                    $('#PasswordInputStrength').removeClass().html('<div class="barre"> <div class="couleur2"></div> <p class="password-comments">Rendez votre mot de passe plus fort en ajoutant des majuscules, des chiffres et des caractères spéciaux !</p> </div> ');
+                    $('#checkmark').removeClass();
+                    $('checkmark').classList.add("checkmark-none");
+                    $('#PasswordInputStrength').removeClass().html('<div class="barre"> <div class="couleur2"></div> </div> ');
+                    $('#errorbox').innerHTML = "";
+                    $('#errorbox').innerHTML ('Le mot de passe doit comporter au moins une lettre minuscule, majuscule, un chiffre et un caractère spécial.');
                 }
 
                 return true;
