@@ -207,8 +207,8 @@ main {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    min-height: 60vh;
-    background: #ffffff;
+    min-height: 78vh;
+    background-color: #fff;
     font-family: 'Nunito Sans', sans-serif;
 }
 
@@ -269,7 +269,7 @@ main {
     bottom: -2px;
     background: #fff;
     z-index: -1;
-    filter: blur(40px);
+    filter: blur(70px);
 }
 
 .box:before,
@@ -305,7 +305,6 @@ main {
     font-weight: 500;
     line-height: 20px;
     letter-spacing: 1px;
-
 }
 
 .box .content h2 span {
@@ -313,7 +312,6 @@ main {
     color: #fff;
     font-weight: 200;
     letter-spacing: 2px;
-
 }
 
 .placement {
