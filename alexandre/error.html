@@ -1,0 +1,117 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
+<html>
+
+<body>
+    <div id="notfound">
+        <div class="notfound">
+            <div class="notfound-404">
+                <h1>404</h1>
+                <h2>Page not found</h2>
+            </div>
+            <a href="#">Report</a>
+            <a href="#">Homepage</a>
+        </div>
+    </div>
+</body>
+
+</html>
+<style>
+    * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        background-color: #C2FFFA;
+        font-family: 'Nunito Sans', sans-serif;
+    }
+
+    #notfound {
+        position: relative;
+        height: 100vh;
+    }
+
+    #notfound .notfound {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        max-width: 767px;
+        width: 100%;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    .notfound .notfound-404 {
+        position: relative;
+        height: 180px;
+        margin-bottom: 20px;
+        z-index: -1;
+    }
+
+    .notfound .notfound-404 h1 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-size: 224px;
+        font-weight: 900;
+        margin: 0 0 0 -12px;
+        color: #00545c;
+        text-transform: uppercase;
+        text-shadow: -1px -1px 0px #00545c, 1px 1px 0px black;
+        letter-spacing: -20px;
+    }
+
+    .notfound .notfound-404 h2 {
+        position: absolute;
+        left: 0;
+        top: 110px;
+        right: 0;
+        font-size: 42px;
+        font-weight: 700;
+        color: #00C4B3;
+        text-transform: uppercase;
+        text-shadow: -1px -1px 0px black;
+        letter-spacing: 13px;
+        margin: 0;
+    }
+
+    .notfound a {
+        display: inline-block;
+        text-transform: uppercase;
+        color: #00C4B3;
+        text-decoration: none;
+        border: 2px solid;
+
+        padding: 10px 40px;
+        font-size: 14px;
+        font-weight: 700;
+        margin: 15px;
+        -webkit-transition: 0.2s all;
+        -ms-transition: 0.2s all;
+        transition: 0.2s all;
+        border-radius: 30px;
+    }
+
+    .notfound a:hover {
+        color: #00545c;
+    }
+
+    @media (max-width:767px) {
+        .notfound .notfound-404 h2 {
+            font-size: 24px;
+        }
+    }
+
+    @media (max-width:480px) {
+        .notfound .notfound-404 h1 {
+            font-size: 182px;
+        }
+    }
+</style>
