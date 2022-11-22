@@ -25,7 +25,7 @@ header {
     left: 0;
     background: #fff;
     padding: 0 2rem;
-    z-index:100;
+    z-index: 100;
 }
 
 nav {
@@ -49,7 +49,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    list-style: none;   
+    list-style: none;
     width: 500px;
 }
 
@@ -137,7 +137,7 @@ nav {
     }
 
     .open .slider {
-        transform:translateX(100%);
+        transform: translateX(100%);
         transition: transform 1s;
     }
 
@@ -151,20 +151,24 @@ nav {
     overflow: hidden;
     position: relative;
 }
+
 .slider img {
     object-fit: cover;
     height: 400pt;
     width: 100%;
-    position:absolute;
-    top:0;
-    left:0;
+    position: absolute;
+    top: 0;
+    left: 0;
     opacity: 0;
     transition: opacity .5s;
 }
+
 .slider img.active {
     opacity: 1;
 }
-.suivant, .precedent{
+
+.suivant,
+.precedent {
     color: #fff;
     font-size: 2.5rem;
     position: absolute;
@@ -172,14 +176,16 @@ nav {
     transform: translateY(-50%);
     cursor: pointer;
 }
+
 .suivant {
     right: 1rem;
 }
-.precedent{
+
+.precedent {
     left: 1rem;
 }
 
-.contenu    {
+.contenu {
     padding: 2vw 2vw;
     text-align: center;
 }
@@ -190,7 +196,7 @@ nav {
     flex-grow: 1;
     padding-left: 7px;
     padding-right: 7px;
-    
+
 }
 
 main {
@@ -353,12 +359,7 @@ section {
     clear: both;
 }
 
-.article {
-    padding: 0 11%;
-    width: 100%;
-    float: left;
 
-}
 
 @media(min-width : 600px) {
     .article {
@@ -366,18 +367,13 @@ section {
     }
 }
 
-#zen {
-    width: 300px;
-    height: 110px;
-    margin-top: 5px;
-    margin-left: 50px;
-}
+
 
 /* Footer */
 
 footer {
     width: 100%;
-    bottom:0;
+    bottom: 0;
     background: #ebebeb;
     color: #000;
     margin-top: 15px;
@@ -389,7 +385,7 @@ footer {
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    justify-content: center;    
+    justify-content: center;
     align-items: flex-start;
     font-size: 16px;
     padding: 20px 0 20px;
@@ -413,7 +409,7 @@ footer {
 
 .liens a {
     text-decoration: none;
-    color : #000;
+    color: #000;
     font-weight: 600;
     font-size: 16px;
 }
@@ -442,15 +438,14 @@ footer {
 
     .bloc {
         margin-left: auto;
-        margin-right: auto; 
-        width: 100%;   
+        margin-right: auto;
+        width: 100%;
     }
 
     .liens {
         flex-direction: column;
         margin-left: auto;
         margin-right: auto;
-        width:100%;
+        width: 100%;
     }
 }
-
