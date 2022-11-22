@@ -11,3 +11,26 @@
 footer{
     margin-top: auto;
 }
+
+.ligne1{
+  margin : 20px;
+
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hz_line{
+  display: block;
+}
+.vert_line{
+  display: none;
+}
+
+@media screen and (max-width: 1300px) {
+  .hz_line{
+    display: none;;
+  }
+  .vert_line{
+    display: block;
+  }
+}
