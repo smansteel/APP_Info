@@ -6,7 +6,6 @@
 
 html {
     font-size: 16px;
-    scroll-behavior: smooth;
 }
 
 body {
@@ -21,11 +20,12 @@ body {
 header {
     position: fixed;
     width: 100%;
-    height: 9vh;
+    height: 8vh;
     top: 0;
     left: 0;
     background: #fff;
     padding: 0 2rem;
+    z-index:100;
 }
 
 nav {
@@ -146,13 +146,14 @@ nav {
 /* Slider */
 
 .slider {
-    margin-top: 9vh;
-    height: 50vh;
+    margin-top: 8vh;
+    height: 400pt;
+    overflow: hidden;
     position: relative;
 }
 .slider img {
     object-fit: cover;
-    height: 100%;
+    height: 400pt;
     width: 100%;
     position:absolute;
     top:0;
@@ -178,10 +179,19 @@ nav {
     left: 1rem;
 }
 
-.contenu {
-    flex: 1 0 auto; 
+.contenu    {
     padding: 2vw 2vw;
+    text-align: center;
+}
+
+.forme {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-left: 7px;
+    padding-right: 7px;
     text-align: justify;
+    word-wrap: break-word;
 }
 
 /* Forme n°1 */
@@ -196,9 +206,8 @@ nav {
 /* Footer */
 
 footer {
-    flex-shrink: 0;
-    flex-grow: 1;
     width: 100%;
+    bottom:0;
     background: #ebebeb;
     color: #000;
 
