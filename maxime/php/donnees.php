@@ -37,15 +37,12 @@ function get_station($ligne){
 
   function get_line_logo($ligne){
     $conn = OpenCon();
-  
-    //fetch from db if an account with this email exists
     $stmt4 = mysqli_prepare($conn, "SELECT lien_logo, hex_color, light_hex FROM metro_line WHERE id=?");
     mysqli_stmt_bind_param($stmt4, "s", $ligne);
     mysqli_stmt_execute($stmt4);
     mysqli_stmt_bind_result($stmt4, $logolink, $hex_code, $light_hex);
     while (mysqli_stmt_fetch($stmt4)) {
       $rarray= [$logolink, $hex_code, $light_hex];
-      //print_r($rarray);
     }
     mysqli_stmt_close($stmt4);
     return $rarray;
@@ -151,7 +148,9 @@ function make_svg_V2_vert($colors){
     <?php
     //print_r(get_station("7bis"));
 }
-
+?>
+<div class="fb_lignes">
+<?php
 display_line("1");
 display_line("2");
 display_line("3");
@@ -161,7 +160,7 @@ display_line("13");
 display_line("14");
 
 ?>
-
+</div>
 
 
 

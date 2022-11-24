@@ -26,19 +26,26 @@ footer{
 
 }
 
-
+.fb_lignes{
+  display: flex;
+  flex-direction: column;
+}
 
 @media screen and (max-width: 1300px) {
   .ligne1{
     overflow: none;
     overflow-x: none ;
     height: auto;
+    width: 500px;
   }
   .hz_line{
     display: none;
   }
   .vert_line{
     display: block;
+  }
+  .fb_lignes{
+    flex-direction: row;
   }
 }
 
