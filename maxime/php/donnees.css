@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 
+
 * {
   font-family: "Noto Sans", sans-serif;}
 
@@ -13,24 +14,72 @@ footer{
 }
 
 .ligne1{
-  margin : 20px;
-
-  padding: 20px;
+  margin-left : 1.5%;
+  margin-right : 1.5%;
+  margin-top : 1%;
+  margin-bottom : 1%;
+  padding: 1.5%;
   border-radius: 10px;
+  width: 97%;
+  height: 300px;
+
+
 }
 
-.hz_line{
-  display: block;
-}
-.vert_line{
-  display: none;
-}
+
 
 @media screen and (max-width: 1300px) {
+  .ligne1{
+    overflow: none;
+    overflow-x: none ;
+    height: auto;
+  }
   .hz_line{
-    display: none;;
+    display: none;
   }
   .vert_line{
     display: block;
   }
+}
+
+@media screen and (min-width: 1301px) {
+  .ligne1{
+    white-space:nowrap;
+    overflow-x:auto;
+    overflow-y: hidden;
+    height: 100px;
+  }
+  .hz_line{
+    width: fit-content;
+    height: 50px;
+    display: block;
+  }
+  .vert_line{
+    display: none;
+  }
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f100;
+  border-radius: 10px;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
