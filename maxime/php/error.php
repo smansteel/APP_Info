@@ -1,7 +1,11 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
 <html>
 
+<?php include("header.php"); ?>
+
+
 <body>
+
     <div id="notfound">
         <div class="notfound">
             <div class="notfound-404">
@@ -17,6 +21,7 @@
         </div>
     </div>
 </body>
+<?php include("footer.php"); ?>
 
 </html>
 <style>
