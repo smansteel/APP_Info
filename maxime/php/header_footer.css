@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 html {
@@ -12,7 +13,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    font-family: 'Nunito Sans', sans-serif;
+    
 }
 
 /* Header */

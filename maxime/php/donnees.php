@@ -4,28 +4,11 @@
 require("db_connect.php");
 include("header.php")
 ?>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
 <br><br><br><br><br>
 
-
-<?php     
-if(!isset($_GET['r']))     
-{     
-echo "<script language=\"JavaScript\">     
-<!--      
-document.location=\"".$_SERVER["PHP_SELF"]."?width=\"+$(window).width();+\";     
-//-->     
-</script>";     
-}     
-else {         
-// Code to be displayed if resolutoin is detected     
-     if(isset($_GET['width'])) {     
-               $screensize = intval($_GET['width']);
-     }     
-     else {     
-      $screensize = 1200;   
-     }     
-}     
-?>
 <?php 
 function get_station($ligne){
     $conn = OpenCon();
@@ -54,48 +37,43 @@ function get_station($ligne){
 
   function get_line_logo($ligne){
     $conn = OpenCon();
-  
-    //fetch from db if an account with this email exists
     $stmt4 = mysqli_prepare($conn, "SELECT lien_logo, hex_color, light_hex FROM metro_line WHERE id=?");
     mysqli_stmt_bind_param($stmt4, "s", $ligne);
     mysqli_stmt_execute($stmt4);
     mysqli_stmt_bind_result($stmt4, $logolink, $hex_code, $light_hex);
     while (mysqli_stmt_fetch($stmt4)) {
       $rarray= [$logolink, $hex_code, $light_hex];
-      //print_r($rarray);
     }
     mysqli_stmt_close($stmt4);
     return $rarray;
   }
 
 function make_svg_V2($colors){
-?>
-<svg width="<?php $screensize-100 ?>" height="30" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  $station_size = 250*(sizeof($colors))
+?><svg width="<?php echo $station_size+4; ?>" height="30" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="Gradient1"x1="0" x2="1" y1="0" y2="0">
       <?php
       $lencol = sizeof($colors)-1;
-      for($x = 0; $x <= $lencol; $x++){
+      for($x = 0; $x <= $lencol; $x++){ 
         echo "<stop class=\" stop" . $x . "\" offset=\"" . (100/($lencol))*$x .  "%\" />";
       }
-      
       ?>
 
     </linearGradient>
     <style>
       <![CDATA[
-              #rect1 { fill: url(#Gradient1); }
-              <?php
-                    $lencol = sizeof($colors)-1;
-                    for($x = 0; $x <= $lencol; $x++){
-                      echo ".stop".$x." { stop-color: ".$colors[$x]."; } \n";
-                    }
-              ?>
-            ]]>
+        #rect1 { fill: url(#Gradient1); }
+        <?php
+          $lencol = sizeof($colors)-1;
+          for($x = 0; $x <= $lencol; $x++){
+          echo ".stop".$x." { stop-color: ".$colors[$x]."; } \n";}
+        ?>
+      ]]>
     </style>
   </defs>
-
-  <rect id="rect1" x="3" y="10" rx="4" ry="4" width="<?php $screensize-200 ?>" height="8" />
+  
+  <rect id="rect1" x="3" y="10" rx="4" ry="4" width="<?php echo $station_size; ?>" height="8" /> 
   <circle cx="11" cy="13" r="8" stroke="black" stroke-width="5" fill="black" />
 </svg>
 
@@ -147,7 +125,7 @@ function make_svg_V2_vert($colors){
     $logo = $lineinfo[0];
   
     ?>
-    <div class="ligne1" style ="background-color: #<?php echo $lighthex ?>;"><div><img src="<?php echo $logo ?>" height="20"></div><br>
+    <div class="ligne1" style ="background-color: #<?php echo $lighthex ?>;"><div><img src="<?php echo $logo ?>" height="30"></div><br>
 
 
     <div class="hz_line">
@@ -170,18 +148,26 @@ function make_svg_V2_vert($colors){
     <?php
     //print_r(get_station("7bis"));
 }
-
-
+?>
+<div class="fb_lignes">
+<?php
+display_line("1");
+display_line("2");
+display_line("3");
+display_line("7bis");
 display_line("12");
+display_line("13");
+display_line("14");
 
 ?>
-
+</div>
 
 
 
 
 
 </div>
+<span id="insertHere"></span>
 
 <footer>
 <?php
