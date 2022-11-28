@@ -15,7 +15,7 @@
                 <h4>Il se peut que l'URL saisie soit mal orthographiée ou que la page que vous recherchez n'existe
                     plus.
                 </h4>
-                <h5>Vous pouvez revenir à <a href="#">la page précédente</a> ou aller à <a href="mainpage.html">la page
+                <h5>Vous pouvez revenir à <a href="javascript:history.back()">la page précédente</a> ou aller à <a href="mainpage.html">la page
                         d'accueil</a>.</h5>
             </div>
         </div>
