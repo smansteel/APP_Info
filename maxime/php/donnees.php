@@ -45,35 +45,42 @@
 
   function make_svg_V2($colors)
   {
-    $id = rand();
-    $id_grad = rand();
+    static $line_ran = 1;
+    $line_ran++;
+    $rect_id = "rect" . $line_ran;
+
+    $id_grad = "grad" . $line_ran;
+    $stopname = ($line_ran * 1000);
+
     $station_size = 250 * (sizeof($colors) - 1);
-  ?><svg width="<?php echo $station_size + 129; ?>" height="30" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  ?><svg width="<?php echo $station_size + 150; ?>" height="30" version="1.1" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="<?php echo $id_grad ?>" x1="0" x2="1" y1="0" y2="0">
           <?php
           $lencol = sizeof($colors) - 1;
           for ($x = 0; $x <= $lencol; $x++) {
-            echo "<stop class=\" stop" . $x . "\" offset=\"" . (100 / ($lencol)) * $x .  "%\" />";
+
+            echo "<stop class=\"stop" . $stopname + $x . "\" offset=\"" . (100 / ($lencol)) * $x .  "%\" />";
           }
           ?>
 
         </linearGradient>
         <style>
-          #<?php echo $id ?> {
+          #<?php echo $rect_id ?> {
             fill: url(#<?php echo $id_grad ?>);
           }
 
           <?php
           $lencol = sizeof($colors) - 1;
           for ($x = 0; $x <= $lencol; $x++) {
-            echo ".stop" . $x . " { stop-color: " . $colors[$x] . "; } \n";
+            echo ".stop" . $stopname + $x  . " { stop-color: " . $colors[$x] . "; } \n";
           }
           ?>
         </style>
       </defs>
 
-      <rect id="<?php echo $id ?>" x="128" y="10" rx="4" ry="4" width="<?php echo $station_size; ?>" height="8" />
+      <rect id="<?php echo $rect_id ?>" x="128" y="10" rx="4" ry="4" width="<?php echo $station_size; ?>" height="8" />
+
       <?php for ($i = 0; $i < sizeof($colors); $i++) {
         $color = $colors[$i];
       ?>
@@ -86,6 +93,57 @@
   <?php
   }
   function make_svg_V2_vert($colors)
+  {
+    static $line_ran_vert = 1;
+    $line_ran_vert++;
+    $rect_id = "rect_vert" . $line_ran_vert;
+
+    $id_grad = "grad_vert" . $line_ran_vert;
+    $stopname = ($line_ran_vert * 1111);
+    $station_space = 125;
+    $station_size = $station_space * (sizeof($colors) - 1);
+  ?><svg width="30" height="<?php echo $station_size + 70; ?>" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="<?php echo $id_grad ?>" x1="0" x2="0" y1="0" y2="1">
+          <?php
+          $lencol = sizeof($colors) - 1;
+          for ($x = 0; $x <= $lencol; $x++) {
+
+            echo "<stop class=\"stop" . $stopname + $x . "\" offset=\"" . (100 / ($lencol)) * $x .  "%\" />";
+          }
+          ?>
+
+        </linearGradient>
+        <style>
+          #<?php echo $rect_id ?> {
+            fill: url(#<?php echo $id_grad ?>);
+          }
+
+          <?php
+          $lencol = sizeof($colors) - 1;
+          for ($x = 0; $x <= $lencol; $x++) {
+            echo ".stop" . $stopname + $x  . " { stop-color: " . $colors[$x] . "; } \n";
+          }
+          ?>
+        </style>
+      </defs>
+
+      <rect id="<?php echo $rect_id ?>" x="10" y="58" rx="4" ry="4" height="<?php echo $station_size; ?>" width="8" />
+
+      <?php for ($i = 0; $i < sizeof($colors); $i++) {
+        $color = $colors[$i];
+      ?>
+        <circle cy="<?php echo 50 + $i * $station_space; ?>" cx="13" r="8" stroke="black" stroke-width="5" fill="<?php echo $color; ?>" />
+      <?php
+      } ?>
+
+    </svg>
+
+  <?php
+  }
+
+
+  function make_svg_V2_vert_old($colors)
   {
   ?>
     <svg width="20" height="1004" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -101,7 +159,6 @@
 
         </linearGradient>
         <style>
-          <![CDATA[
           #rect2 {
             fill: url(#Gradient2);
           }
@@ -112,7 +169,6 @@
             echo ".stop" . $x . " { stop-color: " . $colors[$x] . "; } \n";
           }
           ?>
-          ]]>
         </style>
       </defs>
 
@@ -124,10 +180,8 @@
   }
 
 
-
-
   ?>
-  <br> <br> <br> <br><br><br>
+
   <?php
   function display_line($line)
   {
@@ -139,53 +193,66 @@
     <div class="ligne1" style="background-color: #<?php echo $lighthex ?>;">
       <div><img src="<?php echo $logo ?>" height="30"></div><br>
 
+      <?php
+      $colors = ["green", "red", "yellow"];
+      $sta_colors = [];
+      $stations = get_station($line);
+      $lensta = sizeof($stations) - 1;
+      for ($x = 0; $x <= $lensta; $x++) {
+        array_push($sta_colors, $colors[array_rand($colors)]);
+      } ?>
+
 
       <div class="hz_line">
-        <div class="fb_stations">
-          <?php
-          $colors = ["green", "red", "yellow"];
-          $sta_colors = [];
-          $stations = get_station($line);
-          $lensta = sizeof($stations) - 1;
-          foreach ($stations as $station) {
-          ?>
-            <div class="fb_station_ct">
-              <?php
-              echo mb_convert_case($station, MB_CASE_TITLE, "UTF-8") . " ";
-              ?>
-            </div>
-          <?php
-          }
+        <?php make_svg_V2($sta_colors); ?>
+      </div>
 
-          for ($x = 0; $x <= $lensta; $x++) {
-            array_push($sta_colors, $colors[array_rand($colors)]);
-          } ?>
-        </div>
-        <br>
+      <div class="vert_line">
+        <?php make_svg_V2_vert($sta_colors); ?>
+      </div>
+
+
+      <div class="fb_stations">
         <?php
-        make_svg_V2($sta_colors);
+        foreach ($stations as $station) {
+        ?>
+          <div class="fb_station_ct">
+
+            <?php echo mb_convert_case($station, MB_CASE_TITLE, "UTF-8") . " "; ?>
+
+          </div>
+
+        <?php
+        }
         ?>
       </div>
-      <div class="vert_line">
-        <?php
-        make_svg_V2_vert($sta_colors);
-        ?> </div>
     </div>
   <?php
     //print_r(get_station("7bis"));
   }
   ?>
-  <div class="fb_lignes">
-    <?php
-    display_line("1");
-    display_line("2");
-    display_line("3");
-    display_line("7bis");
-    display_line("12");
-    display_line("13");
-    display_line("14");
+  <div class="fb_fb">
+    <div class="fb_lignes">
+      <?php
+      display_line("1");
+      display_line("2");
+      display_line("3");
+      display_line("3bis");
+      display_line("4");
+      display_line("5");
+      display_line("6");
+      display_line("7");
+      display_line("7bis");
+      display_line("8");
+      display_line("9");
+      display_line("10");
+      display_line("11");
+      display_line("12");
+      display_line("13");
+      display_line("14");
 
-    ?>
+      ?>
+    </div>
   </div>
 
 

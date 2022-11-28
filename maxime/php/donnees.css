@@ -23,11 +23,16 @@ footer {
     border-radius: 10px;
     width: 97%;
     height: 300px;
+    display: flex;
+    flex-direction: column;
 }
 
 .fb_lignes {
     display: flex;
     flex-direction: column;
+    margin-top: 90px;
+    overflow-y: none;
+    overflow-x: none;
 }
 .fb_stations {
     display: flex;
@@ -38,12 +43,18 @@ footer {
     text-align: center;
 }
 
+.fb_fb {
+    overflow-x: auto;
+}
+
 @media screen and (max-width: 1300px) {
     .ligne1 {
         overflow: none;
         overflow-x: none;
         height: auto;
-        width: 500px;
+        width: 90%;
+
+        flex-direction: row;
     }
     .hz_line {
         display: none;
@@ -53,6 +64,14 @@ footer {
     }
     .fb_lignes {
         flex-direction: row;
+    }
+    .fb_stations {
+        margin-top: 40px;
+        flex-direction: column;
+    }
+    .fb_station_ct {
+        height: 125px;
+        text-align: left;
     }
 }
 
@@ -70,6 +89,9 @@ footer {
     }
     .vert_line {
         display: none;
+    }
+    .fb_stations {
+        width: fit-content;
     }
 }
 
