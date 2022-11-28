@@ -1,12 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 
 * {
-  font-family: "Noto Sans", sans-serif;}
+  font-family: "Noto Sans", sans-serif;
+}
 
 body {
   font-family: "Noto Sans", sans-serif;
-  background-color: rgb(255, 255, 255); /* Fallback color */
+  background-color: rgb(255, 255, 255);
+  /* Fallback color */
 }
+
+.box {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-content {
+  height: 100%;
+}
+
 .background {
   position: fixed;
   left: 0;
@@ -19,6 +31,7 @@ body {
   background-size: cover;
   filter: blur(17px);
 }
+
 .bg-image {
   color: white;
   font-weight: bold;
@@ -36,6 +49,7 @@ body {
   border: none;
   background-color: #ffffff;
 }
+
 .logo {
   width: 50%;
   padding-bottom: 30px;
@@ -71,11 +85,13 @@ body {
   transition: background-color 250ms ease-in-out;
   transition: color 250ms ease-in-out;
 }
+
 .submit_button:hover {
   background-color: #03ad9f;
   color: rgb(200, 200, 200);
   cursor: pointer;
 }
+
 .newacc {
   margin: 50px;
   width: 200px;
@@ -99,6 +115,7 @@ body {
   background-color: rgb(200, 200, 200);
   cursor: pointer;
 }
+
 .fgtpsswd {
   font-weight: 200;
   margin-top: 50px;
@@ -122,6 +139,7 @@ body {
   margin-left: 10%;
   margin-right: auto;
 }
+
 .flex-edit {
   margin-left: auto;
   margin-right: 30%;
@@ -142,12 +160,14 @@ body {
   border-color: red;
   font-size: small;
 }
+
 .confirmation {
   color: rgb(70, 70, 253);
   padding-bottom: 10px;
   border-color: red;
   font-size: xx-small;
 }
+
 .text {
   color: black;
   width: 300px;
@@ -157,7 +177,7 @@ body {
 
 
 .couleur1 {
-  margin:0;
+  margin: 0;
 
   width: 25%;
   height: 8px;
@@ -166,8 +186,8 @@ body {
 
 }
 
-.couleur2 {  
-  margin:0;
+.couleur2 {
+  margin: 0;
 
   width: 50%;
   height: 8px;
@@ -176,35 +196,37 @@ body {
 }
 
 .couleur3 {
-  margin:0;
+  margin: 0;
   width: 75%;
   height: 8px;
   background: rgb(106, 248, 67);
   border-radius: 20px;
 }
-.checkmark-green{
+
+.checkmark-green {
   filter: invert(62%) sepia(11%) saturate(2528%) hue-rotate(76deg) brightness(109%) contrast(76%);
   height: 20px;
   width: 20px;
-  position: absolute; 
+  position: absolute;
   left: 350px;
   top: 337px;
 }
-.checkmark-none{
+
+.checkmark-none {
   filter: invert(62%) sepia(11%) saturate(2528%) hue-rotate(76deg) brightness(109%) contrast(76%);
   height: 0px;
   width: 0px;
-  position: absolute; 
+  position: absolute;
   left: 350px;
   top: 337px;
 }
 
 .couleur4 {
-  margin:0;
-  width: 100%;  
+  margin: 0;
+  width: 100%;
   height: 8px;
   background: rgb(7, 159, 7);
-  border-radius: 20px;
+  border-radius: 20px;
 }
 
 
@@ -212,23 +234,23 @@ body {
   margin-left: 20px;
   width: 90%;
   background-color: lightgray;
-  border-radius:20px;
+  border-radius: 20px;
   height: 8px;
 }
 
-.password-comments{
+.password-comments {
   max-width: 360px;
-  color:black;
+  color: black;
   font-size: 10px;
 }
 
-.inline-container{
+.inline-container {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.passwd-error{
+.passwd-error {
   color: black
 }
 
@@ -266,7 +288,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  list-style: none;   
+  list-style: none;
   width: 500px;
 }
 
@@ -292,70 +314,70 @@ nav {
 @media all and (max-width: 991px) {
 
   .header {
-      background: transparent;
+    background: transparent;
   }
 
 
   .toggle {
-      display: block;
-      font-size: 2rem;
-      cursor: pointer;
-      position: relative;
-      z-index: 20;
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 20;
   }
 
   .logo {
-      position: relative;
-      z-index: 20;
+    position: relative;
+    z-index: 20;
   }
 
   .ouvrir {
-      display: block;
+    display: block;
   }
 
   .fermer {
-      display: none;
+    display: none;
   }
 
   .open .ouvrir {
-      display: none;
+    display: none;
   }
 
   .open .fermer {
-      display: block;
+    display: block;
   }
 
   .menu {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: #00C4B3;
-      flex-direction: column;
-      padding: 2rem;
-      justify-content: space-around;
-      transform: translateX(-100%);
-      transition: transform 1s;
-      z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #00C4B3;
+    flex-direction: column;
+    padding: 2rem;
+    justify-content: space-around;
+    transform: translateX(-100%);
+    transition: transform 1s;
+    z-index: 1;
   }
 
   .menu li a {
-      font-size: 2rem;
-      font-weight: 600;
+    font-size: 2rem;
+    font-weight: 600;
   }
 
   .btn {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 
   .open .menu {
-      transform: translateX(0);
+    transform: translateX(0);
   }
 
   .open .slider {
-      transform:translateX(100%);
-      transition: transform 1s;
+    transform: translateX(100%);
+    transition: transform 1s;
   }
 
   /* .fermer .slider {
@@ -381,7 +403,7 @@ footer {
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  justify-content: center;    
+  justify-content: center;
   align-items: flex-start;
   font-size: 16px;
   padding: 20px 0 20px;
@@ -405,7 +427,7 @@ footer {
 
 .liens a {
   text-decoration: none;
-  color : #000;
+  color: #000;
   font-weight: 600;
   font-size: 16px;
 }
@@ -425,23 +447,23 @@ footer {
 @media screen and (max-width: 1300px) {
 
   .contenu-footer {
-      width: 100%;
-      display: inline-block;
-      text-align: center;
-      display: flex;
-      flex-direction: column-reverse;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
   }
 
   .bloc {
-      margin-left: auto;
-      margin-right: auto; 
-      width: 100%;   
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
   }
 
   .liens {
-      flex-direction: column;
-      margin-left: auto;
-      margin-right: auto;
-      width:100%;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
   }
 }

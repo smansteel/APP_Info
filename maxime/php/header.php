@@ -13,10 +13,10 @@
                 <i class="fa-solid fa-xmark fermer"></i>
             </div>
             <ul class="menu">
-                <li><a href="#">A Propos</a></li>
-                <li><a href="/donnees.php">Données</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><button class="btn"><a href="/login.php">Connexion</a></button></li>
+                <li><a href="accueil_v2.php">A Propos</a></li>
+                <li><a href="donnees.php">Données</a></li>
+                <li><a href="faq.php">FAQ</a></li>
+                <li><button class="btn"><a href="login.php">Connexion</a></button></li>
             </ul>
         </nav>
     </header>
