@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="faq.css">
 
 <img src="bonhomme faq 2.png" >
 
