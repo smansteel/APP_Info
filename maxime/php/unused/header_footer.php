@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="header_footer.css">
+<!-- <link rel="stylesheet" href="header_footer.css">
 
 <?php 
 function pageFooter(){?>
@@ -53,3 +53,5 @@ function pageFooter(){?>
             }
 
     ?>
+
+        -->

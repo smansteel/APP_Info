@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,7 +16,7 @@ body {
     
 }
 
-/* Header */
+/* Header 
 
 header {
     position: fixed;
@@ -70,7 +70,7 @@ nav {
     border-radius: 20px;
 }
 
-/* Media Queries pour header */
+/* Media Queries pour header 
 
 @media all and (max-width: 991px) {
 
@@ -144,11 +144,11 @@ nav {
     /* .fermer .slider {
         transform: translateX(-100%);
         transition: transform 1s;
-    } */
+    } 
 
 }
 
-/* Slider */
+/* Slider 
 
 .slider {
     margin-top: 9vh;
@@ -189,7 +189,7 @@ nav {
     text-align: justify;
 }
 
-/* Footer */
+/* Footer 
 
 footer {
     flex-shrink: 0;
@@ -243,7 +243,7 @@ footer {
     display: inline;
 }
 
-/* Media queries pour footer */
+/* Media queries pour footer 
 
 @media screen and (max-width: 1300px) {
 
@@ -267,5 +267,7 @@ footer {
         margin-right: auto;
         width:100%;
     }
-}
+} 
+
+*/
 
