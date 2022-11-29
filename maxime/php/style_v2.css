@@ -554,3 +554,10 @@ footer {
         width: 100%;
     }
 }
+
+@media (max-width: 900px) {
+    .newsletter {
+        width: 80%;
+
+    }
+}
