@@ -14,12 +14,20 @@ body {
 .box {
   display: flex;
   flex-direction: column;
-}
-
-.flex-content {
   height: 100%;
 }
 
+.flex-content {
+}
+
+#content {
+  height: 100%;
+}
+#footer{
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%;
+}
 
 .bg-image {
   color: white;
