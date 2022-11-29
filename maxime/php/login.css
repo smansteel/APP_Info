@@ -17,16 +17,9 @@ body {
   height: 100%;
 }
 
-.flex-content {
-}
 
 #content {
   height: 100%;
-}
-#footer{
-  position: absolute;
-  bottom: 0; left: 0;
-  width: 100%;
 }
 
 .bg-image {
@@ -315,6 +308,7 @@ nav {
   }
 
 
+
   .toggle {
     display: block;
     font-size: 2rem;
@@ -462,5 +456,37 @@ footer {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+  }
+}
+
+
+
+
+@media (max-width:480px) {
+  #content {
+    font-size: 180px;
+  }
+}
+
+
+
+
+@media (max-width:800px) {
+  #footer {
+    width: 0;
+    height: 0;
+
+  }
+
+  @media (max-width:800px) {
+    #footer a {
+      color: transparent
+    }
+  }
+
+  @media (max-width:800px) {
+    #footer h4 {
+      color: transparent
+    }
   }
 }
