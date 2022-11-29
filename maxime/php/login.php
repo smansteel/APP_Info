@@ -5,10 +5,10 @@
 <body>
 
   <div class="box">
-    <div class="flex-content" id="header">
+    <div class="flex-content">
       <?php include("header.php"); ?>
     </div>
-    <div class="flex-content">
+    <div class="flex-content" id="content">
       <div class="background"></div>
       <div class="bg-image">
 
@@ -62,5 +62,9 @@
 
       </div>
     </div>
+
   </div>
+  <div class="flex-content" id="footer">
+      <?php include("footer.php"); ?>
+    </div>
 </body>
