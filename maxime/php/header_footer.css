@@ -152,6 +152,7 @@ nav {
     height: 50vh;
     position: relative;
 }
+
 .slider img {
     object-fit: cover;
     height: 100%;
@@ -162,9 +163,11 @@ nav {
     opacity: 0;
     transition: opacity 0.5s;
 }
+
 .slider img.active {
     opacity: 1;
 }
+
 .suivant,
 .precedent {
     color: #fff;
@@ -174,9 +177,11 @@ nav {
     transform: translateY(-50%);
     cursor: pointer;
 }
+
 .suivant {
     right: 1rem;
 }
+
 .precedent {
     left: 1rem;
 }
