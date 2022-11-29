@@ -3,14 +3,8 @@
 <body>
   <?php
   require("db_connect.php");
-  include("header.php")
-  ?>
+  include("header.php");
 
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  </head>
-
-  <?php
   function get_station($ligne)
   {
     $conn = OpenCon();
@@ -280,7 +274,7 @@
       display_line("7bis");
       display_line("8");
       display_line("9");
-      display_line("10");
+      //display_line("10");
       display_line("11");
       display_line("12");
       display_line("13");
