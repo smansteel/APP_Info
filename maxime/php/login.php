@@ -5,7 +5,7 @@
 <body>
 
   <div class="box">
-    <div class="flex-content">
+    <div class="flex-content" id="header">
       <?php include("header.php"); ?>
     </div>
     <div class="flex-content">

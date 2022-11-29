@@ -16,16 +16,28 @@
     $conn = OpenCon();
     $rarray = [];
     $order_array = [];
+    $hasy = false;
+    $rarray_w_branch = [];
     //fetch from db if an account with this email exists
-    $stmt4 = mysqli_prepare($conn, "SELECT nom FROM stations WHERE ligne=? ORDER BY ordre");
+    $stmt4 = mysqli_prepare($conn, "SELECT nom, branche FROM stations WHERE ligne=? ORDER BY ordre");
     mysqli_stmt_bind_param($stmt4, "s", $ligne);
     mysqli_stmt_execute($stmt4);
-    mysqli_stmt_bind_result($stmt4, $nom);
+    mysqli_stmt_bind_result($stmt4, $nom, $branch);
     while (mysqli_stmt_fetch($stmt4)) {
       array_push($rarray, $nom);
+      array_push($rarray_w_branch, [$nom, $branch]);
+      if($branch != ""){
+        $hasy = true;
+      }
     }
     mysqli_stmt_close($stmt4);
-    return $rarray;
+    if ($hasy){
+      return [$rarray_w_branch, $hasy];
+    }
+    else{
+      return [$rarray, $hasy];
+    }
+    
   }
 
 
@@ -143,36 +155,50 @@
   }
 
 
-  function make_svg_V2_vert_old($colors)
+  function make_svg_Y($colors)
   {
-  ?>
-    <svg width="20" height="1004" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    static $line_ran_vert = 1;
+    $line_ran_vert++;
+    $rect_id = "rect_vert" . $line_ran_vert;
+
+    $id_grad = "grad_vert" . $line_ran_vert;
+    $stopname = ($line_ran_vert * 1111);
+    $station_space = 125;
+    $station_size = $station_space * (sizeof($colors) - 1);
+  ?><svg width="30" height="<?php echo $station_size + 70; ?>" version="1.1" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <linearGradient id="Gradient2" x1="0" x2="0" y1="0" y2="1">
+        <linearGradient id="<?php echo $id_grad ?>" x1="0" x2="0" y1="0" y2="1">
           <?php
           $lencol = sizeof($colors) - 1;
           for ($x = 0; $x <= $lencol; $x++) {
-            echo "<stop class=\" stop" . $x . "\" offset=\"" . (100 / ($lencol)) * $x .  "%\" />";
-          }
 
+            echo "<stop class=\"stop" . $stopname + $x . "\" offset=\"" . (100 / ($lencol)) * $x .  "%\" />";
+          }
           ?>
 
         </linearGradient>
         <style>
-          #rect2 {
-            fill: url(#Gradient2);
+          #<?php echo $rect_id ?> {
+            fill: url(#<?php echo $id_grad ?>);
           }
 
           <?php
           $lencol = sizeof($colors) - 1;
           for ($x = 0; $x <= $lencol; $x++) {
-            echo ".stop" . $x . " { stop-color: " . $colors[$x] . "; } \n";
+            echo ".stop" . $stopname + $x  . " { stop-color: " . $colors[$x] . "; } \n";
           }
           ?>
         </style>
       </defs>
 
-      <rect id="rect2" x="0" y="0" rx="4" ry="4" width="8" height="1000" />
+      <rect id="<?php echo $rect_id ?>" x="10" y="58" rx="4" ry="4" height="<?php echo $station_size; ?>" width="8" />
+
+      <?php for ($i = 0; $i < sizeof($colors); $i++) {
+        $color = $colors[$i];
+      ?>
+        <circle cy="<?php echo 50 + $i * $station_space; ?>" cx="13" r="8" stroke="black" stroke-width="5" fill="<?php echo $color; ?>" />
+      <?php
+      } ?>
 
     </svg>
 
@@ -196,7 +222,10 @@
       <?php
       $colors = ["green", "red", "yellow"];
       $sta_colors = [];
-      $stations = get_station($line);
+      $ligne= get_station($line);
+      $stations = $ligne[0];
+      $hasy = $ligne[1];
+      if(!$hasy){
       $lensta = sizeof($stations) - 1;
       for ($x = 0; $x <= $lensta; $x++) {
         array_push($sta_colors, $colors[array_rand($colors)]);
@@ -206,7 +235,7 @@
       <div class="hz_line">
         <?php make_svg_V2($sta_colors); ?>
       </div>
-
+      <div class="vert_line_fb">
       <div class="vert_line">
         <?php make_svg_V2_vert($sta_colors); ?>
       </div>
@@ -225,10 +254,16 @@
         <?php
         }
         ?>
+        </div><?php
+        
+    }
+    else{
+
+    }
+    ?>
       </div>
     </div>
   <?php
-    //print_r(get_station("7bis"));
   }
   ?>
   <div class="fb_fb">
