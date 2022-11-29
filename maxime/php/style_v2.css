@@ -322,7 +322,7 @@ main {
 
 button {
     font-family: 'Nunito Sans', sans-serif;
-    margin-left: 5%;
+    margin-left: 1%;
     padding: 5px 20px;
     font-size: 1.2rem;
     cursor: pointer;
@@ -563,7 +563,7 @@ section {
 }
 
 #blocnews2 input {
-    margin-left: 35%;
+    margin-left: 50%;
 
 }
 
