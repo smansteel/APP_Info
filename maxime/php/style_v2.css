@@ -504,7 +504,7 @@ section {
 }
 
 
-#lignenewsnews {
+#lignenews {
     display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
@@ -533,8 +533,6 @@ section {
         max-width: 1240px;
     }
 }
-
-
 
 
 #blocnews {
