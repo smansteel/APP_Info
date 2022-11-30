@@ -60,95 +60,141 @@
                         </div>
                         <div id="bloc2">
                             <img src="sources/Ellipse 4.png" alt="">
+
                         </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="curve">
+            <img src="images/wave-haikei (4).svg">
+        </div>
+
+
+
+    </div>
+
+    <div id="blocp11">
+        <div id="bloc11">
+            <div id="container">
+                <div id="ligne">
+                    <div id="bloc2">
+                        <h1> Notre mission :
+
+                            <p> Améliorer le bien-être et la santé des usagers du métro au quotidien. </p>
+
+                    </div>
+                    <div id="bloc2">
+                        <h1> Notre solution :
+
+                            <p> Un bracelet (captair) équipé de plusieurs capteurs permettant de déterminer la qualité de
+                                l'air
+                                auprès de l'utilisateurs.</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="forme">
-            <main>
-                <div class="box">
-                    <div class="imgBx">
-                        <img src="images/img1.jpg">
-                    </div>
-
-                    <div class="content">
-                        <h2>
-                            Capteur pollution<br><span>Capteurs de CO et de microparticules embarqués sur le bracelet,
-                                pour évaluer la qualité de l’air environnant</span>
-                        </h2>
-                    </div>
+    </div>
+    <div id="blocimage">
+        <div id="containerimage">
+            <div id="ligneimage">
+                <div id="bloc2image">
+                    <h1><img class="zen" src="images/zen.jpeg">
                 </div>
-                <div class="box">
-                    <div class="imgBx">
-                        <img src="images/img2.jpg">
-                    </div>
-
-                    <div class="content">
-                        <h2>
-                            Capteur cardiaque<br><span> Capteur cardiaque embarqué, pour évaluer le rythme
-                                cardiaque et établir des tendances de stress au quotidien</span>
-                        </h2>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="imgBx">
-                        <img src="images/img3.jpg">
-                    </div>
-
-                    <div class="content">
-                        <h2>
-                            Capteur sonnore<br><span>Micro de haute précision embarqué pour mesurer le niveau sonore et
-                                évaluer le
-                                remplissage</span>
-                        </h2>
-                    </div>
-                </div>
-            </main>
-            <div id="blocprincipal">
-                <div id="blocnews">
-                    <div id="blocnews1">
-                        <div id="lignenews">
-                            <div id="blocnews2">
-                                <h1> Inscrivez-vous à
-                                    notre
-                                    newsletter
-                                    <p> Si vous souhaitez bénéficier dès a présent des avancées
-                                        technologiques
-                                        de nos capteurs, vous pouvez vous inscrire à notre
-                                        newsletter pour être informé de la date de sortie. </p>
-                            </div>
-                        </div>
-                        <input type="PasswordInput" id="confirmEntréemdp" name="confirmEntréemdp"><button>S'inscrire</button>
-                    </div>
+                <div id="bloc2image">
+                    <h2><img class="bracelet" src="images/bracelet.png">
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="forme">
+        <main>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="images/img1.jpg">
+                </div>
+
+                <div class="content">
+                    <h2>
+                        Capteur pollution<br><span>Capteurs de CO et de microparticules embarqués sur le bracelet,
+                            pour évaluer la qualité de l’air environnant</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="images/img2.jpg">
+                </div>
+
+                <div class="content">
+                    <h2>
+                        Capteur cardiaque<br><span> Capteur cardiaque embarqué, pour évaluer le rythme
+                            cardiaque et établir des tendances de stress au quotidien</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="images/img3.jpg">
+                </div>
+
+                <div class="content">
+                    <h2>
+                        Capteur sonnore<br><span>Micro de haute précision embarqué pour mesurer le niveau sonore et
+                            évaluer le
+                            remplissage</span>
+                    </h2>
+                </div>
+            </div>
+        </main>
+
+        <div id="blocprincipal">
+            <div id="blocnews">
+                <div id="blocnews1">
+                    <div id="lignenews">
+                        <div id="blocnews2">
+                            <h1> Inscrivez-vous à
+                                notre
+                                newsletter
+                                <p> Si vous souhaitez bénéficier dès a présent des avancées
+                                    technologiques
+                                    de nos capteurs, vous pouvez vous inscrire à notre
+                                    newsletter pour être informé de la date de sortie. </p>
+                        </div>
+                    </div>
+                    <input type="PasswordInput" id="confirmEntréemdp" name="confirmEntréemdp"><button>S'inscrire</button>
+                </div>
+            </div>
+        </div>
 
 
 
-            <footer>
+        <footer>
 
-                <div class="contenu-footer">
+            <div class="contenu-footer">
+                <div class="bloc footer-services">
+                    <h4>&copy; 2022 AirQ</h4>
+                </div>
+
+                <div class="liens">
                     <div class="bloc footer-services">
-                        <h4>&copy; 2022 AirQ</h4>
+                        <a href="#">Nous contacter</a>
                     </div>
-
-                    <div class="liens">
-                        <div class="bloc footer-services">
-                            <a href="#">Nous contacter</a>
-                        </div>
-                        <div class="bloc footer-services">
-                            <a href="#">Mentions légales</a>
-                        </div>
-                        <div class="bloc footer-services">
-                            <a href="#">CGU</a>
-                        </div>
-                        <div class="bloc footer-services">
-                            <a href="#">Politique de confidentialité</a>
-                        </div>
+                    <div class="bloc footer-services">
+                        <a href="#">Mentions légales</a>
                     </div>
-
+                    <div class="bloc footer-services">
+                        <a href="#">CGU</a>
+                    </div>
+                    <div class="bloc footer-services">
+                        <a href="#">Politique de confidentialité</a>
+                    </div>
                 </div>
-            </footer>
-        </div>
+
+            </div>
+        </footer>
+    </div>
 </body>
