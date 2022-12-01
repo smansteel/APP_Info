@@ -7,25 +7,33 @@
 <link rel="stylesheet" href="login.css">
 
 <body>
-
-
-    <div class="background"></div>
-
-    <div class="bg-image">
-        <img src="sources/captair.png" class="logo">
-        <div class="text">
-            Un email vous a été envoyé pour confirmer la création de votre compte<br> Nous vous invitons à les vérifier.
+    <div class="box">
+        <div class="flex-content">
+            <?php include("header.php"); ?>
         </div>
-        <br>
-        <a class="newacc" href="/login.php" class="newacc">Retour à la page de connexion</a><br>
+
+        <div class="background"></div>
+
+        <div class="bg-image">
+            <img src="sources/captair.png" class="logo">
+            <div class="text">
+                Un email vous a été envoyé pour confirmer la création de votre compte<br> Nous vous invitons à les vérifier.
+            </div>
+            <br>
+            <a class="newacc" href="/login.php" class="newacc">Retour à la page de connexion</a><br>
+        </div>
+
+
+
+        <?php
+        //text
+        ?>
+
     </div>
 
-
-
-    <?php
-    //text
-    ?>
-
 </body>
+<div class="flex-content" id="footer">
+    <?php include("footer.php"); ?>
+</div>
 
 </html>

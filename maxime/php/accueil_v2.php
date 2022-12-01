@@ -60,82 +60,114 @@
                         </div>
                         <div id="bloc2">
                             <img src="sources/Ellipse 4.png" alt="">
+
                         </div>
                     </div>
                 </div>
             </div>
+
+
         </div>
-        <div class="forme">
-            <main>
-                <div class="box">
-                    <div class="imgBx">
-                        <img src="images/img1.jpg">
-                    </div>
+        <div class="curve">
+            <img src="images/wave-haikei (4).svg">
+        </div>
 
-                    <div class="content">
-                        <h2>
-                            Capteur pollution<br><span>Capteurs de CO et de microparticules embarqués sur le bracelet,
-                                pour évaluer la qualité de l’air environnant</span>
-                        </h2>
+
+
+    </div>
+
+    <div id="blocp11">
+        <div id="bloc11">
+            <div id="container">
+                <div id="ligne">
+                    <div id="bloc2">
+                        <h1> Notre mission :
+
+                            <p> Améliorer le bien-être et la santé des usagers du métro au quotidien. </p>
+
+                    </div>
+                    <div id="bloc2">
+                        <h1> Notre solution :
+
+                            <p> Un bracelet (captair) équipé de plusieurs capteurs permettant de déterminer la qualité de
+                                l'air
+                                auprès de l'utilisateurs.</p>
                     </div>
                 </div>
-                <div class="box">
-                    <div class="imgBx">
-                        <img src="images/img2.jpg">
-                    </div>
-
-                    <div class="content">
-                        <h2>
-                            Capteur cardiaque<br><span> Capteur cardiaque embarqué, pour évaluer le rythme
-                                cardiaque et établir des tendances de stress au quotidien</span>
-                        </h2>
-                    </div>
+            </div>
+        </div>
+    </div>
+    <div id="blocimage">
+        <div id="containerimage">
+            <div id="ligneimage">
+                <div id="bloc2image">
+                    <h1><img class="zen" src="images/zen.jpeg">
                 </div>
-                <div class="box">
-                    <div class="imgBx">
-                        <img src="images/img3.jpg">
-                    </div>
-
-                    <div class="content">
-                        <h2>
-                            Capteur sonnore<br><span>Micro de haute précision embarqué pour mesurer le niveau sonore et
-                                évaluer le
-                                remplissage</span>
-                        </h2>
-                    </div>
+                <div id="bloc2image">
+                    <h2><img class="bracelet" src="images/bracelet.png">
                 </div>
-            </main>
-            <table cellspacing="0" width="100%">
-                <td align="center" style="padding: 0px 10px 0px 10px;">
-                    <table cellspacing="0" width="100%" style="max-width: 1100px;">
+            </div>
+        </div>
+    </div>
 
-                        <td bgcolor="#85FFF5" align="left" valign="top" style=" padding: 15px 20px 20px 20px; border-radius: 25px 25px 0px 0px; color: #000000; ">
-                            <h1 style="font-size: 30px; font-weight: 400; margin: 2;"><strong> Inscrivez-vous à
-                                    notre
-                                    newsletter</strong>
-                            </h1>
-                        </td>
+    <div class="forme">
+        <main>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="images/img1.jpg">
+                </div>
 
-                    </table>
-                </td>
-                <tr>
-                    <td align="center" style="padding: 0px 10px 0px 10px;">
-                        <table cellspacing="0" width="100%" style="max-width: 1100px;">
-                            <td bgcolor="#85FFF5" align="left" style="padding: 10px 30px 25px 30px;border-radius: 0px 0px 25px 25px; color: #111111; font-size: 18px; font-weight: 400; line-height: 25px;">
-                                Si vous souhaitez bénéficier dès a présent des avancées
-                                technologiques
-                                de nos capteurs, vous pouvez vous inscrire à notre
-                                newsletter pour être informé de la date de sortie. </p>
-                                <table align="center" width="80%" style="max-width: 400px;margin-left:300px;margin-right:300px;margin-top:20px ">
-                                    <td bgcolor="white" style="padding: 20px 5px 20px 40px;border-radius: 30px 30px 30px 30px; font-size: 10px">
-                                        <input type="PasswordInput" id="confirmEntréemdp" name="confirmEntréemdp"><button>S'inscrire</button>
-                                    </td>
-                                </table>
-                            </td>
-                        </table>
-                    </td>
-                </tr>
-            </table>
+                <div class="content">
+                    <h2>
+                        Capteur pollution<br><span>Capteurs de CO et de microparticules embarqués sur le bracelet,
+                            pour évaluer la qualité de l’air environnant</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="images/img2.jpg">
+                </div>
+
+                <div class="content">
+                    <h2>
+                        Capteur cardiaque<br><span> Capteur cardiaque embarqué, pour évaluer le rythme
+                            cardiaque et établir des tendances de stress au quotidien</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="images/img3.jpg">
+                </div>
+
+                <div class="content">
+                    <h2>
+                        Capteur sonnore<br><span>Micro de haute précision embarqué pour mesurer le niveau sonore et
+                            évaluer le
+                            remplissage</span>
+                    </h2>
+                </div>
+            </div>
+        </main>
+
+        <div id="blocprincipal">
+            <div id="blocnews">
+                <div id="blocnews1">
+                    <div id="lignenews">
+                        <div id="blocnews2">
+                            <h1> Inscrivez-vous à
+                                notre
+                                newsletter
+                                <p> Si vous souhaitez bénéficier dès a présent des avancées
+                                    technologiques
+                                    de nos capteurs, vous pouvez vous inscrire à notre
+                                    newsletter pour être informé de la date de sortie. </p>
+                        </div>
+                    </div>
+                    <input type="PasswordInput" id="confirmEntréemdp" name="confirmEntréemdp"><button>S'inscrire</button>
+                </div>
+            </div>
         </div>
 
 
