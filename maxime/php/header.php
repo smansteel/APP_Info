@@ -3,7 +3,7 @@
 
 <body>
 
-<header>
+    <header>
         <nav>
             <div class="logo">
                 <img src="sources/air_Q_full_turquoise_v3.svg">
@@ -20,5 +20,4 @@
             </ul>
         </nav>
     </header>
-
 </body>
