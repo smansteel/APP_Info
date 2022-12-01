@@ -11,12 +11,13 @@
     <title>Accueil - AirQ</title>
 </head>
 
-<body>
 
+<body>
 
     <?php
     include("header.php")
     ?>
+
 
 
     <div class="bodyparagraph">
@@ -65,12 +66,12 @@
                     </div>
                 </div>
             </div>
-
+            <div class="curve">
+                <img src="images/wave-haikei (4).svg">
+            </div>
 
         </div>
-        <div class="curve">
-            <img src="images/wave-haikei (4).svg">
-        </div>
+
 
 
 

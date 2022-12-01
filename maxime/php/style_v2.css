@@ -375,7 +375,7 @@ section {
     line-height: 1;
     color: #212529;
     text-align: left;
-    background: linear-gradient(white, #00ffc3);
+
 
 }
 
@@ -389,6 +389,7 @@ section {
 
 
 }
+
 
 #bloc11 {
     margin: 0;
@@ -467,6 +468,7 @@ section {
 
 #bloc1 {
     min-height: 500px;
+    background: linear-gradient(white, #00ffc3);
 }
 
 #bloc11 {
@@ -769,5 +771,6 @@ h2 img {
 
 .curve {
     transform: rotate(180deg);
-    margin: -10px;
+    margin-top: -10px;
+    width: 100%;
 }
