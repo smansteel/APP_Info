@@ -15,45 +15,50 @@ if (isset($_SESSION["prenom"])) {
 ?>
 
 <body>
+    <div class="box">
+        <div class="flex-content">
+            <?php include("header.php"); ?>
+        </div>
+        <link rel="stylesheet" href="login.css">
 
-    <link rel="stylesheet" href="login.css">
+        <div class="background"></div>
+        <div class="bg-image">
 
-    <div class="background"></div>
-    <div class="bg-image">
+            <img src="sources/captair.png" class="logo">
 
-        <img src="sources/captair.png" class="logo">
+            <div class="error">
 
-        <div class="error">
-
-            <?php
-            if (isset($_GET["confirmation"])) {
-                if ($_GET["confirmation"] == "email") {
-                    echo 'Email de vérification envoyé, <br> pensez à verifier vos spams :)';
+                <?php
+                if (isset($_GET["confirmation"])) {
+                    if ($_GET["confirmation"] == "email") {
+                        echo 'Email de vérification envoyé, <br> pensez à verifier vos spams :)';
+                    }
                 }
-            }
-            if (isset($_SESSION["id"])) {
-                header("Location: /moncompte.php");
-            } ?>
+                if (isset($_SESSION["id"])) {
+                    header("Location: /moncompte.php");
+                } ?>
+
+            </div>
+
+
+            <form action="changepasswd.php" method="post" class="form">
+
+                <div class="form-connect">
+                    <input type="email" name="email" id="email" class="form_field" placeholder="Adresse email" required>
+                </div>
+
+                <div class="form-example">
+                    <input type="submit" value="Vérifier mon email" class="submit_button">
+                </div>
+            </form>
+            <br>
+            <a class="newacc" href="/login.php" class="newacc">Retour</a><br>
+
+
 
         </div>
-
-
-        <form action="changepasswd.php" method="post" class="form">
-
-            <div class="form-connect">
-                <input type="email" name="email" id="email" class="form_field" placeholder="Adresse email" required>
-            </div>
-
-            <div class="form-example">
-                <input type="submit" value="Vérifier mon email" class="submit_button">
-            </div>
-        </form>
-        <br>
-        <a class="newacc" href="/login.php" class="newacc">Retour</a><br>
-
-
-
     </div>
+    <div class="flex-content" id="footer">
+        <?php include("footer.php"); ?>
     </div>
-
 </body>

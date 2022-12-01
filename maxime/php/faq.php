@@ -3,9 +3,7 @@
 
 <img src="sources/bonhomme faq 2.png">
 <div class="box">
-  <div class="flex-content">
-    <?php include("header.php"); ?>
-  </div>
+
   <div class="flex-content">
     <div class="flex-content">
       <div class="menu">
