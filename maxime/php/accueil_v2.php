@@ -154,20 +154,21 @@
 
         <div id="blocprincipal">
             <div id="blocnews">
-                <div id="blocnews1">
-                    <div id="lignenews">
-                        <div id="blocnews2">
-                            <h1> Inscrivez-vous à
-                                notre
-                                newsletter
-                                <p> Si vous souhaitez bénéficier dès a présent des avancées
-                                    technologiques
-                                    de nos capteurs, vous pouvez vous inscrire à notre
-                                    newsletter pour être informé de la date de sortie. </p>
-                        </div>
+
+                <div id="lignenews">
+                    <div id="blocnews2">
+                        <h1> Inscrivez-vous à
+                            notre
+                            newsletter
+                            <p> Si vous souhaitez bénéficier dès a présent des avancées
+                                technologiques
+                                de nos capteurs, vous pouvez vous inscrire à notre
+                                newsletter pour être informé de la date de sortie. </p>
                     </div>
                     <input type="PasswordInput" id="confirmEntréemdp" name="confirmEntréemdp"><button>S'inscrire</button>
                 </div>
+
+
             </div>
         </div>
 
