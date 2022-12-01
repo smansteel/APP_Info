@@ -28,8 +28,8 @@
             <img src="images/carrousel3.jpg" alt="img3" class="img_slider">
             <img src="images/carrousel4.jpg" alt="img4" class="img_slider">
             <img src="images/carrousel5.jpg" alt="img5" class="img_slider">
-            <img src="images/carrousel6.jpg" alt="img6" class="img_slider">
-
+            <img src="images/carrousel7.jpg" alt="img6" class="img_slider">
+            <img src="images/carrousel8.jpg" alt="img6" class="img_slider">
             <div class="suivant"><i class="fa-solid fa-circle-chevron-right"></i>
             </div>
             <div class="precedent"><i class="fa-solid fa-circle-chevron-left"></i>
