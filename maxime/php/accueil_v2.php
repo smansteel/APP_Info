@@ -98,6 +98,7 @@
             </div>
         </div>
     </div>
+
     <div id="blocimage">
         <div id="containerimage">
             <div id="ligneimage">
@@ -110,7 +111,10 @@
             </div>
         </div>
     </div>
+    <div>
+        fffff
 
+    </div>
     <div class="forme">
         <main>
             <div class="box">
@@ -150,11 +154,14 @@
                     </h2>
                 </div>
             </div>
+
         </main>
+        <div class="curve">
+            <img src="images/wave-haikei (5).svg">
+        </div>
 
         <div id="blocprincipal">
             <div id="blocnews">
-
                 <div id="lignenews">
                     <div id="blocnews2">
                         <h1> Inscrivez-vous à
@@ -165,10 +172,8 @@
                                 de nos capteurs, vous pouvez vous inscrire à notre
                                 newsletter pour être informé de la date de sortie. </p>
                     </div>
-                    <input type="PasswordInput" id="confirmEntréemdp" name="confirmEntréemdp"><button>S'inscrire</button>
+                    <input type="PasswordInput" id="newsletter" name="confirmEntréemdp"><button>S'inscrire</button>
                 </div>
-
-
             </div>
         </div>
 
