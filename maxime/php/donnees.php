@@ -109,9 +109,9 @@
   {
     static $line_ran = 1;
     $line_ran++;
-    $rect_id = "rect" . $line_ran;
+    $rect_id = "rect" . $line_ran."_3";
     $rect_id2 = "rect" . $line_ran."_2";
-    $id_grad = "grad" . $line_ran;
+    $id_grad = "grad" . $line_ran ."_3";
     $id_grad2 = "grad" . $line_ran."_2";
     $stopname = ($line_ran * 1000);
 
@@ -405,22 +405,22 @@
   <div class="fb_fb">
     <div class="fb_lignes">
       <?php
-      // display_line("1");
-      // display_line("2");
-      // display_line("3");
-      // display_line("3bis");
-      // display_line("4");
-      // display_line("5");
-      // display_line("6");
-      // display_line("7");
-      // display_line("7bis");
-      // display_line("8");
-      // display_line("9");
+      display_line("1");
+      display_line("2");
+      display_line("3");
+      display_line("3bis");
+      display_line("4");
+      display_line("5");
+      display_line("6");
+      display_line("7");
+      display_line("7bis");
+      display_line("8");
+      display_line("9");
       display_line("10");
-      // display_line("11");
-      // display_line("12");
-      // display_line("13");
-      // display_line("14");
+      display_line("11");
+      display_line("12");
+      display_line("13");
+      display_line("14");
 
       ?>
     </div>
