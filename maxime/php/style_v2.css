@@ -315,6 +315,16 @@ main {
     width: 5%;
 }
 
+.capteurs {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+.bracelet {
+    width: 30%;
+}
+
 button {
     font-family: 'Nunito Sans', sans-serif;
     margin-left: 1%;
@@ -401,6 +411,21 @@ section {
     margin-bottom: .5rem;
     font-weight: 300;
     line-height: 1.2;
+}
+
+#bloc2 h1 {
+    margin-left: 150px;
+
+}
+
+#bloc2image h2 {
+    margin-left: 170px;
+
+}
+
+#bloc2image h1 {
+    margin-left: 170px;
+
 }
 
 #container {

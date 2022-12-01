@@ -72,9 +72,6 @@
 
         </div>
 
-
-
-
     </div>
 
     <div id="blocp11">
@@ -111,12 +108,13 @@
             </div>
         </div>
     </div>
-    <div>
-        fffff
 
-    </div>
     <div class="forme">
+        <div class="capteurs">
+            <strong>Les différents capteurs :</strong>
+        </div>
         <main>
+
             <div class="box">
                 <div class="imgBx">
                     <img src="images/img1.jpg">
