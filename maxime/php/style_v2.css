@@ -844,7 +844,7 @@ h2 img {
     }
 }
 
-.reveal {
+[class*="reveal-"] {
     opacity: 0;
     transform: translateY(-30px);
 }
@@ -853,4 +853,12 @@ h2 img {
     opacity: 1;
     transform: translateY(0);
     transition: 1s;
+}
+
+.reveal-2 {
+    transition-delay: 0.1s;
+}
+
+.reveal-3 {
+    transition-delay: 0.1s;
 }

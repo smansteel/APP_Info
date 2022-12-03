@@ -32,10 +32,6 @@
             <img src="images/carrousel8.jpg" alt="img6" class="img_slider">
             <img src="images/carrousel2.jpg" alt="img2" class="img_slider">
             <img src="images/carrousel4.jpg" alt="img4" class="img_slider">
-
-
-
-            <img src="images/carrousel9.jpg" alt="img5" class="img_slider">
             <img src="images/carrousel10.jpg" alt="img5" class="img_slider">
 
             <div class="suivant"><i class="fa-solid fa-circle-chevron-right"></i>
@@ -50,10 +46,10 @@
             <div id="bloc1">
                 <div id="container">
                     <div id="ligne">
-                        <div class="bloc2 reveal">
-                            <h1> “ Le métro parisien transporte
+                        <div class="bloc2 ">
+                            <h1 class="reveal-1"> “ Le métro parisien transporte
                                 1,5 milliard d’utilisateurs par an ”
-                                <p> L’air du métro, plus pollué que l’on pense !
+                                <p class="reveal-2"> L’air du métro, plus pollué que l’on pense !
 
                                     Une étude alerte sur la présence de particules fines
                                     en quantité importante dans le métro. L’association
@@ -86,16 +82,16 @@
         <div id="bloc11">
             <div id="container">
                 <div id="ligne">
-                    <div class="bloc2 reveal">
-                        <h1> Notre mission :
+                    <div class="bloc2">
+                        <h1 class="reveal-1"> Notre mission :
 
-                            <p> Améliorer le bien-être et la santé des usagers du métro au quotidien. </p>
+                            <p class="reveal-2"> Améliorer le bien-être et la santé des usagers du métro au quotidien. </p>
 
                     </div>
-                    <div class="bloc2 reveal">
-                        <h1> Notre solution :
+                    <div class="bloc2 ">
+                        <h1 class="reveal-1"> Notre solution :
 
-                            <p> Un bracelet (captair) équipé de plusieurs capteurs permettant de déterminer la qualité de
+                            <p class="reveal-2"> Un bracelet (captair) équipé de plusieurs capteurs permettant de déterminer la qualité de
                                 l'air
                                 auprès de l'utilisateurs.</p>
                     </div>
@@ -107,10 +103,10 @@
     <div id="blocimage">
         <div id="containerimage">
             <div id="ligneimage">
-                <div class="bloc2image reveal">
+                <div class="bloc2image reveal-3">
                     <h1><img class="zen" src="images/zen.jpeg">
                 </div>
-                <div class="bloc2image reveal">
+                <div class="bloc2image reveal-3">
                     <h2><img class="bracelet" src="images/bracelet.png">
                 </div>
             </div>
@@ -118,12 +114,12 @@
     </div>
 
     <div class="forme">
-        <div class="capteurs reveal">
+        <div class="capteurs reveal-1">
             <strong>Les différents capteurs :</strong>
         </div>
         <main>
 
-            <div class="box reveal">
+            <div class="box reveal-2">
                 <div class="imgBx">
                     <img src="images/img1.jpg">
                 </div>
@@ -135,7 +131,7 @@
                     </h2>
                 </div>
             </div>
-            <div class="box reveal">
+            <div class="box reveal-2">
                 <div class="imgBx">
                     <img src="images/img2.jpg">
                 </div>
@@ -147,7 +143,7 @@
                     </h2>
                 </div>
             </div>
-            <div class="box reveal">
+            <div class="box reveal-2">
                 <div class="imgBx">
                     <img src="images/img3.jpg">
                 </div>
@@ -169,17 +165,17 @@
 
     <div id="blocprincipal">
         <div id="blocnews">
-            <div id="lignenews" class="reveal">
+            <div id="lignenews">
                 <div id="blocnews2">
-                    <h1> Inscrivez-vous à
+                    <h1 class="reveal-1"> Inscrivez-vous à
                         notre
                         newsletter
-                        <p> Si vous souhaitez bénéficier dès a présent des avancées
+                        <p class="reveal-2"> Si vous souhaitez bénéficier dès a présent des avancées
                             technologiques
                             de nos capteurs, vous pouvez vous inscrire à notre
                             newsletter pour être informé de la date de sortie. </p>
                 </div>
-                <input type="PasswordInput" id="newsletter" name="confirmEntréemdp"><button>S'inscrire</button>
+                <input type="PasswordInput" id="newsletter" name="confirmEntréemdp" class="reveal-2"><button class="reveal-2">S'inscrire</button>
             </div>
         </div>
     </div>
@@ -188,7 +184,7 @@
 
     <footer>
 
-        <div class="contenu-footer">
+        <div class=" contenu-footer">
             <div class="bloc footer-services">
                 <h4>&copy; 2022 AirQ</h4>
             </div>
