@@ -221,7 +221,7 @@ main {
     align-items: center;
     margin: 40px;
     background: #85FFF5;
-    transition: 0.5s;
+    transition: 0.1s;
     border-radius: 30px;
 }
 
@@ -241,7 +241,7 @@ main {
 
 .box .imgBx img {
     max-width: 100%;
-    transition: 0.5s;
+    transition: 0.1s;
     border-radius: 20px;
 }
 
@@ -286,7 +286,7 @@ main {
     align-items: center;
     text-align: center;
     opacity: 0;
-    transition: 0.5s;
+    transition: 0.1s;
     border-radius: 30px;
 }
 
@@ -860,5 +860,5 @@ h2 img {
 }
 
 .reveal-3 {
-    transition-delay: 0.1s;
+    transition-delay: 0.2s;
 }
