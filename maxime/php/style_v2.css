@@ -194,10 +194,9 @@ nav {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding-left: 7px;
-    padding-right: 7px;
-
+    background-color: #85FFF5;
 }
+
 
 main {
 
@@ -207,9 +206,10 @@ main {
     align-items: center;
     flex-wrap: wrap;
     min-height: 55vh;
-    background: linear-gradient(white, #00C4B3);
     font-family: 'Nunito Sans', sans-serif;
     width: 100%;
+
+    background-color: #85FFF5;
 }
 
 .box {
@@ -319,6 +319,7 @@ main {
     text-align: center;
     margin-top: 30px;
     font-size: 30px;
+
 }
 
 .bracelet {
@@ -389,8 +390,8 @@ section {
     font-size: 1rem;
     font-weight: 300;
     line-height: 1;
-    color: #212529;
     text-align: left;
+    background-color: #0A0082;
 
 
 }
@@ -415,6 +416,7 @@ section {
 
 #bloc2 h1 {
     margin-left: 150px;
+    color: #fff;
 
 }
 
@@ -520,21 +522,26 @@ section {
     max-width: 450px;
     margin: 20px 0;
     margin-bottom: 4px;
+    color: #fff
 }
 
 #bloc2 img {
+    margin-left: 60px;
     margin-top: 40px;
     width: 80%;
     height: 80%;
 }
 
 
-#blocprincipal {
 
+#blocprincipal {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 300;
     line-height: 1;
     color: #212529;
     text-align: left;
-    background: linear-gradient(#85FFF5, white);
+    background: linear-gradient(#0A0082, white);
 }
 
 #blocnews2 {
@@ -547,210 +554,225 @@ section {
     #blocnews1 {
         max-width: 540px
     }
-}
 
 
-#lignenews {
-    display: flex;
-    margin-right: 10%;
-    margin-left: 20%;
-    font-family: 'Nunito Sans', sans-serif;
-}
 
 
-@media (min-width:768px) {
-    #blocnews2 {
-        -ms-flex: 0 0 50%;
-        flex: 0 0 50%;
-        max-width: 50%
+    #lignenews {
+        display: flex;
+        margin-right: 10%;
+        margin-left: 20%;
+        font-family: 'Nunito Sans', sans-serif;
+
     }
 
-}
 
-#blocnews1 p {
-    color: #666666;
-    font-size: 18px;
-}
+    @media (min-width:768px) {
+        #blocnews2 {
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: 50%
+        }
 
-@media (min-width: 1200px) {
-    #blocnews1 {
-        max-width: 1240px;
     }
-}
+
+    #blocnews1 p {
+        color: #666666;
+        font-size: 18px;
+    }
+
+    @media (min-width: 1200px) {
+        #blocnews1 {
+            max-width: 1240px;
+        }
+    }
 
 
-#blocnews {
-    min-height: 250px;
-}
+    #blocnews {
+        min-height: 200px;
+    }
 
-#blocnews h1 {
-
-    font-size: 30px;
-    color: #000000;
-    max-width: 500px;
-    margin-top: 70px;
-}
-
-@media (max-width: 1199px) {
     #blocnews h1 {
-        margin-top: 30px;
+
+        font-size: 30px;
+        color: #000000;
+        max-width: 500px;
+        margin-top: 70px;
     }
 
-}
+    @media (max-width: 1199px) {
+        #blocnews h1 {
+            margin-top: 30px;
+        }
 
-#blocnews input {
-    margin-top: 10%;
-    margin-bottom: 10%;
-}
-
-#blocnews button {
-    margin-top: 10%;
-    margin-bottom: 10%;
-}
-
-@media (max-width: 100px) {
+    }
 
     #blocnews input {
-        max-width: 10px;
-
-
+        margin-top: 10%;
+        margin-bottom: 10%;
     }
 
     #blocnews button {
-        max-width: 10px;
+        margin-top: 10%;
+        margin-bottom: 10%;
     }
-}
 
-#blocnews p {
-    font-size: 15px;
-    max-width: 450px;
-    margin-top: 20px;
-    margin-bottom: 40px;
-}
+    @media (max-width: 100px) {
 
-#newsletter {
-    font-size: 80%;
-}
+        #blocnews input {
+            max-width: 10px;
 
 
-/* Footer */
+        }
 
-footer {
-    width: 100%;
-    bottom: 0;
-    background: #ebebeb;
-    color: #000;
-    margin-top: 15px;
+        #blocnews button {
+            max-width: 10px;
+        }
+    }
 
-}
+    #blocnews p {
+        font-size: 15px;
+        max-width: 450px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
 
-.contenu-footer {
-    width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    font-size: 16px;
-    padding: 20px 0 20px;
-}
-
-.contenu-footer h4 {
-    text-decoration: none;
-    color: #000;
-    font-size: 16px;
-    font-weight: 600;
-}
+    #newsletter {
+        font-size: 80%;
+    }
 
 
-.liens {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-    text-align: center;
-}
+    /* Footer */
 
-.liens a {
-    text-decoration: none;
-    color: #000;
-    font-weight: 600;
-    font-size: 16px;
-}
+    footer {
+        width: 100%;
+        bottom: 0;
+        background: #ebebeb;
+        color: #000;
+        margin-top: 15px;
 
-.bloc {
-    display: inline;
-    width: 25%;
-    margin: 0 0px;
-}
-
-.bloc div {
-    display: inline;
-}
-
-/* Media queries pour footer */
-
-@media screen and (max-width: 1300px) {
+    }
 
     .contenu-footer {
-        width: 100%;
-        display: inline-block;
-        text-align: center;
+        width: 1200px;
+        margin: 0 auto;
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        font-size: 16px;
+        padding: 20px 0 20px;
+    }
+
+    .contenu-footer h4 {
+        text-decoration: none;
+        color: #000;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+
+    .liens {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .liens a {
+        text-decoration: none;
+        color: #000;
+        font-weight: 600;
+        font-size: 16px;
     }
 
     .bloc {
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
+        display: inline;
+        width: 25%;
+        margin: 0 0px;
     }
 
-    .liens {
-        flex-direction: column;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
+    .bloc div {
+        display: inline;
     }
-}
 
-@media (max-width: 900px) {
-    .newsletter {
-        width: 80%;
+    /* Media queries pour footer */
+
+    @media screen and (max-width: 1300px) {
+
+        .contenu-footer {
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .bloc {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        .liens {
+            flex-direction: column;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .newsletter {
+            width: 80%;
+
+        }
+    }
+
+    @media (max-width: 500px) {
+        #bloc2 img {
+            width: 20%;
+            height: 20%;
+        }
 
     }
-}
-
-
-#blocimage {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1;
-    color: #212529;
-    text-align: left;
-
-}
 
 
 
-#bloc2image {
-    margin-bottom: .5rem;
-    font-weight: 300;
-    line-height: 1.2;
-}
+    #blocimage {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 1;
+        color: #212529;
+        text-align: left;
+        background-color: #0A0082;
 
-#containerimage {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 0%;
-    margin-right: auto;
-    margin-left: auto
-}
+    }
 
-@media (min-width:576px) {
+
+
+    #bloc2image {
+        margin-bottom: .5rem;
+        font-weight: 300;
+        line-height: 1.2;
+    }
+
     #containerimage {
-        max-width: 540px
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 0%;
+        margin-right: auto;
+        margin-left: auto
+    }
+
+    @media (min-width:576px) {
+        #containerimage {
+            max-width: 540px
+        }
+
+
     }
 }
 
@@ -803,4 +825,21 @@ h2 img {
     transform: rotate(180deg);
     margin-top: -10px;
     width: 100%;
+}
+
+
+@media (max-width: 800px) {
+    #lignenews input {
+        width: 30%;
+        height: 30%;
+        margin-top: 32%;
+    }
+}
+
+@media (max-width: 800px) {
+    #lignenews button {
+        width: 30%;
+        height: 30%;
+        margin-top: 30%;
+    }
 }

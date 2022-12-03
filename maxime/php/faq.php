@@ -2,9 +2,11 @@
 <link rel="stylesheet" href="faq.css">
 
 <img src="sources/bonhomme faq 2.png">
-<div class="box">
+<div class="total">
 
-  <div class="flex-content">
+  <div class="box">
+
+
     <div class="flex-content">
       <div class="menu">
         <div class="menu-item" id="Question1">
@@ -52,22 +54,23 @@
       </div>
     </div>
   </div>
+</div>
 
-  <script>
-    const menuItemHeaders = document.querySelectorAll(".menu-item-header");
+<script>
+  const menuItemHeaders = document.querySelectorAll(".menu-item-header");
 
-    menuItemHeaders.forEach(menuItemHeader => {
-      menuItemHeader.addEventListener("click", event => {
+  menuItemHeaders.forEach(menuItemHeader => {
+    menuItemHeader.addEventListener("click", event => {
 
-        menuItemHeader.classList.toggle("active");
-        const menuItemBody = menuItemHeader.nextElementSibling;
-        if (menuItemHeader.classList.contains("active")) {
-          menuItemBody.style.maxHeight = menuItemBody.scrollHeight + "px";
-        } else {
-          menuItemBody.style.maxHeight = 0;
-        }
+      menuItemHeader.classList.toggle("active");
+      const menuItemBody = menuItemHeader.nextElementSibling;
+      if (menuItemHeader.classList.contains("active")) {
+        menuItemBody.style.maxHeight = menuItemBody.scrollHeight + "px";
+      } else {
+        menuItemBody.style.maxHeight = 0;
+      }
 
-      });
     });
-  </script>
+  });
+</script>
 </div>

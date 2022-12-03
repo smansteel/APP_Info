@@ -23,13 +23,18 @@
     <div class="bodyparagraph">
 
         <div class="slider">
-            <img src="images/carrousel1.jpg" alt="img1" class="img_slider active">
-            <img src="images/carrousel2.jpg" alt="img2" class="img_slider">
-            <img src="images/carrousel3.jpg" alt="img3" class="img_slider">
-            <img src="images/carrousel4.jpg" alt="img4" class="img_slider">
+            <img src="images/carrousel3.jpg" alt="img1" class="img_slider active">
+            <img src="images/carrousel6.jpg" alt="img5" class="img_slider">
             <img src="images/carrousel5.jpg" alt="img5" class="img_slider">
-            <img src="images/carrousel7.jpg" alt="img6" class="img_slider">
             <img src="images/carrousel8.jpg" alt="img6" class="img_slider">
+            <img src="images/carrousel2.jpg" alt="img2" class="img_slider">
+            <img src="images/carrousel4.jpg" alt="img4" class="img_slider">
+
+
+
+            <img src="images/carrousel9.jpg" alt="img5" class="img_slider">
+            <img src="images/carrousel10.jpg" alt="img5" class="img_slider">
+
             <div class="suivant"><i class="fa-solid fa-circle-chevron-right"></i>
             </div>
             <div class="precedent"><i class="fa-solid fa-circle-chevron-left"></i>
@@ -67,7 +72,7 @@
                 </div>
             </div>
             <div class="curve">
-                <img src="images/wave-haikei (4).svg">
+                <img src="images/wave-haikei (8).svg">
             </div>
 
         </div>
@@ -154,52 +159,53 @@
             </div>
 
         </main>
-        <div class="curve">
-            <img src="images/wave-haikei (5).svg">
-        </div>
+    </div>
+    <div class="curve">
+        <img src="images/wave-haikei (7).svg">
+    </div>
 
-        <div id="blocprincipal">
-            <div id="blocnews">
-                <div id="lignenews">
-                    <div id="blocnews2">
-                        <h1> Inscrivez-vous à
-                            notre
-                            newsletter
-                            <p> Si vous souhaitez bénéficier dès a présent des avancées
-                                technologiques
-                                de nos capteurs, vous pouvez vous inscrire à notre
-                                newsletter pour être informé de la date de sortie. </p>
-                    </div>
-                    <input type="PasswordInput" id="newsletter" name="confirmEntréemdp"><button>S'inscrire</button>
+    <div id="blocprincipal">
+        <div id="blocnews">
+            <div id="lignenews">
+                <div id="blocnews2">
+                    <h1> Inscrivez-vous à
+                        notre
+                        newsletter
+                        <p> Si vous souhaitez bénéficier dès a présent des avancées
+                            technologiques
+                            de nos capteurs, vous pouvez vous inscrire à notre
+                            newsletter pour être informé de la date de sortie. </p>
                 </div>
+                <input type="PasswordInput" id="newsletter" name="confirmEntréemdp"><button>S'inscrire</button>
             </div>
         </div>
+    </div>
 
 
 
-        <footer>
+    <footer>
 
-            <div class="contenu-footer">
+        <div class="contenu-footer">
+            <div class="bloc footer-services">
+                <h4>&copy; 2022 AirQ</h4>
+            </div>
+
+            <div class="liens">
                 <div class="bloc footer-services">
-                    <h4>&copy; 2022 AirQ</h4>
+                    <a href="#">Nous contacter</a>
                 </div>
-
-                <div class="liens">
-                    <div class="bloc footer-services">
-                        <a href="#">Nous contacter</a>
-                    </div>
-                    <div class="bloc footer-services">
-                        <a href="#">Mentions légales</a>
-                    </div>
-                    <div class="bloc footer-services">
-                        <a href="#">CGU</a>
-                    </div>
-                    <div class="bloc footer-services">
-                        <a href="#">Politique de confidentialité</a>
-                    </div>
+                <div class="bloc footer-services">
+                    <a href="#">Mentions légales</a>
                 </div>
-
+                <div class="bloc footer-services">
+                    <a href="#">CGU</a>
+                </div>
+                <div class="bloc footer-services">
+                    <a href="#">Politique de confidentialité</a>
+                </div>
             </div>
-        </footer>
+
+        </div>
+    </footer>
     </div>
 </body>
