@@ -2,11 +2,14 @@
 <html>
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="with=device-wdith, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style_v2.css">
+    <link rel="stylesheet" href="app_v2.js">
+
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <title>Accueil - AirQ</title>
 </head>
@@ -41,13 +44,13 @@
             </div>
         </div>
 
-        <script src="app_v2.js"></script>
+        <script src="app_v2.js" defer></script>
 
-        <div id="blocp">
+        <div classe="blocp ">
             <div id="bloc1">
                 <div id="container">
                     <div id="ligne">
-                        <div id="bloc2">
+                        <div class="bloc2 reveal">
                             <h1> “ Le métro parisien transporte
                                 1,5 milliard d’utilisateurs par an ”
                                 <p> L’air du métro, plus pollué que l’on pense !
@@ -64,7 +67,7 @@
                                     nombreuses particules(PM10) dans
                                     l’atmosphère. </p>
                         </div>
-                        <div id="bloc2">
+                        <div class="bloc2 reveal">
                             <img src="sources/Ellipse 4.png" alt="">
 
                         </div>
@@ -83,13 +86,13 @@
         <div id="bloc11">
             <div id="container">
                 <div id="ligne">
-                    <div id="bloc2">
+                    <div class="bloc2 reveal">
                         <h1> Notre mission :
 
                             <p> Améliorer le bien-être et la santé des usagers du métro au quotidien. </p>
 
                     </div>
-                    <div id="bloc2">
+                    <div class="bloc2 reveal">
                         <h1> Notre solution :
 
                             <p> Un bracelet (captair) équipé de plusieurs capteurs permettant de déterminer la qualité de
@@ -104,10 +107,10 @@
     <div id="blocimage">
         <div id="containerimage">
             <div id="ligneimage">
-                <div id="bloc2image">
+                <div class="bloc2image reveal">
                     <h1><img class="zen" src="images/zen.jpeg">
                 </div>
-                <div id="bloc2image">
+                <div class="bloc2image reveal">
                     <h2><img class="bracelet" src="images/bracelet.png">
                 </div>
             </div>
@@ -115,12 +118,12 @@
     </div>
 
     <div class="forme">
-        <div class="capteurs">
+        <div class="capteurs reveal">
             <strong>Les différents capteurs :</strong>
         </div>
         <main>
 
-            <div class="box">
+            <div class="box reveal">
                 <div class="imgBx">
                     <img src="images/img1.jpg">
                 </div>
@@ -132,7 +135,7 @@
                     </h2>
                 </div>
             </div>
-            <div class="box">
+            <div class="box reveal">
                 <div class="imgBx">
                     <img src="images/img2.jpg">
                 </div>
@@ -144,7 +147,7 @@
                     </h2>
                 </div>
             </div>
-            <div class="box">
+            <div class="box reveal">
                 <div class="imgBx">
                     <img src="images/img3.jpg">
                 </div>
@@ -166,7 +169,7 @@
 
     <div id="blocprincipal">
         <div id="blocnews">
-            <div id="lignenews">
+            <div id="lignenews" class="reveal">
                 <div id="blocnews2">
                     <h1> Inscrivez-vous à
                         notre
