@@ -465,14 +465,14 @@
       display_line("4");
       display_line("5");
       display_line("6");
-      display_line("7");
+      //display_line("7");
       display_line("7bis");
-      display_line("8");
+      //display_line("8");
       display_line("9");
-      display_line("10");
+      //display_line("10");
       display_line("11");
       display_line("12");
-      display_line("13");
+      //display_line("13");
       display_line("14");
 
       ?>
