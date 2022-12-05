@@ -1,13 +1,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="login.css">
+<?php
+include("header.php")
+?>
 
 <body>
 
   <div class="box">
-    <div class="flex-content">
-      <?php include("header.php"); ?>
-    </div>
+
     <div class="flex-content" id="content">
       <div class="background"></div>
       <div class="bg-image">
@@ -64,9 +65,10 @@
     </div>
   </div>
   </div>
-  <div class="flex-content" id="footer">
-    <?php include("footer.php"); ?>
-  </div>
+
 
 </body>
+<div class="flex-content" id="footer">
+  <?php include("footer.php"); ?>
+</div>
 </div>

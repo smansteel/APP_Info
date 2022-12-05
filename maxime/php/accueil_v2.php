@@ -2,32 +2,37 @@
 <html>
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="with=device-wdith, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style_v2.css">
+    <link rel="stylesheet" href="app_v2.js">
+
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <title>Accueil - AirQ</title>
 </head>
 
-<body>
 
+<body>
 
     <?php
     include("header.php")
     ?>
 
 
+
     <div class="bodyparagraph">
 
         <div class="slider">
-            <img src="images/carrousel1.jpg" alt="img1" class="img_slider active">
-            <img src="images/carrousel2.jpg" alt="img2" class="img_slider">
-            <img src="images/carrousel3.jpg" alt="img3" class="img_slider">
-            <img src="images/carrousel4.jpg" alt="img4" class="img_slider">
+            <img src="images/carrousel3.jpg" alt="img1" class="img_slider active">
+            <img src="images/carrousel6.jpg" alt="img5" class="img_slider">
             <img src="images/carrousel5.jpg" alt="img5" class="img_slider">
-            <img src="images/carrousel6.jpg" alt="img6" class="img_slider">
+            <img src="images/carrousel8.jpg" alt="img6" class="img_slider">
+            <img src="images/carrousel2.jpg" alt="img2" class="img_slider">
+            <img src="images/carrousel4.jpg" alt="img4" class="img_slider">
+            <img src="images/carrousel10.jpg" alt="img5" class="img_slider">
 
             <div class="suivant"><i class="fa-solid fa-circle-chevron-right"></i>
             </div>
@@ -35,16 +40,16 @@
             </div>
         </div>
 
-        <script src="app_v2.js"></script>
+        <script src="app_v2.js" defer></script>
 
-        <div id="blocp">
+        <div classe="blocp ">
             <div id="bloc1">
                 <div id="container">
                     <div id="ligne">
-                        <div id="bloc2">
-                            <h1> “ Le métro parisien transporte
+                        <div class="bloc2 ">
+                            <h1 class="reveal-1"> “ Le métro parisien transporte
                                 1,5 milliard d’utilisateurs par an ”
-                                <p> L’air du métro, plus pollué que l’on pense !
+                                <p class="reveal-2"> L’air du métro, plus pollué que l’on pense !
 
                                     Une étude alerte sur la présence de particules fines
                                     en quantité importante dans le métro. L’association
@@ -58,21 +63,18 @@
                                     nombreuses particules(PM10) dans
                                     l’atmosphère. </p>
                         </div>
-                        <div id="bloc2">
+                        <div class="bloc2 reveal">
                             <img src="sources/Ellipse 4.png" alt="">
 
                         </div>
                     </div>
                 </div>
             </div>
-
+            <div class="curve">
+                <img src="images/wave-haikei (8).svg">
+            </div>
 
         </div>
-        <div class="curve">
-            <img src="images/wave-haikei (4).svg">
-        </div>
-
-
 
     </div>
 
@@ -80,16 +82,16 @@
         <div id="bloc11">
             <div id="container">
                 <div id="ligne">
-                    <div id="bloc2">
-                        <h1> Notre mission :
+                    <div class="bloc2">
+                        <h1 class="reveal-1"> Notre mission :
 
-                            <p> Améliorer le bien-être et la santé des usagers du métro au quotidien. </p>
+                            <p class="reveal-2"> Améliorer le bien-être et la santé des usagers du métro au quotidien. </p>
 
                     </div>
-                    <div id="bloc2">
-                        <h1> Notre solution :
+                    <div class="bloc2 ">
+                        <h1 class="reveal-1"> Notre solution :
 
-                            <p> Un bracelet (captair) équipé de plusieurs capteurs permettant de déterminer la qualité de
+                            <p class="reveal-2"> Un bracelet (captair) équipé de plusieurs capteurs permettant de déterminer la qualité de
                                 l'air
                                 auprès de l'utilisateurs.</p>
                     </div>
@@ -97,13 +99,14 @@
             </div>
         </div>
     </div>
+
     <div id="blocimage">
         <div id="containerimage">
             <div id="ligneimage">
-                <div id="bloc2image">
+                <div class="bloc2image reveal-3">
                     <h1><img class="zen" src="images/zen.jpeg">
                 </div>
-                <div id="bloc2image">
+                <div class="bloc2image reveal-3">
                     <h2><img class="bracelet" src="images/bracelet.png">
                 </div>
             </div>
@@ -111,8 +114,12 @@
     </div>
 
     <div class="forme">
+        <div class="capteurs reveal-1">
+            <strong>Les différents capteurs :</strong>
+        </div>
         <main>
-            <div class="box">
+
+            <div class="box reveal-2">
                 <div class="imgBx">
                     <img src="images/img1.jpg">
                 </div>
@@ -124,7 +131,7 @@
                     </h2>
                 </div>
             </div>
-            <div class="box">
+            <div class="box reveal-2">
                 <div class="imgBx">
                     <img src="images/img2.jpg">
                 </div>
@@ -136,7 +143,7 @@
                     </h2>
                 </div>
             </div>
-            <div class="box">
+            <div class="box reveal-2">
                 <div class="imgBx">
                     <img src="images/img3.jpg">
                 </div>
@@ -149,52 +156,55 @@
                     </h2>
                 </div>
             </div>
-        </main>
 
-        <div id="blocprincipal">
-            <div id="blocnews">
-                <div id="blocnews1">
-                    <div id="lignenews">
-                        <div id="blocnews2">
-                            <h1> Inscrivez-vous à
-                                notre
-                                newsletter
-                                <p> Si vous souhaitez bénéficier dès a présent des avancées
-                                    technologiques
-                                    de nos capteurs, vous pouvez vous inscrire à notre
-                                    newsletter pour être informé de la date de sortie. </p>
-                        </div>
-                    </div>
-                    <input type="PasswordInput" id="confirmEntréemdp" name="confirmEntréemdp"><button>S'inscrire</button>
+        </main>
+    </div>
+    <div class="curve">
+        <img src="images/wave-haikei (7).svg">
+    </div>
+
+    <div id="blocprincipal">
+        <div id="blocnews">
+            <div id="lignenews">
+                <div id="blocnews2">
+                    <h1 class="reveal-1"> Inscrivez-vous à
+                        notre
+                        newsletter
+                        <p class="reveal-2"> Si vous souhaitez bénéficier dès a présent des avancées
+                            technologiques
+                            de nos capteurs, vous pouvez vous inscrire à notre
+                            newsletter pour être informé de la date de sortie. </p>
                 </div>
+                <input type="PasswordInput" id="newsletter" name="confirmEntréemdp" class="reveal-2"><button class="reveal-2">S'inscrire</button>
             </div>
         </div>
+    </div>
 
 
 
-        <footer>
+    <footer>
 
-            <div class="contenu-footer">
-                <div class="bloc footer-services">
-                    <h4>&copy; 2022 AirQ</h4>
-                </div>
-
-                <div class="liens">
-                    <div class="bloc footer-services">
-                        <a href="#">Nous contacter</a>
-                    </div>
-                    <div class="bloc footer-services">
-                        <a href="#">Mentions légales</a>
-                    </div>
-                    <div class="bloc footer-services">
-                        <a href="#">CGU</a>
-                    </div>
-                    <div class="bloc footer-services">
-                        <a href="#">Politique de confidentialité</a>
-                    </div>
-                </div>
-
+        <div class=" contenu-footer">
+            <div class="bloc footer-services">
+                <h4>&copy; 2022 AirQ</h4>
             </div>
-        </footer>
+
+            <div class="liens">
+                <div class="bloc footer-services">
+                    <a href="#">Nous contacter</a>
+                </div>
+                <div class="bloc footer-services">
+                    <a href="#">Mentions légales</a>
+                </div>
+                <div class="bloc footer-services">
+                    <a href="#">CGU</a>
+                </div>
+                <div class="bloc footer-services">
+                    <a href="#">Politique de confidentialité</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
     </div>
 </body>

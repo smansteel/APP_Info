@@ -435,6 +435,7 @@ footer {
 
 /* Media queries pour footer */
 
+
 @media screen and (max-width: 1300px) {
 
   .contenu-footer {
@@ -459,34 +460,8 @@ footer {
   }
 }
 
-
-
-
 @media (max-width:480px) {
   #content {
     font-size: 180px;
-  }
-}
-
-
-
-
-@media (max-width:800px) {
-  #footer {
-    width: 0;
-    height: 0;
-
-  }
-
-  @media (max-width:800px) {
-    #footer a {
-      color: transparent
-    }
-  }
-
-  @media (max-width:800px) {
-    #footer h4 {
-      color: transparent
-    }
   }
 }

@@ -1,7 +1,7 @@
 <?php
 function OpenCon()
  {
- $dbhost = "localhost";
+ $dbhost = "localhost:3307";
  $dbuser = "root";
  $dbpass = "";
  $db = "captair";
