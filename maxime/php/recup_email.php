@@ -1,5 +1,11 @@
+<?php
 
+include "db_connect.php";
+$conn = OpenCon();
 
-<?php 
+if(isset($_POST["S'inscrire"])) 
+{
+    $email = $_POST['email'];
 
-var_dump($_POST);
+    $sql = (INSERT INTO `newsletter`(`email`) VALUES (':email)'));
+}
