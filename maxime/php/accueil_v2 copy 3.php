@@ -68,15 +68,17 @@
 
                         </div>
                     </div>
+
                 </div>
+
+            </div>
+            <div class="curve">
+                <img src="images/wave-haikei (15).svg">
             </div>
 
-
         </div>
 
-        <div class="curve">
-            <img src="images/wave-haikei (15).svg">
-        </div>
+
     </div>
     <div id="blocp11">
         <div id="bloc11">
