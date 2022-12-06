@@ -175,11 +175,13 @@
                             de nos capteurs, vous pouvez vous inscrire à notre
                             newsletter pour être informé de la date de sortie. </p>
                 </div>
-                <input type="PasswordInput" id="newsletter" name="confirmEntréemdp" class="reveal-2"><button class="reveal-2">S'inscrire</button>
+                <form action="recup_email.php" method="post">
+                    <input type="text" id="email" name="email"/>
+                    <input type="submit" value="S'inscrire"/>
+                </form>
             </div>
         </div>
     </div>
-
 
 
     <footer>
