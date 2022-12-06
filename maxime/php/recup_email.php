@@ -9,3 +9,5 @@ if(isset($_POST["S'inscrire"]))
 
     $sql = "INSERT INTO `newsletter`(`email`) VALUES (':email)')";
 }
+
+CloseCon($conn);
