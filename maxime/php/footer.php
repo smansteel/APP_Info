@@ -2,7 +2,7 @@
 
 <body>
 
-    <footer>
+    <footer class = "anticonflict">
 
         <div class="contenu-footer">
             <div class="bloc footer-services">
