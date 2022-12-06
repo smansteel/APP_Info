@@ -12,7 +12,6 @@
     $order_array = [];
     $hasy = false;
     $rarray_w_branch = [];
-    //fetch from db if an account with this email exists
     $stmt4 = mysqli_prepare($conn, "SELECT nom, branche FROM stations WHERE ligne=? ORDER BY ordre");
     mysqli_stmt_bind_param($stmt4, "s", $ligne);
     mysqli_stmt_execute($stmt4);
