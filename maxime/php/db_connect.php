@@ -2,8 +2,8 @@
 function OpenCon()
 {
     $dbhost = "localhost:3306";
-    $dbuser = "root";
-    $dbpass = getenv("DB_PASSWORD");
+    $dbuser = getenv("DB_USER");
+    $dbpass =  getenv("DB_PASSWORD");
     $db = "captair";
     $conn = new mysqli($dbhost, $dbuser, $dbpass, $db) or die("Connect failed: %s\n" . $conn->error);
 
