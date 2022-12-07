@@ -5,21 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="with=device-wdith, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style_v2.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <title>Accueil - AirQ</title>
 </head>
 
 <body>
 
 
-<?php
-include("header.php")
-?>
+    <?php
+    include("header.php")
+    ?>
 
 
     <div class="bodyparagraph">
@@ -90,8 +87,7 @@ include("header.php")
                 <td align="center" style="padding: 0px 10px 0px 10px;">
                     <table cellspacing="0" width="100%" style="max-width: 1100px;">
 
-                        <td bgcolor="#85FFF5" align="left" valign="top"
-                            style=" padding: 15px 20px 20px 20px; border-radius: 25px 25px 0px 0px; color: #000000; ">
+                        <td bgcolor="#85FFF5" align="left" valign="top" style=" padding: 15px 20px 20px 20px; border-radius: 25px 25px 0px 0px; color: #000000; ">
                             <h1 style="font-size: 30px; font-weight: 400; margin: 2;"><strong> Inscrivez-vous à
                                     notre
                                     newsletter</strong>
@@ -103,18 +99,14 @@ include("header.php")
                 <tr>
                     <td align="center" style="padding: 0px 10px 0px 10px;">
                         <table cellspacing="0" width="100%" style="max-width: 1100px;">
-                            <td bgcolor="#85FFF5" align="left"
-                                style="padding: 10px 30px 25px 30px;border-radius: 0px 0px 25px 25px; color: #111111; font-size: 18px; font-weight: 400; line-height: 25px;">
+                            <td bgcolor="#85FFF5" align="left" style="padding: 10px 30px 25px 30px;border-radius: 0px 0px 25px 25px; color: #111111; font-size: 18px; font-weight: 400; line-height: 25px;">
                                 Si vous souhaitez bénéficier dès a présent des avancées
                                 technologiques
                                 de nos capteurs, vous pouvez vous inscrire à notre
                                 newsletter pour être informé de la date de sortie. </p>
-                                <table align="center" width="80%"
-                                    style="max-width: 400px;margin-left:300px;margin-right:300px;margin-top:20px ">
-                                    <td bgcolor="white"
-                                        style="padding: 20px 5px 20px 40px;border-radius: 30px 30px 30px 30px; font-size: 10px">
-                                        <input type="PasswordInput" id="confirmEntréemdp"
-                                            name="confirmEntréemdp"><button>S'inscrire</button>
+                                <table align="center" width="80%" style="max-width: 400px;margin-left:300px;margin-right:300px;margin-top:20px ">
+                                    <td bgcolor="white" style="padding: 20px 5px 20px 40px;border-radius: 30px 30px 30px 30px; font-size: 10px">
+                                        <input type="PasswordInput" id="confirmEntréemdp" name="confirmEntréemdp"><button>S'inscrire</button>
                                     </td>
                                 </table>
                             </td>
