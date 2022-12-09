@@ -1,144 +1,143 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 
 * {
-    font-family: "Noto Sans", sans-serif;
+	font-family: "Noto Sans", sans-serif;
 }
 
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 footer {
-    margin-top: auto;
+	margin-top: auto;
 }
 
 .ligne1 {
-    margin-left: 1.5%;
-    margin-right: 1.5%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    padding: 1.5%;
-    border-radius: 10px;
-    width: 97%;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
+	margin-left: 1.5%;
+	margin-right: 1.5%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	padding: 1.5%;
+	border-radius: 10px;
+	width: 97%;
+	height: 300px;
+	display: flex;
+	flex-direction: column;
 }
 
 .ligne2 {
-    margin-left: 1.5%;
-    margin-right: 1.5%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    padding: 1.5%;
-    border-radius: 10px;
-    width: 97%;
-    height: 800px;
-    display: flex;
-    flex-direction: column;
-    white-space: nowrap;
+	margin-left: 1.5%;
+	margin-right: 1.5%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	padding: 1.5%;
+	border-radius: 10px;
+	width: 97%;
+	height: 800px;
+	display: flex;
+	flex-direction: column;
+	white-space: nowrap;
 }
 
 .fb_lignes {
-    display: flex;
-    flex-direction: column;
-    margin-top: 90px;
-    overflow-y: none;
-    overflow-x: none;
+	display: flex;
+	flex-direction: column;
+	margin-top: 90px;
+	overflow-y: none;
+	overflow-x: none;
 }
 .fb_stations {
-    display: flex;
-    flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 .fb_station_ct {
-    width: 250px;
-    text-align: center;
+	width: 250px;
+	text-align: center;
 }
 
 .fb_fb {
-    overflow-x: auto;
+	overflow-x: auto;
 }
 
-.vert_line_fb{
-    display:flex;
+.vert_line_fb {
+	display: flex;
 }
 
-@media screen and (max-width: 1300px) {
-    .ligne1 {
-        overflow: none;
-        overflow-x: none;
-        height: auto;
-        width: 90%;
+@media screen and (max-width: 900px) {
+	.ligne1 {
+		overflow: none;
+		overflow-x: none;
+		height: auto;
+		width: 90%;
 
-        flex-direction: row;
-    }
-    .hz_line {
-        display: none;
-    }
-    .vert_line {
-        display: block;
-    }
-    .fb_lignes {
-        flex-direction: row;
-        height: 88%;
-    }
-    .fb_stations {
-        height: fit-content;
-        margin-top: 40px;
-        flex-direction: column;
-    }
-    .fb_station_ct {
-        height: 125px;
-        text-align: left;
-    }
-    .vert_line_fb{
-        overflow-y: auto;
-    }
-    
+		flex-direction: row;
+	}
+	.hz_line {
+		display: none;
+	}
+	.vert_line {
+		display: block;
+	}
+	.fb_lignes {
+		flex-direction: row;
+		height: 88%;
+	}
+	.fb_stations {
+		height: fit-content;
+		margin-top: 40px;
+		flex-direction: column;
+	}
+	.fb_station_ct {
+		height: 125px;
+		text-align: left;
+	}
+	.vert_line_fb {
+		overflow-y: auto;
+	}
 }
 
-@media screen and (min-width: 1301px) {
-    .ligne1 {
-        white-space: nowrap;
-        overflow-x: auto;
-        overflow-y: hidden;
-        height: 200px;
-    }
-    .hz_line {
-        width: fit-content;
-        height: 50px;
-        display: block;
-    }
-    .vert_line {
-        display: none;
-    }
-    .fb_stations {
-        width: fit-content;
-    }
+@media screen and (min-width: 901px) {
+	.ligne1 {
+		white-space: nowrap;
+		overflow-x: auto;
+		overflow-y: hidden;
+		height: 200px;
+	}
+	.hz_line {
+		width: fit-content;
+		height: 50px;
+		display: block;
+	}
+	.vert_line {
+		display: none;
+	}
+	.fb_stations {
+		width: fit-content;
+	}
 }
 
 /* width */
 ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+	width: 6px;
+	height: 6px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #f1f1f100;
-    border-radius: 10px;
-    border: solid 10px transparent;
+	background: #f1f1f100;
+	border-radius: 10px;
+	border: solid 10px transparent;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
+	background: #888;
+	border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+	background: #555;
 }
