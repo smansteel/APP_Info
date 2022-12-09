@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="with=device-wdith, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style_v2.css">
+    <link rel="stylesheet" href="style_v2 copy 2.css">
     <link rel="stylesheet" href="app_v2.js">
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -71,7 +71,7 @@
                 </div>
             </div>
             <div class="curve">
-                <img src="images/wave-haikei (8).svg">
+                <img src="images/wave-haikei (12).svg">
             </div>
 
         </div>
@@ -112,7 +112,9 @@
             </div>
         </div>
     </div>
-
+    <div class="curve">
+        <img src="images/wave-haikei (13).svg">
+    </div>
     <div class="forme">
         <div class="capteurs reveal-1">
             <strong>Les différents capteurs :</strong>
@@ -160,7 +162,7 @@
         </main>
     </div>
     <div class="curve">
-        <img src="images/wave-haikei (7).svg">
+        <img src="images/wave-haikei (14).svg">
     </div>
 
     <div id="blocprincipal">

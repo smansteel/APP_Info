@@ -7,9 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="with=device-wdith, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style_v2.css">
+    <link rel="stylesheet" href="style_v2 copy.css">
     <link rel="stylesheet" href="app_v2.js">
-    <link rel="shortcut icon" type="image/png" href="images/AirQ_compact.png" />
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <title>Accueil - AirQ</title>
@@ -72,7 +71,7 @@
                 </div>
             </div>
             <div class="curve">
-                <img src="images/wave-haikei (8).svg">
+                <img src="images/wave-haikei (11).svg">
             </div>
 
         </div>
@@ -112,6 +111,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="curve">
+        <img src="images/wave-haikei (10).svg">
     </div>
 
     <div class="forme">
@@ -161,7 +163,7 @@
         </main>
     </div>
     <div class="curve">
-        <img src="images/wave-haikei (7).svg">
+        <img src="images/wave-haikei (9).svg">
     </div>
 
     <div id="blocprincipal">
@@ -176,10 +178,7 @@
                             de nos capteurs, vous pouvez vous inscrire à notre
                             newsletter pour être informé de la date de sortie. </p>
                 </div>
-                <form action="recup_email.php" method="post">
-                    <input type="text" id="email" name="email" />
-                    <input type="submit" value="S'inscrire" />
-                </form>
+                <input type="PasswordInput" id="newsletter" name="confirmEntréemdp" class="reveal-2"><button class="reveal-2">S'inscrire</button>
             </div>
         </div>
     </div>
