@@ -1,6 +1,4 @@
 <link rel="stylesheet" href="header_footer.css">
-<script src="app_v2.js"></script>
-
 
 <body>
 
@@ -21,5 +19,7 @@
             </ul>
         </nav>
     </header>
+
+    <script src="app_v2.js" defer></script>
 
 </body>
