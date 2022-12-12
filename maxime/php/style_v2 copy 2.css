@@ -194,7 +194,7 @@ nav {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    background-color: #779CAB;
+    background-color: #CCD5FF;
 }
 
 
@@ -209,7 +209,7 @@ main {
     font-family: 'Nunito Sans', sans-serif;
     width: 100%;
 
-    background-color: #779CAB;
+    background-color: #CCD5FF;
 }
 
 .box {
@@ -391,7 +391,7 @@ section {
     font-weight: 300;
     line-height: 1;
     text-align: left;
-    background-color: #A2E8DD;
+    background-color: #7CC6FE;
 
 
 }
@@ -490,7 +490,7 @@ section {
 
 #bloc1 {
     min-height: 500px;
-    background: linear-gradient(white, #32DE8A);
+    background: linear-gradient(white, #23C9FF);
 }
 
 #bloc11 {
@@ -541,7 +541,7 @@ section {
     line-height: 1;
     color: #212529;
     text-align: left;
-    background: linear-gradient(#35524A, white);
+    background: linear-gradient(#E7BBE3, white);
 }
 
 #blocnews2 {
@@ -747,7 +747,7 @@ section {
         line-height: 1;
         color: #212529;
         text-align: left;
-        background-color: #A2E8DD;
+        background-color: #7CC6FE;
 
     }
 

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="with=device-wdith, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style_v2 copy.css">
+    <link rel="stylesheet" href="style_v2 copy 3.css">
     <link rel="stylesheet" href="app_v2.js">
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -68,16 +68,18 @@
 
                         </div>
                     </div>
+
                 </div>
+
             </div>
             <div class="curve">
-                <img src="images/wave-haikei (11).svg">
+                <img src="images/wave-haikei (15).svg">
             </div>
 
         </div>
 
-    </div>
 
+    </div>
     <div id="blocp11">
         <div id="bloc11">
             <div id="container">
@@ -113,9 +115,8 @@
         </div>
     </div>
     <div class="curve">
-        <img src="images/wave-haikei (10).svg">
+        <img src="images/wave-haikei (16).svg">
     </div>
-
     <div class="forme">
         <div class="capteurs reveal-1">
             <strong>Les différents capteurs :</strong>
@@ -163,7 +164,7 @@
         </main>
     </div>
     <div class="curve">
-        <img src="images/wave-haikei (9).svg">
+        <img src="images/wave-haikei (17).svg">
     </div>
 
     <div id="blocprincipal">
