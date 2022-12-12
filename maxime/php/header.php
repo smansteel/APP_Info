@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="header_footer.css">
-<script src="app_v2.js"></script>
 
 
 <body>
