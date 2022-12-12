@@ -20,6 +20,6 @@
         </nav>
     </header>
 
-    <script src="/app_v2.js" defer></script>
+    <script src="app_v2.js" defer></script>
 
 </body>
