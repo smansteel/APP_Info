@@ -21,4 +21,9 @@
         </nav>
     </header>
 
+<<<<<<< HEAD
+=======
+    <script src="/app_v2.js" defer></script>
+
+>>>>>>> parent of 3fbc984 (Revert "test sur les media queries")
 </body>
