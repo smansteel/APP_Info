@@ -1,4 +1,6 @@
 
+// Menu version mobile
+
 let toggle = document.querySelector('.toggle');
 let body = document.querySelector('body');
 
@@ -6,7 +8,7 @@ toggle.addEventListener('click', function () {
     body.classList.toggle('open');
 })
 
-
+// Slider
 
 let img_slider = document.getElementsByClassName('img_slider');
 
