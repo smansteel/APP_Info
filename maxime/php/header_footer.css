@@ -1,13 +1,5 @@
 /* Header */
 
-.header-fb {
-	width: 100%;
-	padding: 1vh 1vh 1vh 1vh;
-	height: 8 0px;
-	flex-direction: row;
-	background-color: white;
-}
-
 .header {
 	font-family: "Nunito Sans", sans-serif;
 	position: fixed;
@@ -16,9 +8,8 @@
 	top: 0;
 	left: 0;
 	background: #fff;
-	padding: 0 1vh;
+	padding: 1vw;
 	font-size: 16px;
-	width: 100%;
 }
 
 nav {
@@ -27,7 +18,7 @@ nav {
 	justify-content: space-between;
 	align-items: center;
 	width: 98vw;
-	padding: 0 1vh;
+	padding: 1vw;
 }
 
 .logo-header {
