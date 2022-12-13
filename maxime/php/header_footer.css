@@ -16,7 +16,7 @@
 	top: 0;
 	left: 0;
 	background: #fff;
-	padding: 0 2rem;
+	padding: 1vh 2rem;
 	font-size: 16px;
 	width: 100%;
 }
@@ -26,7 +26,7 @@ nav {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	width: 95vw;
+	width: 98vw;
 }
 
 .logo-header {
