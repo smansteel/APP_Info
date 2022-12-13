@@ -26,6 +26,10 @@ footer {
 	height: 140px;
 	display: flex;
 	flex-direction: column;
+	white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+	height: 200px;
 }
 
 .ligne2 {
@@ -52,6 +56,7 @@ footer {
 .fb_stations {
 	display: flex;
 	flex-direction: row;
+	width: fit-content;
 }
 .fb_station_ct {
 	width: 250px;
@@ -64,6 +69,15 @@ footer {
 
 .vert_line_fb {
 	display: flex;
+}
+
+.hz_line {
+	width: fit-content;
+	height: 50px;
+	display: block;
+}
+.vert_line {
+	display: none;
 }
 
 @media screen and (max-width: 900px) {
@@ -96,26 +110,6 @@ footer {
 	}
 	.vert_line_fb {
 		overflow-y: auto;
-	}
-}
-
-@media screen and (min-width: 901px) {
-	.ligne1 {
-		white-space: nowrap;
-		overflow-x: auto;
-		overflow-y: hidden;
-		height: 200px;
-	}
-	.hz_line {
-		width: fit-content;
-		height: 50px;
-		display: block;
-	}
-	.vert_line {
-		display: none;
-	}
-	.fb_stations {
-		width: fit-content;
 	}
 }
 
