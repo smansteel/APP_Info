@@ -3,10 +3,10 @@
 
 <body>
 
-    <header class="anticonflict">
+    <header>
         <nav>
             <div class="logo">
-                <a href="/accueil_v2.php"><img src="sources/air_Q_full_turquoise_v3.svg"></a>
+                <a href="/"><img src="sources/air_Q_full_turquoise_v3.svg"></a>
             </div>
             <div class="toggle">
                 <i class="fa-solid fa-bars ouvrir"></i>
