@@ -1,8 +1,6 @@
 <link rel="stylesheet" href="header_footer.css">
 
-<body>
-
-    <footer class = "anticonflict">
+    <footer>
 
         <div class="contenu-footer">
             <div class="bloc footer-services">
@@ -25,4 +23,3 @@
             </div>
         </div>
     </footer>
-</body>
