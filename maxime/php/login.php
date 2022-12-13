@@ -1,11 +1,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="login.css">
-<?php
-include("header.php")
-?>
 
 <body>
+  <div class="fb-page">
+  <?php
+include("header.php")
+?>
 
   <div class="box">
 
@@ -64,10 +65,8 @@ include("header.php")
     </div>
   </div>
   </div>
-
-
-</body>
 <div class="flex-content" id="footer">
   <?php include("footer.php"); ?>
 </div>
-</div>
+
+</body>
