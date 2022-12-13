@@ -7,9 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="with=device-wdith, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style_v2.css">
+    <link rel="stylesheet" href="style_v2 copy.css">
     <link rel="stylesheet" href="app_v2.js">
-    <link rel="shortcut icon" type="image/png" href="images/AirQ_compact.png" />
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <title>Accueil - AirQ</title>
@@ -17,11 +16,23 @@
 
 
 <body>
-
-    <?php
-    include("header.php")
-    ?>
-
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/air_Q_full_turquoise_v3.svg">
+            </div>
+            <div class="toggle">
+                <i class="fa-solid fa-bars ouvrir"></i>
+                <i class="fa-solid fa-xmark fermer"></i>
+            </div>
+            <ul class="menu">
+                <li><a href="#">A Propos</a></li>
+                <li><a href="#">Données</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><button class="btn">Connexion</button></li>
+            </ul>
+        </nav>
+    </header>
 
 
     <div class="bodyparagraph">
@@ -72,7 +83,10 @@
                 </div>
             </div>
             <div class="curve">
-                <img src="images/wave-haikei (8).svg">
+                <img><svg id="visual" viewBox="0 0 1900 120" width="1900" height="120" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+                    <rect x="0" y="0" width="1900" height="120" fill="white"></rect>
+                    <path d="M0 62L52.8 67.7C105.7 73.3 211.3 84.7 316.8 80.2C422.3 75.7 527.7 55.3 633.2 56C738.7 56.7 844.3 78.3 950 84.2C1055.7 90 1161.3 80 1266.8 77C1372.3 74 1477.7 78 1583.2 67.2C1688.7 56.3 1794.3 30.7 1847.2 17.8L1900 5L1900 121L1847.2 121C1794.3 121 1688.7 121 1583.2 121C1477.7 121 1372.3 121 1266.8 121C1161.3 121 1055.7 121 950 121C844.3 121 738.7 121 633.2 121C527.7 121 422.3 121 316.8 121C211.3 121 105.7 121 52.8 121L0 121Z" fill="#00ffc3" stroke-linecap="round" stroke-linejoin="miter"></path>
+                </svg></img>
             </div>
 
         </div>
@@ -112,6 +126,12 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="curve1">
+        <img><svg id="visual" viewBox="0 0 1900 120" width="1900" height="120" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+            <rect x="0" y="0" width="1900" height="140" fill="#00ffc3"></rect>
+            <path d="M0 62L52.8 67.7C105.7 73.3 211.3 84.7 316.8 80.2C422.3 75.7 527.7 55.3 633.2 56C738.7 56.7 844.3 78.3 950 84.2C1055.7 90 1161.3 80 1266.8 77C1372.3 74 1477.7 78 1583.2 67.2C1688.7 56.3 1794.3 30.7 1847.2 17.8L1900 5L1900 121L1847.2 121C1794.3 121 1688.7 121 1583.2 121C1477.7 121 1372.3 121 1266.8 121C1161.3 121 1055.7 121 950 121C844.3 121 738.7 121 633.2 121C527.7 121 422.3 121 316.8 121C211.3 121 105.7 121 52.8 121L0 121Z" fill="white" stroke-linecap="round" stroke-linejoin="miter"></path>
+        </svg></img>
     </div>
 
     <div class="forme">
@@ -160,9 +180,6 @@
 
         </main>
     </div>
-    <div class="curve">
-        <img src="images/wave-haikei (7).svg">
-    </div>
 
     <div id="blocprincipal">
         <div id="blocnews">
@@ -176,10 +193,7 @@
                             de nos capteurs, vous pouvez vous inscrire à notre
                             newsletter pour être informé de la date de sortie. </p>
                 </div>
-                <form action="recup_email.php" method="post">
-                    <input type="text" id="email" name="email" />
-                    <input type="submit" value="S'inscrire" />
-                </form>
+                <input type="PasswordInput" id="newsletter" name="confirmEntréemdp" class="reveal-2"><button class="reveal-2">S'inscrire</button>
             </div>
         </div>
     </div>
