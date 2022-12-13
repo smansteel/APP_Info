@@ -10,7 +10,6 @@ include("header.php")
   <div class="box">
 
     <div class="flex-content" id="content">
-      <div class="background"></div>
       <div class="bg-image">
 
         <img src="sources/captair.png" class="logo">

@@ -16,12 +16,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 82.5vh;
-	background-image: url("sources/blurry_bg.png");
+	background-image: url("sources/blurry_lr.jpg");
 	background-size: cover;
-}
-
-#content {
-	height: 100%;
 }
 
 .bg-image {
