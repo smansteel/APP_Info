@@ -41,6 +41,7 @@ body {
 	background-image: url("sources/background.jpeg");
 	background-repeat: no-repeat;
 	background-size: cover;
+	min-height: 82.5vh;
 }
 
 .menu-faq {
