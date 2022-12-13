@@ -44,7 +44,6 @@ footer {
 .fb_lignes {
 	display: flex;
 	flex-direction: column;
-	margin-top: 90px;
 	overflow-y: none;
 	overflow-x: none;
 }
