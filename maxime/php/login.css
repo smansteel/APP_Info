@@ -7,14 +7,17 @@
 body {
 	font-family: "Noto Sans", sans-serif;
 	background-color: rgb(255, 255, 255);
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
 	/* Fallback color */
-	background-image: url("sources/blurry_bg.png");
 }
 
 .box {
 	display: flex;
 	flex-direction: column;
-	height: 100%;
+	min-height: 82.5vh;
+	background-image: url("sources/blurry_bg.png");
+	background-size: cover;
 }
 
 #content {
