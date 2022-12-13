@@ -21,7 +21,7 @@ footer {
 	margin-bottom: 1vh;
 	padding: 1.5%;
 	border-radius: 10px;
-	width: 97vw;
+	width: 95vw;
 	height: 300px;
 	display: flex;
 	flex-direction: column;
@@ -46,7 +46,7 @@ footer {
 	flex-direction: column;
 	overflow-y: none;
 	overflow-x: none;
-	width: 97vw;
+	width: 100vw;
 }
 .fb_stations {
 	display: flex;
