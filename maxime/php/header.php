@@ -5,7 +5,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-    <header class="header-fb">
+    <header>
         <nav> <a href="/">
                <img class="logo-header" src="sources/air_Q_full_turquoise_v3.svg">
             </a>

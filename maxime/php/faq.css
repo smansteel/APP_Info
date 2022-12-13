@@ -18,9 +18,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: right;
-	background-image: url("sources/background.jpeg");
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
+	min-height: 100vh;
 }
 
 .box-faq {
@@ -39,7 +37,10 @@ body {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	min-width: 100vh;
+
+	background-image: url("sources/background.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .menu-faq {

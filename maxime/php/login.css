@@ -12,10 +12,15 @@ body {
 	/* Fallback color */
 }
 
+.fb-page {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
 .box {
 	display: flex;
 	flex-direction: column;
-	min-height: 82.5vh;
 	background-image: url("sources/blurry_lr.jpg");
 	background-size: cover;
 }
