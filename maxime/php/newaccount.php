@@ -38,20 +38,21 @@
           <div class="form-connect">
             <input type="email" name="email" id="email" class="form_field" placeholder="Adresse email" required autocomplete="off" readonly onfocus="this.removeAttribute('readonly');">
           </div>
-          <div for="Entréemdp">
-             <input type="password" id="Entréemdp" class="form_field" name="Entréemdp" placeholder="Mot de passe:" required>
+          <div for="Entreemdp">
+             <input type="password" id="Entreemdp" class="form_field" name="Entreemdp" placeholder="Mot de passe:" required>
           </div>
 
-          <div for="confirmEntréemdp">
-            <input type="password" id="confirmEntréemdp" class="form_field" name="confirmEntréemdp" placeholder="Confirmer le mot de passe:" required>
+          <div for="confirmEntreemdp">
+            <input type="password" id="confirmEntreemdp" class="form_field" name="confirmEntreemdp" placeholder="Confirmer le mot de passe:" required>
           </div>
-
+          <div style="margin:auto">
           <div class="alertbox">
-          <p class="limited-size" id="PasswordInputStrength">
+          <p id="PasswordInputStrength">
           </p>
-          <p class="limited-size" id="PasswordInputStrengthText">
+          <p id="PasswordInputStrengthText">
           </p>
           </div>
+        </div>
 
 
             <input type="submit" value="S'enregistrer" class="submit_button">
@@ -68,10 +69,11 @@
       <script>
         $(document).ready(function() {
 
-          $('#Entréemdp, #confirmEntréemdp').on('keyup', function(e) {
+          $('#Entreemdp, #confirmEntreemdp').on('keyup', function(e) {
 
-            if ($('#Entréemdp').val() != '' && $('#confirmEntréemdp').val() != '' && $('#Entréemdp').val() != $('#confirmEntréemdp').val()) {
-              $('#PasswordInputStrength').removeClass().addClass('alert alert-error').html('Les mots de passe ne correspondent pas');
+            if ($('#Entreemdp').val() != '' && $('#confirmEntreemdp').val() != '' && $('#Entreemdp').val() != $('#confirmEntreemdp').val()) {
+              $('#PasswordInputStrengthText').removeClass().addClass('alert').html('Les mots de passe ne correspondent pas');
+              $('#PasswordInputStrength').removeClass().addClass('alert').html('');
 
               return false;
             }

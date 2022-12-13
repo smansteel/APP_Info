@@ -13,15 +13,15 @@ if (isset($_SESSION["prenom"])) {
 }
 
 ?>
+        <link rel="stylesheet" href="login.css">
+        <?php
+include("header.php")
+?>
 
 <body>
     <div class="box">
-        <div class="flex-content">
-            <?php include("header.php"); ?>
-        </div>
-        <link rel="stylesheet" href="login.css">
 
-        <div class="background"></div>
+
         <div class="bg-image">
 
             <img src="sources/captair.png" class="logo">
