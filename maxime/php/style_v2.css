@@ -94,6 +94,7 @@ nav {
 
     .ouvrir {
         display: block;
+        width: 100vw;
     }
 
     .fermer {
@@ -541,7 +542,6 @@ section {
     line-height: 1;
     color: #212529;
     text-align: left;
-    background: linear-gradient(#0A0082, white);
 }
 
 #blocnews2 {
