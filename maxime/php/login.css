@@ -23,7 +23,7 @@ body {
 	flex-direction: column;
 	background-image: url("sources/blurry_lr.jpg");
 	background-size: cover;
-	height: 82.5%;
+	height: 87vh;
 }
 
 .bg-image {
