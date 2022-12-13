@@ -8,7 +8,6 @@
 	top: 0;
 	left: 0;
 	background: #fff;
-	padding: 1vw;
 	font-size: 16px;
 }
 
@@ -18,7 +17,7 @@ nav {
 	justify-content: space-between;
 	align-items: center;
 	width: 98vw;
-	padding: 1vw;
+	padding: 1vh 1vw;
 }
 
 .logo-header {
