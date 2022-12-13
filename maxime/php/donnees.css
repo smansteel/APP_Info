@@ -46,6 +46,7 @@ footer {
 	flex-direction: column;
 	overflow-y: none;
 	overflow-x: none;
+	width: 100vh;
 }
 .fb_stations {
 	display: flex;
