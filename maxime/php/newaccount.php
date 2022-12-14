@@ -1,6 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="newacc.css">
-<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
 
 <body>
   <div class="box">
@@ -39,23 +39,23 @@
             <input type="email" name="email" id="email" class="form_field" placeholder="Adresse email" required autocomplete="off" readonly onfocus="this.removeAttribute('readonly');">
           </div>
           <div for="Entreemdp">
-             <input type="password" id="Entreemdp" class="form_field" name="Entreemdp" placeholder="Mot de passe:" required>
+            <input type="password" id="Entreemdp" class="form_field" name="Entreemdp" placeholder="Mot de passe:" required>
           </div>
 
           <div for="confirmEntreemdp">
             <input type="password" id="confirmEntreemdp" class="form_field" name="confirmEntreemdp" placeholder="Confirmer le mot de passe:" required>
           </div>
           <div style="margin:auto">
-          <div class="alertbox">
-          <p id="PasswordInputStrength">
-          </p>
-          <p id="PasswordInputStrengthText">
-          </p>
+            <div class="alertbox">
+              <p id="PasswordInputStrength">
+              </p>
+              <p id="PasswordInputStrengthText">
+              </p>
+            </div>
           </div>
-        </div>
 
 
-            <input type="submit" value="S'enregistrer" class="submit_button">
+          <input type="submit" value="S'enregistrer" class="submit_button">
 
           <br>
         </form>
@@ -101,10 +101,10 @@
               // Si medium PasswordInput correspond au reg ex
               $('#PasswordInputStrength').removeClass().addClass('alert').html('<div class="barre"> <div class="couleur3"></div> </div>');
               $('#PasswordInputStrengthText').removeClass().addClass('alert').html('');
-             
+
             } else {
               // Si le mot depasse est ok
-              
+
               $('#PasswordInputStrengthText').removeClass().addClass('alert').html('Rendez votre mot de passe plus fort en ajoutant des majuscules, des chiffres et des caractères spéciaux !');
               $('#PasswordInputStrength').removeClass().addClass('alert').html('<div class="barre"> <div class="couleur2"></div> </div>');
             }
