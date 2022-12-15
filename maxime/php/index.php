@@ -16,7 +16,7 @@
 
 
 <body>
-<?php include("header.php")?>
+    <?php include("header.php") ?>
 
     <div class="bodyparagraph">
 
@@ -176,13 +176,15 @@
                             de nos capteurs, vous pouvez vous inscrire à notre
                             newsletter pour être informé de la date de sortie. </p>
                 </div>
-                <input type="PasswordInput" id="newsletter" name="confirmEntréemdp" class="reveal-2"><button class="reveal-2">S'inscrire</button>
+                <form action="addnewsletter.php" method="post" class="form">
+                    <input type="email" name="email" id="email" class="form_field" placeholder="Adresse email" required><input type="submit" value="S'inscrire" class="btn">
+                </form>
             </div>
         </div>
     </div>
 
 
 
-    <?php include("footer.php")?>
+    <?php include("footer.php") ?>
     </div>
 </body>
