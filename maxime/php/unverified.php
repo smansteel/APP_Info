@@ -8,26 +8,28 @@
 <html>
 <link rel="stylesheet" href="login.css">
 
+
 <body>
-    <div class="box">
-        <div class="flex-content">
+
+    <div class="fb-page">
             <?php include("header.php"); ?>
-        </div>
 
-        <div class="background"></div>
+        <div class="box">
 
-        <div class="bg-image">
-            <img src="sources/captair.png" class="logo">
-            <div class="text">
-                Un email vous a été envoyé pour confirmer la création de votre compte<br>Nous vous invitons à vérifier votre compte avant de commencer a utiliser nos services<br><br>
+            <div class="bg-image">
+                <img src="sources/captair.png" class="logo">
+                <div class="text">
+                    Un email vous a été envoyé pour confirmer la création de votre compte<br>Nous vous invitons à vérifier votre compte avant de commencer a utiliser nos services<br><br>
+                </div>
+                <br>
+                <a class="newacc" href="/login.php" class="newacc">Se Connecter</a><br>
             </div>
-            <a class="newacc" href="/login.php" class="newacc">Retour</a><br>
+
+                
         </div>
+
+        <?php include("footer.php"); ?>
     </div>
 </body>
-<div class="flex-content" id="footer">
-    <?php include("footer.php"); ?>
-</div>
-
 
 </html>
