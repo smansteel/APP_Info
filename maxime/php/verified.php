@@ -8,7 +8,6 @@
             <?php include("header.php"); ?>
         </div>
 
-        <div class="background"></div>
 
         <div class="bg-image">
             <img src="sources/captair.png" class="logo">
@@ -18,16 +17,11 @@
             <br>
             <a class="newacc" href="/login.php" class="newacc">Se Connecter</a><br>
         </div>
+        <div class="flex-content" id="footer">
+            <?php include("footer.php"); ?>
+        </div>
 
-
-
-        <?php
-        //text
-        ?>
     </div>
 </body>
-<div class="flex-content" id="footer">
-    <?php include("footer.php"); ?>
-</div>
 
 </html>
