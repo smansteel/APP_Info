@@ -18,10 +18,10 @@
                 <a class="newacc" href="/login.php" class="newacc">Se Connecter</a><br>
             </div>
 
-                <?php include("footer.php"); ?>
+                
         </div>
 
-
+        <?php include("footer.php"); ?>
     </div>
 </body>
 
