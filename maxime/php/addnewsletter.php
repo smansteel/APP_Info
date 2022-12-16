@@ -12,6 +12,7 @@ if (isset($_POST["email"])) {
 
     mysqli_stmt_close($stmt);
     header('Location: /');
+    $conn->close();
 } else {
     header('Location: /');
 }
