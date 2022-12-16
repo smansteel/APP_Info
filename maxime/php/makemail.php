@@ -86,8 +86,8 @@ $stringData = '
                         <tr>
                             <td bgcolor="#ffffff" align="left"
                                 style="padding: 20px 30px 20px 30px; color: #666666; font-size: 18px; font-weight: 400; line-height: 25px;">
-                                <p style="margin: 0;"><a  target="_blank" href="' . "https://captair.paris/confirmation.php?token=$token".'"
-                                        style="color: #00C4B3;">' . "https://captair.paris/confirmation.php?token=$token".'</a></p>
+                                <p style="margin: 0;"><a  target="_blank" href="' . "https://www.captair.paris/confirmation.php?token=$token".'"
+                                        style="color: #00C4B3;">' . "https://www.captair.paris/confirmation.php?token=$token".'</a></p>
                             </td>
                         </tr>
                     </table>
