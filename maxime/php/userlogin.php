@@ -33,7 +33,7 @@ if (isset($_POST["email"]) || isset($_POST["password"])) {
         header("Location: /login.php?error=noacc");
     } else {
         if (password_verify($passwd,  $hash)) {
-            if ($verified == 0) {
+            if ($verified == '0') {
                 header("Location: /unverified_logic.php?id=$id");
             } else if ($verified == '1') {
                 session_start();
