@@ -32,7 +32,7 @@ if (isset($_POST["email"])) {
 
 
 
-        $stmt = mysqli_prepare($conn, "INSERT INTO users(email, password, nom, prenom) VALUES (?, ?, ?, ?)");
+        $stmt = mysqli_prepare($conn, "INSERT INTO users(email, password, nom, prenom, verfied) VALUES (?, ?, ?, ?,0)");
 
         mysqli_stmt_bind_param($stmt, "ssss", $mail, $hashed, $nom, $prenom);
 
