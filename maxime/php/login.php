@@ -64,7 +64,6 @@ include("header.php")
       </div>
     </div>
   </div>
-  </div>
 <div class="flex-content" id="footer">
   <?php include("footer.php"); ?>
 </div>
