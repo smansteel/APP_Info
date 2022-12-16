@@ -934,6 +934,7 @@ h2 img {
         margin-bottom: 10%;
         margin-top: 10px;
         font-size: 40%;
+        
     }
 
     #blocnews p {
@@ -974,4 +975,41 @@ h2 img {
         margin-top: 100px;
         margin-left: 120px
     }
+}
+
+.newsbtn{
+        font-family: 'Nunito Sans', sans-serif;
+    margin-left: 1%;
+    padding: 5px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: 0px;
+    background-color: #00C4B3;
+    position: relative;
+    transition: all .2s;
+    overflow: hidden;
+    color: white;
+    border-radius: 30px;
+    height:50px;
+}
+
+.form_field {
+	font-family: "Noto Sans", sans-serif;
+	border: none;
+	color: #77797c;
+	padding: 10px;
+	border-radius: 10px;
+	padding-left: 20px;
+	border-color: white;
+	background-color: #edf2f7;
+	margin-bottom: 10px;
+	height: 50px;
+	width: 350px;
+}
+
+form{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
 }

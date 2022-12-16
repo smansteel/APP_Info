@@ -177,7 +177,8 @@
                             newsletter pour être informé de la date de sortie. </p>
                 </div>
                 <form action="addnewsletter.php" method="post" class="form">
-                    <input type="email" name="email" id="email" class="form_field" placeholder="Adresse email" required><input type="submit" value="S'inscrire" class="btn">
+                        <input type="email" name="email" id="email" class="reveal-2 form_field" placeholder="Adresse email" required><input type="submit" value="S'inscrire" class="reveal-2 newsbtn" >
+
                 </form>
             </div>
         </div>
