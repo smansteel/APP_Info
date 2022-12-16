@@ -170,6 +170,7 @@ nav {
 	flex-direction: row;
 	flex-grow: 1;
 	text-align: center;
+	align-items: center;
 }
 
 .liens a {
