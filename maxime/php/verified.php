@@ -8,7 +8,7 @@
             <?php include("header.php"); ?>
         </div>
 
-
+        <div class="bwate"></div>
         <div class="bg-image">
             <img src="sources/captair.png" class="logo">
             <div class="text">
