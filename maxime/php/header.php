@@ -11,7 +11,7 @@
         <ul class="menu">
             <li><a href="/">A Propos</a></li>
             <li><a href="/donnees.php">Données</a></li>
-            <li><a href="/faq.php">FAQ</a></li>
+            <li><a href="/faq_temp.php">FAQ</a></li>
             <li><button class="btn"><a href="/login.php">Connexion</a></button></li>
         </ul>
         <div class="toggle">

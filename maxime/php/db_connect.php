@@ -13,7 +13,7 @@ function OpenCon()
     //server
     // $dbuser = $_ENV["DB_USERNAME"];
     // $dbpass =  $_ENV["DB_PASSWORD"];
-    $conn = new mysqli($dbhost.":".$dbport, $dbuser, $dbpass, $dbname) or die("Connect failed: %s\n" . $conn->error);
+    $conn = new mysqli($dbhost . ":" . $dbport, $dbuser, $dbpass, $dbname) or die("Connect failed: %s\n" . $conn->error);
 
     return $conn;
 }

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 
 <head>
 
@@ -13,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <title>Accueil - AirQ</title>
 </head>
-
 
 <body>
     <?php include("header.php") ?>
@@ -177,7 +175,7 @@
                             newsletter pour être informé de la date de sortie. </p>
                 </div>
                 <form action="addnewsletter.php" method="post" class="form">
-                        <input type="email" name="email" id="email" class="reveal-2 form_field" placeholder="Adresse email" required><input type="submit" value="S'inscrire" class="reveal-2 newsbtn" >
+                    <input type="email" name="email" id="email" class="reveal-2 form_field" placeholder="Adresse email" required><input type="submit" value="S'inscrire" class="reveal-2 newsbtn">
 
                 </form>
             </div>

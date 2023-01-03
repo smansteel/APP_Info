@@ -1,9 +1,10 @@
 <link rel="stylesheet" href="donnees.css">
 
+
 <body>
+  <?php include("header.php") ?>
   <?php
   require("db_connect.php");
-  include("header.php");
 
   function get_station($ligne)
   {

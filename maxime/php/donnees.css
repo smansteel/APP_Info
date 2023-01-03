@@ -1,15 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 
 * {
-	font-family: "Noto Sans", sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-	min-height: 100vh;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	margin: 0 0 0 0;
-	overflow-x: none;
+	font-family: 'Nunito Sans', sans-serif;
+}
+
+
+header {
+	position: fixed;
+	width: 100%;
+	height: 7vh;
+	top: 0;
+	left: 0;
+	background: #fff;
+	padding: 0 2rem;
+	z-index: 100;
+}
+
+
+nav {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 footer {
@@ -54,11 +76,13 @@ footer {
 	overflow-x: none;
 	width: 100vw;
 }
+
 .fb_stations {
 	display: flex;
 	flex-direction: row;
 	width: fit-content;
 }
+
 .fb_station_ct {
 	width: 250px;
 	text-align: center;
@@ -77,6 +101,7 @@ footer {
 	height: 50px;
 	display: block;
 }
+
 .vert_line {
 	display: none;
 }
@@ -90,25 +115,31 @@ footer {
 
 		flex-direction: row;
 	}
+
 	.hz_line {
 		display: none;
 	}
+
 	.vert_line {
 		display: block;
 	}
+
 	.fb_lignes {
 		flex-direction: row;
 		height: 88%;
 	}
+
 	.fb_stations {
 		height: fit-content;
 		margin-top: 40px;
 		flex-direction: column;
 	}
+
 	.fb_station_ct {
 		height: 125px;
 		text-align: left;
 	}
+
 	.vert_line_fb {
 		overflow-y: auto;
 	}

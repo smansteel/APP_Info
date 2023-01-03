@@ -4,9 +4,7 @@
     box-sizing: border-box;
 }
 
-html {
-    font-size: 16px;
-}
+
 
 body {
     height: 100vh;
@@ -208,7 +206,6 @@ main {
     min-height: 55vh;
     font-family: 'Nunito Sans', sans-serif;
     width: 100%;
-
     background-color: #00ffc3;
 }
 
@@ -934,7 +931,7 @@ h2 img {
         margin-bottom: 10%;
         margin-top: 10px;
         font-size: 40%;
-        
+
     }
 
     #blocnews p {
@@ -977,39 +974,49 @@ h2 img {
     }
 }
 
-.newsbtn{
-        font-family: 'Nunito Sans', sans-serif;
-    margin-left: 1%;
-    padding: 5px 20px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border: 0px;
-    background-color: #00C4B3;
-    position: relative;
-    transition: all .2s;
-    overflow: hidden;
-    color: white;
-    border-radius: 30px;
-    height:50px;
+.newsbtn {
+    margin-left: 20px;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 100px;
+    border: 2px solid #00c4b3;
+    color: #010101;
+    font-weight: 600;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.newsbtn:hover {
+    background-color: #00c4b3;
+    box-shadow: 0 0 20px #81e8df;
+}
+
+.newsbtn:active {
+    background-color: #00c4b3;
+    border: white;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
 }
 
 .form_field {
-	font-family: "Noto Sans", sans-serif;
-	border: none;
-	color: #77797c;
-	padding: 10px;
-	border-radius: 10px;
-	padding-left: 20px;
-	border-color: white;
-	background-color: #edf2f7;
-	margin-bottom: 10px;
-	height: 50px;
-	width: 350px;
+    font-family: "Noto Sans", sans-serif;
+    border: none;
+    color: #77797c;
+    padding: 10px;
+    border-radius: 10px;
+    padding-left: 20px;
+    border-color: white;
+    background-color: #edf2f7;
+    margin-bottom: 10px;
+    height: 50px;
+    width: 350px;
 }
 
-form{
-    display:flex;
+form {
+    display: flex;
     flex-direction: row;
     justify-content: center;
     height: 100%;
+    margin-top: 75px
 }
