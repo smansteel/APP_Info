@@ -50,6 +50,7 @@ if (isset($_POST["email"]) || isset($_POST["password"])) {
             }
         } else {
             header("Location: /login.php?error=badcred");
+            exit();
             //echo "Bah non mauvais mdp ";
             //echo password_hash("1234",1);
         }

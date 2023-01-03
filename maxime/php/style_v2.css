@@ -6,6 +6,7 @@
 
 html {
     font-size: 16px;
+        font-family: 'Nunito Sans', sans-serif;
 }
 
 body {
@@ -94,7 +95,6 @@ nav {
 
     .ouvrir {
         display: block;
-        width: 100vw;
     }
 
     .fermer {
@@ -342,6 +342,22 @@ button {
     border-radius: 30px;
 }
 
+#newsbtn{
+    font-family: 'Nunito Sans', sans-serif;
+    margin-left: 1%;
+    padding: 5px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: 0px;
+    background-color: #00C4B3;
+    position: relative;
+    transition: all .2s;
+    overflow: hidden;
+    color: white;
+    border-radius: 30px;
+}
+
+
 body {
     font-family: 'Nunito Sans', sans-serif;
 }
@@ -542,6 +558,7 @@ section {
     line-height: 1;
     color: #212529;
     text-align: left;
+    background: linear-gradient(#0A0082, white);
 }
 
 #blocnews2 {
@@ -861,110 +878,4 @@ h2 img {
 
 .reveal-3 {
     transition-delay: 0.2s;
-}
-
-/* Media queries pour telephone */
-@media screen and (max-width: 1200px) {
-    .slider {
-        width: 100%;
-        height: 200px;
-
-    }
-
-    .slider img {
-        width: 100%;
-        height: 200px;
-
-    }
-
-
-    #bloc1 p {
-        max-width: 500px;
-        margin-bottom: 0px;
-        font-size: 15px;
-    }
-
-
-    #bloc1 h1 {
-
-        font-size: 30px;
-        color: #000000;
-        max-width: 500px;
-        margin-top: 70px;
-    }
-
-    .zen {
-        width: 0%;
-        height: 0px;
-    }
-
-    .bracelet {
-        width: 40%;
-        height: 40%;
-    }
-
-    .bloc2 h1 {
-        margin-left: 0px;
-        color: black;
-    }
-
-
-
-    #blocnews h1 {
-
-        font-size: 30px;
-        color: #000000;
-        margin-top: 20px;
-        margin-left: 20px;
-    }
-
-    #blocnews input {
-        margin-left: 80px;
-        margin-top: 10px;
-    }
-
-    #blocnews button {
-        margin-bottom: 10%;
-        margin-top: 10px;
-        font-size: 40%;
-    }
-
-    #blocnews p {
-        font-size: 15px;
-        margin-top: 20px;
-    }
-
-    .curve {
-        width: 100%;
-        height: 20%;
-    }
-
-
-}
-
-@media screen and (min-width: 400px) {
-    .bloc2 img {
-        width: 15em;
-        height: 12em;
-        margin-top: 150px;
-
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    .bloc2 img {
-        margin-top: 200px;
-        width: 25em;
-        height: 20em;
-
-    }
-}
-
-@media screen and (min-width: 1400px) {
-    .bloc2 img {
-        width: 30em;
-        height: 25em;
-        margin-top: 100px;
-        margin-left: 120px
-    }
 }

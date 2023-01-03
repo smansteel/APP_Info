@@ -31,9 +31,40 @@
     }
   }
 
-
-  function get_line_logo($ligne)
+    function get_station_id($ligne)
   {
+    $conn = OpenCon();
+    $rarray = [];
+    $stmt5 = mysqli_prepare($conn, "SELECT id FROM stations WHERE ligne=? ");
+    mysqli_stmt_bind_param($stmt5, "s", $ligne);
+    mysqli_stmt_execute($stmt5);
+    mysqli_stmt_bind_result($stmt5, $id);
+    while (mysqli_stmt_fetch($stmt5)) {
+      array_push($rarray, $id);  
+    }
+    mysqli_stmt_close($stmt5);
+    return $rarray;
+  }
+
+
+
+
+  function get_airq_for_id($station_id)
+  {
+    $conn = OpenCon();
+    $stmt6 = mysqli_prepare($conn, "SELECT airq FROM captair.air_quality WHERE station=? ORDER BY time ASC");
+    mysqli_stmt_bind_param($stmt6, "s", $station_id);
+    mysqli_stmt_execute($stmt6);
+    mysqli_stmt_bind_result($stmt6, $airq);
+    $rarray = $airq;
+    mysqli_stmt_close($stmt6);
+    return $rarray;
+
+    
+  }
+
+
+  function get_line_logo($ligne){
     $conn = OpenCon();
     $stmt4 = mysqli_prepare($conn, "SELECT lien_logo, hex_color, light_hex FROM metro_line WHERE id=?");
     mysqli_stmt_bind_param($stmt4, "s", $ligne);
@@ -42,9 +73,8 @@
     while (mysqli_stmt_fetch($stmt4)) {
       $rarray = [$logolink, $hex_code, $light_hex];
     }
-    mysqli_stmt_close($stmt4);
-    return $rarray;
-  }
+    }
+   
 
   function make_svg_V2($colors)
   {
@@ -408,6 +438,7 @@
     $colors = ["green", "red", "yellow"];
     $sta_colors = [];
     $ligne = get_station($line);
+    $ligne_id = get_station_id($line);
     $stations = $ligne[0];
     $hasy = $ligne[1];
     if (!$hasy) {
