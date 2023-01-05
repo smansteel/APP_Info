@@ -1,25 +1,24 @@
 <link rel="stylesheet" href="header_footer.css">
 
-    <footer>
+<div class="footer">
+    <div class="contenu-footer">
+        <div class="bloc footer-services">
+            <h4>&copy; 2022 AirQ</h4>
+        </div>
 
-        <div class="contenu-footer">
+        <div class="liens">
             <div class="bloc footer-services">
-                <h4>&copy; 2022 AirQ</h4>
+                <a href="#">Nous contacter</a>
             </div>
-
-            <div class="liens">
-                <div class="bloc footer-services">
-                    <a href="#">Nous contacter</a>
-                </div>
-                <div class="bloc footer-services">
-                    <a href="#">Mentions légales</a>
-                </div>
-                <div class="bloc footer-services">
-                    <a href="#">CGU</a>
-                </div>
-                <div class="bloc footer-services">
-                    <a href="#">Politique de confidentialité</a>
-                </div>
+            <div class="bloc footer-services">
+                <a href="#">Mentions légales</a>
+            </div>
+            <div class="bloc footer-services">
+                <a href="#">CGU</a>
+            </div>
+            <div class="bloc footer-services">
+                <a href="#">Politique de confidentialité</a>
             </div>
         </div>
-    </footer>
+    </div>
+</div>

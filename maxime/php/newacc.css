@@ -1,6 +1,17 @@
 body {
-	font-family: "Noto Sans", sans-serif;
-	font-size: 12px;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Nunito Sans', sans-serif;
+	height: 100vh;
+	background-image: url("sources/blurry_lr.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 menu {
@@ -18,7 +29,21 @@ menu {
 	padding-bottom: 10px;
 }
 
-.form-connect {
+p {
+	font-size: 80%;
+	margin-top: 10px
+}
+
+.enregistrement {
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+}
+
+.fb-page {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 input {
@@ -70,7 +95,7 @@ input {
 	height: 100%;
 	background-color: rgb(255, 255, 255);
 	/* Fallback color */
-	background-image: url("sources/blurry_bg.png");
+	background-image: url("sources/blurry_lr.jpg");
 	background-size: cover;
 }
 
@@ -100,7 +125,7 @@ input {
 	text-align: center;
 	width: fit-content;
 	border-radius: 10px;
-	border: none;
+	border: 3px solid #f1f1f1;
 	background-color: #ffffff;
 }
 
@@ -149,6 +174,7 @@ body {
 	display: flex;
 	flex-direction: column;
 }
+
 .alertbox {
 	display: flex;
 	flex-direction: column;

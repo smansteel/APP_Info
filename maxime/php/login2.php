@@ -11,10 +11,30 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <title>Accueil - AirQ</title>
+
+
 </head>
 
 <body>
-    <?php include("header.php") ?>
+
+    <header>
+        <nav> <a href="/">
+                <img class="logo-header" src="sources/air_Q_full_turquoise_v3.svg">
+            </a>
+
+            <ul class="menu">
+                <li><a href="/">A Propos</a></li>
+                <li><a href="/donnees.php">Données</a></li>
+                <li><a href="/faq_temp.php">FAQ</a></li>
+                <li><button class="btn"><a href="/login.php">Connexion</a></button></li>
+            </ul>
+            <div class="toggle">
+                <i class="fa-solid fa-bars ouvrir"></i>
+                <i class="fa-solid fa-xmark fermer"></i>
+            </div>
+        </nav>
+
+    </header>
 
     <div class="bodyparagraph">
 
@@ -32,6 +52,7 @@
             <div class="precedent"><i class="fa-solid fa-circle-chevron-left"></i>
             </div>
         </div>
+
         <script src="app_v2.js" defer></script>
 
         <div classe="blocp ">

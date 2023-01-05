@@ -3,12 +3,10 @@
 <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
 
 <body>
+  <?php include("header.php"); ?>
   <div class="box">
-    <div class="flex-content">
-      <?php include("header.php"); ?>
-    </div>
+
     <div class="flex-content" id="content">
-      <div class="background"></div>
 
       <div class="bg-image">
 
@@ -54,10 +52,10 @@
             </div>
           </div>
 
+          <div class="enregistrement">
+            <input type="submit" value="S'enregistrer" class="submit_button">
+          </div>
 
-          <input type="submit" value="S'enregistrer" class="submit_button">
-
-          <br>
         </form>
         <a class="newacc" href="/login.php" class="newacc">Retour</a><br>
 
@@ -117,8 +115,7 @@
 
 
     </div>
-    <div class="flex-content" id="footer">
-      <?php include("footer.php"); ?>
-    </div>
+
+    <?php include("footer.php"); ?>
   </div>
 </body>
