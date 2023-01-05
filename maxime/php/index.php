@@ -32,6 +32,7 @@
             <div class="precedent"><i class="fa-solid fa-circle-chevron-left"></i>
             </div>
         </div>
+
         <script src="app_v2.js" defer></script>
 
         <div classe="blocp ">

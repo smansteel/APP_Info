@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
 <link rel="stylesheet" href="faq.css">
+<link rel="stylesheet" href="app_v2.js">
 
 <body>
   <?php

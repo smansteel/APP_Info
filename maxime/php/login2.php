@@ -6,35 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="with=device-wdith, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style_v2 copy.css">
+    <link rel="stylesheet" href="login2.css">
     <link rel="stylesheet" href="app_v2.js">
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <title>Accueil - AirQ</title>
-
-
 </head>
 
 <body>
-
-    <header>
-        <nav> <a href="/">
-                <img class="logo-header" src="sources/air_Q_full_turquoise_v3.svg">
-            </a>
-
-            <ul class="menu">
-                <li><a href="/">A Propos</a></li>
-                <li><a href="/donnees.php">Données</a></li>
-                <li><a href="/faq_temp.php">FAQ</a></li>
-                <li><button class="btn"><a href="/login.php">Connexion</a></button></li>
-            </ul>
-            <div class="toggle">
-                <i class="fa-solid fa-bars ouvrir"></i>
-                <i class="fa-solid fa-xmark fermer"></i>
-            </div>
-        </nav>
-
-    </header>
+    <?php include("header.php") ?>
 
     <div class="bodyparagraph">
 
@@ -52,7 +32,6 @@
             <div class="precedent"><i class="fa-solid fa-circle-chevron-left"></i>
             </div>
         </div>
-
         <script src="app_v2.js" defer></script>
 
         <div classe="blocp ">

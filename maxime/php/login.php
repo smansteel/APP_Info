@@ -1,10 +1,18 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
 
-<link rel="stylesheet" href="login.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="with=device-wdith, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="app_v2.js">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <title>Accueil - AirQ</title>
+</head>
+
 
 <body>
   <?php include("header.php") ?>
-
   <div class="box">
 
     <div class="flex-content" id="content">
@@ -13,7 +21,6 @@
         <img src="sources/captair.png" class="logo">
 
         <div class="error">
-
           <?php
           if (isset($_GET["error"])) {
             if ($_GET["error"] == "noacc") {
@@ -64,5 +71,23 @@
   <div class="flex-content" id="footer">
     <?php include("footer.php"); ?>
   </div>
-
 </body>
+<script>
+  window.onload = function() {
+    window.addEventListener('scroll', function(e) {
+      if (window.pageYOffset > 100) {
+        document.querySelector("header").classList.add('is-scrolling');
+      } else {
+        document.querySelector("header").classList.remove('is-scrolling');
+      }
+    });
+
+    const menu_btn = document.querySelector('.toggle');
+    const mobile_menu = document.querySelector('.mobile-nav');
+
+    menu_btn.addEventListener('click', function() {
+      menu_btn.classList.toggle('is-active');
+      mobile_menu.classList.toggle('is-active');
+    });
+  }
+</script>

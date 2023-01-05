@@ -20,9 +20,6 @@ body {
 	background-position: center;
 }
 
-
-
-
 /* Fallback color */
 
 
@@ -266,16 +263,6 @@ body {
 
 
 
-
-body {
-	display: flex;
-	flex-direction: column;
-	font-family: 'Nunito Sans', sans-serif;
-	height: 100vh;
-	background-image: url("sources/blurry_lr.jpg");
-	background-size: cover;
-	background-position: center;
-}
 
 .fb-page {
 	display: flex;
