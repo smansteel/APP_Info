@@ -28,6 +28,6 @@
 <nav class="mobile-nav">
     <li><a href="/">A Propos</a></li>
     <li><a href="/donnees.php">Données</a></li>
-    <li><a href="/faq_temp.php">FAQ</a></li>
+    <li><a href="/faq.php">FAQ</a></li>
     <li><a href="/login.php">Connexion</a></li>
 </nav>

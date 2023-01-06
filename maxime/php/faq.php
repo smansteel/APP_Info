@@ -1,168 +1,113 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
+<!DOCTYPE html>
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="with=device-wdith, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
+  <link rel="stylesheet" href="faq.css">
+  <link rel="stylesheet" href="app_v2.js">
+  <title>Accueil - AirQ</title>
+</head>
 
 
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
-<link rel="stylesheet" href="style.css">
+<body>
+  <?php
+  include("header.php")
+  ?>
+  <?php
+  require "db_connect.php";
+  ?>
+  <div class="flex-faq">
+    <img class="img-faq" src="sources/bonhomme faq 2.png">
+    <div class="total">
+      <div class="box-faq">
+        <div class="flex-content-faq">
+          <div class="menu-faq">
+            <?php
+            $conn = OpenCon();
+            $faq_list = [];
+            //fetch from db if an account with this email exists
+            $stmt4 = mysqli_prepare($conn, "SELECT * FROM faq");
+            mysqli_stmt_execute($stmt4);
+            mysqli_stmt_bind_result($stmt4, $id, $titre, $contenu);
+            while (mysqli_stmt_fetch($stmt4)) {
+              $push_array = [];
+              array_push($push_array, $id, $titre, $contenu);
+              //echo $id." ". $titre." ". $contenu;
 
-
-<img src="sources/bonhomme faq 2.png">
-
-
-
-
-<div class="menu">
-
-    <li class="menu-item" id="Question1">
-        <a class="menu-item-header">
-            Comment jumeler sa montre avec son compte ?
-        </a>
-        <div class="menu-item-sub">
-            <a>
-                Il est très simple de synchroniser la montre à votre compte, un code vous sera fourni lors de l'acquisition de la montre. Il suffira d'aller votre compte et mettre ce code pour jumeler les deux ensemble. </a>
-        </div>
-    </li>
-    <li class="menu-item" id="Question2">
-        <a class="menu-item-header">
-            Le délai de préparation et d’envoi des commandes ?
-        </a>
-        <div class="menu-item-sub">
-            <a>
-                Dès la commande valider, la montre partira en fabrication. Compter une à deux semaines pour la réception de votre commande. </a>
-        </div>
-    </li>
-    <li class="menu-item" id="Question3">
-        <a class="menu-item-header">
-            Question 3
-        </a>
-        <div class="menu-item-sub">
-            <a>Lorem ipsum dolor sit amet. Nobis quae sit corrupti beatae a voluptatem alias.</a>
-        </div>
-    </li>
-    <li class="menu-item" id="Question4">
-        <a class="menu-item-header">
-            Question 4
-        </a>
-        <div class="menu-item-sub">
-            <a>Lorem ipsum dolor sit amet. Nobis quae sit corrupti beatae a voluptatem alias.</a>
-        </div>
-    </li>
-    <li><a href="index.php">Retour à l'accueil</a></li>
-</div>
-
-
-<style>
-    :root {
-        --blue: #00ffc3;
-        --white: #00ffc3;
-        --black: #000000;
-        --grey: #888888;
-
-
-    }
-
-    .menu {
-        margin-right: 150px;
-        margin-left: 250px;
-    }
-
-
-    .menu-item {
-
-        margin: 5;
-        padding: 0;
-        font-size: 1.2em;
-        box-sizing: border-box;
-        font-family: 'Nunito Sans', sans-serif;
-        list-style: none;
-        overflow: hidden;
-
-    }
-
-
-    body {
-        display: flex;
-        align-items: center;
-        justify-content: right;
-        background-image: url("sources/background.jpeg");
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-
-    }
-
-
-
-    .menu-item-header {
-        display: block;
-        padding: 1rem 2.2rem;
-        background: white;
-        color: black;
-        position: relative;
-        border-radius: 10px;
-
-
-    }
-
-    .menu-item-sub {
-        background: var(--white);
-        overflow: hidden;
-        transition: max-height 0.3s;
-        max-height: 0;
-        border-radius: 10px;
-
-    }
-
-
-
-    .accordion-item-header::after {
-        content: "\002B";
-        font-size: 2rem;
-        position: absolute;
-        right: 1rem;
-    }
-
-    .accordion-item-header.active::after {
-        content: "\2212";
-    }
-
-
-    .menu-item-sub a {
-        display: block;
-        padding: 1rem 1.6rem;
-        color: black;
-        font-size: 0.9rem;
-        position: relative;
-        border-bottom: 1px solid var(--light-grey);
-        font-size: 1em;
-
-    }
-
-    .menu-item:target .menu-item-sub {
-        max-height: 10em;
-
-    }
-
-    img {
-        width: 400px;
-        height: 400px;
-        margin-right: auto;
-    }
-</style>
-
-<script>
-    const menuItemHeaders = document.querySelectorAll(".menu-item-header");
-
-    menuItemHeaders.forEach(menuItemHeader => {
-        menuItemHeader.addEventListener("click", event => {
-
-            menuItemHeader.classList.toggle("active");
-            const menuItemBody = menuItemHeader.nextElementSibling;
-            if (menuItemHeader.classList.contains("active")) {
-                menuItemBody.style.maxHeight = menuItemBody.scrollHeight + "px";
-            } else {
-                menuItemBody.style.maxHeight = 0;
+              //var_dump($push_array);
+              array_push($faq_list,  $push_array);
             }
 
-        });
+            mysqli_stmt_close($stmt4);
+
+            //var_dump($faq_list);
+            $lencol = sizeof($faq_list) - 1;
+            for ($x = 0; $x <= $lencol; $x++) {
+            ?>
+
+              <div class="menu-item-faq">
+                <div class="menu-item-header-faq">
+                  <?php
+                  echo $faq_list[$x][1];
+                  ?>
+                </div>
+                <div class="menu-item-body-faq">
+                  <div class="menu-item-body-content-faq">
+                    <?php
+                    echo $faq_list[$x][2];
+                    ?>
+                  </div>
+                </div>
+
+              </div>
+            <?php
+            } ?>
+            <script>
+              const menuItemHeaders = document.querySelectorAll(".menu-item-header-faq");
+
+              menuItemHeaders.forEach(menuItemHeader => {
+                menuItemHeader.addEventListener("click", event => {
+
+                  menuItemHeader.classList.toggle("active");
+                  const menuItemBody = menuItemHeader.nextElementSibling;
+                  if (menuItemHeader.classList.contains("active")) {
+                    menuItemBody.style.maxHeight = menuItemBody.scrollHeight + "px";
+                  } else {
+                    menuItemBody.style.maxHeight = 0;
+                  }
+
+                });
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><?php
+        include "footer.php";
+        ?>
+</body>
+<script>
+  window.onload = function() {
+    window.addEventListener('scroll', function(e) {
+      if (window.pageYOffset > 100) {
+        document.querySelector("header").classList.add('is-scrolling');
+      } else {
+        document.querySelector("header").classList.remove('is-scrolling');
+      }
     });
+
+    const menu_btn = document.querySelector('.toggle');
+    const mobile_menu = document.querySelector('.mobile-nav');
+
+    menu_btn.addEventListener('click', function() {
+      menu_btn.classList.toggle('is-active');
+      mobile_menu.classList.toggle('is-active');
+    });
+  }
 </script>
