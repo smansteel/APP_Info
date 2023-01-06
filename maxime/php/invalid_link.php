@@ -15,17 +15,22 @@
 </head>
 
 <body>
-    <?php include("header.php"); ?>
-    <div class="flex-content" id="content">
-        <div class="bg-image">
-            <img src="sources/captair.png" class="logo">
-            <div class="text">
-                Le lien de vérification a expiré<br> Nous vous invitons à réessayer la procédure ou à nous contacter a l'adresse mail : <a href="mailto:contact@captair.paris">contact@captair.paris</a>
+    <?php include("header.php") ?>
+    <div class="box">
+        <div class="flex-content" id="content">
+            <div class="bg-image">
+                <img src="sources/captair.png" class="logo">
+                <div class="text">
+                    Le lien de vérification a expiré<br> Nous vous invitons à réessayer la procédure ou à nous contacter a l'adresse mail : <a href="mailto:contact@captair.paris">contact@captair.paris</a>
+                </div>
+                <br>
+                <a class="newacc" href="/login.php" class="newacc">Se Connecter</a><br>
             </div>
-            <br>
-            <a class="newacc" href="/login.php" class="newacc">Se Connecter</a><br>
+
         </div>
 
+    </div>
+    <div class="flex-content" id="footer">
         <?php include("footer.php"); ?>
     </div>
 
