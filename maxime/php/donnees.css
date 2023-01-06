@@ -1,170 +1,157 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	font-family: 'Nunito Sans', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Nunito Sans", sans-serif;
 }
-
-
-header {
-	position: fixed;
-	width: 100%;
-	height: 7vh;
-	top: 0;
-	left: 0;
-	background: #fff;
-	padding: 0 2rem;
-	z-index: 100;
-}
-
 
 nav {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-footer {
-	margin-top: auto;
+.fb-page {
+    min-height: 100vh;
+    display: flex;
 }
-
 .ligne1 {
-	margin-left: 1.5vw;
-	margin-right: 1.5vw;
-	margin-top: 1vh;
-	margin-bottom: 1vh;
-	padding: 1.5%;
-	border-radius: 10px;
-	width: 94vw;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    padding: 1.5%;
+    border-radius: 10px;
+    width: 94vw;
 
-	display: flex;
-	flex-direction: column;
-	white-space: nowrap;
-	overflow-x: auto;
-	overflow-y: hidden;
-	height: 175px;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 175px;
 }
 
 .ligne2 {
-	margin-left: 1.5%;
-	margin-right: 1.5%;
-	margin-top: 1%;
-	margin-bottom: 1%;
-	padding: 1.5%;
-	border-radius: 10px;
-	width: 97%;
-	height: 800px;
-	display: flex;
-	flex-direction: column;
-	white-space: nowrap;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 1.5%;
+    border-radius: 10px;
+    width: 97%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
 }
 
 .fb_lignes {
-	display: flex;
-	flex-direction: column;
-	overflow-y: none;
-	overflow-x: none;
-	width: 100vw;
+    display: flex;
+    flex-direction: column;
+    overflow-y: none;
+    overflow-x: none;
+    width: 100vw;
 }
 
 .fb_stations {
-	display: flex;
-	flex-direction: row;
-	width: fit-content;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
 }
 
 .fb_station_ct {
-	width: 250px;
-	text-align: center;
+    width: 250px;
+    text-align: center;
 }
 
 .fb_fb {
-	overflow-x: auto;
+    overflow-x: auto;
 }
 
 .vert_line_fb {
-	display: flex;
+    display: flex;
 }
 
 .hz_line {
-	width: fit-content;
-	height: 50px;
-	display: block;
+    width: fit-content;
+    height: 50px;
+    display: block;
 }
 
 .vert_line {
-	display: none;
+    display: none;
 }
 
 @media screen and (max-width: 900px) {
-	.ligne1 {
-		overflow: none;
-		overflow-x: none;
-		height: auto;
-		width: 250px;
+    .ligne1 {
+        overflow: none;
+        overflow-x: none;
+        height: auto;
+        width: 250px;
 
-		flex-direction: row;
-	}
+        flex-direction: row;
+    }
 
-	.hz_line {
-		display: none;
-	}
+    .hz_line {
+        display: none;
+    }
 
-	.vert_line {
-		display: block;
-	}
+    .vert_line {
+        display: block;
+    }
 
-	.fb_lignes {
-		flex-direction: row;
-		height: 88%;
-	}
+    .fb_lignes {
+        flex-direction: row;
+        height: 88%;
+    }
 
-	.fb_stations {
-		height: fit-content;
-		margin-top: 40px;
-		flex-direction: column;
-	}
+    .fb_stations {
+        height: fit-content;
+        margin-top: 40px;
+        flex-direction: column;
+    }
 
-	.fb_station_ct {
-		height: 125px;
-		text-align: left;
-	}
+    .fb_station_ct {
+        height: 125px;
+        text-align: left;
+    }
 
-	.vert_line_fb {
-		overflow-y: auto;
-	}
+    .vert_line_fb {
+        overflow-y: auto;
+    }
 }
 
 /* width */
 ::-webkit-scrollbar {
-	width: 6px;
-	height: 6px;
+    width: 6px;
+    height: 6px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-	background: #f1f1f100;
-	border-radius: 10px;
-	border: solid 10px transparent;
+    background: #f1f1f100;
+    border-radius: 10px;
+    border: solid 10px transparent;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	background: #888;
-	border-radius: 10px;
+    background: #888;
+    border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-	background: #555;
+    background: #555;
 }

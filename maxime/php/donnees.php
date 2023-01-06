@@ -2,6 +2,7 @@
 
 
 <body>
+
   <?php include("header.php") ?>
   <?php
   require("db_connect.php");
@@ -32,16 +33,16 @@
     }
   }
 
-  function get_station_id($ligne)
+  function get_station_id($station_name)
   {
     $conn = OpenCon();
     $rarray = [];
-    $stmt5 = mysqli_prepare($conn, "SELECT id FROM stations WHERE ligne=? ");
-    mysqli_stmt_bind_param($stmt5, "s", $ligne);
+    $stmt5 = mysqli_prepare($conn, "SELECT id FROM stations WHERE nom=? ");
+    mysqli_stmt_bind_param($stmt5, "s", $station_name);
     mysqli_stmt_execute($stmt5);
     mysqli_stmt_bind_result($stmt5, $id);
     while (mysqli_stmt_fetch($stmt5)) {
-      array_push($rarray, $id);
+      $rarray = $id;
     }
     mysqli_stmt_close($stmt5);
     return $rarray;
@@ -53,19 +54,25 @@
   function get_airq_for_id($station_id)
   {
     $conn = OpenCon();
-    $stmt6 = mysqli_prepare($conn, "SELECT airq FROM captair.air_quality WHERE station=? ORDER BY time ASC");
-    mysqli_stmt_bind_param($stmt6, "s", $station_id);
+    $rarray = [];
+    $stmt6 = mysqli_prepare($conn, "SELECT airq FROM air_quality WHERE station=? ORDER BY time DESC LIMIT 1");
+    mysqli_stmt_bind_param($stmt6, "i", $station_id);
     mysqli_stmt_execute($stmt6);
     mysqli_stmt_bind_result($stmt6, $airq);
-    $rarray = $airq;
+    while (mysqli_stmt_fetch($stmt6)) {
+      array_push($rarray, $airq);
+    }
     mysqli_stmt_close($stmt6);
-    return $rarray;
+
+    $robject = end($rarray);
+    return $robject;
   }
 
 
   function get_line_logo($ligne)
   {
     $conn = OpenCon();
+
     $stmt4 = mysqli_prepare($conn, "SELECT lien_logo, hex_color, light_hex FROM metro_line WHERE id=?");
     mysqli_stmt_bind_param($stmt4, "s", $ligne);
     mysqli_stmt_execute($stmt4);
@@ -73,6 +80,7 @@
     while (mysqli_stmt_fetch($stmt4)) {
       $rarray = [$logolink, $hex_code, $light_hex];
     }
+    return $rarray;
   }
 
 
@@ -435,10 +443,20 @@
   ?>
 
     <?php
-    $colors = ["green", "red", "yellow"];
     $sta_colors = [];
     $ligne = get_station($line);
-    $ligne_id = get_station_id($line);
+    //var_dump($ligne);
+    $lensta = sizeof($ligne[0]) - 1;
+    $sta_airq = [];
+    //var_dump($ligne);
+    for ($x = 0; $x <= $lensta; $x++) {
+      //echo $ligne[0][$x] . " ";
+      $id_sta = get_station_id($ligne[0][$x]);
+      //echo $id_sta . " ";
+      array_push($sta_airq, get_airq_for_id($id_sta));
+      //var_dump($id_sta);
+    }
+    //var_dump($sta_airq);
     $stations = $ligne[0];
     $hasy = $ligne[1];
     if (!$hasy) {
@@ -447,10 +465,9 @@
         <div><img src="<?php echo $logo ?>" height="30"></div><br>
 
         <?php
-        $lensta = sizeof($stations) - 1;
-        for ($x = 0; $x <= $lensta; $x++) {
-          array_push($sta_colors, $colors[array_rand($colors)]);
-        } ?>
+        $sta_colors = $sta_airq;
+        //var_dump($sta_airq);
+        ?>
 
 
         <div class="hz_line">
@@ -542,4 +559,5 @@
         include("footer.php")
         ?>
       </footer>
+      </div>
 </body>
