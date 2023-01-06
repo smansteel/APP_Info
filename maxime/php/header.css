@@ -81,11 +81,11 @@ header .logo-header:hover {
 }
 
 @media (max-width: 800px) {
-    header .menu {
+    .header .menu {
         display: none;
     }
 
-    header .toggle {
+    .header .toggle {
         display: block;
     }
 }
