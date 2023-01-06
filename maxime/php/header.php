@@ -21,14 +21,13 @@
         </ul>
         <button class="toggle ">
             <div class="bar"></div>
-            <button>
-                </div>
-            </button>
+            </div>
+
     </nav>
 </header>
 <nav class="mobile-nav">
     <li><a href="/">A Propos</a></li>
     <li><a href="/donnees.php">Données</a></li>
     <li><a href="/faq_temp.php">FAQ</a></li>
-    <li><button class="btn"><a href="/login.php">Connexion</a></button></li>
+    <li><a href="/login.php">Connexion</a></li>
 </nav>

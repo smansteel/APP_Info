@@ -13,8 +13,8 @@ if (isset($_SESSION["prenom"])) {
 }
 
 ?>
-        <link rel="stylesheet" href="login.css">
-        <?php
+<link rel="stylesheet" href="login.css">
+<?php
 include("header.php")
 ?>
 
@@ -62,3 +62,22 @@ include("header.php")
         <?php include("footer.php"); ?>
     </div>
 </body>
+<script>
+    window.onload = function() {
+        window.addEventListener('scroll', function(e) {
+            if (window.pageYOffset > 100) {
+                document.querySelector("header").classList.add('is-scrolling');
+            } else {
+                document.querySelector("header").classList.remove('is-scrolling');
+            }
+        });
+
+        const menu_btn = document.querySelector('.toggle');
+        const mobile_menu = document.querySelector('.mobile-nav');
+
+        menu_btn.addEventListener('click', function() {
+            menu_btn.classList.toggle('is-active');
+            mobile_menu.classList.toggle('is-active');
+        });
+    }
+</script>

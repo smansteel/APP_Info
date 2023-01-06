@@ -7,6 +7,10 @@ header {
     max-height: 70px;
 }
 
+li {
+    list-style-type: none;
+}
+
 header .logo-header {
     height: 40px;
     margin: 0;
@@ -33,7 +37,7 @@ header .menu a:hover {
     text-decoration: underline;
 }
 
-.btn {
+.menu .btn {
     padding: 10px 20px;
     border: 0;
     border-radius: 100px;
@@ -41,8 +45,9 @@ header .menu a:hover {
     color: #ffffff;
     font-weight: 600;
     transition: all 0.5s;
-
 }
+
+
 
 .btn:hover {
     background-color: #00c4b3;
@@ -135,8 +140,8 @@ header .logo-header:hover {
     min-height: 100vh;
     display: block;
     z-index: 98;
-    background-color: grey;
-    padding-top: 120px;
+    background-color: #00C4B3;
+    padding-top: 130px;
     transition: 0.4s;
 }
 
@@ -151,13 +156,14 @@ header .logo-header:hover {
     margin: 0 auto 16px;
     text-align: center;
     padding: 12px 16px;
-    background-color: black;
-    color: #FFF;
+    background-color: #fff;
+    color: black;
     text-decoration: none;
+    border-radius: 50px;
 }
 
 .mobile-nav a:hover {
-    background-color: black;
+    background-color: fff;
 }
 
 @media (min-width: 801px) {
