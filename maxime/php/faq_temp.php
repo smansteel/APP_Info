@@ -49,6 +49,7 @@
             $lencol = sizeof($faq_list) - 1;
             for ($x = 0; $x <= $lencol; $x++) {
             ?>
+
               <div class="menu-item-faq">
                 <div class="menu-item-header-faq">
                   <?php
@@ -62,11 +63,12 @@
                     ?>
                   </div>
                 </div>
+
               </div>
             <?php
             } ?>
             <script>
-              const menuItemHeaders = document.querySelectorAll(".menu-item-header");
+              const menuItemHeaders = document.querySelectorAll(".menu-item-header-faq");
 
               menuItemHeaders.forEach(menuItemHeader => {
                 menuItemHeader.addEventListener("click", event => {
