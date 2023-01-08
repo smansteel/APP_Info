@@ -1,21 +1,34 @@
-<link rel="stylesheet" href="header2.css">
-<!-- Font Awesome logos -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .newsletter {
+            display: flex;
+            align-items: center;
+        }
+
+        .newsletter h2 {
+            margin: 0;
+        }
+
+        .newsletter form {
+            margin-left: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="newsletter">
+        <h2>Inscrivez-vous à notre newsletter</h2>
+        <p>Si vous souhaitez bénéficier dès à présent des avancées technologiques de nos capteurs, vous pouvez vous inscrire à notre newsletter pour être informé de la date de sortie.</p>
+        <form action="addnewsletter.php" method="post" class="form">
+            <input type="email" name="email" id="email" class="form_field" placeholder="Adresse email" required>
+            <input type="submit" value="S'inscrire" class="newsbtn">
+        </form>
+    </div>
+
+</body>
 
 
-<header>
-    <nav> <a href="/">
-            <img class="logo-header" src="sources/air_Q_full_turquoise_v3.svg">
-        </a>
-        <div class="menu">
-            <li><a href="/">A Propos</a></li>
-            <li><a href="/donnees.php">Données</a></li>
-            <li><a href="/faq_temp.php">FAQ</a></li>
-            <li><button class="btn"><a href="/login.php">Connexion</a></button></li>
-
-    </nav>
-    <button class="hamburger">
-        <div class="bar"></div>
-        </div>
-
-</header>
+</html>

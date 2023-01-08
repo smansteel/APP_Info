@@ -80,7 +80,9 @@ li {
 }
 
 .header .logo-header:hover {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+    height: 42px;
+    box-shadow: -5px 5px 10px #81e8df;
+    border-radius: 50px;
 }
 
 @media (max-width: 800px) {
