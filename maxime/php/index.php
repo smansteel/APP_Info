@@ -128,9 +128,9 @@
         <div class="fondblanc">
             <h1>espace</h1>
             <div class="newsletter">
-                <h2>Inscrivez-vous à notre newsletter</h2>
-                <p>Si vous souhaitez bénéficier dès à présent des avancées technologiques de nos capteurs, vous pouvez vous inscrire à notre newsletter pour être informé de la date de sortie.</p>
-                <form action="addnewsletter.php" method="post" class="form">
+                <h2 class="reveal-1">Inscrivez-vous à notre newsletter</h2>
+                <p class="reveal-2">Si vous souhaitez bénéficier dès à présent des avancées technologiques de nos capteurs, vous pouvez vous inscrire à notre newsletter pour être informé de la date de sortie.</p>
+                <form class="reveal-3" action="addnewsletter.php" method="post" class="form">
                     <input type="email" name="email" id="email" class="form_field" placeholder="Adresse email" required>
                     <input type="submit" value="S'inscrire" class="newsbtn">
                 </form>
