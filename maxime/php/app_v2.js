@@ -63,7 +63,7 @@ document.querySelectorAll('[class*="reveal-"]').forEach(function (r) {
     observer.observe(r)
 })
 
-
+// pour le menu hamburger
 const menu_btn = document.querySelector('.toggle');
 const mobile_menu = document.querySelector('.mobile-nav');
 
@@ -72,3 +72,5 @@ menu_btn.addEventListener('click', function () {
     mobile_menu.classList.toggle('is-active');
     document.body.style.overflow = mobile_menu.classList.contains('is-active') ? 'hidden' : 'auto';
 });
+
+
