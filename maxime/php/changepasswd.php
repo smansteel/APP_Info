@@ -3,8 +3,11 @@ session_start();
 include "mailsend.php";
 include "db_connect.php";
 $conn = OpenCon();
+    echo "test";
+    echo $_POST["email"];
 
 if (isset($_POST["email"])) {
+    echo "email";
     $mail = $_POST["email"];
 
     $stmt4 = mysqli_prepare($conn, "SELECT id FROM users WHERE email=?");
