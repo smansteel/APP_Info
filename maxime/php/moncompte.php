@@ -1,15 +1,20 @@
-<link rel="stylesheet" href="login.css">
+<link rel="stylesheet" href="moncompte.css">
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+
+<body>
+   <div class="header-box">
+            <?php include("header.php"); ?>
+</div>
 <?php
-session_start();
 if (!isset($_SESSION["prenom"])) {
    header("Location: /login.php");
 }
 ?>
 
-<body>Bienvenue <?php
+   Bienvenue <?php
                   echo $_SESSION["prenom"] ?>, dans cette rubrique vous pouvez, modifier les paramètres de votre comptes et gérer votre capteur.
    <div class="changeinfos">
       <div class="flex-name">
@@ -39,7 +44,27 @@ if (!isset($_SESSION["prenom"])) {
          </form>
       </div>
    </div>
+
+
+        <div style="margin: 35px;  margin-left:80px;">
+        <p>Mon capteur :</p>     
+        </div>
+            <div style="margin: 15px; margin-left:140px;">
+                <p>Derni&egravere synchronisation du capetur depuis l&rsquo;appli mobile : &nbsp&nbsp&nbsp&nbsp&nbsp  Hier &agrave 13h37</p>
+                <p>D&eacutesactiver les capteurs &agrave la prochaine connexion :</p>
+            </div>
+            <div>
+                  <button class="button button2">activer</button>
+            </div>
+
+        <div style="margin: 30px;  margin-left:80px;">         
+        <p>Contacter l&rsquo;&eacutequipe Captair :</p>
+        </div>
+        <div style="margin: 15px; margin-left:140px;">
+          <p>Pour toute requ&ecirc;te concernant l&rsquo;application web ou le capteur nous vous invitons &agrave nous contacter par mail &agrave l&rsquo;adresse suivante : support@captair.paris</p>  
+        </div>
    <a href=/logout.php>Logout ?<a>
+      <?php include("footer.php"); ?>
 </body>
 
 

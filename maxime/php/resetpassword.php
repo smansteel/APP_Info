@@ -3,7 +3,12 @@
 // add method to collect passwd and confirmation and send the form (POST) to changepasswd.php
 
 
-session_start();
+
+
+?>
+<link rel="stylesheet" href="login.css">
+<?php
+include("header.php");
 if (isset($_SESSION["prenom"])) {
     echo "<script type = 'text/javascript'>";
     echo "alert('Vous êtes connecté a un compte, vous ne pouvez par réinitialiser votre mot de passe, vous allez être redirigé sur votre page mon compte');  ";
@@ -11,11 +16,6 @@ if (isset($_SESSION["prenom"])) {
     echo "</script>  ";
     //header("Location: /moncompte.php");
 }
-
-?>
-<link rel="stylesheet" href="login.css">
-<?php
-include("header.php")
 ?>
 
 <body>

@@ -14,9 +14,21 @@
             <li><a href="/donnees.php">Données</a></li>
             <li><a href="/faq.php">FAQ</a></li>
             <li>
-                <button class="btn">
+
+            <?php
+                session_start();
+                if (isset($_SESSION["prenom"])) {
+                    ?>                <button class="btn">
+                    <a href="/moncompte.php">Mon Compte</a>
+                </button><?php
+                }
+                else{
+                    ?>                <button class="btn">
                     <a href="/login.php">Connexion</a>
-                </button>
+                </button><?php
+                }
+                ?>
+
             </li>
         </ul>
         <button class="toggle ">

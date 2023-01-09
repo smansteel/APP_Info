@@ -30,7 +30,6 @@
               echo 'Bad credentials reset you password <a href="/resetpassword.php">here</a>';
             }
           }
-          session_start();
           if (isset($_SESSION["id"])) {
             header("Location: /moncompte.php");
           } ?>
