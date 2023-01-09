@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>z
+<html>
 
 <head>
 
@@ -8,17 +8,18 @@
   <meta name="viewport" content="with=device-wdith, initial-scale=1.0">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
   <link rel="stylesheet" href="faq3.css">
-  <link rel="stylesheet" href="app_v2.js">
+
+
   <title>FAQ</title>
 </head>
 
 
 
 <body>
-
+  <?php include("header.php") ?>
   <?php
 
-  include("header.php");
+
   require "db_connect.php";
 
   $faq_list = [];
@@ -72,7 +73,6 @@
       mobile_menu.classList.toggle('is-active');
     });
   }
-
 
   const questions = document.querySelectorAll('.question');
   questions.forEach(question => {
