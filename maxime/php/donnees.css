@@ -129,7 +129,7 @@ nav {
     }
 
     .vert_line_fb {
-        overflow-y: auto;
+        overflow: hidden;
     }
 
     .fb_fb {

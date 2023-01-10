@@ -63,12 +63,11 @@ body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    background-color: #005e92;
+    background-color: #00c4b3;
 }
 
 .forme h5 {
-    margin-top: 20px;
-    font-size: 30%;
+    font-size: 50%;
     font-weight: normal;
     right: 0
 }
@@ -84,7 +83,7 @@ main {
     min-height: 55vh;
     font-family: 'Nunito Sans', sans-serif;
     width: 100%;
-    background-color: #005e92;
+    background-color: #00c4b3;
 }
 
 .box {
@@ -144,7 +143,7 @@ main {
 
 .box:before,
 .box:after {
-    background-color: #005e92;
+    background-color: #00c4b3;
     border-radius: 30px;
 }
 
@@ -492,10 +491,10 @@ section {
     .left {
         width: 50%;
         text-align: center;
-        background-color: #005e92;
+        background-color: #006e92;
         color: white;
         padding: 20px;
-        border-radius: 15%;
+        border-radius: 115px;
         margin-top: 30px;
         margin-right: 10px;
         margin-left: 10px;
@@ -512,8 +511,8 @@ section {
         margin-top: 10%;
         width: 50%;
         text-align: center;
-        background-color: #b2ffff;
-        color: black;
+        background-color: #006e92;
+        color: white;
         padding: 20px;
         border-radius: 20%;
         margin-right: 10px;
