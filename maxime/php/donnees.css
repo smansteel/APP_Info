@@ -25,21 +25,18 @@ nav {
     min-height: 100vh;
     display: flex;
 }
+
 .ligne1 {
     margin-left: 1.5vw;
     margin-right: 1.5vw;
     margin-top: 1vh;
     margin-bottom: 1vh;
-    padding: 1.5%;
+    padding: 0.5%;
     border-radius: 10px;
-    width: 94vw;
 
-    display: flex;
-    flex-direction: column;
-    white-space: nowrap;
+
     overflow-x: auto;
     overflow-y: hidden;
-    height: 175px;
 }
 
 .ligne2 {
@@ -47,7 +44,7 @@ nav {
     margin-right: 1.5%;
     margin-top: 1%;
     margin-bottom: 1%;
-    padding: 1.5%;
+    padding: 0.5%;
     border-radius: 10px;
     width: 97%;
     height: 800px;
@@ -61,7 +58,7 @@ nav {
     flex-direction: column;
     overflow-y: none;
     overflow-x: none;
-    width: 100vw;
+    width: auto;
 }
 
 .fb_stations {
@@ -93,14 +90,16 @@ nav {
     display: none;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 600px) {
     .ligne1 {
         overflow: none;
         overflow-x: none;
+        overflow-y: auto;
         height: auto;
-        width: 250px;
+        width: fit-content;
 
         flex-direction: row;
+
     }
 
     .hz_line {
@@ -109,10 +108,12 @@ nav {
 
     .vert_line {
         display: block;
+        width: fit-content;
     }
 
     .fb_lignes {
         flex-direction: row;
+        width: fit-content;
         height: 88%;
     }
 
@@ -129,6 +130,33 @@ nav {
 
     .vert_line_fb {
         overflow-y: auto;
+    }
+
+    .fb_fb {
+        width: fit-content;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .ligne1 {
+        white-space: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        height: 200px;
+    }
+
+    .hz_line {
+        width: fit-content;
+        height: 50px;
+        display: block;
+    }
+
+    .vert_line {
+        display: none;
+    }
+
+    .fb_stations {
+        width: fit-content;
     }
 }
 
