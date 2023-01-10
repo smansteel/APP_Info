@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="with=device-wdith, initial-scale=1.0">
     <link rel="stylesheet" href="../css/login.css">
-    <link rel="stylesheet" href="app_v2.js">
+    <link rel="stylesheet" href="../js/app_v2.js">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 </head>
