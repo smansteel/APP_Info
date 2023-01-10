@@ -4,7 +4,7 @@
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html>
-<link rel="stylesheet" href="login.css">
+<link rel="stylesheet" href="../css/login.css">
 
 <body>
     <div class="box">
@@ -23,10 +23,10 @@
         </div>
 
 
-        </div>
-            <div class="flex-content" id="footer">
-            <?php include("footer.php"); ?>
-        </div>
+    </div>
+    <div class="flex-content" id="footer">
+        <?php include("footer.php"); ?>
+    </div>
 
 
 </body>

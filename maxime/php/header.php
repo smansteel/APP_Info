@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="../css/header.css">
 <!-- Font Awesome logos -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="app_v2.js">
@@ -15,19 +15,18 @@
             <li><a href="/faq.php">FAQ</a></li>
             <li>
 
-            <?php
+                <?php
                 session_start();
                 if (isset($_SESSION["prenom"])) {
-                    ?>                <button class="btn">
-                    <a href="/moncompte.php">Mon Compte</a>
-                </button><?php
-                }
-                else{
-                    ?>                <button class="btn">
-                    <a href="/login.php">Connexion</a>
-                </button><?php
-                }
-                ?>
+                ?> <button class="btn">
+                        <a href="/moncompte.php">Mon Compte</a>
+                    </button><?php
+                            } else {
+                                ?> <button class="btn">
+                        <a href="/login.php">Connexion</a>
+                    </button><?php
+                            }
+                                ?>
 
             </li>
         </ul>

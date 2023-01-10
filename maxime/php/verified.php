@@ -1,11 +1,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html>
-<link rel="stylesheet" href="login.css">
+<link rel="stylesheet" href="../css/login.css">
 
 <body>
 
     <div class="fb-page">
-            <?php include("header.php"); ?>
+        <?php include("header.php"); ?>
 
         <div class="box">
 
@@ -18,7 +18,7 @@
                 <a class="newacc" href="/login.php" class="newacc">Se Connecter</a><br>
             </div>
 
-                
+
         </div>
 
         <?php include("footer.php"); ?>

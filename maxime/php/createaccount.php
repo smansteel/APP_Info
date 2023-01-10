@@ -1,6 +1,4 @@
 <?php
-$password = "test";
-$mail = "potate@captair.paris";
 
 include "db_connect.php";
 $conn = OpenCon();

@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="with=device-wdith, initial-scale=1.0">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
-  <link rel="stylesheet" href="faq3.css">
+  <link rel="stylesheet" href="../css/faq3.css">
 
 
   <title>FAQ</title>

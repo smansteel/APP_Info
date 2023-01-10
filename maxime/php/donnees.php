@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="donnees.css">
+<link rel="stylesheet" href="../css/donnees.css">
 
 
 <body>
@@ -546,10 +546,6 @@
           ?>
         </div>
       </div>
-
-
-
-
 
       </div>
       <span id="insertHere"></span>
