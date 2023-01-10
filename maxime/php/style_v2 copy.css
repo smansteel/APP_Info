@@ -9,21 +9,21 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'Nunito Sans', sans-serif;
-    
+
 }
 
 
 /* Slider */
 
 .slider {
-    height: 300pt;
+    height: 217pt;
     overflow: hidden;
     position: relative;
 }
 
 .slider img {
     object-fit: cover;
-    height: 400pt;
+    height: 255pt;
     width: 100%;
     position: absolute;
     top: 0;
@@ -63,7 +63,7 @@ body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    background-color: #006699;
+    background-color: #005e92;
 }
 
 .forme h5 {
@@ -84,7 +84,7 @@ main {
     min-height: 55vh;
     font-family: 'Nunito Sans', sans-serif;
     width: 100%;
-    background-color: #006699;
+    background-color: #005e92;
 }
 
 .box {
@@ -144,7 +144,7 @@ main {
 
 .box:before,
 .box:after {
-    background-color: #006699;
+    background-color: #005e92;
     border-radius: 30px;
 }
 
@@ -496,6 +496,9 @@ section {
         color: white;
         padding: 20px;
         border-radius: 15%;
+        margin-top: 30px;
+        margin-right: 10px;
+        margin-left: 10px;
     }
 
     .left img {
@@ -513,6 +516,8 @@ section {
         color: black;
         padding: 20px;
         border-radius: 20%;
+        margin-right: 10px;
+        margin-left: 10px;
     }
 
     .right img {
