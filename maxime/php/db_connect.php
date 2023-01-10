@@ -10,9 +10,6 @@ function OpenCon()
     $dbname =  getenv("DB_NAME");
     $dbhost =  getenv("DB_HOST");
 
-    //server
-    // $dbuser = $_ENV["DB_USERNAME"];
-    // $dbpass =  $_ENV["DB_PASSWORD"];
     $conn = new mysqli($dbhost . ":" . $dbport, $dbuser, $dbpass, $dbname) or die("Connect failed: %s\n" . $conn->error);
 
     return $conn;
