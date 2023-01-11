@@ -1,0 +1,121 @@
+:root {
+    --blue1: #0a0082;
+    --blue2: #00c4b3;
+    --blue3: #72ebfe;
+    --blue4: #85fff5;
+    --blue5: #c2fffa;
+    --white: #c2fffa;
+    --black: #000000;
+    --grey: #b4b4b4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.box-faq {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-content-faq {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.flex-faq {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    flex: auto;
+
+    background-image: url("sources/background.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.flex-paj {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.footer {
+    position: bottom;
+}
+
+.menu-faq {
+    margin: 5;
+    font-size: 1.2em;
+    box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+    list-style: none;
+    overflow: hidden;
+}
+
+.menu-item-faq {
+    background-color: white;
+    color: black;
+    margin-top: 10px;
+    border-radius: 0.6rem;
+    width: 100%;
+}
+
+.menu-item-header-faq {
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    min-height: 3rem;
+    line-height: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.menu-item-header-faq::after {
+    content: "	\2B9F";
+    font-size: 1.3rem;
+    position: absolute;
+    right: 1.4rem;
+}
+
+.menu-item-header-faq.active::after {
+    content: "\2B9D";
+}
+
+.menu-item-body-faq {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.menu-item-body-content-faq {
+    padding: 1rem;
+    line-height: 1.5rem;
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+    background-color: var(--blue4);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.img-faq {
+    width: 500px;
+    height: 500px;
+    margin-right: auto;
+}
+
+.flex-content-foo {
+    width: 100vw;
+}
