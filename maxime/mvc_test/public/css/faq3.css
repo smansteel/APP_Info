@@ -2,18 +2,15 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: "Nunito Sans", sans-serif;
 
     overflow: hidden;
-    background-image: url('sources/background.jpeg');
+    background-image: url("../images/background.jpeg");
     background-size: cover;
     margin: 0;
     min-height: 100%;
     position: relative;
-
 }
-
-
 
 .footer2 {
     background-color: #333;
@@ -25,6 +22,10 @@ body {
 }
 
 .faq {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 68vh;
     width: 80%;
     margin: 0 auto;
     font-size: 18px;
@@ -32,22 +33,23 @@ body {
 }
 
 .question-title {
+    display: flex;
     transition: all 0.9s ease-in-out;
     font-weight: bold;
     margin-bottom: 10px;
     cursor: pointer;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .question-title::after {
     content: "	\2B9F";
     font-size: 20px;
-    padding-left: 80%
 }
 
 .question-title.active::after {
     content: "\2B9D";
     font-size: 20px;
-    padding-left: 80%
 }
 
 @media only screen and (max-width: 600px) {
@@ -60,9 +62,10 @@ body {
     }
 }
 
-
 .question {
-    width: 80%;
+    display: flex;
+    flex-direction: column;
+
     background-color: #f1f1f1;
     padding: 20px;
     margin-bottom: 20px;
@@ -72,10 +75,8 @@ body {
 @media (max-width: 600px) {
     .question {
         width: 100%;
-
     }
 }
-
 
 @media only screen and (max-width: 600px) {
     .faq {
@@ -93,6 +94,6 @@ body {
     transition: max-height 0.5s ease-out;
 }
 
-.question-title.active+.answer {
+.question-title.active + .answer {
     max-height: 1000px;
 }

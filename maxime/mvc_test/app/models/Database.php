@@ -39,6 +39,24 @@ class Database
         $this->results = $rarray;
     }
 
+    public function select_etoile($selected_fields, $table)
+    {
+        $stmt = mysqli_prepare($this->db, "SELECT " . implode(", ", $selected_fields) . " FROM $table");
+        mysqli_stmt_execute($stmt);
+        $result = $stmt->get_result();
+        $rows = $result->fetch_all(MYSQLI_ASSOC);
+        $rarray = [];
+        foreach ($rows as $row) {
+            $array = [];
+            foreach ($selected_fields as $field) {
+                array_push($array, $row[$field]);
+            }
+            array_push($rarray, $array);
+        }
+        mysqli_stmt_close($stmt);
+
+        $this->results = $rarray;
+    }
 
     public function ordered_select($selected_fields, $table, $where_column, $where_value, $ordering, $order_column, $limit = -1)
     {
