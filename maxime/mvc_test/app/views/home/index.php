@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 
-<?php $image_folder = "../../../public/images/"?>
-<?php $css = "../../../public/css/"?>
-<?php $js = "../../../public/js/"?>
+<?php $image_folder = "../../../public/images/" ?>
+<?php $css = "../../../public/css/" ?>
+<?php $js = "../../../public/js/";
+$root = "/public";
+?>
+
 <head>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="with=device-wdith, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="<?=$css?>home.css">
-    <link rel="stylesheet" href="<?=$js?>app_v2.js">
+    <link rel="stylesheet" href="<?= $css ?>home.css">
+    <link rel="stylesheet" href="<?= $js ?>app_v2.js">
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <title>Accueil - AirQ</title>
+    <script src="<?= $js ?>ajax_form.js"></script>
 </head>
 
 <body>
-    <?php // include("header.php") ?>
+    <?php // include("header.php") 
+    ?>
 
     <div class="bodyparagraph">
 
         <div class="slider">
-            <img src="<?=$image_folder?>carrousel3.jpg" alt="img1" class="img_slider active">
-            <img src="<?=$image_folder?>carrousel6.jpg" alt="img5" class="img_slider">
-            <img src="<?=$image_folder?>carrousel5.jpg" alt="img5" class="img_slider">
-            <img src="<?=$image_folder?>carrousel8.jpg" alt="img6" class="img_slider">
-            <img src="<?=$image_folder?>carrousel2.jpg" alt="img2" class="img_slider">
-            <img src="<?=$image_folder?>carrousel4.jpg" alt="img4" class="img_slider">
-            <img src="<?=$image_folder?>carrousel10.jpg" alt="img5" class="img_slider">
+            <img src="<?= $image_folder ?>carrousel3.jpg" alt="img1" class="img_slider active">
+            <img src="<?= $image_folder ?>carrousel6.jpg" alt="img5" class="img_slider">
+            <img src="<?= $image_folder ?>carrousel5.jpg" alt="img5" class="img_slider">
+            <img src="<?= $image_folder ?>carrousel8.jpg" alt="img6" class="img_slider">
+            <img src="<?= $image_folder ?>carrousel2.jpg" alt="img2" class="img_slider">
+            <img src="<?= $image_folder ?>carrousel4.jpg" alt="img4" class="img_slider">
+            <img src="<?= $image_folder ?>carrousel10.jpg" alt="img5" class="img_slider">
 
             <div class="suivant"><i class="fa-solid fa-circle-chevron-right"></i>
             </div>
@@ -48,7 +54,7 @@
                 <p class="reveal-3">Les systèmes de freinage du métro sont à l’origine de cette pollution. En effet, à l’approche des stations, les plaquettes de freins et les roues émettent de nombreuses particules (PM10) dans l’atmosphère.</p>
             </div>
             <div class="droite">
-                <img src="<?=$image_folder?>metrobonde.jpg" alt="Metro Bonde">
+                <img src="<?= $image_folder ?>metrobonde.jpg" alt="Metro Bonde">
             </div>
 
 
@@ -61,7 +67,7 @@
             <div class="left">
                 <h1 class="reveal-1">Notre mission :</h1>
                 <p class="reveal-2">Notre mission est de contribuer à améliorer le bien-être des utilisateurs du métro parisien en proposant des solutions concrètes et innovantes pour rendre le voyage plus confortable et agréable.</p>
-                <img src="<?=$image_folder?>zen.jpeg" alt="Image de bien-être">
+                <img src="<?= $image_folder ?>zen.jpeg" alt="Image de bien-être">
             </div>
             <div class="right">
                 <h1 class="reveal-1">Notre solution :</h1>
@@ -69,7 +75,7 @@
                     Le bracelet est conçu pour être porté par les utilisateurs du métro et peut détecter différents paramètres tels que l'affluence la qualité de l'air et le bruit. En utilisant ces données,
                     le bracelet Captair peut aider les utilisateurs à prendre des décisions informées sur leur voyage et à signaler tout problème de qualité. En fournissant ces informations en temps réel,
                     nous espérons contribuer à améliorer la qualité de vie des utilisateurs du métro et à renforcer la réputation de la ville de Paris en tant que destination touristique attractive.</p>
-                <img src="<?=$image_folder?>bracelet.png" alt="Image de bracelet">
+                <img src="<?= $image_folder ?>bracelet.png" alt="Image de bracelet">
             </div>
         </div>
 
@@ -90,7 +96,7 @@
 
                 <div class="box reveal-2">
                     <div class="imgBx">
-                        <img src="<?=$image_folder?>img1.jpg">
+                        <img src="<?= $image_folder ?>img1.jpg">
                     </div>
 
                     <div class="content">
@@ -102,7 +108,7 @@
                 </div>
                 <div class="box reveal-2">
                     <div class="imgBx">
-                        <img src="<?=$image_folder?>img2.jpg">
+                        <img src="<?= $image_folder ?>img2.jpg">
                     </div>
 
                     <div class="content">
@@ -114,7 +120,7 @@
                 </div>
                 <div class="box reveal-2">
                     <div class="imgBx">
-                        <img src="<?=$image_folder?>img3.jpg">
+                        <img src="<?= $image_folder ?>img3.jpg">
                     </div>
 
                     <div class="content">
@@ -133,7 +139,7 @@
             <div class="newsletter">
                 <h2 class="reveal-1">Inscrivez-vous à notre newsletter</h2>
                 <p class="reveal-2">Si vous souhaitez bénéficier dès à présent des avancées technologiques de nos capteurs, vous pouvez vous inscrire à notre newsletter pour être informé de la date de sortie.</p>
-                <form class="reveal-3" action="addnewsletter.php" method="post" class="form">
+                <form class="reveal-3" class="form" action="<?= $root ?>/home/addnewsletter/" method="POST" id="newsletter">
                     <input type="email" name="email" id="email" class="form_field" placeholder="Adresse email" required>
                     <input type="submit" value="S'inscrire" class="newsbtn">
                 </form>
@@ -142,6 +148,7 @@
         </div>
 
 
-        <?php //include("footer.php") ?>
+        <?php //include("footer.php") 
+        ?>
     </div>
 </body>

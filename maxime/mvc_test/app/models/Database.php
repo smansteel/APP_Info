@@ -39,6 +39,16 @@ class Database
         $this->results = $rarray;
     }
 
+
+    public function insert_one($table, $field, $field_value)
+    {
+
+        $stmt = $this->db->prepare("INSERT INTO $table ($field) VALUES (?)");
+        $stmt->bind_param("s", $field_value);
+        $stmt->execute();
+        $stmt->close();
+    }
+
     public function select_etoile($selected_fields, $table)
     {
         $stmt = mysqli_prepare($this->db, "SELECT " . implode(", ", $selected_fields) . " FROM $table");

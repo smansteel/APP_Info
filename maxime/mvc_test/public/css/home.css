@@ -8,10 +8,8 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    font-family: 'Nunito Sans', sans-serif;
-
+    font-family: "Nunito Sans", sans-serif;
 }
-
 
 /* Slider */
 
@@ -29,7 +27,7 @@ body {
     top: 0;
     left: 0;
     opacity: 0;
-    transition: opacity .5s;
+    transition: opacity 0.5s;
 }
 
 .slider img.active {
@@ -69,19 +67,17 @@ body {
 .forme h5 {
     font-size: 50%;
     font-weight: normal;
-    right: 0
+    right: 0;
 }
 
-
 main {
-
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     min-height: 55vh;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: "Nunito Sans", sans-serif;
     width: 100%;
     background-color: #00c4b3;
 }
@@ -94,7 +90,7 @@ main {
     justify-content: center;
     align-items: center;
     margin: 40px;
-    background: #85FFF5;
+    background: #85fff5;
     transition: 0.1s;
     border-radius: 30px;
 }
@@ -120,7 +116,7 @@ main {
 }
 
 .box:before {
-    content: '';
+    content: "";
     position: absolute;
     top: -2px;
     left: -2px;
@@ -130,7 +126,7 @@ main {
 }
 
 .box:after {
-    content: '';
+    content: "";
     position: absolute;
     top: -2px;
     left: -2px;
@@ -138,7 +134,6 @@ main {
     bottom: -2px;
     background: #fff;
     z-index: -1;
-
 }
 
 .box:before,
@@ -193,14 +188,11 @@ main {
     text-align: center;
     margin-top: 30px;
     font-size: 30px;
-
 }
 
 .bracelet {
     width: 30%;
 }
-
-
 
 section {
     grid-column: 2;
@@ -214,14 +206,11 @@ section {
     clear: both;
 }
 
-
-
-@media(min-width : 600px) {
+@media (min-width: 600px) {
     .article {
-        width: 28%
+        width: 28%;
     }
 }
-
 
 /* Alexandre */
 
@@ -232,8 +221,6 @@ section {
     line-height: 1;
     color: white;
     text-align: left;
-
-
 }
 
 #blocp11 {
@@ -243,10 +230,7 @@ section {
     line-height: 1;
     text-align: left;
     background-color: white;
-
-
 }
-
 
 #bloc11 {
     margin: 0;
@@ -256,11 +240,10 @@ section {
     line-height: 1;
     color: white;
     text-align: left;
-
 }
 
 .bloct2 {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
     font-weight: 300;
     line-height: 1.2;
 }
@@ -268,24 +251,15 @@ section {
 .bloc2 h1 {
     margin-left: 150px;
     color: black;
-
 }
 
-
-
-
-
-@media (min-width:768px) {
+@media (min-width: 768px) {
     .bloc2 {
         -ms-flex: 0 0 50%;
         flex: 0 0 50%;
-        max-width: 50%
+        max-width: 50%;
     }
-
 }
-
-
-
 
 #gtco-main-nav {
     padding: 20px 0;
@@ -297,7 +271,6 @@ section {
         height: 390px;
     }
 }
-
 
 #bloc1 {
     min-height: 500px;
@@ -315,7 +288,6 @@ section {
     margin-left: 0;
 }
 
-
 @media (max-width: 1199px) {
     #bloc1 h1 {
         margin-top: 30px;
@@ -332,7 +304,7 @@ section {
     max-width: 450px;
     margin: 20px 0;
     margin-bottom: 4px;
-    color: black
+    color: black;
 }
 
 .bloc2 img {
@@ -341,8 +313,6 @@ section {
     width: 10%;
     height: 10%;
 }
-
-
 
 #blocprincipal {
     margin: 0;
@@ -360,31 +330,24 @@ section {
     line-height: 1.2;
 }
 
-
-@media (min-width:576px) {
+@media (min-width: 576px) {
     #blocnews1 {
-        max-width: 540px
+        max-width: 540px;
     }
-
-
-
 
     #lignenews {
         display: flex;
         margin-right: 10%;
         margin-left: 20%;
-        font-family: 'Nunito Sans', sans-serif;
-
+        font-family: "Nunito Sans", sans-serif;
     }
 
-
-    @media (min-width:768px) {
+    @media (min-width: 768px) {
         #blocnews2 {
             -ms-flex: 0 0 50%;
             flex: 0 0 50%;
-            max-width: 50%
+            max-width: 50%;
         }
-
     }
 
     #blocnews1 p {
@@ -398,13 +361,11 @@ section {
         }
     }
 
-
     #blocnews {
         min-height: 200px;
     }
 
     #blocnews h1 {
-
         font-size: 30px;
         color: #000000;
         max-width: 500px;
@@ -415,7 +376,6 @@ section {
         #blocnews h1 {
             margin-top: 30px;
         }
-
     }
 
     #blocnews input {
@@ -429,11 +389,8 @@ section {
     }
 
     @media (max-width: 100px) {
-
         #blocnews input {
             max-width: 10px;
-
-
         }
 
         #blocnews button {
@@ -451,8 +408,6 @@ section {
     #newsletter {
         font-size: 80%;
     }
-
-
 
     .liens {
         width: 100%;
@@ -479,12 +434,11 @@ section {
         display: inline;
     }
 
-
     #blocimage {
         margin-top: 200px;
         display: flex;
         align-items: flex-start;
-        font-family: 'Nunito Sans', sans-serif;
+        font-family: "Nunito Sans", sans-serif;
         background-color: white;
     }
 
@@ -542,14 +496,8 @@ section {
         hyphens: auto;
     }
 
-
-
-
-
-
-
     .bloc2image {
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
         font-weight: 300;
         line-height: 1.2;
     }
@@ -559,18 +507,15 @@ section {
         padding-right: 15px;
         padding-left: 0%;
         margin-right: auto;
-        margin-left: auto
+        margin-left: auto;
     }
 
-    @media (min-width:576px) {
+    @media (min-width: 576px) {
         #containerimage {
-            max-width: 540px
+            max-width: 540px;
         }
-
-
     }
 }
-
 
 #ligneimage {
     display: -ms-flexbox;
@@ -578,17 +523,15 @@ section {
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: "Nunito Sans", sans-serif;
 }
 
-
-@media (min-width:768px) {
+@media (min-width: 768px) {
     .bloc2image {
         -ms-flex: 0 0 50%;
         flex: 0 0 50%;
-        max-width: 50%
+        max-width: 50%;
     }
-
 }
 
 #containerimage p {
@@ -603,7 +546,6 @@ section {
 }
 
 h1 img {
-
     width: 70%;
     height: 70%;
     border-radius: 45px;
@@ -628,7 +570,6 @@ h2 img {
     width: 100%;
     margin-bottom: -25px;
 }
-
 
 @media (max-width: 800px) {
     #lignenews input {
@@ -665,29 +606,23 @@ h2 img {
     transition-delay: 0.4s;
 }
 
-
-
 /* Media queries pour telephone */
 @media screen and (max-width: 1200px) {
     .slider {
         width: 100%;
         height: 200px;
-
     }
 
     .slider img {
         width: 100%;
         height: 200px;
-
     }
-
 
     #bloc1 p {
         max-width: 500px;
         margin-bottom: 0px;
         font-size: 15px;
     }
-
 
     #bloc1 h1 {
         color: #000000;
@@ -710,10 +645,7 @@ h2 img {
         color: black;
     }
 
-
-
     #blocnews h1 {
-
         font-size: 30px;
         color: #000000;
         margin-top: 20px;
@@ -729,7 +661,6 @@ h2 img {
         margin-bottom: 10%;
         margin-top: 10px;
         font-size: 40%;
-
     }
 
     #blocnews p {
@@ -741,11 +672,7 @@ h2 img {
         width: 100%;
         height: 20%;
     }
-
-
 }
-
-
 
 .newsbtn {
     height: 50px;
@@ -792,7 +719,7 @@ form {
     flex-direction: row;
     justify-content: center;
     height: 100px;
-    margin-top: 40px
+    margin-top: 40px;
 }
 
 #container {
@@ -802,7 +729,6 @@ form {
 }
 
 #container img {
-
     width: 100%;
     display: block;
     margin: 20px auto;
@@ -812,14 +738,14 @@ form {
     z-index: -1;
     right: 0;
     top: 0;
-    opacity: 0.8
+    opacity: 0.8;
 }
 
 #container {
     width: 80%;
     margin: 0 auto;
     text-align: center;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: "Nunito Sans", sans-serif;
 }
 
 .gauche {
@@ -858,9 +784,8 @@ form {
     }
 
     #container img {
-        opacity: 0.5
+        opacity: 0.5;
     }
-
 
     .gauche {
         width: 100%;
@@ -876,15 +801,12 @@ form {
         display: block;
         margin: 20px auto;
     }
-
-
 }
 
 .newsletter {
     align-items: center;
     background-color: white;
     margin-left: 30px;
-
 }
 
 .newsletter p {
@@ -892,12 +814,11 @@ form {
 }
 
 .fondblanc h1 {
-    color: white
+    color: white;
 }
 
 .newsletter h2 {
-
-    font-size: 30px
+    font-size: 30px;
 }
 
 .newsletter form {

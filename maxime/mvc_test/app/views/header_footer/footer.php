@@ -1,8 +1,8 @@
-<?php $image_folder = "../../../public/images/"?>
-<?php $css = "../../../public/css/"?>
-<?php $js = "../../../public/js/"?>
+<?php $image_folder = "../../../public/images/" ?>
+<?php $css = "../../../public/css/" ?>
+<?php $js = "../../../public/js/" ?>
 
-<link rel="stylesheet" href="<?=$css?>header_footer.css">
+<link rel="stylesheet" href="<?= $css ?>header_footer.css">
 
 <div class="footer">
     <div class="contenu-footer">
@@ -12,16 +12,16 @@
 
         <div class="liens">
             <div class="bloc footer-services">
-                <a href="#">Nous contacter</a>
+                <a href="mailto:contact@captair.paris">Nous contacter</a>
             </div>
             <div class="bloc footer-services">
-                <a href="#">Mentions légales</a>
+                <a href="<?= $root ?>/ml">Mentions légales</a>
             </div>
             <div class="bloc footer-services">
-                <a href="#">CGU</a>
+                <a href="<?= $root ?>/cgu">CGU</a>
             </div>
             <div class="bloc footer-services">
-                <a href="#">Politique de confidentialité</a>
+                <a href="<?= $root ?>/pdc">Politique de confidentialité</a>
             </div>
         </div>
     </div>
