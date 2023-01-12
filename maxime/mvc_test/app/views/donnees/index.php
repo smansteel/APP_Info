@@ -3,8 +3,8 @@
 
 <body>
 
-  <?php
- 
+  <?
+  $megarray = $data['megarray'];
 
   function make_svg_V2($colors)
   {
@@ -56,7 +56,7 @@
   <?php
   }
 
-  
+
 
   function make_svg_V2_vert($colors)
   {
@@ -105,7 +105,7 @@
 
     </svg>
 
-    <?php
+  <?php
   }
 
   function display_line($line)
@@ -168,61 +168,39 @@
             ?>
           </div><?php
 
-              } else {
-
-                ?>
-          <div class="ligne2" style="background-color: #<?php echo $lighthex ?>;">
-            <div><img src="<?php echo $logo ?>" height="30"></div><br>
-            <div style="display : inline; overflow-x : scroll;overflow-y : none; height : 100%">
-              <div style="display : inline;z-index: 20;">
-                <?php
-                make_svg_V2(["green", "yellow", "yellow"]);
-                ?>
-              </div>
-              <div style="display : inline; position:relative; top : 135px; left : -125px; z-index: 10;">
-                <?php
-                make_svg_Y("green", "yellow", "blue", true);
-                ?></div>
-              <div style="display : inline; position:relative; top : 222px; left : -250px; z-index: 10;">
-                <?php
-                make_svg_parra(["blue", "yellow", "green"], ["yellow", "yellow", "green"])
-                ?></div>
-
-            </div>
-          <?php
               }
-          ?>
-          </div>
-        </div>
-      <?php
-    }
-      ?>
-      <div class="fb_fb">
-        <div class="fb_lignes">
-          <?php
-          display_line("1");
-          display_line("2");
-          display_line("3");
-          display_line("3bis");
-          display_line("4");
-          display_line("5");
-          display_line("6");
-          //display_line("7");
-          display_line("7bis");
-          //display_line("8");
-          display_line("9");
-          //display_line("10");
-          display_line("11");
-          display_line("12");
-          //display_line("13");
-          display_line("14");
-
-          ?>
+                ?>
         </div>
       </div>
+    <?php
+  }
+    ?>
+    <div class="fb_fb">
+      <div class="fb_lignes">
+        <?php
+        display_line("1");
+        display_line("2");
+        display_line("3");
+        display_line("3bis");
+        display_line("4");
+        display_line("5");
+        display_line("6");
+        //display_line("7");
+        display_line("7bis");
+        //display_line("8");
+        display_line("9");
+        //display_line("10");
+        display_line("11");
+        display_line("12");
+        //display_line("13");
+        display_line("14");
 
+        ?>
       </div>
-      <span id="insertHere"></span>
+    </div>
 
-      </div>
+    </div>
+    <span id="insertHere"></span>
+
+    </div>
 </body>
