@@ -1,9 +1,13 @@
-<link rel="stylesheet" href="../css/donnees.css">
+<?php $image_folder = "../../../public/images/" ?>
+<?php $css = "../../../public/css/" ?>
+<?php $js = "../../../public/js/" ?>
+
+<link rel="stylesheet" href="<?= $css ?>donnees.css">
 
 
 <body>
 
-  <?
+  <?php
   $megarray = $data['megarray'];
 
   function make_svg_V2($colors)
@@ -15,8 +19,8 @@
     $id_grad = "grad" . $line_ran;
     $stopname = $line_ran * 1000;
 
-    $station_size = 250 * (sizeof($colors) - 1);
-  ?><svg width="<?php echo $station_size + 150; ?>" height="30" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    $station_size = 250 * (sizeof($colors) - 1); ?>
+    <svg width="<?php echo $station_size + 150; ?>" height="30" version="1.1" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="<?php echo $id_grad ?>" x1="0" x2="1" y1="0" y2="0">
           <?php
@@ -108,99 +112,85 @@
   <?php
   }
 
-  function display_line($line)
+  function display_line($lineinfo, $stations_name, $sta_airq)
   {
-    $lineinfo = get_line_logo($line);
+
     $lighthex =  $lineinfo[2];
     $logo = $lineinfo[0];
 
   ?>
 
     <?php
-    $sta_colors = [];
-    $ligne = get_station($line);
+
+    $ligne = $stations_name;
     //var_dump($ligne);
-    $lensta = sizeof($ligne[0]) - 1;
-    $sta_airq = [];
+    $lensta = sizeof($ligne) - 1;
     //var_dump($ligne);
-    for ($x = 0; $x <= $lensta; $x++) {
-      //echo $ligne[0][$x] . " ";
-      $id_sta = get_station_id($ligne[0][$x]);
-      //echo $id_sta . " ";
-      array_push($sta_airq, get_airq_for_id($id_sta));
-      //var_dump($id_sta);
-    }
+
     //var_dump($sta_airq);
-    $stations = $ligne[0];
-    $hasy = $ligne[1];
-    if (!$hasy) {
+    $stations = $ligne;
+
+
     ?>
-      <div class="ligne1" style="background-color: #<?php echo $lighthex ?>;">
-        <div><img src="<?php echo $logo ?>" height="30"></div><br>
+    <div class="ligne1" style="background-color: #<?php echo $lighthex ?>;">
+      <div><img src="<?php echo $logo ?>" height="30"></div><br>
 
-        <?php
-        $sta_colors = $sta_airq;
-        //var_dump($sta_airq);
-        ?>
-
-
-        <div class="hz_line">
-          <?php make_svg_V2($sta_colors); ?>
-        </div>
-        <div class="vert_line_fb">
-          <div class="vert_line">
-            <?php make_svg_V2_vert($sta_colors); ?>
-          </div>
+      <?php
+      $sta_colors = $sta_airq;
+      //var_dump($sta_airq);
+      ?>
 
 
-          <div class="fb_stations">
-            <?php
-            foreach ($stations as $station) {
-            ?>
-              <div class="fb_station_ct">
-
-                <?php echo mb_convert_case($station, MB_CASE_TITLE, "UTF-8") . " "; ?>
-
-              </div>
-
-            <?php
-            }
-            ?>
-          </div><?php
-
-              }
-                ?>
-        </div>
+      <div class="hz_line">
+        <?php make_svg_V2($sta_colors); ?>
       </div>
-    <?php
+      <div class="vert_line_fb">
+        <div class="vert_line">
+          <?php make_svg_V2_vert($sta_colors); ?>
+        </div>
+
+
+        <div class="fb_stations">
+          <?php
+          foreach ($stations as $station) {
+          ?>
+            <div class="fb_station_ct">
+
+              <?php echo mb_convert_case($station, MB_CASE_TITLE, "UTF-8") . " "; ?>
+
+            </div>
+
+          <?php
+          }
+          ?>
+        </div><?php
+
+
+              ?>
+      </div>
+    </div>
+  <?php
   }
-    ?>
-    <div class="fb_fb">
-      <div class="fb_lignes">
-        <?php
-        display_line("1");
-        display_line("2");
-        display_line("3");
-        display_line("3bis");
-        display_line("4");
-        display_line("5");
-        display_line("6");
-        //display_line("7");
-        display_line("7bis");
-        //display_line("8");
-        display_line("9");
-        //display_line("10");
-        display_line("11");
-        display_line("12");
-        //display_line("13");
-        display_line("14");
+  ?>
+  <div class="fb_fb">
+    <div class="fb_lignes">
+      <?php
 
-        ?>
-      </div>
-    </div>
+      foreach ($megarray as $ligne) {
+        $stations = $ligne[0];
+        $stations_name = $stations[0];
+        $stations_id = $stations[1];
+        $ligne_info = $ligne[1][0];
+        $airq = $ligne[2];
+        display_line($ligne_info, $stations_name, $airq);
+      }
 
+      ?>
     </div>
-    <span id="insertHere"></span>
+  </div>
 
-    </div>
+  </div>
+  <span id="insertHere"></span>
+
+  </div>
 </body>
