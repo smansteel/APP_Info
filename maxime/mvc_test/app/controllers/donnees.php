@@ -1,6 +1,6 @@
 <?php
 
-class Home extends Controller
+class Donnees extends Controller
 {
     public function index()
     {
