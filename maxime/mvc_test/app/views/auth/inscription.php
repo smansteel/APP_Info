@@ -63,7 +63,7 @@ $root = "/public";
                     </div>
 
                 </form>
-                <a class="newacc" href="/login/" class="newacc">Retour</a><br>
+                <a class="newacc" href="<?= $root ?>/login/" class="newacc">Retour</a><br>
 
 
                 </menu>
@@ -122,7 +122,6 @@ $root = "/public";
 
         </div>
 
-        <?php include("footer.php"); ?>
     </div>
 </body>
 <script>
