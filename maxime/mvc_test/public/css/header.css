@@ -7,14 +7,12 @@
     align-items: center;
     padding: 20px;
     max-height: 70px;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: "Nunito Sans", sans-serif;
 }
 
 li {
     list-style-type: none;
 }
-
-
 
 .header .logo-header {
     height: 40px;
@@ -151,7 +149,6 @@ li {
 
 .mobile-nav li {
     transition: all 0.7s ease;
-
 }
 
 .mobile-nav li:active {

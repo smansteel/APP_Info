@@ -17,13 +17,12 @@
 
 
 <body>
-    <?php include("header.php") ?>
-    <div class="box">
+    <div class="box" style="background-image: url(<?= $image_folder ?>/blurry_lr.jpg);">
 
         <div class="flex-content" id="content">
             <div class="bg-image">
 
-                <img src="sources/captair.png" class="logo">
+                <img src="<?= $image_folder ?>captair.png" class="logo">
 
                 <div class="error">
                     <?php
@@ -64,7 +63,7 @@
                     </div>
                 </form>
                 <br>
-                <a class="newacc" href="/newaccount.php" class="newacc">Créer mon compte</a><br>
+                <a class="newacc" href="/login/inscription" class="newacc">Créer mon compte</a><br>
                 <br>
                 <a href="/resetpassword.php" class="fgtpsswd">Mot de passe oublié</a>
 
@@ -72,9 +71,7 @@
             </div>
         </div>
     </div>
-    <div class="flex-content" id="footer">
-        <?php include("footer.php"); ?>
-    </div>
+
 </body>
 <script>
     window.onload = function() {
