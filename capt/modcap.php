@@ -22,7 +22,7 @@
             $id = $_POST['id'];
             $id_sql = $_POST['id_sql'];
             echo $status ."  ". empty($status);
-            if($status == 0 || empty($owner) || empty($id)){
+            if($status != 0 || empty($owner) || empty($id)){
                                 echo "Tout les champs sont requis!";
                
             }else{

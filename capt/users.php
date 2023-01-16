@@ -35,7 +35,6 @@
                             echo $capteur['id'] . ' ';
                         } ?></td>
                         <td>
-                            <a href="addUser.php?id=<?= $id ?>">Ajouter</a>
                             <a href="updateUser.php?id=<?= $id ?>">Modifier</a>
                             <a href="deleteUser.php?id=<?= $id?>" onclick="return confirm('Voulez vous vraiment supprimer l'utilisateur<?php echo $utilisateur['id'] ?> ? ')">Supprimer</a>
                         </td>

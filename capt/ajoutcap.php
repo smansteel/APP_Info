@@ -15,7 +15,7 @@
            $owner = $_POST['owner'];
            if (!empty($status) && !empty($owner)){
               // $pdo = new PDO('mysql:host=localhost;dbname=capteurs','root','');
-               $sqlState = $pdo->prepare('INSERT INTO capteurs VALUES(Null,?,0,?)');
+               $sqlState = $pdo->prepare('INSERT INTO capteurs VALUES(Null,?,0  ,?)');
                $sqlState->execute([$status,$owner]);
   
                header('Location: capair.php');
