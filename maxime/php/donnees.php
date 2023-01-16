@@ -1,8 +1,53 @@
 <link rel="stylesheet" href="../css/donnees.css">
 
+<script>
+  const currentTime = performance.now();
+  const loadTime = performance.timing.loadEventEnd;
+  const loadTimeDiff = loadTime - currentTime;
+  if (loadTimeDiff > 3000) {
+    document.querySelector(".preloader").style.display = "block";
+  }
+  // Ajouter un écouteur d'événement pour l'événement onload
+  window.onload = function() {
+    // Cacher le preloader
+    document.querySelector(".preloader").style.display = "none";
+  };
+  window.onload = function() {
+    document.querySelector(".preloader").classList.add("preloader-exit");
+    setTimeout(function() {
+      document.querySelector(".preloader").remove();
+    }, 4000);
+  };
+</script>
 
 <body>
+  <div class="preloader">
+    <div class="container">
+      <div class="content">
+        <div class="track"></div>
+        <div class="train">
+          <div class="front"></div>
+          <div class="wheels">
+            <div class="smallOne"></div>
+            <div class="smallTwo"></div>
+            <div class="smallThree"></div>
+            <div class="smallFour"></div>
+            <div class="smallFive"></div>
+            <div class="smallSix"></div>
+            <div class="big"></div>
+          </div>
+          <div class="cord"></div>
+          <div class="coach"></div>
+          <div class="coachTwo"></div>
+          <div class="windows"></div>
 
+          <div id="up" class="steam"></div>
+          <div id="up" class="steam2"></div>
+          <div id="up" class="steam3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
   <?php include("header.php") ?>
   <?php
   require("db_connect.php");

@@ -906,3 +906,11 @@ form {
 .fondblanc {
     background-color: #fff;
 }
+
+@media (max-width: 800px) {
+    img {
+        width: 100%;
+
+    }
+
+}
