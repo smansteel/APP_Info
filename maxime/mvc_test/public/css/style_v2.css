@@ -6,7 +6,7 @@
 
 html {
     font-size: 16px;
-        font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 body {
@@ -342,7 +342,7 @@ button {
     border-radius: 30px;
 }
 
-#newsbtn{
+#newsbtn {
     font-family: 'Nunito Sans', sans-serif;
     margin-left: 1%;
     padding: 5px 20px;

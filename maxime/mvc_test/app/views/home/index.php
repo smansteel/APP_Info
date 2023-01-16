@@ -72,7 +72,7 @@ $root = "/public";
             <div class="right">
                 <h1 class="reveal-1">Notre solution :</h1>
                 <p class="reveal-2">Le bracelet Captair, qui est équipé de plusieurs capteurs permettant de mesurer la qualité de l'environnement autour de l'utilisateur.
-                    Le bracelet est conçu pour être porté par les utilisateurs du métro et peut détecter différents paramètres tels que l'affluence la qualité de l'air et le bruit. En utilisant ces données,
+                    Le bracelet est conçu pour être porté par les utilisateurs du métro et peut détecter différents paramètres tels que l'affluence, la qualité de l'air et le bruit. En utilisant ces données,
                     le bracelet Captair peut aider les utilisateurs à prendre des décisions informées sur leur voyage et à signaler tout problème de qualité. En fournissant ces informations en temps réel,
                     nous espérons contribuer à améliorer la qualité de vie des utilisateurs du métro et à renforcer la réputation de la ville de Paris en tant que destination touristique attractive.</p>
                 <img src="<?= $image_folder ?>bracelet.png" alt="Image de bracelet">
@@ -90,7 +90,7 @@ $root = "/public";
         <div class="forme">
             <div class="capteurs reveal-1">
                 <strong>Les différents capteurs :</strong>
-                <h5>(Placer le curseur sur les images pour decouvrir les capteurs.)</h5>
+                <h5>(Placer le curseur sur les images pour decouvrir les capteurs)</h5>
             </div>
             <main>
 
@@ -101,7 +101,7 @@ $root = "/public";
 
                     <div class="content">
                         <h2>
-                            Capteur pollution<br><span>Capteurs de CO et de microparticules embarqués sur le bracelet,
+                            Capteur pollution<br><span>Capteurs de CO₂ et de microparticules embarqués sur le bracelet,
                                 pour évaluer la qualité de l’air environnant</span>
                         </h2>
                     </div>
@@ -125,7 +125,7 @@ $root = "/public";
 
                     <div class="content">
                         <h2>
-                            Capteur sonnore<br><span>Micro de haute précision embarqué pour mesurer le niveau sonore et
+                            Capteur sonore<br><span>Micro de haute précision embarqué pour mesurer le niveau sonore et
                                 évaluer le
                                 remplissage</span>
                         </h2>

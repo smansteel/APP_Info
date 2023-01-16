@@ -445,10 +445,10 @@ section {
     .left {
         width: 50%;
         text-align: center;
-        background-color: #006e92;
+        background-color: #00c4b3;
         color: white;
         padding: 20px;
-        border-radius: 115px;
+        border-radius: 120px;
         margin-top: 30px;
         margin-right: 10px;
         margin-left: 10px;
@@ -465,10 +465,10 @@ section {
         margin-top: 10%;
         width: 50%;
         text-align: center;
-        background-color: #006e92;
+        background-color: #00c4b3;
         color: white;
         padding: 20px;
-        border-radius: 20%;
+        border-radius: 220px;
         margin-right: 10px;
         margin-left: 10px;
     }
