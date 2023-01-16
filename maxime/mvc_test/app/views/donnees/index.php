@@ -123,14 +123,7 @@
     <?php
 
     $ligne = $stations_name;
-    //var_dump($ligne);
-    $lensta = sizeof($ligne) - 1;
-    //var_dump($ligne);
-
-    //var_dump($sta_airq);
     $stations = $ligne;
-
-
     ?>
     <div class="ligne1" style="background-color: #<?php echo $lighthex ?>;">
       <div><img src="<?php echo $logo ?>" height="30"></div><br>

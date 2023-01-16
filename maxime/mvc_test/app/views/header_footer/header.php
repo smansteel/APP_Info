@@ -23,20 +23,37 @@ $root = "/public";
             <li><a href="<?= $root ?>/">A Propos</a></li>
             <li><a href="<?= $root ?>/donnees/">Données</a></li>
             <li><a href="<?= $root ?>/faq/">FAQ</a></li>
-            <li>
 
-                <?php
-                session_start();
-                if (isset($_SESSION["prenom"])) {
-                ?> <button class="btn">
+
+            <?php
+            session_start();
+            if (isset($_SESSION["prenom"])) {
+            ?> <li>
+                    <button class="btn">
                         <a href="<?= $root ?>/moncompte/">Mon Compte</a>
-                    </button><?php
-                            } else {
-                                ?> <button class="btn">
+                    </button>
+                </li>
+                <li>
+                    <button class="btn">
+                        <a href="<?= $root ?>/auth/logout">Se déconnecter</a>
+                    </button>
+                </li>
+            <?php
+            } else {
+            ?> <li>
+                    <button class="btn">
                         <a href="<?= $root ?>/login/">Connexion</a>
-                    </button><?php
-                            }
-                                ?>
+                    </button>
+                <li>
+                </li>
+                <button class="btn">
+                    <a href="<?= $root ?>/login/inscription/">S'inscrire</a>
+                </button>
+                </li>
+            <?php
+            }
+
+            ?>
 
             </li>
         </ul>
