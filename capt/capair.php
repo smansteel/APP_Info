@@ -21,7 +21,7 @@
         </thead>
         <tbody>
             <?php 
-                $pdo = new PDO('mysql:host=localhost;dbname=Capteurs','root','');
+                $pdo = new PDO('mysql:host=localhost;dbname=captair','root','');
                 $capteurs = $pdo-> query ('SELECT * FROM capteurs')->fetchAll(PDO::FETCH_ASSOC);
 
                 foreach($capteurs as $capteurs){

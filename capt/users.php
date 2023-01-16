@@ -22,7 +22,7 @@
         <tbody>
             <?php 
                 require 'connexion.php';
-                $utilisateur = $pdo-> query ('SELECT * FROM utilisateur')->fetchAll(PDO::FETCH_ASSOC);
+                $utilisateur = $pdo-> query ('SELECT * FROM users')->fetchAll(PDO::FETCH_ASSOC);
 
                 foreach($utilisateur as $utilisateur){
                     $id = $utilisateur ['id']; 
@@ -30,11 +30,12 @@
                     <tr>
                         <td><?php echo $utilisateur['email'] ?></td>
                         <td><?php echo $utilisateur['creation'] ?></td>
-                        <td><?php echo $utilisateur['capteur'] ?></td>
+                        <?php $capteurs = $pdo-> query ('SELECT id FROM capteurs WHERE owner=$id')->fetchAll(PDO::FETCH_ASSOC); ?>
+                        <td><?php echo $capteurs ?></td>
                         <td>
                             <a href="addUser.php?id=<?= $id ?>">Ajouter</a>
                             <a href="updateUser.php?id=<?= $id ?>">Modifier</a>
-                            <a href="deleteUser.php?id=<?= $id?>" onclick="return confirm('Voulez vous vraiment supprimer le utilisateur<?php echo $utilisateur['id'] ?> ? ')">Supprimer</a>
+                            <a href="deleteUser.php?id=<?= $id?>" onclick="return confirm('Voulez vous vraiment supprimer l'utilisateur<?php echo $utilisateur['id'] ?> ? ')">Supprimer</a>
                         </td>
                     </tr>
                     <?php
