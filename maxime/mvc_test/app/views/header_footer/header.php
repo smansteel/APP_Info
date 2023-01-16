@@ -44,11 +44,12 @@ $root = "/public";
                     <button class="btn">
                         <a href="<?= $root ?>/login/">Connexion</a>
                     </button>
-                <li>
                 </li>
-                <button class="btn">
-                    <a href="<?= $root ?>/login/inscription/">S'inscrire</a>
-                </button>
+                <li>
+
+                    <button class="btn">
+                        <a href="<?= $root ?>/login/inscription/">S'inscrire</a>
+                    </button>
                 </li>
             <?php
             }
@@ -67,4 +68,5 @@ $root = "/public";
     <li><a href="<?= $root ?>/donnees.php">Données</a></li>
     <li><a href="<?= $root ?>/faq.php">FAQ</a></li>
     <li><a href="<?= $root ?>/login.php">Connexion</a></li>
+    <li><a href="<?= $root ?>/inscription.php">S'inscrire</a></li>
 </nav>

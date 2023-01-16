@@ -46,6 +46,7 @@ nav {
     align-items: center;
     list-style: none;
     width: 500px;
+    text-align: center;
 }
 
 .menu.open {
@@ -74,6 +75,8 @@ nav {
     transition: all 0.25s;
     -webkit-transition: all 0.25s;
     box-shadow: none;
+    line-height: 2;
+    letter-spacing: 0.5px;
 }
 
 /* Footer */
@@ -113,4 +116,24 @@ nav {
 
 .footer .liens .bloc a:hover {
     text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+
+
+    nav {
+        overflow-x: hidden;
+        position: fixed;
+        height: 10%;
+        left: 0;
+        margin-top: 30px;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+    }
+
+
+
 }

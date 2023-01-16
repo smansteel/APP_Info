@@ -33,8 +33,6 @@ nav {
     margin-bottom: 1vh;
     padding: 0.5%;
     border-radius: 10px;
-
-
     overflow-x: auto;
     overflow-y: hidden;
 }
@@ -134,6 +132,7 @@ nav {
 
     .fb_fb {
         width: fit-content;
+        margin-top: 25px
     }
 }
 
@@ -182,4 +181,33 @@ nav {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+@media screen and (max-width: 600px) {
+
+    body {
+        overflow-y: hidden;
+    }
+
+    footer {
+        overflow-x: hidden;
+        position: fixed;
+        bottom: 0; 
+    }
+
+
+
+    nav {
+        overflow-x: hidden;
+        position: fixed;
+        height: 10%;
+        left: 0;
+        margin-top: 30px;
+
+    }
+
+
+    .ligne1 {
+        overflow-x: auto;
+    }
 }
