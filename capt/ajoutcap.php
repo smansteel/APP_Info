@@ -11,14 +11,14 @@
        include_once'navs.php';
        require 'connexion.php';
         if(isset($_POST['ajouter'])){
-           $status= $_POST['status'];
+           $status= $_POST['id'];
            $owner = $_POST['owner'];
            if (!empty($status) && !empty($owner)){
               // $pdo = new PDO('mysql:host=localhost;dbname=capteurs','root','');
-               $sqlState = $pdo->prepare('INSERT INTO capteurs VALUES(Null,?,?)');
+               $sqlState = $pdo->prepare('INSERT INTO capteurs VALUES(Null,?,0,?)');
                $sqlState->execute([$status,$owner]);
   
-               header('location:capair.php');
+               header('Location: capair.php');
            }else{
                echo "Le status et le propriétaires sont requis!";
            }
@@ -26,8 +26,8 @@
  ?>
     
  <form method="POST">
-    <label>status</label><br>
-        <input type="text" name = "status" ><br>
+    <label>id</label><br>
+        <input type="text" name = "id" ><br>
         <label> owner </label><br>
         <input type = "text" name = "owner"><br><br>
 

@@ -30,8 +30,10 @@
                     <tr>
                         <td><?php echo $utilisateur['email'] ?></td>
                         <td><?php echo $utilisateur['creation'] ?></td>
-                        <?php $capteurs = $pdo-> query ('SELECT id FROM capteurs WHERE owner=$id')->fetchAll(PDO::FETCH_ASSOC); ?>
-                        <td><?php echo $capteurs ?></td>
+                        <?php $capteurs = $pdo-> query ("SELECT id FROM capteurs WHERE owner=$id")->fetchAll(PDO::FETCH_ASSOC); ?>
+                        <td><?php foreach($capteurs as $capteur){
+                            echo $capteur['id'] . ' ';
+                        } ?></td>
                         <td>
                             <a href="addUser.php?id=<?= $id ?>">Ajouter</a>
                             <a href="updateUser.php?id=<?= $id ?>">Modifier</a>
