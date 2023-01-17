@@ -26,14 +26,16 @@
                
                 //var_dump($userlist);
                 foreach($userlist as $utilisateur){
-                    var_dump($utilisateur);
+
                     $id = $utilisateur ['id']; 
                     ?>
                     <tr>
                         <td><?php echo $utilisateur['email'] ?></td>
                         <td><?php echo $utilisateur['creation'] ?></td>
-                        <?php $capteurs = $pdo-> query ("SELECT id FROM capteurs WHERE owner=$id")->fetchAll(PDO::FETCH_ASSOC); ?>
-                        <td><?php foreach($capteurs as $capteur){
+                        <?php $capteur_list = $data['capteur_list']; ?>
+                        
+                        <td><?php var_dump($capteur_list);
+                        foreach($capteur_list as $capteur){
                             echo $capteur['id'] . ' ';
                         } ?></td>
                         <td>

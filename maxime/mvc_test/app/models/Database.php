@@ -39,6 +39,41 @@ class Database
         $this->results = $rarray;
     }
 
+    public function select_fields($selected_fields, $table, $where_column, $where_value)
+    {
+        $stmt = mysqli_prepare($this->db, "SELECT " . implode(", ", $selected_fields) . " FROM $table WHERE $where_column=?");
+        mysqli_stmt_bind_param($stmt, "s", $where_value);
+        mysqli_stmt_execute($stmt);
+        $result = $stmt->get_result();
+        $rows = $result->fetch_all(MYSQLI_ASSOC);
+        
+        mysqli_stmt_close($stmt);
+
+        $this->results = $rows;
+    }
+
+
+
+    public function select_where_not_null($selected_fields, $table, $where_value)
+    {
+        $stmt = mysqli_prepare($this->db, "SELECT " . implode(", ", $selected_fields) . " FROM $table WHERE ? IS NOT NULL");
+        mysqli_stmt_bind_param($stmt, "s", $where_value);
+        mysqli_stmt_execute($stmt);
+        $result = $stmt->get_result();
+        $rows = $result->fetch_all(MYSQLI_ASSOC);
+        $rarray = [];
+        foreach ($rows as $row) {
+            $array = [];
+            foreach ($selected_fields as $field) {
+                array_push($array, $row[$field]);
+            }
+            array_push($rarray, $array);
+        }
+        mysqli_stmt_close($stmt);
+
+        $this->results = $rarray;
+    }
+
 
     public function insert_one($table, $field, $field_value)
     {
