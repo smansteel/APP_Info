@@ -46,7 +46,7 @@ class Database
         mysqli_stmt_execute($stmt);
         $result = $stmt->get_result();
         $rows = $result->fetch_all(MYSQLI_ASSOC);
-        
+
         mysqli_stmt_close($stmt);
 
         $this->results = $rows;
@@ -101,6 +101,17 @@ class Database
         mysqli_stmt_close($stmt);
 
         $this->results = $rarray;
+    }
+
+    public function select_etoile_fields($selected_fields, $table)
+    {
+        $stmt = mysqli_prepare($this->db, "SELECT " . implode(", ", $selected_fields) . " FROM $table");
+        mysqli_stmt_execute($stmt);
+        $result = $stmt->get_result();
+        $rows = $result->fetch_all(MYSQLI_ASSOC);
+        mysqli_stmt_close($stmt);
+
+        $this->results = $rows;
     }
 
     public function ordered_select($selected_fields, $table, $where_column, $where_value, $ordering, $order_column, $limit = -1)
