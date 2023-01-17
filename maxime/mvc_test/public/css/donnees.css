@@ -1,17 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
     font-family: "Nunito Sans", sans-serif;
 }
+
 
 nav {
     width: 100%;
@@ -192,19 +184,9 @@ nav {
     footer {
         overflow-x: hidden;
         position: fixed;
-        bottom: 0; 
+        bottom: 0;
     }
 
-
-
-    nav {
-        overflow-x: hidden;
-        position: fixed;
-        height: 10%;
-        left: 0;
-        margin-top: 30px;
-
-    }
 
 
     .ligne1 {
