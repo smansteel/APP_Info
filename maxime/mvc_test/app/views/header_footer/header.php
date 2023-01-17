@@ -5,7 +5,6 @@ $image_folder = $public_root. "images/" ?>
 <?php $css = $public_root ."css/" ?>
 <?php $js = $public_root ."js/";
 $root = "/public";
-echo $_SERVER['REQUEST_URI'];
 ?>
 
 

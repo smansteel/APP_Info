@@ -16,21 +16,26 @@ class Admin extends Controller
         $db->select_fields($selected_fields, $table, $where_column, $where_value);
         $userlist = $db->return_list();
         $db->close();
+        var_dump($userlist);
         foreach($userlist as $utilisateur){
+            
             $db = new Database;
             $selected_fields = ["id", "id_sql", "status", "owner"];
             $table = "capteurs";
             $where_value = $utilisateur['id'];
             $where_column = "owner";
             $db->select_fields($selected_fields, $table, $where_column, $where_value);
-            echo $utilisateur['id'];
-            $capteur_list[$utilisateur['id']] = $db->return_list();
+
+            if (sizeof($db->return_list())!=0){
+                $capteur_list = $db->return_list();
+                $userlist['capteurs'] = $capteur_list;}
+
             $db->close();
         }
 
 
 
-        $this->view('admin/users', ['userlist' => $userlist, 'capteur_list' => $capteur_list]);
+        $this->view('admin/users', ['userlist' => $userlist]);
 
     
 }

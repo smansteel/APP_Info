@@ -26,16 +26,17 @@
                
                 //var_dump($userlist);
                 foreach($userlist as $utilisateur){
-
+                    var_dump($utilisateur);
+                    echo "<br>";
                     $id = $utilisateur ['id']; 
                     ?>
                     <tr>
                         <td><?php echo $utilisateur['email'] ?></td>
                         <td><?php echo $utilisateur['creation'] ?></td>
-                        <?php $capteur_list = $data['capteur_list']; ?>
+                                                
+                        <td><?php var_dump($userlist["capteurs"]);
                         
-                        <td><?php var_dump($capteur_list);
-                        foreach($capteur_list as $capteur){
+                        foreach($userlist["capteurs"] as $capteur){
                             echo $capteur['id'] . ' ';
                         } ?></td>
                         <td>
