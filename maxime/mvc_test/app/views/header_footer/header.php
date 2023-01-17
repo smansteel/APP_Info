@@ -1,7 +1,11 @@
-<?php $image_folder = "../../../public/images/" ?>
-<?php $css = "../../../public/css/" ?>
-<?php $js = "../../../public/js/";
+<?php 
+$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+$public_root =$protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$image_folder = $public_root. "images/" ?>
+<?php $css = $public_root ."css/" ?>
+<?php $js = $public_root ."js/";
 $root = "/public";
+echo $_SERVER['REQUEST_URI'];
 ?>
 
 
