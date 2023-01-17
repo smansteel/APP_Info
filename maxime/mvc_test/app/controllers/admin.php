@@ -72,6 +72,16 @@ class Admin extends Controller
 
 
 
+
+
         $this->view('admin/capteurs', ['capteurlist' => $capteurlist, 'ownerlist' =>  $ownerlist]);
+    }
+    public function edit($param = "void")
+    {
+        if ($param == 'capteur' && $_SESSION["admin"]) {
+            echo 'alles gut';
+        } else {
+            header('Location: /public/');
+        }
     }
 }

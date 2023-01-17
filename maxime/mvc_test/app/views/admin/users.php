@@ -41,7 +41,7 @@
 
                         foreach ($capteurs_list as $capteur) {
                             if ($capteur[0] == $id) {
-                                echo $capteur[1][0]["id_sql"];
+                                echo $capteur[1][0]["id"];
                             }
                         }
                         ?></td>

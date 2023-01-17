@@ -32,6 +32,7 @@
             foreach ($capteurs_ls as $capteurs) {
 
                 $id = $capteurs["id"];
+                $id_sql = $capteurs["id_sql"];
                 $own = $capteurs["owner"];
                 echo $id;
             ?>
@@ -39,11 +40,10 @@
                     <td> <?= $id ?> </td>
                     <td><?php echo $capteurs['status'] ?></td>
                     <td><?php
-
                         foreach ($owners as $owner) {
-                            var_dump($owner);
-                            if ($owner[0] == $own) {
-                                echo $capteur[1][0]["id_sql"];
+
+                            if ($owner[0] == $id_sql) {
+                                echo $owner[1][0]["email"] . ' (id ' . $owner[1][0]["id"] . ' )';
                             }
                         }
                         ?></td>
