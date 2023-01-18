@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <?php include_once 'navs.php';
+    <?php
     if (isset($data["user"])) {
         $user = $data["user"];
 

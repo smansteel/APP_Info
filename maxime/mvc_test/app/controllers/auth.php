@@ -125,7 +125,7 @@ class Auth extends Controller
                         echo $verified;
                     }
                 } else {
-                    header("Location: $root/auth/login/?error=badcred");
+                    header("Location: $root/login/inscription/?error=email");
                     exit();
                     //echo "Bah non mauvais mdp ";
                     //echo password_hash("1234",1);

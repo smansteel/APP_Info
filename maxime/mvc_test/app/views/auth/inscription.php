@@ -1,22 +1,23 @@
-<?php $image_folder = "../../../public/images/" ?>
-<?php $css = "../../../public/css/" ?>
-<?php $js = "../../../public/js/";
+<?php
 $root = "/public";
 ?>
+<?php $image_folder = $root . "/images" ?>
+<?php $css = $root . "/css/" ?>
+<?php $js = $root . "/js/"; ?>
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../css/newacc.css">
+<link rel="stylesheet" href="<?= $css ?>newacc.css">
 <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
 
 <body>
-    <div class="box">
+    <div class="box" style="background-image: url(<?= $image_folder ?>/blurry_lr.jpg);    background-size: cover; background-position: center;">
 
-        <div class="flex-content" id="content">
+        <div class=" flex-content" id="content">
 
             <div class="bg-image">
 
-                <img src="<?= $root ?>/captair.png" class="logo">
+                <img src="<?= $image_folder ?>/captair.png" class="logo">
 
                 <div class="error">
                     <?php

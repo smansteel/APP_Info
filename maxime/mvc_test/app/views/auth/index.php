@@ -1,10 +1,11 @@
 <head>
-
-    <?php $image_folder = "../../../public/images/" ?>
-    <?php $css = "../../../public/css/" ?>
-    <?php $js = "../../../public/js/";
+    <?php
     $root = "/public";
     ?>
+    <?php $image_folder = $root . "/images/" ?>
+    <?php $css = $root . "/css/" ?>
+    <?php $js = $root . "/js/"; ?>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="with=device-wdith, initial-scale=1.0">
@@ -17,7 +18,7 @@
 
 
 <body>
-    <div class="box" style="background-image: url(<?= $image_folder ?>/blurry_lr.jpg);">
+    <div class="box" style="background-image: url(<?= $image_folder ?>blurry_lr.jpg);">
 
         <div class="flex-content" id="content">
             <div class="bg-image">
