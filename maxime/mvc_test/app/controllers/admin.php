@@ -77,11 +77,69 @@ class Admin extends Controller
         $this->view('admin/capteurs', ['capteurlist' => $capteurlist, 'ownerlist' =>  $ownerlist]);
     }
     public function edit($param = "void")
-    {
-        if ($param == 'capteur' && $_SESSION["admin"]) {
-            echo 'alles gut';
+    {   // !! ADD CHECK FOR ADMIN SESSION !! && $_SESSION["admin"]
+        $this->model('Database');
+        if ($param == 'capteurs' || $param == 'users') {
+            $fields_to_edit = ["fields" => [], "values" => []];
+            if ($param == 'capteurs') {
+                $possible_fields = ["id_sql", "id", "status", "owner"];
+            } else {
+                $possible_fields = ["id", "email", "nom", "prenom", "password", "verified"];
+            }
+            foreach ($possible_fields as $field) {
+                if (isset($_POST[$field])) {
+                    echo $_POST[$field];
+                    array_push($fields_to_edit["fields"], $field);
+                    array_push($fields_to_edit["values"], $_POST[$field]);
+                }
+            }
+            $db = new Database;
+            $where_column = array_shift($fields_to_edit["fields"]);
+            $where_value = array_shift($fields_to_edit["values"]);
+            $update_fields = $fields_to_edit["fields"];
+            $update_fields_value =  $fields_to_edit["values"];
+            $table = $param;
+
+            $db->update($update_fields, $update_fields_value, $table, $where_column, $where_value);
         } else {
             header('Location: /public/');
+            exit();
+        }
+    }
+    public function modif($param = "void", $param1 = "void")
+    {
+        $this->model('Database');
+        // !! ADD CHECK FOR ADMIN SESSION !! && $_SESSION["admin"]
+        if (intval($param1) != 0) {
+            if ($param == 'capteurs') {
+                $db = new Database;
+                $selected_fields = ["id", "id_sql", "status", "owner"];
+                $table = "capteurs";
+                $where_value = $param1;
+                $where_column = "id_sql";
+                $db->select_fields($selected_fields, $table, $where_column, $where_value);
+                $capteur = $db->return_list();
+                $db->close();
+
+                $this->view('admin/mod', ["capteur" => $capteur]);
+            } else if ($param == 'users') {
+                $db = new Database;
+                $selected_fields = ["id", "email", "nom", "prenom", "creation", "verified"];
+                $table = "users";
+                $where_column = "id";
+                $where_value = $param1;
+                $db->select_fields($selected_fields, $table, $where_column, $where_value);
+                $user = $db->return_list()[0];
+                $db->close();
+
+                $this->view('admin/mod', ["user" => $user]);
+            } else {
+                // header("Location: /public/");
+                // exit();
+            }
+        } else {
+            // header("Location: /public/");
+            // exit();
         }
     }
 }

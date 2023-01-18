@@ -52,6 +52,24 @@ class Database
         $this->results = $rows;
     }
 
+    public function update($update_fields, $update_fields_value, $table, $where_column, $where_value)
+    {
+        $for_str = $update_fields[0] . " = ? ";
+        for ($i = 1; $i < sizeof($update_fields); $i++) {
+            $field = $update_fields[$i];
+            $for_str = $for_str . ", $field = ? ";
+        }
+        echo "<br>";
+        var_dump($update_fields);
+        echo "<br>";
+        var_dump($update_fields_value);
+        echo "<br>";
+        $stmt = mysqli_prepare($this->db, "UPDATE $table SET " .  $for_str . " WHERE $where_column=$where_value");
+        mysqli_stmt_execute($stmt, $update_fields_value);
+        mysqli_stmt_close($stmt);
+    }
+
+
 
 
     public function select_where_not_null($selected_fields, $table, $where_value)
