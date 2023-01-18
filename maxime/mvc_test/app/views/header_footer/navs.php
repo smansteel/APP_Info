@@ -26,10 +26,23 @@ $root = "/public/";
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="<?= $root ?>admin/capteurs">Capteur</a>
+              <?php if ($data == "capteur") {
+              ?> <a class="nav-link active" aria-current="page" href="<?= $root ?>admin/capteurs">Capteur</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?= $root ?>admin/users">Utilisateurs</a>
+            <?php
+              } else {
+
+            ?>
+              <a class="nav-link" href="<?= $root ?>admin/capteurs">Capteur</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="<?= $root ?>admin/users">Utilisateurs</a>
+            <?php
+              }
+            ?>
+
             </li>
           </ul>
         </div>

@@ -52,6 +52,18 @@ class Database
         $this->results = $rows;
     }
 
+    public function select_fields_nw($selected_fields, $table)
+    {
+        $stmt = mysqli_prepare($this->db, "SELECT " . implode(", ", $selected_fields) . " FROM $table");
+        mysqli_stmt_execute($stmt);
+        $result = $stmt->get_result();
+        $rows = $result->fetch_all(MYSQLI_ASSOC);
+
+        mysqli_stmt_close($stmt);
+
+        $this->results = $rows;
+    }
+
     public function update($update_fields, $update_fields_value, $table, $where_column, $where_value)
     {
         $for_str = $update_fields[0] . " = ? ";
@@ -59,11 +71,6 @@ class Database
             $field = $update_fields[$i];
             $for_str = $for_str . ", $field = ? ";
         }
-        echo "<br>";
-        var_dump($update_fields);
-        echo "<br>";
-        var_dump($update_fields_value);
-        echo "<br>";
         $stmt = mysqli_prepare($this->db, "UPDATE $table SET " .  $for_str . " WHERE $where_column=$where_value");
         mysqli_stmt_execute($stmt, $update_fields_value);
         mysqli_stmt_close($stmt);
@@ -98,6 +105,22 @@ class Database
 
         $stmt = $this->db->prepare("INSERT INTO $table ($field) VALUES (?)");
         $stmt->bind_param("s", $field_value);
+        $stmt->execute();
+        $stmt->close();
+    }
+    public function insert($table, $field, $field_value)
+    {
+
+        $stmt = $this->db->prepare("INSERT INTO $table (" . implode(", ", $field) . ") VALUES (?" . str_repeat(" ,? ", sizeof($field_value) - 1) . ")");
+        $stmt->execute($field_value);
+        $stmt->close();
+    }
+
+    public function delete($table, $where_field, $where_value)
+    {
+
+        $stmt = $this->db->prepare("DELETE FROM $table WHERE $where_field= ?");
+        $stmt->bind_param("s", $where_value);
         $stmt->execute();
         $stmt->close();
     }

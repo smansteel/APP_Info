@@ -1,3 +1,11 @@
+<?php
+$root = "/public/";
+?>
+
 <script>
-    alert("L'adresse <?= $data['email'] ?> inscrite à la newsletter");
+    if (confirm("Voulez vous supprimer <?= $data["object"] ?> avec l'id <?= $data["id"] ?>")) {
+        window.location.replace("<?= $root ?>admin/del/<?= $data["object"] ?>/<?= $data["id"] ?>");
+    } else {
+        window.location.replace("<?= $root ?>admin/");
+    }
 </script>

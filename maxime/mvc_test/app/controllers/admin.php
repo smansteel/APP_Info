@@ -1,6 +1,7 @@
 <?php
 class Admin extends Controller
 {
+    protected $root = "/public";
     public function index()
     {
         $this->users();
@@ -14,10 +15,9 @@ class Admin extends Controller
         $table = "users";
         $where_column = "verified";
         $where_value = "1";
-        $db->select_fields($selected_fields, $table, $where_column, $where_value);
+        $db->select_fields_nw($selected_fields, $table);
         $userlist = $db->return_list();
         $db->close();
-        //var_dump($userlist);
         $capteurs_list = [];
         foreach ($userlist as $utilisateur) {
 
@@ -31,13 +31,13 @@ class Admin extends Controller
                 $capteur_list = $db->return_list();
                 array_push($capteurs_list,  [$utilisateur['id'], $capteur_list]);
             }
-            //var_dump($capteurs_list);
+
 
             $db->close();
         }
 
 
-
+        $this->view('header_footer/navs', "user");
         $this->view('admin/users', ['userlist' => $userlist, 'capteurs_list' =>  $capteurs_list]);
     }
 
@@ -46,14 +46,14 @@ class Admin extends Controller
         $this->model('Database');
         $db = new Database;
 
-        //var_dump($userlist);
+
         $ownerlist = [];
 
         $selected_fields = ["id", "id_sql", "status", "owner"];
         $table = "capteurs";
         $db->select_etoile_fields($selected_fields, $table);
         $capteurlist = $db->return_list();
-        //var_dump($capteurs_list);
+
 
         $db->close();
         foreach ($capteurlist as $capteur) {
@@ -73,7 +73,7 @@ class Admin extends Controller
 
 
 
-
+        $this->view('header_footer/navs', "capteur");
         $this->view('admin/capteurs', ['capteurlist' => $capteurlist, 'ownerlist' =>  $ownerlist]);
     }
     public function edit($param = "void")
@@ -84,13 +84,15 @@ class Admin extends Controller
             if ($param == 'capteurs') {
                 $possible_fields = ["id_sql", "id", "status", "owner"];
             } else {
-                $possible_fields = ["id", "email", "nom", "prenom", "password", "verified"];
+                $possible_fields = ["id", "email", "nom", "prenom", "password", "verified", "admin"];
             }
             foreach ($possible_fields as $field) {
                 if (isset($_POST[$field])) {
-                    echo $_POST[$field];
-                    array_push($fields_to_edit["fields"], $field);
-                    array_push($fields_to_edit["values"], $_POST[$field]);
+                    if ($field == "password" && $_POST[$field] == "") {
+                    } else {
+                        array_push($fields_to_edit["fields"], $field);
+                        array_push($fields_to_edit["values"], $_POST[$field]);
+                    }
                 }
             }
             $db = new Database;
@@ -101,8 +103,10 @@ class Admin extends Controller
             $table = $param;
 
             $db->update($update_fields, $update_fields_value, $table, $where_column, $where_value);
+            header("Location: $this->root/admin/$param");
+            exit();
         } else {
-            header('Location: /public/');
+            header("Location: /public/");
             exit();
         }
     }
@@ -124,22 +128,91 @@ class Admin extends Controller
                 $this->view('admin/mod', ["capteur" => $capteur]);
             } else if ($param == 'users') {
                 $db = new Database;
-                $selected_fields = ["id", "email", "nom", "prenom", "creation", "verified"];
+                $selected_fields = ["id", "email", "nom", "prenom", "creation", "verified", "admin"];
                 $table = "users";
                 $where_column = "id";
                 $where_value = $param1;
                 $db->select_fields($selected_fields, $table, $where_column, $where_value);
                 $user = $db->return_list()[0];
                 $db->close();
-
+                $this->view('header_footer/navs', $param);
                 $this->view('admin/mod', ["user" => $user]);
             } else {
-                // header("Location: /public/");
-                // exit();
+                header("Location: /public/");
+                exit();
             }
         } else {
-            // header("Location: /public/");
-            // exit();
+            header("Location: /public/");
+            exit();
         }
+    }
+    public function del($param = "void", $param1 = "void")
+    { // !! ADD CHECK FOR ADMIN SESSION !! && $_SESSION["admin"]
+        $this->model('Database');
+        if (intval($param1) != 0) {
+            $db = new Database;
+            $table = $param;
+            if ($param == "capteurs") {
+                $where_field = "id_sql";
+                $where_value = $param1;
+                $db->delete($table, $where_field, $where_value);
+            } else if ($param == "users") {
+
+                $where_field = "id";
+                $where_value = $param1;
+                $db->delete($table, $where_field, $where_value);
+            }
+            $where_value = $param1;
+            $db->delete($table, $where_field, $where_value);
+            $db->close();
+        }
+        header("Location: $this->root/admin/$param");
+    }
+    public function del_conf($param = "void", $param1 = "void")
+    { // !! ADD CHECK FOR ADMIN SESSION !! && $_SESSION["admin"]
+        if (intval($param1) != 0) {
+            $this->view("alert/js_alert", ["object" => $param, "id" => $param1]);
+        }
+    }
+
+    public function add($param = "void")
+    {   // !! ADD CHECK FOR ADMIN SESSION !! && $_SESSION["admin"]
+        $this->model('Database');
+        if ($param == 'capteurs' || $param == 'users') {
+            $fields_to_edit = ["fields" => [], "values" => []];
+            if ($param == 'capteurs') {
+                $possible_fields = ["id", "status", "owner"];
+            } else {
+                $possible_fields = ["email", "nom", "prenom", "password", "verified", "admin"];
+            }
+            foreach ($possible_fields as $field) {
+                if (isset($_POST[$field])) {
+                    if ($field == "password" && $_POST[$field] == "") {
+                    } else if ($field == "password") {
+                        array_push($fields_to_edit["fields"], $field);
+                        array_push($fields_to_edit["values"], password_hash($_POST[$field], 1));
+                    } else {
+                        array_push($fields_to_edit["fields"], $field);
+                        array_push($fields_to_edit["values"], $_POST[$field]);
+                    }
+                }
+            }
+            $db = new Database;
+            $update_fields = $fields_to_edit["fields"];
+            $update_fields_value =  $fields_to_edit["values"];
+            $table = $param;
+
+            $db->insert($table, $update_fields, $update_fields_value);
+            header("Location: $this->root/admin/$param");
+            exit();
+        } else {
+            header("Location: /public/");
+            exit();
+        }
+    }
+    public function ajouter($param = "void")
+    {
+        $this->view('header_footer/navs', $param);
+        $this->view('admin/add', $param);
     }
 }

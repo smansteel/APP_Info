@@ -3,6 +3,10 @@
 <?php $userlist = $data['userlist'] ?>
 <?php $capteurs_list = $data['capteurs_list']; ?>
 <html lang="en">
+<?php
+$root = "/public/";
+?>
+
 
 <head>
     <meta charset="UTF-8">
@@ -12,9 +16,8 @@
 </head>
 
 <body>
-    <?php include_once 'navs.php'; ?>
 
-    <a href="ajoutcap.php">Ajout capteur</a>
+    <a href="<?= $root ?>admin/ajouter/user/">Ajout utilisateur</a>
     <table class="table table-secondary table-striped table-hover" border="1">
         <thead>
             <tr>
@@ -46,8 +49,8 @@
                         }
                         ?></td>
                     <td>
-                        <a href="updateUser.php?id=<?= $id ?>">Modifier</a>
-                        <a href="deleteUser.php?id=<?= $id ?>" onclick="return confirm(Voulez vous vraiment supprimer l'utilisateur<?php echo $utilisateur['id'] ?> ? ')">Supprimer</a>
+                        <a href="<?= $root ?>admin/modif/users/<?= $id ?>">Modifier</a>
+                        <a href="<?= $root ?>admin/del_conf/users/<?= $id ?>">Supprimer</a>
                     </td>
                 </tr>
             <?php

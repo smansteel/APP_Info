@@ -12,9 +12,8 @@
 </head>
 
 <body>
-    <?php include_once 'navs.php'; ?>
 
-    <a href="ajoutcap.php">Ajout capteur</a>
+    <a href="<?= $root ?>admin/ajouter/capteur/">Ajout capteur</a>
     <table class="table table-secondary table-striped table-hover" border="1">
         <thead>
             <tr>
@@ -34,7 +33,6 @@
                 $id = $capteurs["id"];
                 $id_sql = $capteurs["id_sql"];
                 $own = $capteurs["owner"];
-                echo $id;
             ?>
                 <tr>
                     <td> <?= $id ?> </td>
@@ -48,8 +46,8 @@
                         }
                         ?></td>
                     <td class="">
-                        <a href="modcap.php?id=<?= $capteurs['id_sql'] ?>">Modifier</a>
-                        <a href="supcap.php?id=<?= $capteurs['id_sql'] ?>" onclick="return confirm('Voulez vous vraiment supprimer le capteurs<?php echo $capteurs['id'] ?> ? ')">Supprimer</a>
+                        <a href="<?= $root ?>admin/modif/capteurs/<?= $id_sql ?>">Modifier</a>
+                        <a href="<?= $root ?>admin/del_conf/capteurs/<?= $id_sql ?>">Supprimer</a>
                     </td>
                 </tr>
             <?php
