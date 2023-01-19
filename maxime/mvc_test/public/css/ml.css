@@ -1,13 +1,19 @@
-.ml{
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+
+* {
+    font-family: "Noto Sans", sans-serif;
+}
+
+.ml {
     padding: 10px;
     height: 100%;
 }
 
-.fb{
+.fb {
     display: flex;
     flex-direction: column;
 }
 
-h1{
+h1 {
     text-align: center;
 }
