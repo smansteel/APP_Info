@@ -3,7 +3,7 @@ class Auth extends Controller
 {
     public function login()
     {
-
+        $this->model("Database");
         $root = "/public";
 
         $this->view('header_footer/header');
@@ -130,6 +130,46 @@ class Auth extends Controller
                 }
             }
             $db->close();
+        }
+    }
+    public function verify($token)
+    {
+        $this->model('Database');
+
+        $db = new Database;
+        $table = "onetimepasses";
+        $selected_fields = ["creation_time", "account_id", "utilisation"];
+        $where_column = 'token';
+        $where_value = $token;
+        $db->select_fields($selected_fields, $table, $where_column, $where_value);
+        $creation_time = $db->return_list()[0]["creation_time"];
+        $account_id = $db->return_list()[0]["account_id"];
+        $utilisation = $db->return_list()[0]["utilisation"];
+
+        if (!isset($creation_time) || $creation_time <= time() - 6000) {
+            $this->view('header_footer/header');
+            $this->view('auth/invalid');
+            $this->view('header_footer/footer');
+        } else {
+            $db = new Database;
+            $table = "onetimepasses";
+            $where_field = "account_id";
+            $where_value = $account_id;
+            $db->delete($table, $where_field, $where_value);
+            $db->close();
+            if ($utilisation == '0') {
+                $db = new Database;
+                $update_fields = ["verified"];
+                $update_fields_value = [1];
+                $table = "users";
+                $where_column = "id";
+                $where_value = $account_id;
+                $db->update($update_fields, $update_fields_value, $table, $where_column, $where_value);
+                $db->close();
+                $this->view('header_footer/header');
+                $this->view('auth/verified');
+                $this->view('header_footer/footer');
+            }
         }
     }
 }

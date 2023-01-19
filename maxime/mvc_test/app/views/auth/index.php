@@ -5,7 +5,6 @@
     <?php $image_folder = $root . "/images/" ?>
     <?php $css = $root . "/css/" ?>
     <?php $js = $root . "/js/";
-    $error = $data["error"];
     ?>
 
     <meta charset="UTF-8">
@@ -29,7 +28,8 @@
 
                 <div class="error">
                     <?php
-                    if (isset($error)) {
+                    if (isset($data["error"])) {
+                        $error = $data["error"];
                         if ($error == "noacc") {
                             echo 'Non existing account, please create one <a href="/createaccount.php">here</a>';
                         }
