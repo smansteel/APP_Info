@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+$root = "/public/";
+?>
+
 
 <?php $capteurs_ls = $data['capteurlist'] ?>
 <?php $owners = $data['ownerlist']; ?>
