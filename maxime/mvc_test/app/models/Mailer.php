@@ -120,7 +120,7 @@ class Mailer
                                                     <table border="0" cellspacing="0" cellpadding="0">
                                                         <tr>
                                                             <td align="center" style="border-radius: 3px;" bgcolor="#00C4B3"><a
-                                                                    href="' . "https://captair.paris/confirmation.php?token=$token" . '" target="_blank"
+                                                                    href="' . "https://www.captair.paris/auth/verify/$token" . '" target="_blank"
                                                                     style="font-size: 20px; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; display: inline-block;">Confirmer
                                                                     le mail</a></td>
                                                         </tr>
