@@ -8,8 +8,6 @@ class Auth extends Controller
 
         $this->view('header_footer/header');
 
-        var_dump($_POST);
-
         if (isset($_POST["email"]) || isset($_POST["password"])) {
             $db = new Database;
             $mail = $_POST["email"];
@@ -53,7 +51,7 @@ class Auth extends Controller
                         echo $verified;
                     }
                 } else {
-                    header("Location: $root/auth/login/?error=badcred");
+                    header("Location: $root/auth/login/badcred");
                     exit();
                     //echo "Bah non mauvais mdp ";
                     //echo password_hash("1234",1);
@@ -168,6 +166,74 @@ class Auth extends Controller
                 $db->close();
                 $this->view('header_footer/header');
                 $this->view('auth/verified');
+                $this->view('header_footer/footer');
+            } else if ($utilisation == "1") {
+
+                $db = new Database;
+                $update_fields = ["verified"];
+                $update_fields_value = [1];
+                $table = "users";
+                $where_column = "id";
+                $where_value = $account_id;
+                $db->update($update_fields, $update_fields_value, $table, $where_column, $where_value);
+                $db->close();
+                $this->view('header_footer/header');
+                $this->view('auth/password_retype', ['id' => $account_id]);
+                $this->view('header_footer/footer');
+            }
+        }
+    }
+    public function forgor()
+    {
+        if (isset($_POST["submit"])) {
+            $this->model('Mailer');
+            $this->model('Database');
+            $mail = $_POST["email"];
+            $db = new Database;
+            $table = "users";
+            $selected_fields = ["id"];
+            $where_column = 'email';
+            $where_value = $mail;
+            $db->select_fields($selected_fields, $table, $where_column, $where_value);
+            $id = $db->return_list()[0]["id"];
+
+
+            $mailer = new Mailer;
+            $token = $this->tokenGen();
+            $email = $mail;
+            $typeofemail = 0;
+            $mailer->send($token, $email, $typeofemail);
+            $db = new Database;
+            $table = "onetimepasses";
+            $fields = ["token", "utilisation", "creation_time", "account_id"];
+            $fields_value = [$token, "1", time(), $id];
+            $db->insert($table, $fields, $fields_value);
+
+            header("Location: $this->root/login/verify/");
+        }
+    }
+
+    public function forgor_retype()
+    {
+        $this->model('Database');
+        if (isset($_POST["id"])) {
+            if (isset($_POST["submit"])) {
+                if (($_POST["password"] == $_POST["password"]) && (preg_match("/^.{6}/",  $_POST["password"])))
+
+                    $id = $_POST["id"];
+                $hash = password_hash($_POST["password"], 1);
+                $db = new Database;
+                $table = "users";
+                $update_fields = ["password"];
+                $update_fields_value = [$hash];
+                $where_column = "id";
+                $where_value = $_POST["id"];
+                $db->update($update_fields, $update_fields_value, $table, $where_column, $where_value);
+
+                header("Location: $this->root/login/chang");
+            } else {
+                $this->view('header_footer/header');
+                $this->view('auth/password_retype', ['id' => $_POST["id"]]);
                 $this->view('header_footer/footer');
             }
         }

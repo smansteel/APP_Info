@@ -19,15 +19,7 @@ class Login extends Controller
         $this->view('header_footer/footer');
     }
 
-    public function tokenGen()
-    {
-        $rtoken = "";
-        $array_letters = array_merge(range('A', 'Z'), range('a', 'z'), range(0, 9));;
-        for ($i = 0; $i < 30; $i++) {
-            $rtoken .= $array_letters[array_rand($array_letters, 1)];
-        }
-        return $rtoken;
-    }
+
 
     public function verify($mail = "void")
     {
@@ -47,7 +39,7 @@ class Login extends Controller
             $mailer = new Mailer;
             $token = $this->tokenGen();
             $email = $mail;
-            $typeofemail = 0;
+            $typeofemail = 1;
             $mailer->send($token, $email, $typeofemail);
             $db = new Database;
             $table = "onetimepasses";
@@ -66,5 +58,11 @@ class Login extends Controller
     public function login($param = 'void')
     {
         $this->index($param);
+    }
+    public function forgor()
+    {
+        $this->view('header_footer/header');
+        $this->view('auth/forgor');
+        $this->view('header_footer/footer');
     }
 }

@@ -71,7 +71,7 @@
                 <br>
                 <a class="newacc" href="<?= $root ?>/login/inscription" class="newacc">Créer mon compte</a><br>
                 <br>
-                <a href="/resetpassword.php" class="fgtpsswd">Mot de passe oublié</a>
+                <a href="<?= $root ?>/login/forgor" class="fgtpsswd">Mot de passe oublié</a>
 
 
             </div>

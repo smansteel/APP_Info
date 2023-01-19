@@ -13,4 +13,14 @@ class Controller
     {
         require_once '../app/views/' . $view . '.php';
     }
+
+    public function tokenGen()
+    {
+        $rtoken = "";
+        $array_letters = array_merge(range('A', 'Z'), range('a', 'z'), range(0, 9));;
+        for ($i = 0; $i < 30; $i++) {
+            $rtoken .= $array_letters[array_rand($array_letters, 1)];
+        }
+        return $rtoken;
+    }
 }
