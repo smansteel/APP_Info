@@ -71,7 +71,7 @@ class Auth extends Controller
         $root = "";
         session_start();
         session_destroy();
-        header("Location: $root");
+        header("Location: $root/");
     }
 
     public function email($email,)
