@@ -1,7 +1,7 @@
 <?php
 class Admin extends Controller
 {
-    protected $root = "/public";
+    protected $root = "";
     public function index()
     {
         $this->users();
@@ -52,7 +52,7 @@ class Admin extends Controller
             $this->view('header_footer/navs', "user");
             $this->view('admin/users', ['userlist' => $userlist, 'capteurs_list' =>  $capteurs_list]);
         } else {
-            header("Location: /public/");
+            header("Location: /");
         }
     }
 
@@ -94,7 +94,7 @@ class Admin extends Controller
             $this->view('header_footer/navs', "capteur");
             $this->view('admin/capteurs', ['capteurlist' => $capteurlist, 'ownerlist' =>  $ownerlist]);
         } else {
-            header("Location: /public/");
+            header("Location: /");
         }
     }
     public function edit($param = "void")
@@ -129,11 +129,11 @@ class Admin extends Controller
                 header("Location: $this->root/admin/$param");
                 exit();
             } else {
-                header("Location: /public/");
+                header("Location: /");
                 exit();
             }
         } else {
-            header("Location: /public/");
+            header("Location: /");
             exit();
         }
     }
@@ -167,15 +167,15 @@ class Admin extends Controller
                     $this->view('header_footer/navs', $param);
                     $this->view('admin/mod', ["user" => $user]);
                 } else {
-                    header("Location: /public/");
+                    header("Location: /");
                     exit();
                 }
             } else {
-                header("Location: /public/");
+                header("Location: /");
                 exit();
             }
         } else {
-            header("Location: /public/");
+            header("Location: /");
             exit();
         }
     }
@@ -203,7 +203,7 @@ class Admin extends Controller
             }
             header("Location: $this->root/admin/$param");
         } else {
-            header("Location: /public/");
+            header("Location: /");
             exit();
         }
     }
@@ -215,7 +215,7 @@ class Admin extends Controller
                 $this->view("alert/js_alert", ["object" => $param, "id" => $param1]);
             }
         } else {
-            header("Location: /public/");
+            header("Location: /");
             exit();
         }
     }
@@ -253,11 +253,11 @@ class Admin extends Controller
                 header("Location: $this->root/admin/$param");
                 exit();
             } else {
-                header("Location: /public/");
+                header("Location: /");
                 exit();
             }
         } else {
-            header("Location: /public/");
+            header("Location: /");
             exit();
         }
     }
@@ -268,7 +268,7 @@ class Admin extends Controller
             $this->view('header_footer/navs', $param);
             $this->view('admin/add', $param);
         } else {
-            header("Location: /public/");
+            header("Location: /");
             exit();
         }
     }

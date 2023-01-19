@@ -1,7 +1,7 @@
-<?php $image_folder = "../../../public/images/" ?>
-<?php $css = "../../../public/css/" ?>
-<?php $js = "../../../public/js/" ;
-$root = "/public";
+<?php $image_folder = "../../../images/" ?>
+<?php $css = "../../../css/" ?>
+<?php $js = "../../../js/";
+$root = "";
 ?>
 
 <link rel="stylesheet" href="<?= $css ?>header_footer.css">

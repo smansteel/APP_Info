@@ -2,7 +2,7 @@
 
 class Controller
 {
-    protected $root = "/public";
+    protected $root = "";
     public function model($model)
     {
         require_once '../app/models/' . $model . '.php';

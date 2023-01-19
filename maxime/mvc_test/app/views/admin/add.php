@@ -17,7 +17,7 @@
 
         ?>
 
-            <form method="post" action="/public/admin/add/users/">
+            <form method="post" action="/admin/add/users/">
 
                 <label>Nom</label><br>
                 <input type="text" name="nom" value=""><br>
@@ -40,7 +40,7 @@
 
                     ?>
 
-            <form method="post" action="/public/admin/add/capteurs/">
+            <form method="post" action="/admin/add/capteurs/">
 
                 <label>status</label><br>
                 <input type="text" name="status" value=""><br>

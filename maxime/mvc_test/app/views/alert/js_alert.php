@@ -1,5 +1,5 @@
 <?php
-$root = "/public/";
+$root = "/";
 ?>
 
 <script>

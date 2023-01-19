@@ -4,7 +4,7 @@ class Auth extends Controller
     public function login()
     {
         $this->model("Database");
-        $root = "/public";
+        $root = "";
 
         $this->view('header_footer/header');
 
@@ -68,7 +68,7 @@ class Auth extends Controller
     }
     public function logout()
     {
-        $root = "/public";
+        $root = "";
         session_start();
         session_destroy();
         header("Location: $root");
@@ -85,7 +85,7 @@ class Auth extends Controller
 
     public function inscription()
     {
-        $root = "/public";
+        $root = "";
         $this->model('Database');
 
         var_dump($_POST);

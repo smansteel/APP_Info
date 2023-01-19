@@ -4,7 +4,7 @@
 <?php $capteurs_list = $data['capteurs_list']; ?>
 <html lang="en">
 <?php
-$root = "/public/";
+$root = "/";
 ?>
 
 

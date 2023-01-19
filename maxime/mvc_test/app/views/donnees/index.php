@@ -1,6 +1,6 @@
-<?php $image_folder = "../../../public/images/" ?>
-<?php $css = "../../../public/css/" ?>
-<?php $js = "../../../public/js/" ?>
+<?php $image_folder = "../../../images/" ?>
+<?php $css = "../../../css/" ?>
+<?php $js = "../../../js/" ?>
 
 <link rel="stylesheet" href="<?= $css ?>donnees.css">
 

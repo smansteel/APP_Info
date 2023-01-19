@@ -1,6 +1,6 @@
 <head>
     <?php
-    $root = "/public";
+    $root = "";
     ?>
     <?php $image_folder = $root . "/images/" ?>
     <?php $css = $root . "/css/" ?>

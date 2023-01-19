@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-$root = "/public/";
+$root = "/";
 ?>
 
 

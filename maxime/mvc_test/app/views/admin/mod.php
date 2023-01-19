@@ -16,7 +16,7 @@
 
         ?>
 
-            <form method="post" action="/public/admin/edit/users/">
+            <form method="post" action="/admin/edit/users/">
                 <input type="hidden" name="id" value="<?php echo $user['id'] ?>"><br>
                 <label>Nom</label><br>
                 <input type="text" name="nom" value="<?php echo $user['nom'] ?>"><br>
@@ -39,7 +39,7 @@
                     $capteurs = $data["capteur"][0];
                     ?>
 
-            <form method="post" action="/public/admin/edit/capteurs/">
+            <form method="post" action="/admin/edit/capteurs/">
                 <input type="hidden" name="id_sql" value="<?= $capteurs['id_sql'] ?>"><br>
                 <label>status</label><br>
                 <input type="text" name="status" value="<?php echo $capteurs['status'] ?>"><br>
