@@ -26,7 +26,7 @@ $root = "/public/";
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <?php if ($data == "capteur") {
+              <?php if ($data == "capteur" || $data == "capteurs") {
               ?> <a class="nav-link active" aria-current="page" href="<?= $root ?>admin/capteurs">Capteur</a>
             </li>
             <li class="nav-item">
@@ -42,7 +42,11 @@ $root = "/public/";
             <?php
               }
             ?>
-
+            </li>
+            <div class="box" style="display:flex; flex-direction:column; justify-content: right;">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="<?= $root ?>auth/logout/">Logout</a>
+            </div>
             </li>
           </ul>
         </div>

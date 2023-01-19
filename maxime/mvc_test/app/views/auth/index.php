@@ -4,7 +4,9 @@
     ?>
     <?php $image_folder = $root . "/images/" ?>
     <?php $css = $root . "/css/" ?>
-    <?php $js = $root . "/js/"; ?>
+    <?php $js = $root . "/js/";
+    $error = $data["error"];
+    ?>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,12 +29,15 @@
 
                 <div class="error">
                     <?php
-                    if (isset($_GET["error"])) {
-                        if ($_GET["error"] == "noacc") {
+                    if (isset($error)) {
+                        if ($error == "noacc") {
                             echo 'Non existing account, please create one <a href="/createaccount.php">here</a>';
                         }
-                        if ($_GET["error"] == "badcred") {
+                        if ($error == "badcred") {
                             echo 'Bad credentials reset you password <a href="/resetpassword.php">here</a>';
+                        }
+                        if ($error == "acc_exists") {
+                            echo 'Le compte existe déja, vous pouvez reinitialiser votre mode de passe <a href="/resetpassword.php">ici</a>';
                         }
                     }
                     if (isset($_SESSION["id"])) {

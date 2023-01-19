@@ -3,33 +3,33 @@ class Auth extends Controller
 {
     public function login()
     {
+
         $root = "/public";
-        $this->model('Database');
+
         $this->view('header_footer/header');
 
-        $_POST["email"];
-        $_POST["password"];
+        var_dump($_POST);
 
         if (isset($_POST["email"]) || isset($_POST["password"])) {
             $db = new Database;
             $mail = $_POST["email"];
             $passwd = $_POST["password"];
+            echo $mail;
 
-            $hashed = password_hash($passwd, PASSWORD_DEFAULT);
-            $selected_fields = ["id", "password", "nom", "prenom", "creation", "verified"];
+            $selected_fields = ["id", "password", "nom", "prenom", "creation", "verified", "admin"];
             $table = "users";
             $where_column = "email";
             $where_value = $mail;
 
-            $db->select($selected_fields, $table, $where_column, $where_value);
-            $userlist = $db->return_list();
-            $f_user = $userlist[0];
-            $id =  $f_user[0];
-            $hash =  $f_user[1];
-            $nom =  $f_user[2];
-            $prenom =  $f_user[3];
-            $creation =  $f_user[4];
-            $verified =  $f_user[5];
+            $db->select_fields($selected_fields, $table, $where_column, $where_value);
+            $f_user = $db->return_list()[0];
+            $id =  $f_user["id"];
+            $hash =  $f_user["password"];
+            $nom =  $f_user["nom"];
+            $prenom =  $f_user["prenom"];
+            $creation =  $f_user["creation"];
+            $verified =  $f_user["verified"];
+            $admin =  $f_user["admin"];
 
 
             if (!isset($nom)) {
@@ -37,7 +37,7 @@ class Auth extends Controller
             } else {
                 if (password_verify($passwd,  $hash)) {
                     if ($verified == '0') {
-                        header("Location: /unverified_logic.php?id=$id");
+                        header("Location: $root/auth/unverif/$id");
                     } else if ($verified == '1') {
                         session_start();
                         $_SESSION["id"] = $id;
@@ -45,6 +45,7 @@ class Auth extends Controller
                         $_SESSION["nom"] = $nom;
                         $_SESSION["prenom"] = $prenom;
                         $_SESSION["creation"] = $creation;
+                        $_SESSION["Admin"] = $admin;
 
                         echo $nom . " " . $_SESSION["nom"];
                         header("Location: $root/moncompte/");
@@ -75,60 +76,57 @@ class Auth extends Controller
         header("Location: $root");
     }
 
+    public function email($email,)
+    {
+        $this->model('Mailer');
+        $mailer = new Mailer;
+        $token = "1234";
+        $typeofemail = 0;
+        $mailer->send($token, $email, $typeofemail);
+    }
+
     public function inscription()
     {
         $root = "/public";
         $this->model('Database');
 
-        $_POST["email"];
-        $_POST["password"];
-
-        if (isset($_POST["email"]) || isset($_POST["password"])) {
+        var_dump($_POST);
+        if (isset($_POST["submit"])) {
             $db = new Database;
             $mail = $_POST["email"];
-            $passwd = $_POST["password"];
-
-            $hashed = password_hash($passwd, PASSWORD_DEFAULT);
-            $selected_fields = ["id", "password", "nom", "prenom", "creation", "verified"];
+            $passwd = $_POST["Entreemdp"];
+            $confpasswd = $_POST["confirmEntreemdp"];
+            $selected_fields = ["id"];
             $table = "users";
             $where_column = "email";
             $where_value = $mail;
 
-            $db->select($selected_fields, $table, $where_column, $where_value);
-            $userlist = $db->return_list();
-            $f_user = $userlist[0];
-            $id =  $f_user[0];
-            $hash =  $f_user[1];
-            $nom =  $f_user[2];
-            $prenom =  $f_user[3];
-            $creation =  $f_user[4];
-            $verified =  $f_user[5];
+            $db->select_fields($selected_fields, $table, $where_column, $where_value);
+            $f_user = $db->return_list()[0];
+            var_dump($f_user);
+            $db->close();
 
 
-            if (!isset($nom)) {
-                header("Location: $root/auth/login/?error=noacc");
+
+
+            if (isset($f_user["id"])) {
+                header("Location: $root/login/acc_exists");
             } else {
-                if (password_verify($passwd,  $hash)) {
-                    if ($verified == '0') {
-                        header("Location: /unverified_logic.php?id=$id");
-                    } else if ($verified == '1') {
-                        session_start();
-                        $_SESSION["id"] = $id;
-                        $_SESSION["email"] = $mail;
-                        $_SESSION["nom"] = $nom;
-                        $_SESSION["prenom"] = $prenom;
-                        $_SESSION["creation"] = $creation;
+                if (preg_match("/^.{6}/",  $passwd)) {
+                    if ($passwd == $confpasswd) {
+                        $db = new Database;
+                        $insert_fields = ["email", "password", "nom", "prenom"];
+                        $insert_fields_value = [$mail, password_hash($passwd, 1), $_POST["nom"], $_POST["prenom"]];
+                        $db->insert("users", $insert_fields, $insert_fields_value);
 
-                        echo $nom . " " . $_SESSION["nom"];
-                        header("Location: $root/moncompte/");
+
+                        header("Location: $root/login/verify/$mail/");
                     } else {
-                        echo $verified;
+                        header("Location: $root/login/inscription/passwd_nomatch");
                     }
                 } else {
-                    header("Location: $root/login/inscription/?error=email");
+                    header("Location: $root/login/inscription/passwd_str");
                     exit();
-                    //echo "Bah non mauvais mdp ";
-                    //echo password_hash("1234",1);
                 }
             }
             $db->close();

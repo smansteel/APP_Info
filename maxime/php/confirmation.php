@@ -9,7 +9,8 @@ $conn = OpenCon();
 
 if (isset($_POST["email"])) {
     $mail = $_POST["email"];
-    $passwd = $_POST["password"];
+    $passwd = $_POST["Entreemdp"];
+    $confpasswd = $_POST["confirmEntreemdp"];
     $nom = $_POST["nom"];
     $prenom = $_POST["prenom"];
     $usertoken = tokenGen();
@@ -132,7 +133,7 @@ if (isset($_POST["email"])) {
                 } else {
 
                     session_start();
-                    session_unset();     
+                    session_unset();
                     $_SESSION["id"] = $id;
                     $_SESSION["token"] = $usertoken;
                     header("Location: /newpassword.php");

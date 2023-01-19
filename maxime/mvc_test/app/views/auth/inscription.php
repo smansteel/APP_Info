@@ -3,7 +3,8 @@ $root = "/public";
 ?>
 <?php $image_folder = $root . "/images" ?>
 <?php $css = $root . "/css/" ?>
-<?php $js = $root . "/js/"; ?>
+<?php $js = $root . "/js/";
+$error = $data["error"]; ?>
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,9 +22,11 @@ $root = "/public";
 
                 <div class="error">
                     <?php
-                    if (isset($_GET["error"])) {
-                        if ($_GET["error"] == "email") {
-                            echo 'Un compte avec cet email existe déjà,<br> <a href="/resetpassword.php">changez le ici</a>';
+                    if (isset($error)) {
+                        if ($error == "passwd_nomatch") {
+                            echo 'Les 2 mots de passe ne correspondent pas <br>';
+                        } else if ($error == "passwd_str") {
+                            echo "Le mot de passe est trop faible, veillez à ce qu'il ai au moins 6 caractères <br>";
                         }
                     }
 
@@ -32,7 +35,7 @@ $root = "/public";
 
 
 
-                <form action="<?= $root ?>/auth/inscription" method="post" class="form">
+                <form action="<?= $root ?>/auth/inscription/" method="post" class="form">
                     <div class="form-connect">
                         <input type="nom" name="nom" id="nom" class="form_field" placeholder="Nom" required>
                     </div>
@@ -60,7 +63,7 @@ $root = "/public";
                     </div>
 
                     <div class="enregistrement">
-                        <input type="submit" value="S'enregistrer" class="submit_button">
+                        <input type="submit" value="S'enregistrer" name="submit" class="submit_button">
                     </div>
 
                 </form>
