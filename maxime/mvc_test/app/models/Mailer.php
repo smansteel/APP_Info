@@ -14,8 +14,6 @@ class Mailer
 
     public function __construct()
     {
-
-        echo "constructy";
     }
 
     public function send($token, $email, $typeofemail)
@@ -44,7 +42,7 @@ class Mailer
         }
         try {
             $mail->send();
-            echo "Message has been sent successfully";
+            //echo "Message has been sent successfully";
 
             //connect to db and add usage of token (password reset/acc confirmation)
 

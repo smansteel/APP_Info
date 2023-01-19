@@ -10,7 +10,7 @@ $root = "/public";
 <link rel="stylesheet" href="<?= $css ?>login.css">
 
 <body>
-    <div class="box">
+    <div class="box" style="background-image: url(<?= $image_folder ?>/blurry_lr.jpg);">
         <div class="bg-image">
             <img src="<?= $image_folder ?>/captair.png" class="logo">
             <div class="text">

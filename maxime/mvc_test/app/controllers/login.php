@@ -33,6 +33,16 @@ class Login extends Controller
     {
         if ($mail != "void") {
             $this->model('Mailer');
+            $this->model('Database');
+
+            $db = new Database;
+            $table = "users";
+            $selected_fields = ["id"];
+            $where_column = 'email';
+            $where_value = $mail;
+            $db->select_fields($selected_fields, $table, $where_column, $where_value);
+            $id = $db->return_list()[0]["id"];
+
 
             $mailer = new Mailer;
             $token = $this->tokenGen();
@@ -42,11 +52,13 @@ class Login extends Controller
             $db = new Database;
             $table = "onetimepasses";
             $fields = ["token", "utilisation", "creation_time", "account_id"];
-            $fields_value = [];
+            $fields_value = [$token, "0", time(), $id];
             $db->insert($table, $fields, $fields_value);
 
+            header("Location: $this->root/login/verify/");
+        } else {
             $this->view('header_footer/header');
-            $this->view('auth/inscription');
+            $this->view('auth/verify');
             $this->view('header_footer/footer');
         }
     }
