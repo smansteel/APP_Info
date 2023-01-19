@@ -9,12 +9,6 @@
 
     <link rel="stylesheet" href="<?= $css ?>ml.css">
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <div class="ml">
         <h1>MENTIONS LÉGALES :</h1>
 
