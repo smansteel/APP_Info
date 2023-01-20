@@ -26,27 +26,6 @@
 
                     <img src="<?= $image_folder ?>captair.png" class="logo">
 
-<<<<<<< Updated upstream
-                <img src="<?= $image_folder ?>captair.png" class="logo">
-
-                <div class="error">
-                    <?php
-                    if (isset($data["error"])) {
-                        $error = $data["error"];
-                        if ($error == "noacc") {
-                            echo 'Non existing account, please create one <a href="/createaccount.php">here</a>';
-                        }
-                        if ($error == "badcred") {
-                            echo 'Bad credentials reset you password <a href="/resetpassword.php">here</a>';
-                        }
-                        if ($error == "acc_exists") {
-                            echo 'Le compte existe déja, vous pouvez reinitialiser votre mode de passe <a href="/resetpassword.php">ici</a>';
-                        }
-                    }
-                    if (isset($_SESSION["id"])) {
-                        header("Location: /moncompte.php");
-                    } ?>
-=======
                     <div class="error">
                         <?php
                         if (isset($_GET["error"])) {
@@ -60,7 +39,6 @@
                         if (isset($_SESSION["id"])) {
                             header("Location: /moncompte.php");
                         } ?>
->>>>>>> Stashed changes
 
                     </div>
                     <div class="confirmation">
@@ -76,42 +54,41 @@
 
                     <form action="<?= $root ?>/auth/login/" method="post" class="form">
 
-<<<<<<< Updated upstream
-                    <div class="form-connect">
-                        <input type="email" name="email" id="email" class="form_field" placeholder="Adresse email" required>
-                    </div>
-                    <div class="form-example">
-                        <input type="password" name="password" id="password" class="form_field" placeholder="Mot de passe" required>
-                    </div>
-                    <div class="form-example">
-                        <input type="submit" value="Connexion" class="submit_button">
-                    </div>
+                        <<<<<<< Updated upstream <div class="form-connect">
+                            <input type="email" name="email" id="email" class="form_field" placeholder="Adresse email" required>
+                </div>
+                <div class="form-example">
+                    <input type="password" name="password" id="password" class="form_field" placeholder="Mot de passe" required>
+                </div>
+                <div class="form-example">
+                    <input type="submit" value="Connexion" class="submit_button">
+                </div>
                 </form>
                 <br>
                 <a class="newacc" href="<?= $root ?>/login/inscription" class="newacc">Créer mon compte</a><br>
                 <br>
                 <a href="<?= $root ?>/login/forgor" class="fgtpsswd">Mot de passe oublié</a>
-=======
-                        <div class="form-connect">
-                            <input type="email" name="email" id="email" class="form_field" placeholder="Adresse email" required>
-                        </div>
-                        <div class="form-example">
-                            <input type="password" name="password" id="password" class="form_field" placeholder="Mot de passe" required>
-                        </div>
-                        <div class="form-example">
-                            <input type="submit" value="Connexion" class="submit_button">
-                        </div>
-                    </form>
-                    <br>
-                    <a class="newacc" href="<?= $root ?>/login/inscription" class="newacc">Créer mon compte</a><br>
-                    <br>
-                    <a href="/resetpassword.php" class="fgtpsswd">Mot de passe oublié</a>
->>>>>>> Stashed changes
-
-
+                =======
+                <div class="form-connect">
+                    <input type="email" name="email" id="email" class="form_field" placeholder="Adresse email" required>
                 </div>
+                <div class="form-example">
+                    <input type="password" name="password" id="password" class="form_field" placeholder="Mot de passe" required>
+                </div>
+                <div class="form-example">
+                    <input type="submit" value="Connexion" class="submit_button">
+                </div>
+                </form>
+                <br>
+                <a class="newacc" href="<?= $root ?>/login/inscription" class="newacc">Créer mon compte</a><br>
+                <br>
+                <a href="/resetpassword.php" class="fgtpsswd">Mot de passe oublié</a>
+                >>>>>>> Stashed changes
+
+
             </div>
         </div>
+    </div>
     </div>
 
 </body>
