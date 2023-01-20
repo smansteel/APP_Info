@@ -63,9 +63,7 @@
                     <input type="submit" value="Connexion" class="submit_button">
                 </div>
                 </form>
-                <br>
-                <a class="newacc" href="<?= $root ?>/login/inscription" class="newacc">Créer mon compte</a><br>
-                <br>
+                <a class="newacc" href="<?= $root ?>/login/inscription" class="newacc">Créer mon compte</a>
                 <a href="<?= $root ?>/login/forgor" class="fgtpsswd">Mot de passe oublié</a>
                 
 
