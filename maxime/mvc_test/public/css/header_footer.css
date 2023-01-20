@@ -122,18 +122,18 @@ nav {
 
 
     nav {
-        overflow-x: hidden;
+        /*  overflow-x: hidden;
         position: fixed;
-        height: 10%;
+
         left: 0;
-        margin-top: 30px;
+       margin-top: 30px;*/
+        height: 10%;
     }
 
     .footer {
+
         position: fixed;
         bottom: 0;
     }
-
-
 
 }
