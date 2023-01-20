@@ -76,7 +76,7 @@ class Donnees extends Controller
     }
 
 
-    $this->view('header_footer/header');
+    $this->view('header_footer/header_donnees');
     $this->view('donnees/index', ['megarray' => $megarray]);
     $this->view('header_footer/footer');
   }
