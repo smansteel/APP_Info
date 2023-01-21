@@ -25,7 +25,6 @@ body {
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    min-height: 68vh;
     width: 80%;
     margin: 0 auto;
     font-size: 18px;
@@ -94,6 +93,6 @@ body {
     transition: max-height 0.5s ease-out;
 }
 
-.question-title.active + .answer {
+.question-title.active+.answer {
     max-height: 1000px;
 }

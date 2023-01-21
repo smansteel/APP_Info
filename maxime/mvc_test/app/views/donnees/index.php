@@ -1,8 +1,9 @@
-<?php $image_folder = "../../../images/" ?>
-<?php $css = "../../../css/" ?>
-<?php $js = "../../../js/" ?>
+<?php $image_folder = "/images/" ?>
+<?php $css = "/css/" ?>
+<?php $js = "/js/" ?>
 
 <link rel="stylesheet" href="<?= $css ?>donnees.css">
+<link rel="stylesheet" href="<?= $js ?>app_v2.js">
 
 
 <body>

@@ -496,6 +496,8 @@ section {
         hyphens: auto;
     }
 
+
+
     .bloc2image {
         margin-bottom: 0.5rem;
         font-weight: 300;
@@ -513,6 +515,7 @@ section {
     @media (min-width: 576px) {
         #containerimage {
             max-width: 540px;
+
         }
     }
 }
@@ -781,6 +784,7 @@ form {
     #container {
         display: flex;
         flex-direction: column;
+
     }
 
     #container img {
@@ -800,6 +804,12 @@ form {
         width: 100%;
         display: block;
         margin: 20px auto;
+    }
+
+    #blocimage img {
+        width: 100%;
+        display: block;
+
     }
 }
 

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<?php $image_folder = "../../../images/" ?>
-<?php $css = "../../../css/" ?>
-<?php $js = "../../../js/" ?>
+<?php $image_folder = "/images/" ?>
+<?php $css = "/css/" ?>
+<?php $js = "/js/" ?>
 
 <head>
 
