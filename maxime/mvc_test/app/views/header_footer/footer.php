@@ -19,9 +19,9 @@ $root = "";
             <div class="bloc footer-services">
                 <a href="<?= $root ?>/ml">Mentions légales</a>
             </div>
-            <div class="bloc footer-services">
+            <!-- <div class="bloc footer-services">
                 <a href="<?= $root ?>/cgu">CGU</a>
-            </div>
+            </div> -->
             <div class="bloc footer-services">
                 <a href="<?= $root ?>/pdc">Politique de confidentialité</a>
             </div>
