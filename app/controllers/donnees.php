@@ -20,7 +20,10 @@ class Donnees extends Controller
       $table = "stations";
       $where_column = "ligne";
       $where_value = $ligne;
-      $db->select($selected_fields, $table, $where_column, $where_value);
+      $ordering = "ASC";
+      $order_column = "ordre";
+      $db->ordered_select($selected_fields, $table, $where_column, $where_value, $ordering, $order_column);
+
 
       $stations = $db->return_list();
 
