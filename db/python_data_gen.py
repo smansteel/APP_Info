@@ -1,5 +1,8 @@
 import random
 import time
+from dotenv import dotenv_values
+
+config = dotenv_values(".env")  # config = {"USER": "foo", "EMAIL": "foo@example.org"}
 
 import mysql.connector
 from mysql.connector import Error
@@ -7,8 +10,8 @@ from mysql.connector import Error
 try:
     connection = mysql.connector.connect(host='localhost',
                                          database='captair',
-                                         user='root',
-                                         password='')
+                                         user=config["DB_USER"],
+                                         password=config["DB_PASS"])
 
     mycursor = connection.cursor()
 
@@ -16,8 +19,8 @@ try:
 
     deuxndconnection = mysql.connector.connect(host='localhost',
                                          database='captair',
-                                         user='root',
-                                         password='')
+                                         user=config["DB_USER"],
+                                         password=config["DB_PASS"])
     myresult = mycursor.fetchall()
     for x in myresult:
         colorlist = ["green", "red", "yellow"]
