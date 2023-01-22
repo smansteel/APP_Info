@@ -37,15 +37,9 @@ class Auth extends Controller
                     if ($verified == '0') {
                         header("Location: $root/auth/unverif/$id");
                     } else if ($verified == '1') {
-                        session_start();
                         $_SESSION["id"] = $id;
-                        $_SESSION["email"] = $mail;
-                        $_SESSION["nom"] = $nom;
-                        $_SESSION["prenom"] = $prenom;
-                        $_SESSION["creation"] = $creation;
                         $_SESSION["Admin"] = $admin;
 
-                        echo $nom . " " . $_SESSION["nom"];
                         header("Location: $root/moncompte/");
                     } else {
                         echo $verified;
@@ -69,7 +63,6 @@ class Auth extends Controller
     public function logout()
     {
         $root = "";
-        session_start();
         session_destroy();
         header("Location: $root/");
     }
