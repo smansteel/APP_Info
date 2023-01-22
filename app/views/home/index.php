@@ -24,8 +24,8 @@ $root = "/";
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <title>Accueil - AirQ</title>
     <script src="<?= $js ?>ajax_form.js"></script>
-    <link rel="stylesheet" href="<?=$js?>app_v2.js">
-        
+    <link rel="stylesheet" href="<?= $js ?>app_v2.js">
+
 </head>
 
 <body>
@@ -78,7 +78,8 @@ $root = "/";
             </div>
             <div class="right">
                 <h1 class="reveal-1">Notre solution :</h1>
-                <p class="reveal-2">Le bracelet Captair, qui est équipé de plusieurs capteurs permettant de mesurer la qualité de l'environnement autour de l'utilisateur.
+                <img src="<?= $image_folder ?>captair.png">
+                <p class=" reveal-2">Le bracelet Captair, qui est équipé de plusieurs capteurs permettant de mesurer la qualité de l'environnement autour de l'utilisateur.
                     Le bracelet est conçu pour être porté par les utilisateurs du métro et peut détecter différents paramètres tels que l'affluence, la qualité de l'air et le bruit. En utilisant ces données,
                     le bracelet Captair peut aider les utilisateurs à prendre des décisions informées sur leur voyage et à signaler tout problème de qualité. En fournissant ces informations en temps réel,
                     nous espérons contribuer à améliorer la qualité de vie des utilisateurs du métro et à renforcer la réputation de la ville de Paris en tant que destination touristique attractive.</p>
