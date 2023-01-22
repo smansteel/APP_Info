@@ -23,24 +23,24 @@ class Auth extends Controller
             $f_user = $db->return_list()[0];
             $id =  $f_user["id"];
             $hash =  $f_user["password"];
-            $nom =  $f_user["nom"];
-            $prenom =  $f_user["prenom"];
-            $creation =  $f_user["creation"];
             $verified =  $f_user["verified"];
             $admin =  $f_user["admin"];
 
 
-            if (!isset($nom)) {
+            if (!isset($id)) {
                 header("Location: $root/auth/login/?error=noacc");
+                exit();
             } else {
                 if (password_verify($passwd,  $hash)) {
                     if ($verified == '0') {
                         header("Location: $root/auth/unverif/$id");
+                        exit();
                     } else if ($verified == '1') {
                         $_SESSION["id"] = $id;
                         $_SESSION["Admin"] = $admin;
 
                         header("Location: $root/moncompte/");
+                        exit();
                     } else {
                         echo $verified;
                     }
@@ -65,6 +65,7 @@ class Auth extends Controller
         $root = "";
         session_destroy();
         header("Location: $root/");
+        exit();
     }
 
     public function email($email,)
@@ -102,6 +103,7 @@ class Auth extends Controller
 
             if (isset($f_user["id"])) {
                 header("Location: $root/login/acc_exists");
+                exit();
             } else {
                 if (preg_match("/^.{6}/",  $passwd)) {
                     if ($passwd == $confpasswd) {
@@ -112,8 +114,10 @@ class Auth extends Controller
 
 
                         header("Location: $root/login/verify/$mail/");
+                        exit();
                     } else {
                         header("Location: $root/login/inscription/passwd_nomatch");
+                        exit();
                     }
                 } else {
                     header("Location: $root/login/inscription/passwd_str");
@@ -203,6 +207,7 @@ class Auth extends Controller
             $db->insert($table, $fields, $fields_value);
 
             header("Location: $this->root/login/verify/");
+            exit();
         }
     }
 
@@ -224,6 +229,7 @@ class Auth extends Controller
                 $db->update($update_fields, $update_fields_value, $table, $where_column, $where_value);
 
                 header("Location: $this->root/login/chang");
+                exit();
             } else {
                 $this->view('header_footer/header');
                 $this->view('auth/password_retype', ['id' => $_POST["id"]]);

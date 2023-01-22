@@ -53,6 +53,7 @@ class Admin extends Controller
             $this->view('admin/users', ['userlist' => $userlist, 'capteurs_list' =>  $capteurs_list]);
         } else {
             header("Location: /");
+            exit();
         }
     }
 
@@ -95,6 +96,7 @@ class Admin extends Controller
             $this->view('admin/capteurs', ['capteurlist' => $capteurlist, 'ownerlist' =>  $ownerlist]);
         } else {
             header("Location: /");
+            exit();
         }
     }
     public function edit($param = "void")

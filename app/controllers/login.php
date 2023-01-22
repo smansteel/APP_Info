@@ -48,6 +48,7 @@ class Login extends Controller
             $db->insert($table, $fields, $fields_value);
 
             header("Location: $this->root/login/verify/");
+            exit();
         } else {
             $this->view('header_footer/header');
             $this->view('auth/verify');
