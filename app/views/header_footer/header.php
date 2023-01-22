@@ -66,10 +66,21 @@ $root = "";
 </div>
 
 </nav>
-<nav class="mobile-nav">
-    <li><a href="<?= $root ?>/">A Propos</a></li>
-    <li><a href="<?= $root ?>/donnees/">Données</a></li>
-    <li><a href="<?= $root ?>/faq/">FAQ</a></li>
-    <li><a href="<?= $root ?>/login">Connexion</a></li>
-    <li><a href="<?= $root ?>/login/inscription">S'inscrire</a></li>
-</nav>
+<?php if (isset($_SESSION["id"])) { ?>
+    <nav class="mobile-nav">
+        <li><a href="<?= $root ?>/">A Propos</a></li>
+        <li><a href="<?= $root ?>/donnees/">Données</a></li>
+        <li><a href="<?= $root ?>/faq/">FAQ</a></li>
+        <li><a href="<?= $root ?>/moncompte/">Mon Compte</a></li>
+        <li><a href="<?= $root ?>/auth/logout">Se Déconnecter</a></li>
+    </nav>
+<?php } else { ?>
+    <nav class="mobile-nav">
+        <li><a href="<?= $root ?>/">A Propos</a></li>
+        <li><a href="<?= $root ?>/donnees/">Données</a></li>
+        <li><a href="<?= $root ?>/faq/">FAQ</a></li>
+        <li><a href="<?= $root ?>/login">Connexion</a></li>
+        <li><a href="<?= $root ?>/login/inscription">S'inscrire</a></li>
+    </nav>
+
+<?php }
