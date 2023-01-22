@@ -143,7 +143,7 @@ $root = "/";
             </main>
         </div>
         <div class="fondblanc">
-            <h1></h1>
+            <br>
             <div class="newsletter">
                 <h2 class="reveal-1">Inscrivez-vous à notre newsletter</h2>
                 <p class="reveal-2">Si vous souhaitez bénéficier dès à présent des avancées technologiques de nos capteurs, vous pouvez vous inscrire à notre newsletter pour être informé de la date de sortie.</p>
