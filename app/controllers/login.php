@@ -4,6 +4,10 @@ class Login extends Controller
 {
     public function index($param = 'void')
     {
+        if (isset($_SESSION["id"])) {
+            header("Location: /moncompte/");
+            exit();
+        }
         $this->view('header_footer/header');
         if ($param != 'void') {
             $this->view('auth/index', ["error" => $param]);

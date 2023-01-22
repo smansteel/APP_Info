@@ -45,7 +45,7 @@ class Auth extends Controller
                         echo $verified;
                     }
                 } else {
-                    header("Location: $root/auth/login/badcred");
+                    header("Location: $root/login/badcred");
                     exit();
                     //echo "Bah non mauvais mdp ";
                     //echo password_hash("1234",1);

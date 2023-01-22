@@ -68,8 +68,8 @@ $root = "";
 </nav>
 <nav class="mobile-nav">
     <li><a href="<?= $root ?>/">A Propos</a></li>
-    <li><a href="<?= $root ?>/donnees/index.php">Données</a></li>
-    <li><a href="<?= $root ?>/faq/index.php">FAQ</a></li>
+    <li><a href="<?= $root ?>/donnees/">Données</a></li>
+    <li><a href="<?= $root ?>/faq/">FAQ</a></li>
     <li><a href="<?= $root ?>/login">Connexion</a></li>
     <li><a href="<?= $root ?>/login/inscription">S'inscrire</a></li>
 </nav>

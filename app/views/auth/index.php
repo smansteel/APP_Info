@@ -28,23 +28,21 @@
 
                     <div class="error">
                         <?php
-                        if (isset($_GET["error"])) {
-                            if ($_GET["error"] == "noacc") {
-                                echo 'Non existing account, please create one <a href="/createaccount.php">here</a>';
+                        if (isset($data["error"])) {
+                            if ($data["error"] == "noacc") {
+                                echo 'Non existing account, please create one <a href="/login/inscription/">here</a>';
                             }
-                            if ($_GET["error"] == "badcred") {
-                                echo 'Bad credentials reset you password <a href="/resetpassword.php">here</a>';
+                            if ($data["error"] == "badcred") {
+                                echo 'Bad credentials reset you password <a href="/login/forgor/">here</a>';
                             }
                         }
-                        if (isset($_SESSION["id"])) {
-                            header("Location: /moncompte.php");
-                        } ?>
+                        ?>
 
                     </div>
                     <div class="confirmation">
                         <?php
-                        if (isset($_GET["confirmation"])) {
-                            if ($_GET["confirmation"] == "passwd") {
+                        if (isset($data["confirmation"])) {
+                            if ($data["confirmation"] == "passwd") {
                                 echo "Votre mot de passe vient d'être changé, <br>nous vous invitons à vous connecter pour s'assurer que tout marche ! ";
                             }
                         }

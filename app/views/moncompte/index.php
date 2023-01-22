@@ -6,11 +6,7 @@
 
 <body>
 
-   <?php
-   if (!isset($_SESSION["prenom"])) {
-      header("Location: /login.php");
-   }
-   ?>
+
 
 
 
@@ -61,7 +57,7 @@
                <input type="submit" value="Enregistrer" class="submit_button">
             </div>
          </form>
-         <form action="changepasswd.php" method="post" class="form">
+         <form action="/login/forgor" method="post" class="form">
             <div>
                <input type="hidden" name="email" id="email" value="<?php echo $_SESSION["email"] ?>" />
                <input type="submit" value="Changer de mot de passe" class="submit_button">
@@ -70,7 +66,7 @@
       </div>
 
    </div>
-   <a href=/logout.php>Logout ?<a>
+   <a href=/logout />Logout ?<a>
 </body>
 
 

@@ -11,7 +11,7 @@ $root = "";
 if (isset($_SESSION["id"])) {
     echo "<script type = 'text/javascript'>";
     echo "alert('Vous êtes connecté a un compte, vous ne pouvez par réinitialiser votre mot de passe, vous allez être redirigé sur votre page mon compte');  ";
-    echo "window.location = '/moncompte.php';";
+    echo "window.location = '/moncompte/';";
     echo "</script>  ";
     //header("Location: /moncompte.php");
 }
@@ -34,7 +34,7 @@ if (isset($_SESSION["id"])) {
                     }
                 }
                 if (isset($_SESSION["id"])) {
-                    header("Location: /moncompte.php");
+                    header("Location: /moncompte/");
                     exit();
                 } ?>
 
@@ -52,7 +52,7 @@ if (isset($_SESSION["id"])) {
                 </div>
             </form>
             <br>
-            <a class="newacc" href="/login.php" class="newacc">Retour</a><br>
+            <a class="newacc" href="/login/" class="newacc">Retour</a><br>
 
 
 
