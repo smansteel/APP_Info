@@ -465,7 +465,7 @@ section {
         margin-top: 10%;
         width: 50%;
         text-align: center;
-        background-color: #00c4b3;
+        background-color: #21302d9c;
         color: white;
         padding: 20px;
         border-radius: 145px;
@@ -788,7 +788,7 @@ form {
     }
 
     #container img {
-        opacity: 0.5;
+        opacity: 0;
     }
 
     .gauche {
