@@ -1,10 +1,21 @@
-<?php $image_folder = "/images/" ?>
-<?php $css = "/css/" ?>
-<?php $js = "/js/" ?>
+<head>
+  <?php
+  $root = "";
+  ?>
+  <?php $image_folder = $root . "/images/" ?>
+  <?php $css = $root . "/css/" ?>
+  <?php $js = $root . "/js/";
+  ?>
 
-<link rel="stylesheet" href="<?= $css ?>donnees.css">
-<link rel="stylesheet" href="<?= $js ?>app_v2.js">
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="with=device-wdith, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="<?= $css ?>donnees.css">
+  <link rel="stylesheet" href="<?= $js ?>app_v2.js">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <title>Données - AirQ</title>
+</head>
 
 <body>
 
@@ -188,3 +199,22 @@
 
   </div>
 </body>
+<script>
+  window.onload = function() {
+    window.addEventListener('scroll', function(e) {
+      if (window.pageYOffset > 100) {
+        document.querySelector("header").classList.add('is-scrolling');
+      } else {
+        document.querySelector("header").classList.remove('is-scrolling');
+      }
+    });
+
+    const menu_btn = document.querySelector('.toggle');
+    const mobile_menu = document.querySelector('.mobile-nav');
+
+    menu_btn.addEventListener('click', function() {
+      menu_btn.classList.toggle('is-active');
+      mobile_menu.classList.toggle('is-active');
+    });
+  }
+</script>
