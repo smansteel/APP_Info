@@ -19,6 +19,18 @@
 
 <body>
 
+  <div class="color-legend">Légende:
+    <div class="color-dot"></div>
+    <div class="color-bar"></div>
+    <div class="color-label">
+      <span class="green">Bien</span>
+      <span class="yellow">Moyen</span>
+      <span class="red">Mauvais</span>
+    </div>
+  </div>
+
+
+
   <?php
   $megarray = $data['megarray'];
 
@@ -217,4 +229,25 @@
       mobile_menu.classList.toggle('is-active');
     });
   }
+  const dot = document.querySelector('.color-dot');
+  const bar = document.querySelector('.color-bar');
+  const label = document.querySelector('.color-label');
+
+  dot.addEventListener('click', function() {
+    if (bar.style.display === 'block') {
+      bar.style.height = '0';
+      label.style.opacity = '0';
+      setTimeout(() => {
+        bar.style.display = 'none';
+        label.style.display = 'none';
+      }, 500);
+    } else {
+      bar.style.display = 'block';
+      label.style.display = 'flex';
+      setTimeout(() => {
+        bar.style.height = '20px';
+        label.style.opacity = '1';
+      }, 50);
+    }
+  });
 </script>

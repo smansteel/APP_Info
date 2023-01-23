@@ -193,3 +193,53 @@ nav {
         overflow-x: auto;
     }
 }
+
+.color-legend {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+
+}
+
+.color-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(to right, green, yellow, rgb(151, 0, 0));
+    cursor: pointer;
+}
+
+.color-bar {
+    width: 25%;
+    height: 13px;
+    background: linear-gradient(to right, rgb(1, 106, 1), yellow, rgb(122, 0, 0));
+    border-radius: 20% / 500%;
+    margin-top: 10px;
+    margin-left: 30px;
+    display: none;
+    transition: height 0.5s ease;
+}
+
+.color-label {
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+    margin-left: 30px;
+    display: none;
+    transition: opacity 0.5s ease;
+}
+
+.green {
+    color: green;
+}
+
+.yellow {
+    color: rgb(255, 174, 0);
+}
+
+.red {
+    color: red;
+}
