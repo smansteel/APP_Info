@@ -1,7 +1,8 @@
 body {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     font-family: "Nunito Sans", sans-serif;
 
     overflow: hidden;
@@ -29,7 +30,6 @@ body {
     margin: 0 auto;
     font-size: 18px;
     padding-top: 10%;
-    min-height: 68vh;
 }
 
 .question-title {

@@ -2,7 +2,6 @@
 
 .header {
     font-family: "Nunito Sans", sans-serif;
-    height: 9vh;
     background: #fff;
     font-size: 16px;
     padding: 0 2rem;
@@ -119,8 +118,6 @@ nav {
 }
 
 @media screen and (max-width: 600px) {
-
-
     nav {
         /*  overflow-x: hidden;
         position: fixed;
@@ -135,5 +132,4 @@ nav {
         position: fixed;
         bottom: 0;
     }*/
-
 }

@@ -9,13 +9,21 @@ class Moncompte extends Controller
             exit();
         } else {
             $db = new Database;
-            $db->select_fields(["email", "prenom", "nom", "creation", "verified"], "users", "id", $_SESSION["id"]);
-            $db->return_list();
-            $user = $db[0][0];
+            $db->select_fields(["email", "prenom", "nom", "creation", "verified", "admin"], "users", "id", $_SESSION["id"]);
+
+            $db_list = $db->return_list();
+            $user = $db_list[0];
+
+
+            $db = new Database;
+            $db->select_fields(["id", "id_sql", "name", "status"], "capteurs", "owner", $_SESSION["id"]);
+
+            $cpt_list = $db->return_list();
+
 
 
             $this->view('header_footer/header');
-            $this->view('moncompte/index', ["user " => $user]);
+            $this->view('moncompte/index', ["user" => $user, "capteurs" => $cpt_list]);
             $this->view('header_footer/footer');
         }
     }
