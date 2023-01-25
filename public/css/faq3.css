@@ -29,7 +29,6 @@ body {
     width: 80%;
     margin: 0 auto;
     font-size: 18px;
-    padding-top: 10%;
 }
 
 .question-title {
@@ -94,6 +93,6 @@ body {
     transition: max-height 0.5s ease-out;
 }
 
-.question-title.active + .answer {
+.question-title.active+.answer {
     max-height: 1000px;
 }
