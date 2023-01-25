@@ -19,6 +19,20 @@ class Database
         $this->db = new mysqli($dbhost . ":" . $dbport, $dbuser, $dbpass, $dbname) or die("Connect failed: %s\n" . $this->db->error);
     }
 
+    public function gen()
+    {
+
+        for ($i = 0; $i < 1000; $i++) {
+            $time = time() - rand(0, 604000);
+            $co2 = rand(0, 100);
+            $mo = rand(0, 100);
+            $decibel = rand(0, 100);
+            $stmt = mysqli_prepare($this->db, "INSERT INTO `capteurs_qualite` ( `capteur_id`, `time`, `airq_air`, `airq_db`, `airq_cardiac`) VALUES (3, " . $time . ", $co2, $mo, $decibel);");
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_close($stmt);
+        }
+    }
+
     public function select($selected_fields, $table, $where_column, $where_value)
     {
         $stmt = mysqli_prepare($this->db, "SELECT " . implode(", ", $selected_fields) . " FROM $table WHERE $where_column=?");
@@ -41,6 +55,7 @@ class Database
 
     public function select_fields($selected_fields, $table, $where_column, $where_value)
     {
+
         $stmt = mysqli_prepare($this->db, "SELECT " . implode(", ", $selected_fields) . " FROM $table WHERE $where_column=?");
         mysqli_stmt_bind_param($stmt, "s", $where_value);
         mysqli_stmt_execute($stmt);

@@ -10,6 +10,85 @@ body {
     min-height: calc(100vh - 197px);
 }
 
+.mini-fb {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.Titre {
+    padding: 20px;
+    font-size: 2em;
+}
+
+.diagram {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+.results {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: space-around;
+}
+.result_text {
+    font-size: 2em;
+
+    /* text-decoration: underline; */
+}
+.result_text_empty {
+    font-size: 1.5em;
+
+    /* text-decoration: underline; */
+}
+.ajout_text {
+    font-size: 1.5em;
+    padding-right: 40px;
+
+    /* text-decoration: underline; */
+}
+
+.nano-fb {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    justify-content: center;
+    align-items: center;
+}
+.red {
+    color: red;
+}
+.green {
+    color: green;
+}
+.yellow {
+    color: yellow;
+}
+.mid-fb {
+    padding: 0 40px;
+    max-width: 350px;
+}
+.mid-mid-fb {
+    display: flex;
+    flex-direction: row;
+    background-color: #edf2f7;
+    margin: 8px;
+    border-radius: 8px;
+    justify-content: space-between;
+
+    width: 80%;
+    padding: 10px;
+}
+.big-fb {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .background {
     position: fixed;
     left: 0;
@@ -176,7 +255,7 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 1px 550px;
+    margin: 4px 4px;
     cursor: pointer;
 }
 
@@ -242,4 +321,33 @@ body {
 }
 .header-box {
     width: 100vw;
+}
+
+@media (max-width: 900px) {
+    .mid-mid-fb {
+        flex-direction: column;
+    }
+    .mid-fb {
+        padding: 20 0px;
+    }
+    .mid_2-fb {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    .ajout_text {
+        padding-right: 0px;
+
+        /* text-decoration: underline; */
+    }
+}
+
+@media (min-width: 900px) {
+    .mid_2-fb {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+    }
 }
