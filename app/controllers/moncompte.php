@@ -39,7 +39,7 @@ class Moncompte extends Controller
             $this->view('header_footer/footer');
         }
     }
-    public function add_capteur()
+    public function addcapteur()
     {
         $this->model("Database");
         if (!isset($_SESSION["id"])) {
@@ -62,5 +62,61 @@ class Moncompte extends Controller
             $this->view('moncompte/index', ["user " => $user]);
             $this->view('header_footer/footer');
         }
+    }
+    public function editcapteur()
+    {
+    }
+    public function delcapteur()
+    {
+        $this->view('moncompte/js_alert', ["id" => $_POST["id"]]);
+    }
+    public function del_conf_capteur($param)
+    {
+        $this->model("Database");
+
+        $db = new Database;
+        $db->select_fields(["owner"], "capteurs", "id_sql", $param);
+        $owner = $db->return_list()[0]["id"];
+        header("Location: /moncompte/");
+        if (!isset($param)) {
+            header("Location: /moncompte/");
+            exit();
+        } else if ($_SESSION["id"] == $owner) {
+            $db = new Database;
+            $db->delete("capteurs", "id_sql", $param);
+            header("Location: /moncompte/");
+            exit();
+        } else {
+            header("Location: /moncompte/");
+            exit();
+        }
+    }
+    public function togglecapteur()
+    {
+    }
+    public function edit()
+    {
+    }
+    public function delete()
+    {
+        $this->view('moncompte/js_alert_self', ["id" => $_SESSION["id"]]);
+    }
+    public function delete_conf($param)
+    {
+
+        $this->model("Database");
+        if (!isset($param)) {
+            header("Location: /moncompte/");
+            exit();
+        } else if ($_SESSION["id"] == $param) {
+            $db = new Database;
+            $db->delete("users", "id", $_SESSION["id"]);
+            header("Location: /moncompte/");
+            exit();
+        } else {
+            header("Location: /moncompte/");
+            exit();
+        }
+        session_destroy();
     }
 }

@@ -105,7 +105,7 @@ $css = "/css/";
                      Supprimer ce capteur et toutes les informations associées&nbsp:
                   </div>
                   <div class="mini-fb">
-                     <form action="/moncompte/editcapteur" method="POST">
+                     <form action="/moncompte/delcapteur" method="POST">
                         <input type="hidden" name="id" value="<?= $capteur["id_sql"] ?>">
                         <button type="submit" class="button">Supprimer</button>
                      </form>
