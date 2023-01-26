@@ -48,7 +48,7 @@ if (isset($_SESSION["id"])) {
                 </div>
 
                 <div class="form-example">
-                    <input type="submit" name="submit" value="Vérifier mon email" class="submit_button">
+                    <input type="submit" name="submit" value="Envoyer un lien de réinitialisation" class="submit_button">
                 </div>
             </form>
             <br>
