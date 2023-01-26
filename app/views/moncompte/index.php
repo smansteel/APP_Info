@@ -26,6 +26,11 @@ $css = "/css/";
       ?>
 
       <div class="big-fb">
+         <?php
+         if (isset($data["param"]) && $data["param"] == "email_duplicate") {
+            echo "<p class='red'>La modification de l'email n'a pas pu etre effectuée, un compte avec cet email existe deja.</p>";
+         }
+         ?>
          <div class="Titre">Mes Capteurs</div>
 
 
@@ -84,12 +89,25 @@ $css = "/css/";
                      Dernière synchronisation du capteur&nbsp: Hier
                   </div>
                   <div class="mini-fb">
-                     Désactiver les capteurs à la prochaine connexion&nbsp:
+                     <?php if (isset($capteur["status"]) && $capteur["status"] == 1) {
+                        echo "Désactiver le capteur à la prochaine connexion&nbsp:";
+                     } else {
+                        echo "Activer le capteur à la prochaine connexion&nbsp:";
+                     } ?>
+
                   </div>
                   <div class="mini-fb">
                      <form action="/moncompte/togglecapteur" method="POST">
                         <input type="hidden" name="id" value="<?= $capteur["id_sql"] ?>">
-                        <button type="submit" class="button">Activer</button>
+                        <input type="hidden" name="status" value="<?= $capteur["status"] ?>">
+                        <button type="submit" name="submit" class="button">
+                           <?php if (isset($capteur["status"]) && $capteur["status"] == 1) {
+                           ?><input type="hidden" name="status" value="<?= $capteur["status"] ?> ">
+                           <?php
+                              echo "Désactiver";
+                           } else {
+                              echo "Activer";
+                           } ?></button>
                      </form>
                   </div>
                   <div class="mini-fb">
@@ -98,7 +116,7 @@ $css = "/css/";
                   <div class="mini-fb">
                      <form action="/moncompte/editcapteur" method="POST">
                         <input type="hidden" name="id" value="<?= $capteur["id_sql"] ?>">
-                        <button type="submit" class="button">Changer</button>
+                        <button type="submit" name="submit" class="button">Changer</button>
                      </form>
                   </div>
                   <div class="mini-fb">
@@ -107,7 +125,7 @@ $css = "/css/";
                   <div class="mini-fb">
                      <form action="/moncompte/delcapteur" method="POST">
                         <input type="hidden" name="id" value="<?= $capteur["id_sql"] ?>">
-                        <button type="submit" class="button">Supprimer</button>
+                        <button type="submit" name="submit" class="button">Supprimer</button>
                      </form>
                   </div>
 
@@ -122,7 +140,7 @@ $css = "/css/";
                </div>
                <div class="mini-fb">
                   <form action="/moncompte/addcapteur" method="POST">
-                     <button type="submit" class="button">Ajouter</button>
+                     <button type="submit" name="submit" class="button">Ajouter</button>
                   </form>
                </div>
             </div>
@@ -141,7 +159,7 @@ $css = "/css/";
                </div>
                <div class="mini-fb">
                   <form action="/moncompte/edit" method="POST">
-                     <button type="submit" class="button">Modifier</button>
+                     <button type="submit" name="submit" class="button">Modifier</button>
                   </form>
                </div>
             </div>
@@ -154,7 +172,7 @@ $css = "/css/";
                </div>
                <div class="mini-fb">
                   <form action="/moncompte/delete" method="POST">
-                     <button type="submit" class="button">Supprimer</button>
+                     <button type="submit" name="submit" class="button">Supprimer</button>
                   </form>
                </div>
             </div>

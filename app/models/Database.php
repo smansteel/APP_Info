@@ -86,7 +86,8 @@ class Database
             $field = $update_fields[$i];
             $for_str = $for_str . ", $field = ? ";
         }
-        $stmt = mysqli_prepare($this->db, "UPDATE $table SET " .  $for_str . " WHERE $where_column=$where_value");
+        array_push($update_fields_value, $where_value);
+        $stmt = mysqli_prepare($this->db, "UPDATE $table SET " .  $for_str . " WHERE $where_column=?");
         mysqli_stmt_execute($stmt, $update_fields_value);
         mysqli_stmt_close($stmt);
     }

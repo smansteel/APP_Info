@@ -1,7 +1,7 @@
 <?php
 class Moncompte extends Controller
 {
-    public function index()
+    public function index($param = "void")
     {
         $this->model("Database");
         $this->model("Averager");
@@ -35,36 +35,63 @@ class Moncompte extends Controller
             }
 
             $this->view('header_footer/header');
-            $this->view('moncompte/index', ["user" => $user, "capteurs" => $cpt_list, "airq" => $avg_fordays]);
+            $this->view('moncompte/index', ["user" => $user, "capteurs" => $cpt_list, "airq" => $avg_fordays, "param" => $param]);
             $this->view('header_footer/footer');
         }
     }
     public function addcapteur()
     {
-        $this->model("Database");
-        if (!isset($_SESSION["id"])) {
-            header("Location: /login/");
-            exit();
-        } else if (isset($_POST["id"])) {
-            $db = new Database;
-            $db->select_fields(["email", "prenom", "nom", "creation", "verified"], "users", "id", $_SESSION["id"]);
-            $db->return_list();
-            $user = $db[0][0];
-
-            $db = new Database;
-            $db->insert("users", ["email", "prenom", "nom", "creation", "verified"], ["email", "prenom", "nom", "creation", "verified"]);
-            $db->return_list();
-            $capt = $db[0][0];
-
-
-
+        if (isset($_POST["submit"])) {
             $this->view('header_footer/header');
-            $this->view('moncompte/index', ["user " => $user]);
+            $this->view('moncompte/addcapt', ["id" => $_SESSION["id"]]);
             $this->view('header_footer/footer');
+        }
+    }
+    public function doaddcapteur()
+    {
+        $this->model("Database");
+        if (isset($_POST["submit"])) {
+            $db = new Database;
+            echo $_POST["id"];
+            $db->select_fields(["owner"], "capteurs", "id", $_POST["id"]);
+
+            $owner = $db->return_list()[0]["owner"];
+            if ($owner == 0 || $owner == "") {
+                $db = new Database;
+                $db->update(["name", "owner"], [$_POST["name"], $_SESSION["id"]], "capteurs", "id", $_POST["id"]);
+                header("Location: /moncompte/");
+                exit();
+            } else {
+                header("Location: /moncompte/");
+                exit();
+            }
         }
     }
     public function editcapteur()
     {
+        if (isset($_POST["submit"])) {
+            $this->view('header_footer/header');
+            $this->view('moncompte/changeinfos', ["id" => $_POST["id"]]);
+            $this->view('header_footer/footer');
+        }
+    }
+    public function doeditcapteur()
+    {
+        $this->model("Database");
+        if (isset($_POST["submit"])) {
+            $db = new Database;
+            $db->select_fields(["owner"], "capteurs", "id_sql", $_POST["id"]);
+            $owner = $db->return_list()[0]["owner"];
+            if ($_SESSION["id"] == $owner) {
+                $db = new Database;
+                $db->update(["name"], [$_POST["name"]], "capteurs", "id_sql", $_POST["id"]);
+                header("Location: /moncompte/");
+                exit();
+            } else {
+                header("Location: /moncompte/");
+                exit();
+            }
+        }
     }
     public function delcapteur()
     {
@@ -93,9 +120,42 @@ class Moncompte extends Controller
     }
     public function togglecapteur()
     {
+        if (isset($_POST["submit"])) {
+            if ($_POST["status"] == 0) {
+                $status = 1;
+            } else {
+                $status = 0;
+            }
+            $this->model('Database');
+            $db = new Database;
+            $db->update(["status"], [$status], "capteurs", "id_sql", $_POST["id"]);
+            echo $_POST["status"] . " " . $status;
+            header("Location: /moncompte/");
+            exit();
+        }
     }
     public function edit()
     {
+        if (isset($_POST["submit"])) {
+            $this->view('header_footer/header');
+            $this->view('moncompte/changeinfos_acc');
+            $this->view('header_footer/footer');
+        }
+    }
+    public function doeditacc()
+    {
+        $this->model("Database");
+        if (isset($_POST["submit"])) {
+            $db = new Database;
+            $db->select_fields(["id"], "users", "email", $_POST["email"]);
+            $email = $db->return_list()[0]["email"];
+            if (empty($email)) {
+                $db = new Database;
+                $db->update(["nom", "prenom", "email"], [$_POST["name"], $_POST["prenom"], $_POST["email"]], "users", "id", $_SESSION["id"]);
+                header("Location: /moncompte/email_duplicate");
+                exit();
+            }
+        }
     }
     public function delete()
     {

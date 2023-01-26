@@ -9,7 +9,6 @@ class Admin extends Controller
 
     public function  checkauth()
     {
-        session_start();
         if (isset($_SESSION["Admin"]) && ($_SESSION["Admin"] == "2" || $_SESSION["Admin"] == "1" || $_SESSION["Admin"] == 1 || $_SESSION["Admin"] == 2)) {
             return (intval($_SESSION["Admin"]));
         } else {
