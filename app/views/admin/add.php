@@ -33,7 +33,7 @@
                 <input type="text" name="admin" value=""><br>
 
 
-                <input type="submit" value="Modifier" name="modifier">
+                <input type="submit" value="Ajouter" name="modifier">
             </form><?php
 
                 } else if ($data == "capteur") {
@@ -48,7 +48,19 @@
                 <input type="text" name="id" value=""><br>
                 <label>owner</label><br>
                 <input type="tel" name="owner" value=""><br><br>
-                <input type="submit" value="Modifier" name="modifier">
+                <input type="submit" value="Ajouter" name="modifier">
+            </form><?php
+
+                } else if ($data == "faq") {
+
+                    ?>
+
+            <form method="post" action="/admin/add/faq/">
+                <label>Titre</label><br>
+                <input type="text" name="titre"><br>
+                <label>Contenu</label><br>
+                <textarea type="text" name="contenu"></textarea><br>
+                <input type="submit" value="Ajouter" name="modifier">
             </form><?php
 
                 } ?>

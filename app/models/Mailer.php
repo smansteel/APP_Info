@@ -21,14 +21,14 @@ class Mailer
         // @ts-ignore
         $mail = new PHPMailer();                // @ignore
 
-        $mail->SMTPDebug = 0;                   // Enable verbose debug output
+        $mail->SMTPDebug = 3;                   // Enable verbose debug output
         $mail->isSMTP();                        // Set mailer to use SMTP
-        $mail->Host       = 'ssl0.ovh.net;';    // Specify main SMTP server
+        $mail->Host       = 'ssl0.ovh.net';    // Specify main SMTP server
         $mail->SMTPAuth   = true;               // Enable SMTP authentication
         $mail->Username   = 'postmaster@captair.paris';     // SMTP username
-        $mail->Password   = '8VHg2$v*25S%Cs3';         // SMTP password
-        $mail->SMTPSecure = 'ssl';              // Enable TLS encryption, 'ssl' also accepted
-        $mail->Port       = 465;                // TCP port to connect to
+        $mail->Password   = 'nw3hkkZPYVQYbG5u';         // SMTP password
+        $mail->SMTPSecure = 'tls';              // Enable TLS encryption, 'ssl' also accepted
+        $mail->Port       = 587;                // TCP port to connect to
         $mail->setFrom('noreply@captair.paris', 'captair.paris noreply');
         $mail->addAddress($email);
         if ($typeofemail == 0) {

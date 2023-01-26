@@ -50,6 +50,19 @@
                 <input type="submit" value="Modifier" name="modifier">
             </form><?php
 
+                } else if (isset($data["faq"])) {
+                    $faq = $data["faq"];
+                    ?>
+
+            <form method="post" action="/admin/edit/faq/">
+                <input type="hidden" name="id" value="<?= $faq['id'] ?>"><br>
+                <label>Titre</label><br>
+                <input type="textarea" name="titre" value="<?php echo $faq['titre'] ?>" size="50"><br>
+                <label>Contenu</label><br>
+                <textarea name="contenu" cols="60" rows="5"><?php echo $faq['contenu'] ?></textarea>
+                <input type="submit" value="Modifier" name="modifier">
+            </form><?php
+
                 } ?>
 
     </div>

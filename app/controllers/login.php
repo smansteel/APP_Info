@@ -38,6 +38,7 @@ class Login extends Controller
             $where_value = $mail;
             $db->select_fields($selected_fields, $table, $where_column, $where_value);
             $id = $db->return_list()[0]["id"];
+            $db->close();
 
 
             $mailer = new Mailer;
@@ -45,12 +46,13 @@ class Login extends Controller
             $email = $mail;
             $typeofemail = 1;
             $mailer->send($token, $email, $typeofemail);
+
             $db = new Database;
             $table = "onetimepasses";
             $fields = ["token", "utilisation", "creation_time", "account_id"];
             $fields_value = [$token, "0", time(), $id];
             $db->insert($table, $fields, $fields_value);
-
+            $db->close();
             header("Location: $this->root/login/verify/");
             exit();
         } else {

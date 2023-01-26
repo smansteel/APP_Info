@@ -68,19 +68,11 @@ class Auth extends Controller
         exit();
     }
 
-    public function email($email,)
-    {
-        $this->model('Mailer');
-        $mailer = new Mailer;
-        $token = "1234";
-        $typeofemail = 0;
-        $mailer->send($token, $email, $typeofemail);
-    }
-
     public function inscription()
     {
         $root = "";
         $this->model('Database');
+        $this->model('Mailer');
 
         var_dump($_POST);
         if (isset($_POST["submit"])) {
@@ -94,14 +86,13 @@ class Auth extends Controller
             $where_value = $mail;
 
             $db->select_fields($selected_fields, $table, $where_column, $where_value);
-            $f_user = $db->return_list()[0];
-            var_dump($f_user);
+            $f_user = $db->return_list();
             $db->close();
 
 
 
 
-            if (isset($f_user["id"])) {
+            if (isset($f_user[0])) {
                 header("Location: $root/login/acc_exists");
                 exit();
             } else {
@@ -112,7 +103,26 @@ class Auth extends Controller
                         $insert_fields_value = [$mail, password_hash($passwd, 1), $_POST["nom"], $_POST["prenom"]];
                         $db->insert("users", $insert_fields, $insert_fields_value);
 
+                        $db = new Database;
+                        $table = "users";
+                        $selected_fields = ["id"];
+                        $where_column = 'email';
+                        $where_value = $mail;
+                        $db->select_fields($selected_fields, $table, $where_column, $where_value);
+                        $id = $db->return_list()[0]["id"];
+                        $db->close();
+                        $mailer = new Mailer;
+                        $token = $this->tokenGen();
+                        $email = $mail;
+                        $typeofemail = 1;
+                        $mailer->send($token, $email, $typeofemail);
+                        $db = new Database;
+                        $table = "onetimepasses";
+                        $fields = ["token", "utilisation", "creation_time", "account_id"];
+                        $fields_value = [$token, "0", time(), $id];
+                        $db->insert($table, $fields, $fields_value);
 
+                        $db->close();
                         header("Location: $root/login/verify/$mail/");
                         exit();
                     } else {
@@ -124,7 +134,6 @@ class Auth extends Controller
                     exit();
                 }
             }
-            $db->close();
         }
     }
     public function verify($token)
@@ -193,6 +202,7 @@ class Auth extends Controller
             $where_value = $mail;
             $db->select_fields($selected_fields, $table, $where_column, $where_value);
             $id = $db->return_list()[0]["id"];
+            $db->close();
 
 
             $mailer = new Mailer;
@@ -205,7 +215,7 @@ class Auth extends Controller
             $fields = ["token", "utilisation", "creation_time", "account_id"];
             $fields_value = [$token, "1", time(), $id];
             $db->insert($table, $fields, $fields_value);
-
+            $db->close();
             header("Location: $this->root/login/verify/");
             exit();
         }
@@ -227,7 +237,7 @@ class Auth extends Controller
                 $where_column = "id";
                 $where_value = $_POST["id"];
                 $db->update($update_fields, $update_fields_value, $table, $where_column, $where_value);
-
+                $db->close();
                 header("Location: $this->root/login/chang");
                 exit();
             } else {

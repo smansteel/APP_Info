@@ -35,6 +35,9 @@
                             if ($data["error"] == "badcred") {
                                 echo 'Bad credentials reset you password <a href="/login/forgor/">here</a>';
                             }
+                            if ($data["error"] == "acc_exists") {
+                                echo 'Un compte avec cet email là existe déja, <br>sinon réinitialiser le mot de passe <a href="/login/forgor/">ici</a>';
+                            }
                         }
                         ?>
 

@@ -56,6 +56,29 @@ class Admin extends Controller
         }
     }
 
+    public function faq()
+    {
+        if ($this->checkauth() == 2) {
+
+            $this->model('Database');
+            $db = new Database;
+            $selected_fields = ["id", "titre", "contenu"];
+            $table = "faq";
+            $db->select_fields_nw($selected_fields, $table);
+            $faqlist = $db->return_list();
+            $db->close();
+
+
+
+
+            $this->view('header_footer/navs', "faq");
+            $this->view('admin/faq', ['faqlist' => $faqlist]);
+        } else {
+            header("Location: /");
+            exit();
+        }
+    }
+
     public function capteurs()
     {
         $auth = $this->checkauth();
@@ -101,14 +124,16 @@ class Admin extends Controller
     public function edit($param = "void")
     {   // !! ADD CHECK FOR ADMIN SESSION !! && $_SESSION["admin"]
         $auth = $this->checkauth();
-        if (($auth == 2 && $param == 'users') || (($auth <= 2 && $auth >= 1) && $param == 'capteurs')) {
+        if (($auth == 2 && ($param == 'users' || $param == "faq")) || (($auth <= 2 && $auth >= 1) && $param == 'capteurs')) {
             $this->model('Database');
-            if ($param == 'capteurs' || $param == 'users') {
+            if ($param == 'capteurs' || $param == 'users' || $param == 'faq') {
                 $fields_to_edit = ["fields" => [], "values" => []];
                 if ($param == 'capteurs') {
                     $possible_fields = ["id_sql", "id", "status", "owner"];
-                } else {
+                } else if ($param == 'users') {
                     $possible_fields = ["id", "email", "nom", "prenom", "password", "verified", "admin"];
+                } else if ($param == 'faq') {
+                    $possible_fields = ["id", "titre", "contenu"];
                 }
                 foreach ($possible_fields as $field) {
                     if (isset($_POST[$field])) {
@@ -127,6 +152,7 @@ class Admin extends Controller
                 $table = $param;
 
                 $db->update($update_fields, $update_fields_value, $table, $where_column, $where_value);
+                $db->close();
                 header("Location: $this->root/admin/$param");
                 exit();
             } else {
@@ -142,7 +168,7 @@ class Admin extends Controller
     {
         $this->model('Database');
         $auth = $this->checkauth();
-        if (($auth == 2 && $param == 'users') || (($auth <= 2 && $auth >= 1) && $param == 'capteurs')) {
+        if (($auth == 2 && ($param == 'users' || $param == 'faq')) || (($auth <= 2 && $auth >= 1) && $param == 'capteurs')) {
             // !! ADD CHECK FOR ADMIN SESSION !! && $_SESSION["admin"]
             if (intval($param1) != 0) {
                 if ($param == 'capteurs') {
@@ -167,6 +193,17 @@ class Admin extends Controller
                     $db->close();
                     $this->view('header_footer/navs', $param);
                     $this->view('admin/mod', ["user" => $user]);
+                } else if ($param == 'faq') {
+                    $db = new Database;
+                    $selected_fields = ["id", "titre", "contenu"];
+                    $table = "faq";
+                    $where_column = "id";
+                    $where_value = $param1;
+                    $db->select_fields($selected_fields, $table, $where_column, $where_value);
+                    $faq = $db->return_list()[0];
+                    $db->close();
+                    $this->view('header_footer/navs', $param);
+                    $this->view('admin/mod', ["faq" => $faq]);
                 } else {
                     header("Location: /");
                     exit();
@@ -183,7 +220,7 @@ class Admin extends Controller
     public function del($param = "void", $param1 = "void")
     { // !! ADD CHECK FOR ADMIN SESSION !! && $_SESSION["admin"]
         $auth = $this->checkauth();
-        if (($auth == 2 && $param == 'users') || (($auth <= 2 && $auth >= 1) && $param == 'capteurs')) {
+        if (($auth == 2 && ($param == 'users' || $param == "faq")) || (($auth <= 2 && $auth >= 1) && $param == 'capteurs')) {
             $this->model('Database');
             if (intval($param1) != 0) {
                 $db = new Database;
@@ -193,6 +230,11 @@ class Admin extends Controller
                     $where_value = $param1;
                     $db->delete($table, $where_field, $where_value);
                 } else if ($param == "users") {
+
+                    $where_field = "id";
+                    $where_value = $param1;
+                    $db->delete($table, $where_field, $where_value);
+                } else if ($param == "faq") {
 
                     $where_field = "id";
                     $where_value = $param1;
@@ -211,7 +253,7 @@ class Admin extends Controller
     public function del_conf($param = "void", $param1 = "void")
     { // !! ADD CHECK FOR ADMIN SESSION !! && $_SESSION["admin"]
         $auth = $this->checkauth();
-        if (($auth == 2 && $param == 'users') || (($auth <= 2 && $auth >= 1) && $param == 'capteurs')) {
+        if (($auth == 2 && ($param == 'users' || $param == "faq")) || (($auth <= 2 && $auth >= 1) && $param == 'capteurs')) {
             if (intval($param1) != 0) {
                 $this->view("alert/js_alert", ["object" => $param, "id" => $param1]);
             }
@@ -222,15 +264,17 @@ class Admin extends Controller
     }
 
     public function add($param = "void")
-    {   // !! ADD CHECK FOR ADMIN SESSION !! && $_SESSION["admin"]
+    {
         $auth = $this->checkauth();
-        if (($auth == 2 && $param == 'users') || (($auth <= 2 && $auth >= 1) && $param == 'capteurs')) {
+        if (($auth == 2 && ($param == 'users' || $param == "faq")) || (($auth <= 2 && $auth >= 1) && $param == 'capteurs')) {
             $this->model('Database');
-            if ($param == 'capteurs' || $param == 'users') {
+            if ($param == 'capteurs' || $param == 'faq' || $param == 'users') {
                 $fields_to_edit = ["fields" => [], "values" => []];
                 if ($param == 'capteurs') {
                     $possible_fields = ["id", "status", "owner"];
-                } else {
+                } else if ($param == 'faq') {
+                    $possible_fields = ["id", "titre", "contenu"];
+                } else if ($param == 'users') {
                     $possible_fields = ["email", "nom", "prenom", "password", "verified", "admin"];
                 }
                 foreach ($possible_fields as $field) {
@@ -251,6 +295,7 @@ class Admin extends Controller
                 $table = $param;
 
                 $db->insert($table, $update_fields, $update_fields_value);
+                $db->close();
                 header("Location: $this->root/admin/$param");
                 exit();
             } else {
@@ -265,7 +310,7 @@ class Admin extends Controller
     public function ajouter($param = "void")
     {
         $auth = $this->checkauth();
-        if (($auth == 2 && $param == 'users') || (($auth <= 2 && $auth >= 1) && $param == 'capteurs')) {
+        if (($auth == 2 && ($param == 'users' || $param == "faq")) || (($auth <= 2 && $auth >= 1) && $param == 'capteurs')) {
             $this->view('header_footer/navs', $param);
             $this->view('admin/add', $param);
         } else {

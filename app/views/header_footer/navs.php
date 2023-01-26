@@ -31,14 +31,30 @@ $root = "/";
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?= $root ?>admin/users">Utilisateurs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?= $root ?>admin/faq">F.A.Q.</a>
             <?php
-              } else {
+              } else if ($data == "faq") {
 
             ?>
               <a class="nav-link" href="<?= $root ?>admin/capteurs">Capteur</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="<?= $root ?>admin/users">Utilisateurs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="<?= $root ?>admin/faq">F.A.Q.</a>
+            <?php
+              } else {
+            ?>
+              <a class="nav-link" href="<?= $root ?>admin/capteurs">Capteur</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="<?= $root ?>admin/users">Utilisateurs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?= $root ?>admin/faq">F.A.Q.</a>
             <?php
               }
             ?>

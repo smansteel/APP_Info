@@ -17,12 +17,14 @@ class Moncompte extends Controller
 
             $db_list = $db->return_list();
             $user = $db_list[0];
+            $db->close();
 
 
             $db = new Database;
             $db->select_fields(["id", "id_sql", "name", "status"], "capteurs", "owner", $_SESSION["id"]);
 
             $cpt_list = $db->return_list();
+            $db->close();
             $avg_fordays = [];
             foreach ($cpt_list as $capteur) {
                 $db = new Database;
@@ -32,6 +34,7 @@ class Moncompte extends Controller
                 $average = new Averager;
 
                 $avg_fordays[$capteur["id_sql"]] = $average->fromArray($res);
+                $db->close();
             }
 
             $this->view('header_footer/header');
@@ -55,10 +58,13 @@ class Moncompte extends Controller
             echo $_POST["id"];
             $db->select_fields(["owner"], "capteurs", "id", $_POST["id"]);
 
+
             $owner = $db->return_list()[0]["owner"];
+            $db->close();
             if ($owner == 0 || $owner == "") {
                 $db = new Database;
                 $db->update(["name", "owner"], [$_POST["name"], $_SESSION["id"]], "capteurs", "id", $_POST["id"]);
+                $db->close();
                 header("Location: /moncompte/");
                 exit();
             } else {
@@ -82,9 +88,11 @@ class Moncompte extends Controller
             $db = new Database;
             $db->select_fields(["owner"], "capteurs", "id_sql", $_POST["id"]);
             $owner = $db->return_list()[0]["owner"];
+            $db->close();
             if ($_SESSION["id"] == $owner) {
                 $db = new Database;
                 $db->update(["name"], [$_POST["name"]], "capteurs", "id_sql", $_POST["id"]);
+                $db->close();
                 header("Location: /moncompte/");
                 exit();
             } else {
@@ -104,6 +112,7 @@ class Moncompte extends Controller
         $db = new Database;
         $db->select_fields(["owner"], "capteurs", "id_sql", $param);
         $owner = $db->return_list()[0]["id"];
+        $db->close();
         header("Location: /moncompte/");
         if (!isset($param)) {
             header("Location: /moncompte/");
@@ -111,6 +120,7 @@ class Moncompte extends Controller
         } else if ($_SESSION["id"] == $owner) {
             $db = new Database;
             $db->delete("capteurs", "id_sql", $param);
+            $db->close();
             header("Location: /moncompte/");
             exit();
         } else {
@@ -130,6 +140,7 @@ class Moncompte extends Controller
             $db = new Database;
             $db->update(["status"], [$status], "capteurs", "id_sql", $_POST["id"]);
             echo $_POST["status"] . " " . $status;
+            $db->close();
             header("Location: /moncompte/");
             exit();
         }
@@ -149,10 +160,12 @@ class Moncompte extends Controller
             $db = new Database;
             $db->select_fields(["id"], "users", "email", $_POST["email"]);
             $email = $db->return_list()[0]["email"];
+            $db->close();
             if (empty($email)) {
                 $db = new Database;
                 $db->update(["nom", "prenom", "email"], [$_POST["name"], $_POST["prenom"], $_POST["email"]], "users", "id", $_SESSION["id"]);
                 header("Location: /moncompte/email_duplicate");
+                $db->close();
                 exit();
             }
         }
@@ -172,6 +185,7 @@ class Moncompte extends Controller
             $db = new Database;
             $db->delete("users", "id", $_SESSION["id"]);
             header("Location: /moncompte/");
+            $db->close();
             exit();
         } else {
             header("Location: /moncompte/");
