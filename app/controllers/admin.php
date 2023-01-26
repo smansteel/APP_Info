@@ -310,7 +310,7 @@ class Admin extends Controller
     public function ajouter($param = "void")
     {
         $auth = $this->checkauth();
-        if (($auth == 2 && ($param == 'users' || $param == "faq")) || (($auth <= 2 && $auth >= 1) && $param == 'capteurs')) {
+        if (($auth == 2 && ($param == 'users' || $param == 'user' || $param == "faq")) || (($auth <= 2 && $auth >= 1) && $param == 'capteurs')) {
             $this->view('header_footer/navs', $param);
             $this->view('admin/add', $param);
         } else {
