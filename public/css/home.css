@@ -105,7 +105,6 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 10px;
     box-sizing: border-box;
 }
 
@@ -806,11 +805,60 @@ form {
         margin: 20px auto;
     }
 
-    #blocimage img {
-        width: 100%;
+    #blocimage .left img {
         display: block;
-
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        height: auto;
+        border-radius: 10px;
+        margin-top: 30px;
     }
+
+    #blocimage .right img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        height: auto;
+        border-radius: 10px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+
+    .left {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        height: auto;
+    }
+
+    .left h1 {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        height: auto;
+        margin-bottom: 15px;
+        margin-top: 40px
+    }
+
+    .right {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        height: auto;
+    }
+
+    .right h1 {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        height: auto;
+        margin-bottom: 15px;
+        margin-top: 40px
+    }
+
+
 }
 
 .newsletter {
@@ -837,4 +885,20 @@ form {
 
 .fondblanc {
     background-color: #fff;
+}
+
+@media (max-width: 576px) {
+    .blocimage {
+
+        width: 100%;
+
+        margin: 0;
+
+        padding: 0;
+
+        text-align: center;
+
+    }
+
+
 }
