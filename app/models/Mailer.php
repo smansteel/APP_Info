@@ -26,7 +26,7 @@ class Mailer
         $mail->Host       = 'ssl0.ovh.net';    // Specify main SMTP server
         $mail->SMTPAuth   = true;               // Enable SMTP authentication
         $mail->Username   = 'postmaster@captair.paris';     // SMTP username
-        $mail->Password   = 'nw3hkkZPYVQYbG5u';         // SMTP password
+        $mail->Password   = 'x5KD!s8@SBhw85zDV31M';         // SMTP password
         $mail->SMTPSecure = 'tls';              // Enable TLS encryption, 'ssl' also accepted
         $mail->Port       = 587;                // TCP port to connect to
         $mail->setFrom('noreply@captair.paris', 'captair.paris noreply');
