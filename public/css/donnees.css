@@ -4,7 +4,6 @@
     font-family: "Nunito Sans", sans-serif;
 }
 
-
 nav {
     width: 100%;
     height: 100%;
@@ -80,6 +79,102 @@ nav {
     display: none;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f100;
+    border-radius: 10px;
+    border: solid 10px transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        overflow-y: hidden;
+    }
+
+    footer {
+        overflow-x: hidden;
+        position: fixed;
+        bottom: 0;
+    }
+
+    .ligne1 {
+        overflow-x: auto;
+    }
+}
+
+.color-legend {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.legende {
+    display: flex;
+    flex-direction: column;
+    width: 94%;
+    margin: 20px;
+    padding: 20px;
+    background-color: #dddddd;
+    border-radius: 8px;
+}
+
+.welcome {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.color-bar {
+    width: 25%;
+    height: 13px;
+    background: linear-gradient(
+        to right,
+        rgb(0, 128, 0),
+        rgb(255, 255, 0),
+        rgb(255, 0, 0)
+    );
+    border-radius: 20% / 500%;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.color-label {
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+    margin-left: 30px;
+}
+
+.green {
+    color: green;
+}
+
+.yellow {
+    color: rgb(255, 174, 0);
+}
+
+.red {
+    color: red;
+}
+
 @media screen and (max-width: 600px) {
     .ligne1 {
         overflow: none;
@@ -89,7 +184,6 @@ nav {
         width: fit-content;
 
         flex-direction: row;
-
     }
 
     .hz_line {
@@ -124,7 +218,30 @@ nav {
 
     .fb_fb {
         width: fit-content;
-        margin-top: 25px
+        margin-top: 25px;
+    }
+
+    .color-bar {
+        width: 90%;
+        height: 13px;
+        background: linear-gradient(
+            to right,
+            rgb(0, 128, 0),
+            rgb(255, 255, 0),
+            rgb(255, 0, 0)
+        );
+        border-radius: 20% / 500%;
+        margin-top: 10px;
+        margin-left: 30px;
+    }
+    .color-label {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        margin-left: 30px;
+    }
+    .legend {
+        margin: 50 0px;
     }
 }
 
@@ -149,101 +266,4 @@ nav {
     .fb_stations {
         width: fit-content;
     }
-}
-
-/* width */
-::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: #f1f1f100;
-    border-radius: 10px;
-    border: solid 10px transparent;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-@media screen and (max-width: 600px) {
-
-    body {
-        overflow-y: hidden;
-    }
-
-    footer {
-        overflow-x: hidden;
-        position: fixed;
-        bottom: 0;
-    }
-
-
-
-    .ligne1 {
-        overflow-x: auto;
-    }
-}
-
-.color-legend {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-    z-index: 1;
-}
-
-.legende {
-    width: 100%;
-    background-color: #dddddd;
-    border-radius: 10px;
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
-
-}
-
-.welcome {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: left;
-    margin-left: 20px
-}
-
-.color-bar {
-    width: 25%;
-    height: 13px;
-    background: linear-gradient(to right, rgb(1, 106, 1), yellow, rgb(122, 0, 0));
-    border-radius: 20% / 500%;
-    margin-top: 10px;
-    margin-left: 30px;
-
-}
-
-.color-label {
-    display: flex;
-    justify-content: space-between;
-    width: 25%;
-    margin-left: 30px;
-}
-
-.green {
-    color: green;
-}
-
-.yellow {
-    color: rgb(255, 174, 0);
-}
-
-.red {
-    color: red;
 }

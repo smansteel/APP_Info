@@ -3,8 +3,10 @@ $css = "/css/";
 ?>
 
 <link rel="stylesheet" href="<?= $css ?>moncompte.css">
-<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+
 
 
 
@@ -30,7 +32,26 @@ $css = "/css/";
          if (isset($data["param"]) && $data["param"] == "email_duplicate") {
             echo "<p class='red'>La modification de l'email n'a pas pu etre effectuée, un compte avec cet email existe deja.</p>";
          }
+         if ($admin >= 1) {
          ?>
+            <div class="Titre">Interface Administrateur</div>
+            <div class="mid-mid-fb">
+               <div class="mid_2-fb">
+                  <div class="mini-fb result_text">
+                     Gérer le site&nbsp:
+                  </div>
+                  <div class="mini-fb">
+                     <form action="/admin/">
+                        <button type="submit" name="submit" class="button">Accéder</button>
+                     </form>
+                  </div>
+
+               </div>
+            </div>
+         <?php
+         }
+         ?>
+
          <div class="Titre">Mes Capteurs</div>
 
 

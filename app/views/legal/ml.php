@@ -2,10 +2,9 @@
     <?php
     $root = "";
     ?>
-    <?php $image_folder = $root . "/images" ?>
-    <?php $css = $root . "/css/" ?>
-    <?php $js = $root . "/js/"; ?>
-
+    <?php $image_folder = "/images/" ?>
+    <?php $css = "/css/" ?>
+    <?php $js = "/js/" ?>
 
     <link rel="stylesheet" href="<?= $css ?>ml.css">
 
