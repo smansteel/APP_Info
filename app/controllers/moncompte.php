@@ -184,7 +184,7 @@ class Moncompte extends Controller
         } else if ($_SESSION["id"] == $param) {
             $db = new Database;
             $db->delete("users", "id", $_SESSION["id"]);
-            header("Location: /moncompte/");
+            header("Location: /login/");
             $db->close();
             exit();
         } else {
@@ -192,5 +192,6 @@ class Moncompte extends Controller
             exit();
         }
         session_destroy();
+        session_unset();
     }
 }
