@@ -21,6 +21,7 @@ $root = "/";
     <table class="table table-secondary table-striped table-hover" border="1">
         <thead>
             <tr>
+                <th>ID</th>
                 <th>Email</th>
                 <th>Creation</th>
                 <th>Capteurs</th>
@@ -37,6 +38,7 @@ $root = "/";
                 $id = $utilisateur['id'];
             ?>
                 <tr>
+                    <td><?php echo $id ?></td>
                     <td><?php echo $utilisateur['email'] ?></td>
                     <td><?php echo $utilisateur['creation'] ?></td>
 
