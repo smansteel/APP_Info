@@ -68,13 +68,18 @@ class Auth extends Controller
         exit();
     }
 
+    public function unverif($param = "void")
+    {
+        $root = "";
+        header("Location: $root/login/?error=verif");
+        exit();
+    }
     public function inscription()
     {
         $root = "";
         $this->model('Database');
         $this->model('Mailer');
 
-        var_dump($_POST);
         if (isset($_POST["submit"])) {
             $db = new Database;
             $mail = $_POST["email"];
