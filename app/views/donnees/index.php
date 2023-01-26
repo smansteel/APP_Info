@@ -18,18 +18,6 @@
 </head>
 
 <body>
-  <div class="legende">
-    <div class="welcome">Bienvenue sur notre page données</div>
-    <div class="color-legend">Notre page "Données" présente l'ensemble des lignes du métro parisien et associe une couleur à chaque point de la ligne en fonction de la situation de la station. Plus la couleur tend vers le rouge, plus la ligne ou l'endroit ciblé dans une situation délicate, cela peut s'agir d'une station bruyante ou polluée. À l'inverse, plus la couleur tend vers le vert, plus la station sera considérée comme agréable. Il est important de noter que ces informations sont fournies à partir des données de nos clients. En possédant un capteur, vous pourrez également avoir accès à vos propres données ,
-      comme par exemple leur rythme cardiaque.
-      <div class="color-bar"></div>
-      <div class="color-label">
-        <span class="green">Bien</span>
-        <span class="yellow">Moyen</span>
-        <span class="red">Mauvais</span>
-      </div>
-    </div>
-  </div>
 
 
 
@@ -192,6 +180,25 @@
   }
   ?>
   <div class="fb_fb">
+    <div class="legende">
+      <div class="welcome">Bienvenue sur notre page données</div>
+      <div class="color-legend">Notre page "Données" présente l'ensemble des lignes du métro parisien et associe une
+        couleur à chaque station en fonction de sa situation. Plus la couleur tend vers le rouge, plus la ligne ou l'endroit
+        ciblé est inconfortable, il peut s'agir d'une station à forte affluence, bruyante ou polluée. À l'inverse, plus la couleur
+        tend vers le vert, plus la station sera considérée comme agréable et bénéfique à votre confort. Il est important de noter que c
+        es informations sont fournies à partir des données de nos clients. En possédant un capteur, vous participer à l'ammelioration
+        de notre service mais vous pourrez également avoir accès à vos doonées personelles.
+
+        <div class="color-bar"></div>
+        <div class="color-label">
+          <span class="green">Bien</span>
+          <span class="yellow">Moyen</span>
+          <span class="red">Mauvais</span>
+        </div>
+      </div>
+    </div>
+
+
     <div class="fb_lignes">
       <?php
 
