@@ -186,9 +186,9 @@
       <div class="color-legend reveal-2 ">Notre page "Données" présente l'ensemble des lignes du métro parisien et associe une
         couleur à chaque station en fonction de sa situation. Plus la couleur tend vers le rouge, plus la ligne ou l'endroit
         ciblé est inconfortable, il peut s'agir d'une station à forte affluence, bruyante ou polluée. À l'inverse, plus la couleur
-        tend vers le vert, plus la station sera considérée comme agréable et bénéfique à votre confort. Il est important de noter que c
-        es informations sont fournies à partir des données de nos clients. En possédant un capteur, vous participer à l'ammelioration
-        de notre service mais vous pourrez également avoir accès à vos doonées personelles.
+        tend vers le vert, plus la station sera considérée comme agréable et bénéfique à votre confort. Il est important de noter que ces
+         informations sont fournies à partir des données de nos clients. En possédant un capteur, vous participez à l'amélioration
+        de notre service mais vous pourrez également avoir accès à vos données personelles.
 
         <div class="color-bar reveal-3"></div>
         <div class="color-label">
