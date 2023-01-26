@@ -23,9 +23,6 @@ $root = "";
 
     </div>
 
-
-
-
 </body>
 
 </html>
