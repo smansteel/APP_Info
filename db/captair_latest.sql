@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 26, 2023 at 01:09 PM
+-- Generation Time: Jan 26, 2023 at 01:35 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -1221,7 +1221,7 @@ CREATE TABLE `capteurs` (
   `id_sql` int(11) NOT NULL,
   `id` text NOT NULL,
   `status` int(11) NOT NULL,
-  `owner` int(11) NOT NULL,
+  `owner` int(11) DEFAULT NULL,
   `name` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -1231,7 +1231,7 @@ CREATE TABLE `capteurs` (
 
 INSERT INTO `capteurs` (`id_sql`, `id`, `status`, `owner`, `name`) VALUES
 (3, 'AE16Ffssdf', 1, 1, 'Joli_capteur'),
-(4, 'SFFSD', 0, 1, ''),
+(4, 'SFFSD', 1, 1, ''),
 (5, 'KJHS-LKJHSQF-FKLJH', 0, 1, 'dd'),
 (6, 'Quelle est la fonction principale de nos bracelets Captair ?', 0, 0, '');
 
