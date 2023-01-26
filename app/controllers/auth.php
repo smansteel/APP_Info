@@ -28,7 +28,7 @@ class Auth extends Controller
 
 
             if (!isset($id)) {
-                header("Location: $root/auth/login/?error=noacc");
+                header("Location: $root/login/?error=noacc");
                 exit();
             } else {
                 if (password_verify($passwd,  $hash)) {
