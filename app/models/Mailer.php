@@ -21,7 +21,7 @@ class Mailer
         // @ts-ignore
         $mail = new PHPMailer();                // @ignore
 
-        $mail->SMTPDebug = 3;                   // Enable verbose debug output
+        $mail->SMTPDebug = 0;                   // Enable verbose debug output
         $mail->isSMTP();                        // Set mailer to use SMTP
         $mail->Host       = 'ssl0.ovh.net';    // Specify main SMTP server
         $mail->SMTPAuth   = true;               // Enable SMTP authentication

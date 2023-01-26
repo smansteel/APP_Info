@@ -13,7 +13,7 @@ if (isset($_SESSION["id"])) {
     echo "alert('Vous êtes connecté a un compte, vous ne pouvez par réinitialiser votre mot de passe, vous allez être redirigé sur votre page mon compte');  ";
     echo "window.location = '/moncompte/';";
     echo "</script>  ";
-    //header("Location: /moncompte.php");
+    header("Location: /moncompte.php");
 }
 ?>
 
