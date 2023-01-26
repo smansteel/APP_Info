@@ -38,6 +38,9 @@
                             if ($data["error"] == "acc_exists") {
                                 echo 'Un compte avec cet email là existe déja, <br>sinon réinitialiser le mot de passe <a href="/login/forgor/">ici</a>';
                             }
+                            if ($data["error"] == "verif") {
+                                echo 'Veuillez vérifier votre email pour pouvoir vous connecter';
+                            }
                         }
                         ?>
 

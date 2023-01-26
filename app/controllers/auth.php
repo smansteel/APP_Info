@@ -71,7 +71,7 @@ class Auth extends Controller
     public function unverif($param = "void")
     {
         $root = "";
-        header("Location: $root/login/?error=verif");
+        header("Location: $root/login/verif");
         exit();
     }
     public function inscription()
