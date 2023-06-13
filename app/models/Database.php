@@ -33,6 +33,17 @@ class Database
         }
     }
 
+    public function checkTable() {
+        $stmt = mysqli_prepare($this->db, "CREATE TABLE IF NOT EXISTS `capteurs_raw` ( `id` INT NOT NULL AUTO_INCREMENT , `capteur_id` INT NOT NULL , `time` INT NOT NULL , `data` INT NOT NULL , `type` INT NOT NULL, PRIMARY KEY (`id`)) ENGINE = InnoDB;");
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+        
+    }
+
+    public function insertRawData($capteur_id, $time, $data, $type) {
+        $this->insertIfNotDuplicate("capteurs_raw", ["capteur_id", "time", "data", "type"], [$capteur_id, $time, $data, $type]);       
+    }
+
     public function select($selected_fields, $table, $where_column, $where_value)
     {
         $stmt = mysqli_prepare($this->db, "SELECT " . implode(", ", $selected_fields) . " FROM $table WHERE $where_column=?");
@@ -116,6 +127,26 @@ class Database
     }
 
 
+    public function insertIfNotDuplicate($table, $field, $field_value)
+    {
+        $duplicateCheckStmt = mysqli_prepare($this->db, "SELECT COUNT(*) as count FROM $table WHERE " . implode("=? AND ", $field) . "=?");
+        mysqli_stmt_bind_param($duplicateCheckStmt, str_repeat("s", count($field)), ...$field_value);
+        mysqli_stmt_execute($duplicateCheckStmt);
+        $duplicateCheckResult = $duplicateCheckStmt->get_result();
+        $duplicateCheckData = $duplicateCheckResult->fetch_assoc();
+        mysqli_stmt_close($duplicateCheckStmt);
+
+        if ($duplicateCheckData['count'] <= 0) {
+        $insertStmt = $this->db->prepare("INSERT INTO $table (" . implode(", ", $field) . ") VALUES (?" . str_repeat(", ?", count($field_value) - 1) . ")");
+        $insertStmt->execute($field_value);
+                $insertStmt->close();
+        }
+
+
+
+    }
+
+
     public function insert_one($table, $field, $field_value)
     {
 
@@ -126,7 +157,6 @@ class Database
     }
     public function insert($table, $field, $field_value)
     {
-
         $stmt = $this->db->prepare("INSERT INTO $table (" . implode(", ", $field) . ") VALUES (?" . str_repeat(" ,? ", sizeof($field_value) - 1) . ")");
         $stmt->execute($field_value);
         $stmt->close();

@@ -5,17 +5,17 @@ class Home extends Controller
     public function index()
     {
         $this->view('header_footer/header');
+        $this->model('DataGetter');
+
+        $dataGetter = new DataGetter();
+
         $this->view('home/index');
         $this->view('header_footer/footer');
     }
 
     public function addnewsletter()
     {
-
-
         $this->model('Database');
-
-
         // adding email
         $db = new Database;
         $table = "newsletter";
