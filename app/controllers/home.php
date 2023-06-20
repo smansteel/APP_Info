@@ -5,9 +5,9 @@ class Home extends Controller
     public function index()
     {
         $this->view('header_footer/header');
-        $this->model('DataGetter');
+        $this->model('DataManager');
 
-        $dataGetter = new DataGetter();
+        $dataGetter = new DataManager();
 
         $this->view('home/index');
         $this->view('header_footer/footer');

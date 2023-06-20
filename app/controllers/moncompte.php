@@ -12,6 +12,7 @@ class Moncompte extends Controller
             // $db_gen  = new Database;
             // $db_gen->gen();
             // $db_gen->close();
+            
             $db = new Database;
             $db->select_fields(["email", "prenom", "nom", "creation", "verified", "admin"], "users", "id", $_SESSION["id"]);
 
@@ -32,6 +33,7 @@ class Moncompte extends Controller
 
                 $res = $db->return_list();
                 $average = new Averager;
+                //Check conflct between data struct for DataManager et Averager
 
                 $avg_fordays[$capteur["id_sql"]] = $average->fromArray($res);
                 $db->close();

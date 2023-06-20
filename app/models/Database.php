@@ -129,20 +129,19 @@ class Database
 
     public function insertIfNotDuplicate($table, $field, $field_value)
     {
+        echo $this->db;
         $duplicateCheckStmt = mysqli_prepare($this->db, "SELECT COUNT(*) as count FROM $table WHERE " . implode("=? AND ", $field) . "=?");
         mysqli_stmt_bind_param($duplicateCheckStmt, str_repeat("s", count($field)), ...$field_value);
         mysqli_stmt_execute($duplicateCheckStmt);
         $duplicateCheckResult = $duplicateCheckStmt->get_result();
         $duplicateCheckData = $duplicateCheckResult->fetch_assoc();
-        mysqli_stmt_close($duplicateCheckStmt);
+        $duplicateCheckStmt->close();
 
         if ($duplicateCheckData['count'] <= 0) {
         $insertStmt = $this->db->prepare("INSERT INTO $table (" . implode(", ", $field) . ") VALUES (?" . str_repeat(", ?", count($field_value) - 1) . ")");
         $insertStmt->execute($field_value);
-                $insertStmt->close();
+        $insertStmt->close();
         }
-
-
 
     }
 

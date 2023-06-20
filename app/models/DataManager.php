@@ -1,11 +1,11 @@
 <?php
 require("Database.php");
-class DataGetter
+class DataManager
 {
 
     protected $urlApi;
     protected $data;
-    const TEAM_NUMBER = "9999";
+    const TEAM_NUMBER = "6969";
     const SENSORS_MAP = ["sound" => 1, "bpm" => 2, "hum" => 3, "temp" => 4];
     protected $trame;
     protected $db;
@@ -14,6 +14,7 @@ class DataGetter
     {   $this->db = new Database();
         $this->db->connect();
         $this->db->checkTable();
+        $this->db->close();
         $this->urlApi = "http://projets-tomcat.isep.fr:8080/appService?ACTION=GETLOG&TEAM=" . self::TEAM_NUMBER;
         $this->getData();
     }
@@ -25,13 +26,16 @@ class DataGetter
         $pattern = '/1' . self::TEAM_NUMBER . '.*?(?=1' . self::TEAM_NUMBER . '|$)/s';
         preg_match_all($pattern, $this->trame, $matches);
         $foundFrames = $matches[0];
-        
+        //var_dump($foundFrames);
+        $this->db->connect();
         foreach ($foundFrames as $frame) {
             $sensorInfos = $this->processFrame($frame);
+            
             if ($sensorInfos) {
                 array_push($this->data, $sensorInfos);
                 $this->db->insertRawData(self::TEAM_NUMBER, strtotime($sensorInfos["date"]->format('Y-m-d H:i:s')), $sensorInfos["sensorValue"], $sensorInfos["sensorID"]);
             }
+        $this->db->close();
         }
 
         echo "trame : ";
@@ -39,6 +43,17 @@ class DataGetter
             echo "Failed to fetch data from ISEP server : " . $e->getMessage() . ". Please check that ISEP correctly opened port 22 👀👀", 1, true;
             return false;
         }
+    }
+
+    public function transformData(){
+        $this->db->connect();
+        //Select db content 
+
+        //Transform data
+
+        //push data to db on new table
+        
+        $this->db->close();
     }
 
     private function processFrame($frame)
