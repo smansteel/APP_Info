@@ -12,13 +12,14 @@ class Moncompte extends Controller
             // $db_gen  = new Database;
             // $db_gen->gen();
             // $db_gen->close();
-            
+
             $db = new Database;
             $db->select_fields(["email", "prenom", "nom", "creation", "verified", "admin"], "users", "id", $_SESSION["id"]);
 
             $db_list = $db->return_list();
             $user = $db_list[0];
             $db->close();
+
 
 
             $db = new Database;

@@ -7,7 +7,7 @@ class Home extends Controller
         $this->view('header_footer/header');
         $this->model('DataManager');
 
-        $dataGetter = new DataManager();
+
 
         $this->view('home/index');
         $this->view('header_footer/footer');

@@ -5,54 +5,57 @@ class DataManager
 
     protected $urlApi;
     protected $data;
-    const TEAM_NUMBER = "6969";
+    protected $team_num = "6969";
     const SENSORS_MAP = ["sound" => 1, "bpm" => 2, "hum" => 3, "temp" => 4];
     protected $trame;
     protected $db;
 
-    public function __construct()
-    {   $this->db = new Database();
+    public function __construct($team)
+    {
+        $this->team_num = $team;
+        $this->db = new Database();
         $this->db->connect();
         $this->db->checkTable();
         $this->db->close();
-        $this->urlApi = "http://projets-tomcat.isep.fr:8080/appService?ACTION=GETLOG&TEAM=" . self::TEAM_NUMBER;
+        $this->urlApi = "http://projets-tomcat.isep.fr:8080/appService?ACTION=GETLOG&TEAM=" . $this->team_num;
         $this->getData();
     }
 
-    public function getData(){
-        try{
-        $this->trame = file_get_contents($this->urlApi);
-        $this->data = [];
-        $pattern = '/1' . self::TEAM_NUMBER . '.*?(?=1' . self::TEAM_NUMBER . '|$)/s';
-        preg_match_all($pattern, $this->trame, $matches);
-        $foundFrames = $matches[0];
-        //var_dump($foundFrames);
-        $this->db->connect();
-        foreach ($foundFrames as $frame) {
-            $sensorInfos = $this->processFrame($frame);
-            
-            if ($sensorInfos) {
-                array_push($this->data, $sensorInfos);
-                $this->db->insertRawData(self::TEAM_NUMBER, strtotime($sensorInfos["date"]->format('Y-m-d H:i:s')), $sensorInfos["sensorValue"], $sensorInfos["sensorID"]);
-            }
-        $this->db->close();
-        }
+    public function getData()
+    {
+        try {
+            $this->trame = file_get_contents($this->urlApi);
+            $this->data = [];
+            $pattern = '/1' . $this->team_num . '.*?(?=1' . $this->team_num . '|$)/s';
+            preg_match_all($pattern, $this->trame, $matches);
+            $foundFrames = $matches[0];
+            //var_dump($foundFrames);
+            $this->db->connect();
+            foreach ($foundFrames as $frame) {
+                $sensorInfos = $this->processFrame($frame);
 
-        echo "trame : ";
-          } catch (Exception $e) {
+                if ($sensorInfos) {
+                    array_push($this->data, $sensorInfos);
+                    $this->db->insertRawData($this->team_num, strtotime($sensorInfos["date"]->format('Y-m-d H:i:s')), $sensorInfos["sensorValue"], $sensorInfos["sensorID"]);
+                }
+            }
+            $this->db->close();
+            echo "trame : ";
+        } catch (Exception $e) {
             echo "Failed to fetch data from ISEP server : " . $e->getMessage() . ". Please check that ISEP correctly opened port 22 👀👀", 1, true;
             return false;
         }
     }
 
-    public function transformData(){
+    public function transformData()
+    {
         $this->db->connect();
         //Select db content 
 
         //Transform data
 
         //push data to db on new table
-        
+
         $this->db->close();
     }
 
@@ -66,7 +69,7 @@ class DataManager
             return null;
         }
 
-        if ($data[1] != self::TEAM_NUMBER) {
+        if ($data[1] != $this->team_num) {
             return null;
         }
 
@@ -84,10 +87,10 @@ class DataManager
             return null;
         }
 
-        return ["sensorID" =>$sensorID, "sensorValue" => $sensorValue, "date"=> $date];
+        return ["sensorID" => $sensorID, "sensorValue" => $sensorValue, "date" => $date];
     }
 
-     private function isDateCorrect($year, $month, $day, $hours, $min, $seconds)
+    private function isDateCorrect($year, $month, $day, $hours, $min, $seconds)
     {
         if ($year === null || $month === null || $day === null || $hours === null || $min === null || $seconds === null) {
             return false; // At least one value is null
@@ -98,11 +101,9 @@ class DataManager
         }
 
         if ($hours < 0 || $hours > 23 || $min < 0 || $min > 59 || $seconds < 0 || $seconds > 59) {
-            return false; 
+            return false;
         }
 
-        return true; 
+        return true;
     }
-
-    
 }

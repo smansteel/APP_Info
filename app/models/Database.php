@@ -33,15 +33,16 @@ class Database
         }
     }
 
-    public function checkTable() {
+    public function checkTable()
+    {
         $stmt = mysqli_prepare($this->db, "CREATE TABLE IF NOT EXISTS `capteurs_raw` ( `id` INT NOT NULL AUTO_INCREMENT , `capteur_id` INT NOT NULL , `time` INT NOT NULL , `data` INT NOT NULL , `type` INT NOT NULL, PRIMARY KEY (`id`)) ENGINE = InnoDB;");
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
-        
     }
 
-    public function insertRawData($capteur_id, $time, $data, $type) {
-        $this->insertIfNotDuplicate("capteurs_raw", ["capteur_id", "time", "data", "type"], [$capteur_id, $time, $data, $type]);       
+    public function insertRawData($capteur_id, $time, $data, $type)
+    {
+        $this->insertIfNotDuplicate("capteurs_raw", ["capteur_id", "time", "data", "type"], [$capteur_id, $time, $data, $type]);
     }
 
     public function select($selected_fields, $table, $where_column, $where_value)
@@ -126,24 +127,21 @@ class Database
         $this->results = $rarray;
     }
 
-
     public function insertIfNotDuplicate($table, $field, $field_value)
     {
-        echo $this->db;
-        $duplicateCheckStmt = mysqli_prepare($this->db, "SELECT COUNT(*) as count FROM $table WHERE " . implode("=? AND ", $field) . "=?");
+        $duplicateCheckStmt = $this->db->prepare("SELECT COUNT(*) as count FROM $table WHERE " . implode("=? AND ", $field) . "=?");
         mysqli_stmt_bind_param($duplicateCheckStmt, str_repeat("s", count($field)), ...$field_value);
         mysqli_stmt_execute($duplicateCheckStmt);
         $duplicateCheckResult = $duplicateCheckStmt->get_result();
         $duplicateCheckData = $duplicateCheckResult->fetch_assoc();
-        $duplicateCheckStmt->close();
 
         if ($duplicateCheckData['count'] <= 0) {
-        $insertStmt = $this->db->prepare("INSERT INTO $table (" . implode(", ", $field) . ") VALUES (?" . str_repeat(", ?", count($field_value) - 1) . ")");
-        $insertStmt->execute($field_value);
-        $insertStmt->close();
+            $insertStmt = $this->db->prepare("INSERT INTO $table (" . implode(", ", $field) . ") VALUES (?" . str_repeat(", ?", count($field_value) - 1) . ")");
+            $insertStmt->execute($field_value);
+            $insertStmt->close();
         }
-
     }
+
 
 
     public function insert_one($table, $field, $field_value)
