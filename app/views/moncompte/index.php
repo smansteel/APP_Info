@@ -52,47 +52,80 @@ $css = "/css/";
          }
          ?>
 
-         <div class="Titre">Mes Capteurs</div>
+         <div class="fb-dir Titre"><div class="fb">Mes Capteurs</div><div class="fb"><button href="#" class="button" onclick="refreshPage()">Rafraichir</button></div></div>
+
+
+
+         <script>
+         function refreshPage() {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "/moncompte/updateDB", true);
+            xhr.onload = (e) => {
+               if (xhr.readyState === 4) {
+               if (xhr.status === 200) {
+                  console.log(xhr.responseText);
+                  location.reload(); // Reload the page
+               } else {
+                  console.error(xhr.statusText);
+               }
+               }
+            };
+            xhr.onerror = (e) => {
+               console.error(xhr.statusText);
+            };
+            xhr.send(null);
+         }
+         </script>
 
 
 
          <?php
+         //var_dump($data["capteurs"]);
          foreach ($data["capteurs"] as  $capteur) {
-
          ?><div class="mid-mid-fb">
                <div class="diagram">
                   <div class="ajout_text">
                      Recap des données du capteur sur les dernières 24h
                   </div>
                   <div class="results">
-
-                     <?php
-                     if (!empty(end($data["airq"][$capteur["id_sql"]]))) {
-                        foreach (end($data["airq"][$capteur["id_sql"]]) as $key => $donnee) {
-                           $score = (int) $donnee; ?>
-                           <div class='nano-fb'>
-                              <?php
-                              if ($score >= 0) {
-                                 echo "<score class='red result_text'>$score</score>";
-                              } else if ($score >= 50) {
-                                 echo "<score class='yellow result_text'> $score</score>";
-                              } else if ($score >= 75) {
-                                 echo "<score class='green result_text'> $score</score>";
-                              }
-                              if ($key == "air") {
-                                 echo "<div> Indice de qualité de l'air</div>";
-                              } else if ($key == "db") {
-                                 echo "<div> Indice de qualité sonore</div>";
-                              } else if ($key == "cardiac") {
-                                 echo "<div> Indice de qualité votre rythme cardiaque</div>";
-                              } else
-                              ?>
-                           </div>
-                     <?php
-                     }
-                  } else {
-                     echo "<score class=' result_text_empty'>Pas d'infos récentes à afficher, n'oubliez pas de porter votre bracelet ;)</score>";
-                  } ?>
+                     <?php if (isset($capteur["data"])): ?>
+                           <table>
+                              <tr>
+                                 <th>Nom</th>
+                                 <th>Moyenne</th>
+                              </tr>
+                              <?php foreach ($capteur["data"] as $category => $average): ?>
+                                 <tr>
+                                    <td><?php if($category == "tmp"){
+                                       echo "Temperature";
+                                    } else if($category == "ISO"){
+                                       echo "Isobutylène";
+                                    } else if ($category == "hum"){
+                                       echo "Humidité";
+                                    } else if ($category == "mic"){
+                                       echo "Microphone";
+                                    } else if ($category == "hrt"){
+                                       echo "Rythme cardiaque (bpm)";
+                                    }else{
+                                    echo $category;}
+                                     ?></td>
+                                    <td>
+                                 <?php if($category == "tmp" || $category == "hum" ){
+                                       echo "Défaut capteur";
+                                    } else if ($category == "ISO" || $category == "mic"){
+                                       echo $average/100;
+                                    } else if ($category == "CO2"){
+                                       echo $average/10;
+                                    } else if ($category == "hrt"){
+                                       echo $average/100;
+                                    }else{
+                                    echo $category;}?></td>
+                                 </tr>
+                              <?php endforeach; ?>
+                              </table>
+                              <?php else: ?>
+                                 <score class=' result_text_empty'>Pas d'infos récentes à afficher, n'oubliez pas de porter votre bracelet ;)</score>
+                              <?php endif; ?>
                   </div>
 
                </div>

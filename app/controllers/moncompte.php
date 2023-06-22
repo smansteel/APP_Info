@@ -5,13 +5,12 @@ class Moncompte extends Controller
     {
         $this->model("Database");
         $this->model("Averager");
+
+        $this->model("DataConvertor");
         if (!isset($_SESSION["id"])) {
             header("Location: /login/");
             exit();
         } else {
-            // $db_gen  = new Database;
-            // $db_gen->gen();
-            // $db_gen->close();
 
             $db = new Database;
             $db->select_fields(["email", "prenom", "nom", "creation", "verified", "admin"], "users", "id", $_SESSION["id"]);
@@ -20,31 +19,34 @@ class Moncompte extends Controller
             $user = $db_list[0];
             $db->close();
 
-
-
             $db = new Database;
             $db->select_fields(["id", "id_sql", "name", "status"], "capteurs", "owner", $_SESSION["id"]);
 
             $cpt_list = $db->return_list();
             $db->close();
-            $avg_fordays = [];
+            $capteurs = [];
             foreach ($cpt_list as $capteur) {
-                $db = new Database;
-                $db->select_fields(["time", "location", "airq_air", "airq_db", "airq_cardiac"], "capteurs_qualite", "capteur_id", $capteur["id_sql"]);
-
-                $res = $db->return_list();
-                $average = new Averager;
-                //Check conflct between data struct for DataManager et Averager
-
-                $avg_fordays[$capteur["id_sql"]] = $average->fromArray($res);
-                $db->close();
+                $capteurs[$capteur["id_sql"]] = $capteur;
+                $dc = new DataConvertor($capteur["id"]);
+                if($dc->clean_data != null){
+                $capteur["data"] = $dc->clean_data;
+                $capteurs[$capteur["id_sql"]] = $capteur;
+            }
             }
 
             $this->view('header_footer/header');
-            $this->view('moncompte/index', ["user" => $user, "capteurs" => $cpt_list, "airq" => $avg_fordays, "param" => $param]);
+            $this->view('moncompte/index', ["user" => $user, "capteurs" => $capteurs, "param" => $param]);
             $this->view('header_footer/footer');
         }
     }
+
+    public function updateDB(){
+        $this->model("Database");
+        $this->model("DataManager");
+        $dm = new DataManager();
+        echo "ok";
+    }
+
     public function addcapteur()
     {
         if (isset($_POST["submit"])) {

@@ -17,8 +17,27 @@ body {
 }
 
 .Titre {
+    justify-content: center;
     padding: 20px;
     font-size: 2em;
+    width: 100%;
+    text-align: center; /* Added property */
+}
+
+.fb-dir{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    padding: 10px;
+}
+.fb{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: space-around;
+
 }
 
 .diagram {

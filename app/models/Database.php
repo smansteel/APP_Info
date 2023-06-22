@@ -222,6 +222,49 @@ class Database
 
         $this->results = $rarray;
     }
+
+    public function getLastDay($id)
+    {
+        $query = "SELECT * FROM `capteurs_raw` WHERE `time` > UNIX_TIMESTAMP() - 86400 AND `capteur_id` = ? ORDER BY `time` DESC;";
+        $stmt = mysqli_prepare($this->db, $query);
+        $stmt->bind_param("s", $id);
+        $stmt->execute();
+        
+        $rarray = [];
+        $result = $stmt->get_result();
+        $rows = $result->fetch_all(MYSQLI_ASSOC);
+        foreach ($rows as $row) {
+            array_push($rarray, $row);
+        }
+        $stmt->close();
+        $this->results = $rarray;
+    }
+
+    public function ordered_select_sup($selected_fields, $table, $where_column, $where_value, $ordering, $order_column, $limit = -1)
+    {
+        $limite = "";
+        if ($limit != -1) {
+            $limite = " LIMIT $limit";
+        }
+
+        $stmt = mysqli_prepare($this->db, "SELECT " . implode(", ", $selected_fields) . " FROM $table WHERE $where_column>? ORDER BY $order_column $ordering $limite");
+        mysqli_stmt_bind_param($stmt, "s", $where_value);
+        mysqli_stmt_execute($stmt);
+        $result = $stmt->get_result();
+        $rows = $result->fetch_all(MYSQLI_ASSOC);
+        $rarray = [];
+        foreach ($rows as $row) {
+            $array = [];
+            foreach ($selected_fields as $field) {
+                array_push($array, $row[$field]);
+            }
+            array_push($rarray, $array);
+        }
+        mysqli_stmt_close($stmt);
+
+        $this->results = $rarray;
+    }
+
     public function return_list()
     {
         return $this->results;

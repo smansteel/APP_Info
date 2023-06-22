@@ -1,5 +1,4 @@
 <?php
-require("Database.php");
 class DataManager
 {
 
@@ -10,9 +9,9 @@ class DataManager
     protected $trame;
     protected $db;
 
-    public function __construct($team)
+    public function __construct()
     {
-        $this->team_num = $team;
+        $this->team_num = "6969";
         $this->db = new Database();
         $this->db->connect();
         $this->db->checkTable();
@@ -40,7 +39,6 @@ class DataManager
                 }
             }
             $this->db->close();
-            echo "trame : ";
         } catch (Exception $e) {
             echo "Failed to fetch data from ISEP server : " . $e->getMessage() . ". Please check that ISEP correctly opened port 22 👀👀", 1, true;
             return false;
