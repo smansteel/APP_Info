@@ -11,6 +11,10 @@ class App
     public function __construct()
     {
         $url = $this->parseUrl();
+        if((null != getenv('PROD_ENV')) && (getenv('PROD_ENV') == 'true')) {
+            array_shift($url);
+        }
+
 
         if (isset($url[0]) && file_exists('../app/controllers/' .  $url[0] . '.php')) {
             $this->controller = $url[0];
