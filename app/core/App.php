@@ -11,8 +11,8 @@ class App
     public function __construct()
     {
         $url = $this->parseUrl();
-        echo getenv('PROD_ENV');
-        if((null != getenv('PROD_ENV')) && (getenv('PROD_ENV') == 'true')) {
+
+        if((null != getenv('PROD_ENV')) && (getenv('PROD_ENV') == 'true') && (isset($url[0]))) {
             array_shift($url);
         }
 
