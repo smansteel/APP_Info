@@ -10,8 +10,8 @@ class DataManager
     protected $db;
 
     public function __construct()
-    {   $this->sensorLIst=["6969", "6666"];
-        $this->team_num = "6969";
+    {
+        $this->team_num = "0690";
         $this->db = new Database();
         $this->db->connect();
         $this->db->checkTable();
@@ -21,11 +21,11 @@ class DataManager
     }
 
     public function getData()
-    {   foreach($this->sensorLIst as $sensor){
+    {
         try {
             $this->trame = file_get_contents($this->urlApi);
             $this->data = [];
-            $pattern = '/1' . $sensor . '.*?(?=1' . $sensor . '|$)/s';
+            $pattern = '/1' . $this->team_num . '.*?(?=1' . $this->team_num . '|$)/s';
             preg_match_all($pattern, $this->trame, $matches);
             $foundFrames = $matches[0];
             //var_dump($foundFrames);
@@ -35,7 +35,7 @@ class DataManager
 
                 if ($sensorInfos) {
                     array_push($this->data, $sensorInfos);
-                    $this->db->insertRawData($sensor, strtotime($sensorInfos["date"]->format('Y-m-d H:i:s')), $sensorInfos["sensorValue"], $sensorInfos["sensorID"]);
+                    $this->db->insertRawData($this->team_num, strtotime($sensorInfos["date"]->format('Y-m-d H:i:s')), $sensorInfos["sensorValue"], $sensorInfos["sensorID"]);
                 }
             }
             $this->db->close();
@@ -43,7 +43,6 @@ class DataManager
             echo "Failed to fetch data from ISEP server : " . $e->getMessage() . ". Please check that ISEP correctly opened port 22 👀👀", 1, true;
             return false;
         }
-    }
     }
 
     public function transformData()
